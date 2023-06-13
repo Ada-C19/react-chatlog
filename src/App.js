@@ -10,9 +10,10 @@ const App = () => {
         <h1>Application title</h1>
       </header>
       <main>
+        <ChatEntry entries={chatMessages}> </ChatEntry>
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
-        <ChatEntry></ChatEntry>
+        
       </main>
     </div>
   );
