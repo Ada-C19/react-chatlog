@@ -4,13 +4,15 @@ import TimeStamp from './TimeStamp';
 import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
+  console.log(props.timeStamp);
   return (
     <div className="chat-entry local">
       <h2 className="entry-name"> { props.sender } </h2>
       <section className="entry-bubble">
         <p> {props.body} </p>
-        <TimeStamp className="entry-time" time={props.timeStamp}></TimeStamp>
-        <button className="like">🤍</button>
+        <TimeStamp className="entry-time" time={props.timeStamp}> </TimeStamp>
+        <button className="like">🤍</button> 
+        {/* call props.liked boolean and use for like button */}
       </section>
     </div>
   );
