@@ -7,7 +7,7 @@ const ChatEntry = (props) => {
     <div className="chat-entry local">
       <h2 className="entry-name"> { props.sender } </h2>
       <section className="entry-bubble">
-        <p>Replace with body of ChatEntry</p>
+        <p> {props.body} </p>
         <p className="entry-time">Replace with TimeStamp component</p>
         <button className="like">🤍</button>
       </section>
