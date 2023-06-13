@@ -5,7 +5,7 @@ import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
 
-  const { sender, body, timeStamp } = props;
+  const { sender, body, timeStamp} = props;
 
   return (
     <div className="chat-entry local">
@@ -13,9 +13,7 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{body}</p>
         <p className="entry-time">
-          <span>
             <TimeStamp time={timeStamp}></TimeStamp>
-          </span>
         </p>
         <button className="like">🤍</button>
       </section>
