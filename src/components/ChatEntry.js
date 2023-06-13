@@ -4,7 +4,6 @@ import TimeStamp from './TimeStamp';
 import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
-  console.log(props.timeStamp);
   return (
     <div className="chat-entry local">
       <h2 className="entry-name"> { props.sender } </h2>

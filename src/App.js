@@ -14,7 +14,7 @@ const App = () => {
         <h1>Application title</h1>
       </header>
       <main>
-        <ChatEntry timeStamp={chatMessage1.timeStamp}> {chatMessage1} </ChatEntry>
+        <ChatEntry sender={chatMessage1.sender} body={chatMessage1.body} timeStamp={chatMessage1.timeStamp}></ChatEntry>
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
       </main>
