@@ -3,7 +3,7 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import { DateTime } from 'luxon';
 
-const ChatEntry = ({props}) => {
+const ChatEntry = (props) => {
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{props.sender}</h2>
