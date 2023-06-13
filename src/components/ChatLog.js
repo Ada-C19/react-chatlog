@@ -1,6 +1,6 @@
 import React from 'react';
 import './ChatLog.css';
-// import PropTypes ...
+import PropTypes from 'prop-types';
 
 const ChatLog = (props) => {
     return (
@@ -8,6 +8,10 @@ const ChatLog = (props) => {
 
         </div>
     );
+};
+
+ChatLog.propTypes = {
+    entries: PropTypes.array
 };
 
 export default ChatLog;
