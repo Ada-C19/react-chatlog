@@ -29,14 +29,14 @@ const ChatLog = ({entries}) => {
 };
 
 
-// ChatLog.propTypes = {
-//     entries: PropTypes.arrayOf(PropTypes.shape({
-//         sender: PropTypes.string.isRequired,
-//         body: PropTypes.string.isRequired,
-//         timeStamp: PropTypes.string.isRequired,
-//         id: PropTypes.number
-//     })).isRequired,
+ChatLog.propTypes = {
+    entries: PropTypes.arrayOf(PropTypes.shape({
+        sender: PropTypes.string.isRequired,
+        body: PropTypes.string.isRequired,
+        timeStamp: PropTypes.string.isRequired,
+        id: PropTypes.number
+    })).isRequired,
 
-// };
+};
 
 export default ChatLog;
