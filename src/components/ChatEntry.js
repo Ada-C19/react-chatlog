@@ -1,9 +1,24 @@
 import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
-import TimeStamp from './TimeStamp'
+import TimeStamp from './TimeStamp';
+import { useState } from 'react';
 
 const ChatEntry = ({sender, body, timeStamp, id}) => {
+
+  const [isLiked, setIsLiked] = useState(false);
+
+  if (isLiked) {
+    console.log('button is liked!');
+  }else {
+    console.log('no likeys for you');
+  }
+
+  const updateLikeButton = () => {
+    setIsLiked(!isLiked);
+  }
+
+  // const heartColor = isLiked ? 'red' : 'white';
   
   return (
     <div className="chat-entry local">
@@ -11,7 +26,7 @@ const ChatEntry = ({sender, body, timeStamp, id}) => {
       <section className="entry-bubble">
         <p>{ body }</p>
         <p className="entry-time"><TimeStamp time={ timeStamp }/></p>
-        <button className="like">🤍</button>
+        <button onClick={updateLikeButton} className='like'>{isLiked ? '🩷' : '🤍'}</button>
       </section>
     </div>
   );
