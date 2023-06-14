@@ -1,4 +1,3 @@
-import messages from '../data/messages.json';
 import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
@@ -20,6 +19,14 @@ const ChatLog = (props) => {
         {chatComp}
         </div>
     );
+};
+
+ChatLog.propTypes = {
+    key: PropTypes.number.isRequired,
+    sender: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+    timeStamp: PropTypes.string.isRequired,
+    liked: PropTypes.bool.isRequired
 };
 
 export default ChatLog;
