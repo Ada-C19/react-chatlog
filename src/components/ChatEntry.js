@@ -20,16 +20,16 @@ const ChatEntry = (props) => {
       <h2 className="sender">{sender}</h2>
       <section className="entry-bubble">
         <p>{body}</p>
-        <p className="entry-time"></p>
-        <TimeStamp time={timeStamp}></TimeStamp>
+        <p className="entry-time"><TimeStamp time={timeStamp}></TimeStamp></p>
         {/* <span>{props.sender}</span>
         <span>{props.body}</span> */}
 
         {/* <span>{props.chatTime}</span> */}
-        <button className="like" onClick={handleLikeClick}>
-          {liked ? '❤️' : '🤍'}
-        </button>
+        
       </section>
+      <button className="like" onClick={handleLikeClick}>
+          {liked ? '❤️' : '🤍'}
+      </button>
     </div>
   );
 };
