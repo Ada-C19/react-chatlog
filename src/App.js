@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry';
+import ChatLog from './components/ChatLog';
 
 const App = () => {
-  const firstChatMessage = chatMessages[0];
+  const [likedMessages, setLikedMessages] = useState(0);
+
+  const handleLikeChange = (isLiked) => {
+    setLikedMessages((prevCount) => (isLiked ? prevCount + 1 : prevCount - 1));
+  };
+
   return (
     <div id="App">
       <header>
         <h1>Application title</h1>
+        <p>{likedMessages} ❤️</p>
       </header>
       <main>
-      <ChatEntry
-        sender={firstChatMessage.sender}
-        body={firstChatMessage.body}
-        timeStamp={firstChatMessage.timeStamp}
-        />
+        <ChatLog entries={chatMessages} onLikeChange={handleLikeChange} />
       </main>
     </div>
   );
