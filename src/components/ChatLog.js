@@ -4,27 +4,24 @@ import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
 const ChatLog = (props) => {
-  const chatLogComponents = props.messagesData.map((message) => {
+  const chatLogComponents = props.entries.map((message) => {
     return (
-      <li>
-        <ChatEntry>
+      <div key={message.id}>
+        <ChatEntry
           sender={message.sender}
           body={message.body}
-          timeStamp=
-        </ChatEntry>
-      </li>
-    )
-  })
-
-
-
-
-
-    return(
+          timeStamp={message.timeStamp}
+        />
+      </div>
+    );
+  });
+    return (
       <section>
-        {chatLogComponents}
+        <div>{chatLogComponents}</div>
       </section>
-)
+    );
 }
+
+export default ChatLog;
 
 
