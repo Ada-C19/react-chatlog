@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 const ChatLog = ({entries}) => {
 
     const chatComponents = entries.map((message) => {
+
         return (
             <section className='chat-log' key={message.id}>
                 <ChatEntry
@@ -12,10 +13,12 @@ const ChatLog = ({entries}) => {
                 body= {message.body}
                 timeStamp={message.timeStamp}
                 id={message.id}
+                liked={message.liked}
                 />
             </section>
         )
     })
+
 
     return (
         <section>
@@ -34,7 +37,8 @@ ChatLog.propTypes = {
         sender: PropTypes.string.isRequired,
         body: PropTypes.string.isRequired,
         timeStamp: PropTypes.string.isRequired,
-        id: PropTypes.number
+        id: PropTypes.number,
+        liked: PropTypes.bool
     })).isRequired,
 
 };

@@ -4,25 +4,30 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 import { useState } from 'react';
 
-const ChatEntry = ({sender, body, timeStamp, id}) => {
+const ChatEntry = ({sender, body, timeStamp, id, liked}) => {
 
   const [isLiked, setIsLiked] = useState(false);
 
-  if (isLiked) {
-    console.log('button is liked!');
-  }else {
-    console.log('no likeys for you');
-  }
+  const [likeCount, setLikeCount] = useState(0)
+
 
   const updateLikeButton = () => {
     setIsLiked(!isLiked);
-  }
-  
+    liked = isLiked;
+    if (!liked) {
+      setLikeCount(likeCount + 1);
+    }else {
+      setLikeCount(likeCount - 1);
+    }
+  };
 
-  // const heartColor = isLiked ? 'red' : 'white';
+  liked = isLiked;
+  console.log(liked)
+
   
   return (
     <div className="chat-entry local">
+      <section>{likeCount}</section>
       <h2 className="entry-name">{ sender }</h2>
       <section className="entry-bubble">
         <p>{ body }</p>

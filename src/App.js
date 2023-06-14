@@ -1,18 +1,19 @@
 import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry';
-import TimeStamp from './components/TimeStamp';
 import ChatLog from './components/ChatLog';
+import Post from './components/Post';
+import { useState } from 'react';
 
 
 const App = () => {
+
   return (
     <div id="App">
       <header>
         <h1>Application title</h1>
-        
       </header>
+        {/* <section>{likeCount} hearts</section> */}
       <main>
         {/* <ChatEntry sender='Vladamir' body='hey whatsup hello' timeStamp='2018-05-29T22:49:06+00:00'/> */}
         <ChatLog entries={chatMessages} />
