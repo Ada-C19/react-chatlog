@@ -1,12 +1,12 @@
 import React from 'react';
 import './ChatLog.css';
 import ChatEntry from './ChatEntry.js';
-import PropTypes from 'prop-type';
+import PropTypes from 'prop-types';
 
 const ChatLog = (props) => {
     const chatEntryComponents = props.entries.map((chatEntry, index) => {
         return (
-            <ChatEntry key={index} sender={chatEntry.sender} body={chatEntry.body} timeStamp={chatEntry.timeStamp} id={chatEntry.id}/>
+            <ChatEntry onUpdate={props.onUpdateMessage} key={index} sender={chatEntry.sender} body={chatEntry.body} timeStamp={chatEntry.timeStamp} id={chatEntry.id} liked={chatEntry.liked}/>
         )
     });
     return (
@@ -18,11 +18,13 @@ const ChatLog = (props) => {
 
 ChatLog.propTypes = {
     chatEntries: PropTypes.arrayOf(PropTypes.shape({
-        key: PropTypes.index.isRequired,
         sender: PropTypes.string.isRequired,
         body: PropTypes.string.isRequired,
         timeStamp: PropTypes.string.isRequired,
-        id: PropTypes.number.isRequired
-    }))
-}
+        id: PropTypes.number.isRequired,
+        liked: PropTypes.bool.isRequired
+    })),
+    onUpdateMessage: PropTypes.func.isRequired
+};
+
 export default ChatLog
