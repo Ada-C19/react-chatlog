@@ -35,7 +35,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat between {chatMessages[0].sender} and {chatMessages[1].sender}</h1>
-        <h2>{likes} ❤️'s</h2>
+        <h2>{likes} ❤️s</h2>
       </header>
       <main>
         <ChatLog entries={chatData} onUpdateChat={updateChatData}></ChatLog>

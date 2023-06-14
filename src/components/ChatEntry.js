@@ -14,7 +14,7 @@ const ChatEntry = (props) => {
       id: props.id,
       sender: props.sender,
       body: props.body, 
-      time: props.time,
+      timeStamp: props.timeStamp,
       liked: !props.isLiked
     };
     props.onUpdate(updatedChat);
@@ -29,8 +29,8 @@ const ChatEntry = (props) => {
     <h2 className="entry-name">{props.sender}</h2>
     <section className="entry-bubble">
       <p>{props.body}</p>
-      <p className="entry-time"><TimeStamp time={props.time}></TimeStamp></p>
-      <button onClick={onLikeButtonClick}>{buttonContent}</button>
+      <p className="entry-time"><TimeStamp time={props.timeStamp}></TimeStamp></p>
+      <button className="like" onClick={onLikeButtonClick}>{buttonContent}</button>
     </section>
   </div>
   );
@@ -39,7 +39,7 @@ const ChatEntry = (props) => {
 ChatEntry.propTypes = {
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
-  time: PropTypes.string.isRequired,
+  timeStamp: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   liked: PropTypes.bool,
   onUpdate: PropTypes.func.isRequired
