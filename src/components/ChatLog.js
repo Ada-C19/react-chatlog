@@ -6,14 +6,14 @@ const ChatLog = ({entries}) => {
 
     const chatComponents = entries.map((message) => {
         return (
-            <li key={message.id}>
+            <section className='chat-log' key={message.id}>
                 <ChatEntry
                 sender={ message.sender }
                 body= {message.body}
                 timeStamp={message.timeStamp}
                 id={message.id}
                 />
-            </li>
+            </section>
         )
     })
 
