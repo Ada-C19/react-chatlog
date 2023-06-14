@@ -5,15 +5,18 @@ import TimeStamp from './TimeStamp';
 import { useState } from 'react';
 
 const ChatEntry = (props) => {
-  const { id, sender, body, timeStamp, onLikeChange } = props;
+  const { id, sender, body, timeStamp, onLikeChange} = props;
   const [liked, setLiked] = useState(false);
 
   const handleLikeClick = () => {
     setLiked((prevLiked) => !prevLiked);
     onLikeChange(id, !liked);
   }
+
+  const isLocal = sender === 'Vladimir';
   return (
-    <div className="chat-entry local" key ={id}>
+    <div className={`chat-entry ${isLocal ? 'local' : 'remote'}`} key={id}>
+    {/* // <div className="chat-entry local" key={id}> */}
       <h2 className="sender">{sender}</h2>
       <section className="entry-bubble">
         <p>{body}</p>

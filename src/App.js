@@ -19,7 +19,6 @@ const App = () => {
   const handleLikeChange = (liked) => {
     setLikedCount((prevCount) => liked ? prevCount + 1 : prevCount - 1);
   };
-
   return (
     <div id="App">
       <header>

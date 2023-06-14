@@ -1,8 +1,6 @@
 import React from 'react';
 import ChatEntry from './ChatEntry';
 
-
-
 const ChatLog = (props) => {
     const { entries, onLikeChange } = props;
     const handleLikeChange = (id, liked) => {
