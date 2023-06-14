@@ -10,7 +10,7 @@ const ChatLog = (entries) => {
     <div className="chat-entry local">
       {
         chatMessages.map(entry => (
-          <ChatEntry sender={entry.sender} body={entry.body} timeStamp={entry.timeStamp}></ChatEntry>
+          <ChatEntry id={entry.id} sender={entry.sender} body={entry.body} timeStamp={entry.timeStamp}></ChatEntry>
         ))
       }
     </div>
