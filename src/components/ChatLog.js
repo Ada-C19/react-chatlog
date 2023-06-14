@@ -4,9 +4,15 @@ import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
 
 const ChatLog = (entries) => {
+  const {chatMessages} = entries;
+
   return (
     <div className="chat-entry local">
-      <ChatEntry sender={entries.sender} body={entries.body} timeStamp={entries.timeStamp}></ChatEntry>
+      {
+        chatMessages.map(entry => (
+          <ChatEntry sender={entry.sender} body={entry.body} timeStamp={entry.timeStamp}></ChatEntry>
+        ))
+      }
     </div>
   );
 };

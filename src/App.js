@@ -5,10 +5,8 @@ import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
 
 const App = () => {
-  const chatMessage1 = chatMessages[0]
   console.log('Hello World')
-  console.log(chatMessage1)
-  const chatMessage2 = chatMessages[1]
+  console.log(chatMessages)
 
   return (
     <div id="App">
