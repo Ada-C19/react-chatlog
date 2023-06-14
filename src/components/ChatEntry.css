@@ -9,7 +9,7 @@ button {
 }
 
 .chat-entry {
-  margin: 1rem;
+  margin: 3rem;
 }
 
 .chat-entry:last-child {
@@ -98,3 +98,7 @@ button {
 .chat-entry.remote .entry-bubble:hover::before {
   background-color: #a9f6f6;
 }
+
+
+
+
