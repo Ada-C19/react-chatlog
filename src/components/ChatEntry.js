@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 const ChatEntry = (props) => {
 
-  const { sender, body, timeStamp } = props;
+  const { sender, body, timeStamp, liked } = props;
   
   const [isEmptyHeart, setIsEmptyHeart] = useState(false);
 
