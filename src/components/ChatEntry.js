@@ -19,6 +19,8 @@ const ChatEntry = (props) => {
 
 ChatEntry.propTypes = {
   //Fill with correct proptypes
+  sender: PropTypes.string,
+  body: PropTypes.string
 };
 
 export default ChatEntry;
