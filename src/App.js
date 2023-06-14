@@ -12,7 +12,7 @@ const App = () => {
       <main>
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
-        <ChatLog chatEntries={chatMessages} />
+        <ChatLog entries={chatMessages} />
       </main>
     </div>
   );

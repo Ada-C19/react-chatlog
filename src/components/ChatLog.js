@@ -3,9 +3,9 @@ import './ChatLog.css';
 import ChatEntry from './ChatEntry.js';
 
 const ChatLog = (props) => {
-    const chatEntryComponents = props.chatEntries.map((chatEntry, index) => {
+    const chatEntryComponents = props.entries.map((chatEntry, index) => {
         return (
-            <ChatEntry key={index} name={chatEntry.name} body={chatEntry.body} timeStamp={chatEntry.timeStamp} id={chatEntry.id}/>
+            <ChatEntry key={index} sender={chatEntry.sender} body={chatEntry.body} timeStamp={chatEntry.timeStamp} id={chatEntry.id}/>
         )
     });
     return (
