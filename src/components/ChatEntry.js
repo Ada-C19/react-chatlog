@@ -3,6 +3,7 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp'
 
+
 const ChatEntry = (props) => {
   // console.log(messages)
   return (

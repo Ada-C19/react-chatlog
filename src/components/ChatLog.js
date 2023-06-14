@@ -1,5 +1,4 @@
-
-import messages from '..data/messages.json';
+import messages from '../data/messages.json';
 import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
