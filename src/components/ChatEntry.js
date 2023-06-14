@@ -9,12 +9,16 @@ const ChatEntry = (props) => {
   const { sender, body, timeStamp, liked } = props;
   
   const [isEmptyHeart, setIsEmptyHeart] = useState(false);
+  const [updateLiked, setLikedNumber] = useState(0);
 
-  //function to toggle from false to true
+  //function to toggle 
   const updateHeart = () => {
     setIsEmptyHeart(!isEmptyHeart);
+    
+    if (!isEmptyHeart) {
+      setLikedNumber(updateLiked + 1);
+    }
   }
-
 
   return (
     <div className="chat-entry local">
@@ -24,10 +28,9 @@ const ChatEntry = (props) => {
         <p className="entry-time">
           <TimeStamp time={timeStamp}></TimeStamp>
         </p>
-        <button
-          className="like"
-          onClick={updateHeart}>
-          {isEmptyHeart ? '🤍' : '❤️'}
+        <button className="like" onClick={updateHeart}>
+          {/* {isEmptyHeart ? "🤍" : "❤️"} {updateLiked} */}
+          {isEmptyHeart ? '❤️' : '🤍'} {updateLiked}
         </button>
       </section>
     </div>

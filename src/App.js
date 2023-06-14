@@ -10,7 +10,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat between Vladimir and Estragon</h1>
-        <p>2 ❤️s</p>
+        <p>testing ❤️s</p>
       </header>
       <main>
         {/* loops through the chatMessages to render each to chatentry */}
