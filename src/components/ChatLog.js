@@ -25,4 +25,16 @@ const ChatLog = (props) => {
     return <div className="chat-log">{chatEntryComponents}</div>;
 };
 
+ChatLog.protoTypes = {
+    messages: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            sender: PropTypes.string.isRequired,
+            body: PropTypes.string.isRequired,
+            timeStamp: PropTypes.string.isRequired,
+        })
+    ),
+    updateLikes: PropTypes.func.isRequired,
+}
+
 export default ChatLog;
