@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ChatLog from './components/ChatLog';
 import chatMessages from './data/messages.json';
 import ChatEntry from './components/ChatEntry';
 

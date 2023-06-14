@@ -22,7 +22,7 @@ const ChatLog = (props) => {
             </div>
         );
     }
-    return <div>{chatEntryComponents}</div>;
+    return <div className="chat-log">{chatEntryComponents}</div>;
 };
 
 export default ChatLog;
