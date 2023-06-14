@@ -10,11 +10,11 @@ const ChatEntry = (props) => {
   
   const [isEmptyHeart, setIsEmptyHeart] = useState(false);
 
+  //function to toggle from false to true
   const updateHeart = () => {
     setIsEmptyHeart(!isEmptyHeart);
   }
 
-  const toggleHeartColor = isEmptyHeart ? 'red' : 'white';
 
   return (
     <div className="chat-entry local">
@@ -24,9 +24,11 @@ const ChatEntry = (props) => {
         <p className="entry-time">
           <TimeStamp time={timeStamp}></TimeStamp>
         </p>
-        <button className="like"
-          style={{backgroundColor: toggleHeartColor}}
-          onClick={updateHeart}>🤍</button>
+        <button
+          className="like"
+          onClick={updateHeart}>
+          {isEmptyHeart ? '🤍' : '❤️'}
+        </button>
       </section>
     </div>
   );
