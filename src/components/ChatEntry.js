@@ -10,7 +10,7 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time">
-          <TimeStamp className="entry-time" time="2018-05-29T22:49:06+00:00"/>
+          <TimeStamp time={props.timeStamp} />
         </p>
         <button className="like">🤍</button>
       </section>
@@ -20,9 +20,9 @@ const ChatEntry = (props) => {
 
 ChatEntry.propTypes = {
   id: PropTypes.number,
-  sender: PropTypes.string, 
-  body: PropTypes.string,
-  timeStamp: PropTypes.string,
+  sender: PropTypes.string.isRequired, 
+  body: PropTypes.string.isRequired,
+  timeStamp: PropTypes.string.isRequired,
 };
 
 export default ChatEntry;
