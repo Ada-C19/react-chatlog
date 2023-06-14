@@ -9,6 +9,8 @@ const App = () => {
         <h1>Application title</h1>
       </header>
       <main>
+        {/* <ChatEntry sender='Vladamir' body='hey whatsup hello' timeStamp='2018-05-29T22:49:06+00:00'/> */}
+        <ChatLog entries={chatMessages} />
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
       </main>
