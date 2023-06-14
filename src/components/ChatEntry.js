@@ -17,6 +17,7 @@ const ChatEntry = ({sender, body, timeStamp, id}) => {
   const updateLikeButton = () => {
     setIsLiked(!isLiked);
   }
+  
 
   // const heartColor = isLiked ? 'red' : 'white';
   
