@@ -15,6 +15,7 @@ const App = () => {
 
   const updateMessage = (messageToUpdate) => {
     const messages = messageData.map((message) => {
+
       if (messageToUpdate.liked === true) {
         setLikeCount(likeCount + 1);
       }else {

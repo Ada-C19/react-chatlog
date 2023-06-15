@@ -7,8 +7,9 @@ const ChatLog = ({entries, onUpdateMessage}) => {
 
     const chatComponents = entries.map((message) => {
 
+
         return (
-            <section className='chat-log' key={message.id}>
+            <section className='chat-log' id={message.sender} key={message.id}>
                 <ChatEntry
                 key= { message.id }
                 sender={ message.sender }
@@ -25,7 +26,7 @@ const ChatLog = ({entries, onUpdateMessage}) => {
 
     return (
         <section>
-            <h2>Chat Log</h2>
+            <h2 className='chat-log'>Chat Log</h2>
             <ul className='chat-log'>
                 { chatComponents }
             </ul>

@@ -2,13 +2,8 @@ import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
-// import { useState } from 'react';
 
 const ChatEntry = ({sender, body, timeStamp, id, liked, onUpdateMessage}) => {
-
-  // const [isLiked, setIsLiked] = useState(false);
-
-  // const [likeCount, setLikeCount] = useState(0)
 
 
   const onUpdateLikeButton = () => {
@@ -20,22 +15,13 @@ const ChatEntry = ({sender, body, timeStamp, id, liked, onUpdateMessage}) => {
       liked: !liked,
     });
     console.log(`updating like status for ${sender}`)
-
-    // setIsLiked(!isLiked);
-    // liked = isLiked;
-    // // if (!liked) {
-    // //   setLikeCount(likeCount + 1);
-    // // }else {
-    // //   setLikeCount(likeCount - 1);
-    // // }
   };
 
   
   return (
-    <div className="chat-entry local">
-      {/* <section>{likeCount}</section> */}
+    <div className="chat-entry local" id={ sender}>
       <h2 className="entry-name">{ sender }</h2>
-      <section className="entry-bubble">
+      <section className="entry-bubble" id={`${sender}-bubble`}>
         <p>{ body }</p>
         <p className="entry-time"><TimeStamp time={ timeStamp }/></p>
         <button onClick={onUpdateLikeButton} className='like'>{liked ? '🩷' : '🤍'}</button>

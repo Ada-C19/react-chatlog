@@ -1,4 +1,20 @@
 .chat-log {
   margin: auto;
   max-width: 50rem;
+  text-align: center;
+  color: aliceblue;
+}
+
+#Vladimir {
+  margin-right: 0;
+  margin-left: 280px;
+  max-width: 50rem;
+  color: black;
+}
+
+#Estragon {
+  margin-left: 0;
+  margin-right: 280px;
+  max-width: 50rem;
+  color: black;
 }
