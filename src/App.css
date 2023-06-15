@@ -42,11 +42,16 @@
 
 #App #heartWidget {
   font-size: 1.5em;
-  margin: 1em
+  margin: 1em;
+  color: black;
 }
 
 #App span {
-  display: inline-block
+  display: inline-block;
+}
+
+#form-check {
+  display: inline-block;
 }
 
 .red {

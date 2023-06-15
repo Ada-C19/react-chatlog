@@ -8,6 +8,10 @@ button {
 	outline: inherit;
 }
 
+.like{
+  color: red;
+}
+
 .chat-entry {
   margin: 1rem;
 }
@@ -97,4 +101,5 @@ button {
 
 .chat-entry.remote .entry-bubble:hover::before {
   background-color: #a9f6f6;
+
 }
