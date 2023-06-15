@@ -2,6 +2,7 @@ import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
+import ChatLog from './ChatLog';
 
 
 const ChatEntry = (props) => {
@@ -11,7 +12,7 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{ props.body }</p>
         <p className="entry-time">
-          <TimeStamp time={props.time}></TimeStamp>
+          <TimeStamp time={props.TimeStamp}></TimeStamp>
         </p>
         <button className="like">🤍</button>
       </section>
@@ -22,8 +23,9 @@ const ChatEntry = (props) => {
 ChatEntry.propTypes = {
   //Fill with correct proptypes
   // id: PropTypes.number,
-  sender: PropTypes.string,
-  body: PropTypes.string
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  timeStamp: PropTypes.string.isRequired
   // liked: PropTypes.bool
 };
 
