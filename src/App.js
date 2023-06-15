@@ -9,7 +9,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Application title</h1>
-        <ChatEntry></ChatEntry>
+        {/* <ChatEntry></ChatEntry> */}
       </header>
       <main>
         {/* Wave 01: Render one ChatEntry component

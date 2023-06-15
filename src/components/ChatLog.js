@@ -1,23 +1,26 @@
 import React from 'react';
+import chatMessages from '../data/messages.json'
 import ChatEntry from './ChatEntry';
 
 
-const ChatLog = chatMessages => {
-  console.log(chatMessages)
+const ChatLog = ({ chatMessages }) => {
+  // console.log(entries)
+  // const datas = chatMessages;
 
-  const chatComponents = chatMessages.map(chat => {
+  const chatComponents = chatMessages.map(data => {
     return (
-      <ChatEntry
-      sender = {chat.sender}
-      body = {chat.body}
-      timestamp = {chat.timeStamp}
-      liked = {chat.like}
-      />
-    )
-  })
+    <ChatEntry
+      sender={data.sender}
+      body={data.body}
+      timeStamp={data.timeStamp}
+      
+    />
+    )})
 
   return (
+    <div>
     {chatComponents}
+    </div>
   )
 };
 
