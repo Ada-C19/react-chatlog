@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import ChatEntry from './components/ChatEntry';
 import chatMessages from './data/messages.json';
 import { useState } from 'react';
+import ChatLog from './components/ChatLog';
 
 const App = () => {
 
@@ -18,28 +18,11 @@ const App = () => {
         <p>{redFilledHeartCount} ❤️s</p>
       </header>
       <main>
-        {/* loops through the chatMessages to render each obj to chatentry */}
-
-        {chatMessages.map((data) => (
-          <ChatEntry
-            key={data.id}
-            sender={data.sender}
-            body={data.body}
-            timeStamp={data.timeStamp}
-            liked = {data.liked}
-            setredFilledHeartCount={setredFilledHeartCount}
-            redFilledHeartCount={redFilledHeartCount}
-          />
-        ))}
-
-        {/* Another way to loop through using spread operator! :) */}
-        {/* {chatMessages.map((data) => (
-          <ChatEntry
-            key={data.id}
-            {...data}
-            
-          />
-        ))} */}
+        
+        <ChatLog entries={chatMessages}
+          redFilledHeartCount={redFilledHeartCount}
+          setredFilledHeartCount={setredFilledHeartCount}
+        />
       </main>
     </div>
   );

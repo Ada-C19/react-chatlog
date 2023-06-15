@@ -3,19 +3,20 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 import { useState } from 'react';
-import App from '../App';
 
 const ChatEntry = (props) => {
 
-  const { sender, body, timeStamp, redFilledHeartCount, setredFilledHeartCount } = props;
+  const { sender, body, timeStamp, liked, redFilledHeartCount, setredFilledHeartCount } = props;
   
-  const [isEmptyHeart, setIsEmptyHeart] = useState(false);
+  //remember initial state liked = false
+  const [isEmptyHeart, setIsEmptyHeart] = useState(liked);
   // const [updateLiked, setLikedNumber] = useState(0);
 
   //function to toggle 
   const updateHeart = () => {
     setIsEmptyHeart(!isEmptyHeart);
     
+    //checkpoint - if true
     if (!isEmptyHeart) {
       setredFilledHeartCount(redFilledHeartCount + 1);
     }
@@ -41,6 +42,7 @@ ChatEntry.propTypes = {
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
+  redFilledHeartCount: PropTypes.number.isRequired,
   setredFilledHeartCount: PropTypes.func.isRequired
 
 };
