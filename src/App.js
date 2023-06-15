@@ -19,6 +19,7 @@ const App = () => {
       </header>
       <main>
         
+        {/* to render that chatlog component */}
         <ChatLog entries={chatMessages}
           redFilledHeartCount={redFilledHeartCount}
           setredFilledHeartCount={setredFilledHeartCount}

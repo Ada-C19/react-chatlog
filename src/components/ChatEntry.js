@@ -6,11 +6,11 @@ import { useState } from 'react';
 
 const ChatEntry = (props) => {
 
+  //deconstruct
   const { sender, body, timeStamp, liked, redFilledHeartCount, setredFilledHeartCount } = props;
   
   //remember initial state liked = false
   const [isEmptyHeart, setIsEmptyHeart] = useState(liked);
-  // const [updateLiked, setLikedNumber] = useState(0);
 
   //function to toggle 
   const updateHeart = () => {

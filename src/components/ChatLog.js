@@ -4,7 +4,7 @@ import ChatEntry from './ChatEntry';
 const ChatLog = (props) => {
     const { entries, redFilledHeartCount, setredFilledHeartCount } = props;
   return (
-    <div>
+      <div>
       {entries.map((data) => (
           <ChatEntry
               key={data.id}
