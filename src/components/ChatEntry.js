@@ -35,8 +35,16 @@ const ChatEntry = (props) => {
 
   const heartColor = props.isLiked ? '❤️' : '🤍';
 
+  const setLocalOrRemote = () => {
+    if (props.sender === 'Vladimir') {
+      return 'chat-entry local'
+    } else {
+      return 'chat-entry remote'
+    }
+  }
+
   return (
-    <div className="chat-entry local">
+    <div className={setLocalOrRemote()}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
