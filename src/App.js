@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
+import ColorChoice from './components/ColorChoice';
 import { useState } from 'react';
 
 const App = () => {
@@ -19,6 +20,8 @@ const App = () => {
     setChatData(chats);
 };
 
+  const [color, setColor] = useState()
+
   const countLikes = (arr) => {
     let count = 0;
     arr.forEach(element => {
@@ -35,7 +38,11 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat between {chatMessages[0].sender} and {chatMessages[1].sender}</h1>
-        <h2>{likes} ❤️s</h2>
+        <section>
+        <span className='widget'><p>{chatMessages[0].sender}'s color</p><ColorChoice></ColorChoice></span>
+        <span className='widget'><h2 id="heartWidget">{likes} ❤️s</h2></span>
+        <span className='widget'><p>{chatMessages[1].sender}'s color</p><ColorChoice></ColorChoice></span>
+        </section>
       </header>
       <main>
         <ChatLog entries={chatData} onUpdateChat={updateChatData}></ChatLog>
