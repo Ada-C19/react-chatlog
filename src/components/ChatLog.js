@@ -6,6 +6,7 @@ const ChatLog = (props) => {
         return (
             <ChatEntry
                 key={messages.id}
+                id={messages.id}
                 sender={messages.sender}
                 body={messages.body}
                 timeStamp={messages.timeStamp}

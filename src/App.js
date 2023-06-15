@@ -2,9 +2,11 @@ import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
+import { useState } from 'react';
 
 
 const App = () => {
+  const [like, setLike] = useState(liked)
   return (
     <div id="App">
       <header>
