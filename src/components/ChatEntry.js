@@ -5,13 +5,14 @@ import PropTypes from 'prop-types';
 
 
 
-const ChatEntry = ({ props }) => {
+const ChatEntry = ({ message }) => {
+  // console.log(props)
   return (
     <div className="chat-entry local">
-      <h2 className="entry-name">{props.sender}</h2>
+      <h2 className="entry-name">{message.sender}</h2>
       <section className="entry-bubble">
-        <p>{props.body}</p>
-        <p className="entry-time">{props.timeStamp}</p>
+        <p>{message.body}</p>
+        <p className="entry-time">{message.timeStamp}</p>
         <button className="like">🤍</button>
       </section>
     </div>
