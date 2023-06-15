@@ -19,12 +19,22 @@ const App = () => {
     setEntryData(entries);
   };
 
+  let likeCount = 0;
+  const countLikes = () => {
+    for (let entry of entryData) {
+      if (entry.liked === true) {
+        likeCount++;
+      }
+    }
+  };
+  countLikes();
+
   return (
     <div id="App">
       <header>
         <h1>Chat between Vladimir and Estragon</h1>
         <section>
-        <div id="heartWidget" className="widget">0 ❤️s</div>
+        <div id="heartWidget" className="widget">{likeCount} ❤️s</div>
         </section>
       </header>
       <main>
