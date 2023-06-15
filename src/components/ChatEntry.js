@@ -3,36 +3,30 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = (props) => {
-  const entryId = props.id;
-  const entrySender = props.sender;
-  const entryBody = props.body;
-  const entryTime = props.timeStamp;
-  const entryRelativeTime = TimeStamp(entryTime);
-  const entryLiked = props.liked;
-  const updateLike = props.updateLike;
+const ChatEntry = ({ id, sender, body, timeStamp, liked, updateLike }) => {
+    const senderName =
+    sender === 'Vladimir' ? 'chat-entry local' : 'chat-entry remote';
 
-  let locationClass = entrySender === 'Vladimir' ? 'local' : 'remote';
-  let heartCondition = entryLiked === true ? '❤️':'🤍';
-
-  function changeLike(likedStatus) {
-    updateLike(entryId, likedStatus);
-  }
+    const likeButtonContent = liked ? '❤️' : '🤍';
 
   return (
-    <div className={`chat-entry ${locationClass}`}>
-      <h2 className="entry-name">{entrySender}</h2>
+    <div className={senderName}>
+      <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
-        <p>{entryBody}</p>
-        <p className="entry-time">{entryRelativeTime}</p>
-        <button onClick={() => changeLike(!entryLiked)} className="like">{heartCondition}</button>
+        <p>{body}</p>
+        <p className="entry-time">
+          <TimeStamp time={timeStamp} />
+        </p>
+        <button className="like" onClick={() => updateLike(id, !liked)} >
+          {likeButtonContent}
+        </button>
       </section>
     </div>
   );
 };
 
 ChatEntry.propTypes = {
-  id: PropTypes.number,
+  id: PropTypes.number.isRequired,
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
