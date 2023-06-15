@@ -21,10 +21,14 @@ const App = () => {
     });
   };
 
+  const senderOne = messages[0]['sender'];
+  const senderTwo = messages[1]['sender'];
+
   return (
     <div id="App">
       <header>
-        <h1> { likesCount } ❤️s </h1>
+        <h1>Chat between { senderOne } and { senderTwo }</h1>
+        <section id="heart"> { likesCount } ❤️s </section>
       </header>
       <main>
         <ChatLog 
