@@ -3,12 +3,14 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
+  const singleEntry = props.props
+  console.log(props);
   return (
     <div className="chat-entry local">
-      <h2 className="entry-name">Replace with name of sender</h2>
+      <h2 className="entry-name">{singleEntry.sender}</h2>
       <section className="entry-bubble">
-        <p>Replace with body of ChatEntry</p>
-        <p className="entry-time">Replace with TimeStamp component</p>
+        <p>{singleEntry.body}</p>
+        <p className="entry-time">{singleEntry.timeStamp}</p>
         <button className="like">🤍</button>
       </section>
     </div>
