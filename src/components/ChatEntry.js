@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 const ChatEntry = (singleEntry) => {
   // const singleEntry = props.props
-  console.log('ChatEntry');
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{singleEntry.sender}</h2>
