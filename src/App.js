@@ -9,6 +9,7 @@ const App = () => {
   const [count, setCount] = useState(0);
 
   const countLikes = (messages) => {
+    setCount(0);
     for (let message of messages) {
       if (message.liked === true) {
         setCount(count + 1);
