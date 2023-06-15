@@ -1,18 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
 
 const App = () => {
+
+  const [messages] = useState(chatMessages);
+  const [likesCount, setLikesCount] = useState(0);
+
+  const updateLikesCount = (messageToUpdate) => {
+    messages.forEach((message) => {
+      if (message.id === messageToUpdate.id) {
+        // Check if 'liked' is true
+        if (messageToUpdate.liked) {
+          setLikesCount(likesCount + 1);
+        } else {
+          setLikesCount(likesCount - 1);
+        };
+      };
+    });
+  };
+
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1> { likesCount } ❤️s </h1>
       </header>
       <main>
-        <ChatLog entries={chatMessages} />
-        <ChatEntry />
+        <ChatLog 
+          entries={ chatMessages } 
+          onUpdateMessage={ updateLikesCount }
+        />
       </main>
     </div>
   );
