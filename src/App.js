@@ -39,7 +39,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Application title</h1>
-        <h2>{likeCount} 🩷's </h2>
+        <h2>{likeCount} 🩷s </h2>
       </header>
 
         

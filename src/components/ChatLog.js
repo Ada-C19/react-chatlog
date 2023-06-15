@@ -43,7 +43,7 @@ ChatLog.propTypes = {
         timeStamp: PropTypes.string.isRequired,
         id: PropTypes.number,
         liked: PropTypes.bool,
-        onUpdateMessage:PropTypes.func.isRequired
+        onUpdateMessage:PropTypes.func
     })).isRequired,
 
 };
