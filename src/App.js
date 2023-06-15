@@ -16,7 +16,7 @@ const App = () => {
         Wave 02: Render ChatLog component */}
         {/* console.log({chatMessages[0]['sender']}) */}
       
-        <ChatLog chat= {chatMessages}/>
+        <ChatLog chat={chatMessages}/>
 
 
       </main>
