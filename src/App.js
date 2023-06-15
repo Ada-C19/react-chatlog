@@ -3,6 +3,7 @@ import './App.css';
 import ChatLog from './components/ChatLog';
 import chatMessages from './data/messages.json';
 import { useState } from 'react';
+import ColorSelector from './components/ColorSelector';
 
 const App = () => {
   const initialCopy = chatMessages.map((chat) => {
@@ -37,10 +38,14 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Chat between Vladimir and Estragon</h1>
+        <ColorSelector />
+        <section>
+          <span id="heartWidget">{likeCount} ❤️s</span>
+        </section>
       </header>
       <main>
-        <ChatLog entries={chatMessages}/>
+        <ChatLog updateLike={updateLike} entries={chatMessages}/>
       </main>
     </div>
   );

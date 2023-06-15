@@ -25,7 +25,7 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{entryBody}</p>
         <p className="entry-time">{entryRelativeTime}</p>
-        <button onClick={() => changeLike(!entryLiked)} className="like">🤍</button>
+        <button onClick={() => changeLike(!entryLiked)} className="like">{heartCondition}</button>
       </section>
     </div>
   );
@@ -37,7 +37,7 @@ ChatEntry.propTypes = {
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
-  updateLikes: PropTypes.func.isRequired,
+  updateLike: PropTypes.func.isRequired,
 };
 
 export default ChatEntry;

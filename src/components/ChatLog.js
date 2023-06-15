@@ -3,26 +3,24 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
-const ChatLog = (props) => {
-    const chatEntryComponents = [];
-    const chatEntries = props.entries;
-    const updateLikes = props.updateLikes;
+const ChatLog = ({ entries, updateLike }) => {
+    const entryComponents = [];
 
-    for(const chatentry of chatEntries) {
-        chatEntryComponents.push(
-            <div key={chatentry.id}>
-                <ChatEntry
-                id={chatentry.id}
-                sender={chatentry.sender}
-                body={chatentry.body}
-                timeStamp={chatentry.timeStamp}
-                liked={chatentry.liked}
-                updateLikes={updateLikes}
-                />
-            </div>
+    for (const message of entries) {
+        entryComponents.push(
+            <ChatEntry
+                key={message.id}
+                id={message.id}
+                sender={message.sender}
+                body={message.body}
+                timeStamp={message.timeStamp}
+                liked={message.liked}
+                updateLike={updateLike}
+            />
         );
     }
-    return <div className="chat-log">{chatEntryComponents}</div>;
+
+    return <div className="chat-log">{entryComponents}</div>;
 };
 
 ChatLog.protoTypes = {
@@ -34,7 +32,7 @@ ChatLog.protoTypes = {
             timeStamp: PropTypes.string.isRequired,
         })
     ),
-    updateLikes: PropTypes.func.isRequired,
+    updateLike: PropTypes.func.isRequired,
 }
 
 export default ChatLog;
