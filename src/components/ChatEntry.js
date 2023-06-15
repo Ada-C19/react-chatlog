@@ -17,7 +17,9 @@ const ChatEntry = (props) => {
 };
 
 ChatEntry.propTypes = {
-
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  timeStamp: PropTypes.string.isRequired
 };
 
 export default ChatEntry;
