@@ -8,21 +8,17 @@ const App = () => {
   const [chatMessagesData, setChatMessages] = useState(chatMessages);
   const [count, setCount] = useState(0);
 
-  // const countLikes = (messages) => {
-  //   for (let message of messages) {
-  //     if (message.liked === true) {
-  //       setCount(count + 1);
-  //     }
-  //   }
-  // };
+  const likeCount = updatedMessage => {
+    if (updatedMessage.liked) {
+      setCount(count + 1);
+    } else {
+      setCount(count - 1);
+    }
+  }
 
   const updateMessages = updatedMessage => {
+    likeCount(updatedMessage)
     const messages = chatMessagesData.map(message => {
-      if (updatedMessage.liked) {
-        setCount(count + 1);
-      } else {
-        setCount(count - 1);
-      }
       if (message.id === updatedMessage.id) {
         return updatedMessage;
       } else {
@@ -30,7 +26,6 @@ const App = () => {
       }
     });
     setChatMessages(messages);
-    // countLikes(messages);
   };
 
   return (
