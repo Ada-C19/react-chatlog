@@ -3,23 +3,23 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 import { useState } from 'react';
+import App from '../App';
 
 const ChatEntry = (props) => {
 
-  const { sender, body, timeStamp, liked } = props;
+  const { sender, body, timeStamp, redFilledHeartCount, setredFilledHeartCount } = props;
   
   const [isEmptyHeart, setIsEmptyHeart] = useState(false);
-  const [updateLiked, setLikedNumber] = useState(0);
+  // const [updateLiked, setLikedNumber] = useState(0);
 
   //function to toggle 
   const updateHeart = () => {
     setIsEmptyHeart(!isEmptyHeart);
     
     if (!isEmptyHeart) {
-      setLikedNumber(updateLiked + 1);
+      setredFilledHeartCount(redFilledHeartCount + 1);
     }
   }
-
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{sender}</h2>
@@ -29,8 +29,7 @@ const ChatEntry = (props) => {
           <TimeStamp time={timeStamp}></TimeStamp>
         </p>
         <button className="like" onClick={updateHeart}>
-          {/* {isEmptyHeart ? "🤍" : "❤️"} {updateLiked} */}
-          {isEmptyHeart ? '❤️' : '🤍'} {updateLiked}
+          {isEmptyHeart ? '❤️' : '🤍'} 
         </button>
       </section>
     </div>
@@ -38,7 +37,12 @@ const ChatEntry = (props) => {
 };
 
 ChatEntry.propTypes = {
-  //Fill with correct proptypes
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  timeStamp: PropTypes.string.isRequired,
+  liked: PropTypes.bool.isRequired,
+  setredFilledHeartCount: PropTypes.func.isRequired
+
 };
 
 export default ChatEntry;
