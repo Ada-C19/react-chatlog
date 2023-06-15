@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 
 const ChatEntry = ({id, sender, body, timeStamp, liked}) => {
-  const [isLiked, setIsLiked] = useState(false);
+  const [isLiked, setIsLiked] = useState(liked);
   const toggleLiked = () => {
     setIsLiked(!isLiked);
   };
