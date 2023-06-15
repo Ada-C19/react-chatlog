@@ -10,30 +10,33 @@ const App = () => {
     return {...chat};
   });
 
-  const [chatLog, setChatLog] = useState(initialCopy);
-  const [likeCount, setLikeCount] = useState(0);
+  const [chatData, setChatData] = useState(initialCopy);
+  const [likedCount, setLikedCount] = useState(0);
 
-  const updateLike = (messageId, likedStatus) => {
-    const newMessageList = [];
-    for (const message of chatLog) {
-      if (message.id !== messageId) {
-        newMessageList.push(message);
+  const heartWidget = likedCount !== 0 ? `${likedCount} ❤️s` : '';
+
+  const updateLike = (chatEntryId, updatedLike) => {
+    let newLikeCount = likedCount;
+    const newChatData = chatData.map((chatEntry) => {
+      if (chatEntry.id !== chatEntryId) {
+        return chatEntry;
       } else {
-        const newMessage = {
-          ...message,
-          liked: likedStatus,
+        if (updatedLike) {
+          newLikeCount++;
+        } else {
+          newLikeCount--;
+        }
+        const newChat = {
+          ...chatEntry,
+          liked: updatedLike,
         };
-        newMessageList.push(newMessage);
-        console.log(likedStatus);
+        return newChat;
       }
-    }
-    setChatLog(newMessageList);
-    if (likedStatus) {
-      setLikeCount(likeCount + 1);
-    } else {
-      setLikeCount(likeCount - 1);
-    }
+    });
+    setChatData(newChatData);
+    setLikedCount(newLikeCount);
   };
+
 
   return (
     <div id="App">
@@ -41,11 +44,13 @@ const App = () => {
         <h1>Chat between Vladimir and Estragon</h1>
         <ColorSelector />
         <section>
-          <span id="heartWidget">{likeCount} ❤️s</span>
+          <span className="widget" id="heartWidget">
+            {heartWidget}
+          </span>
         </section>
       </header>
       <main>
-        <ChatLog updateLike={updateLike} entries={chatMessages}/>
+        <ChatLog entries={chatData} updateLike={updateLike} />
       </main>
     </div>
   );
