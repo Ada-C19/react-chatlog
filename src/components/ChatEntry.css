@@ -8,6 +8,16 @@ button {
 	outline: inherit;
 }
 
+#Vladimir.remote #Vladimir-bubble {
+  /* content: ''; */
+  height: 22px;
+  width: 44px;
+  /* clip-path: polygon(100% 0, 0 0, 50% 100%); */
+  position: absolute;
+  top: 0;
+
+}
+
 #Vladimir #Vladimir-bubble:hover {
   background-color: lavender;
 }
@@ -61,11 +71,11 @@ button {
 
 /* Chat bubble arrow styling */
 .chat-entry .entry-bubble::before {
-  content: '';
+  /* content: ''; */
   height: 22px;
   width: 44px;
   clip-path: polygon(100% 0, 0 0, 50% 100%);
-  position: absolute;
+  /* position: absolute; */
   top: 0;
 }
 
