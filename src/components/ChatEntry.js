@@ -8,17 +8,17 @@ const ChatEntry = ({sender, body, timeStamp, id, liked}) => {
 
   const [isLiked, setIsLiked] = useState(false);
 
-  const [likeCount, setLikeCount] = useState(0)
+  // const [likeCount, setLikeCount] = useState(0)
 
 
   const updateLikeButton = () => {
     setIsLiked(!isLiked);
     liked = isLiked;
-    if (!liked) {
-      setLikeCount(likeCount + 1);
-    }else {
-      setLikeCount(likeCount - 1);
-    }
+    // if (!liked) {
+    //   setLikeCount(likeCount + 1);
+    // }else {
+    //   setLikeCount(likeCount - 1);
+    // }
   };
 
   liked = isLiked;
@@ -27,7 +27,7 @@ const ChatEntry = ({sender, body, timeStamp, id, liked}) => {
   
   return (
     <div className="chat-entry local">
-      <section>{likeCount}</section>
+      {/* <section>{likeCount}</section> */}
       <h2 className="entry-name">{ sender }</h2>
       <section className="entry-bubble">
         <p>{ body }</p>
