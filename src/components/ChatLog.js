@@ -2,17 +2,26 @@ import React from 'react';
 import ChatEntry from './ChatEntry';
 
 const ChatLog = (props) => {
-    const chatEntryComponents = props.entries.map(chatMsg => {
+    const chatEntryComponents = props.entries.map((chatMsg, index) => {
         return (
-            <ul>
-                <ChatEntry sender={chatMsg.sender} body={chatMsg.body} timeStamp={chatMsg.timeStamp}></ChatEntry>
-            </ul>
+            <li key={index}>
+                <ChatEntry 
+                id={chatMsg.id}
+                sender={chatMsg.sender} 
+                body={chatMsg.body} 
+                timeStamp={chatMsg.timeStamp}
+                isLiked={chatMsg.liked}
+                onUpdate={props.onUpdateChat}
+                ></ChatEntry>
+            </li>
         )
     });
 
     return (
-        <div>
-            {chatEntryComponents}
+        <div className="chat-log">
+            <ul>
+                {chatEntryComponents}
+            </ul>
         </div>
     );
 }
