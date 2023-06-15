@@ -32,7 +32,12 @@ const ChatEntry = (props) => {
         <p className="entry-time">
           <TimeStamp time={ props.timeStamp }/>
         </p>
-        <button onClick={ updateChatLog }>{ heart }</button>
+        <button 
+          onClick={ updateChatLog }
+          className='like'
+          >
+            { heart }
+        </button>
       </section>
     </div>
   );
