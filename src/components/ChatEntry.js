@@ -15,7 +15,7 @@ const ChatEntry = (props) => {
     props.onUpdate(updatedMessage);
   };
 
-  const heart = (props.liked === true) ? '💜' : '🤍';
+  const heart = (props.liked === true) ? '❤️' : '🤍';
   const className = (props.id % 2 === 0) ? 'chat-entry remote' : 'chat-entry local';
   
   return (
