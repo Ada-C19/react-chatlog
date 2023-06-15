@@ -5,6 +5,7 @@ import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
 
 const App = () => {
+  console.log('chat messages in app.js:', chatMessages)
   return (
     <div id="App">
       <header>
