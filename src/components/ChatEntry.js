@@ -5,21 +5,35 @@ import TimeStamp from './TimeStamp';
 import { useState } from 'react';
 
 const ChatEntry = (props) => {
-  const [isLiked, setLiked] = useState(false);
-  const [heartColor, setHeartColor] = useState('🤍');
+  // const [isLiked, setLiked] = useState(false);
+  // const [heartColor, setHeartColor] = useState('🤍');
 
-  const changeLiked = () => {
-    setLiked(!isLiked);
-    changeHeartColor();
+  // const changeLiked = () => {
+  //   setLiked(!isLiked);
+  //   changeHeartColor();
+  // };
+
+  // const changeHeartColor = () => {
+  //   if (isLiked === true) {
+  //     setHeartColor('❤️');
+  //   } else {
+  //     setHeartColor('🤍');
+  //   }
+  // }
+
+  const onLikeButtonClicked = () => {
+    const updatedChatEntry = {
+      id: props.id,
+      sender: props.sender,
+      body: props.body,
+      timeStamp: props.timeStamp,
+      liked: !props.isLiked
+    };
+
+    props.onUpdate(updatedChatEntry);
   };
 
-  const changeHeartColor = () => {
-    if (isLiked === true) {
-      setHeartColor('❤️');
-    } else {
-      setHeartColor('🤍');
-    }
-  }
+  const heartColor = props.isLiked ? '❤️' : '🤍';
 
   return (
     <div className="chat-entry local">
@@ -27,7 +41,7 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp}></TimeStamp></p>
-        <button className="like" onClick={changeLiked}>{heartColor}</button>
+        <button className="like" onClick={onLikeButtonClicked}>{heartColor}</button>
       </section>
     </div>
   );
@@ -35,7 +49,7 @@ const ChatEntry = (props) => {
 
 ChatEntry.propTypes = {
   //Fill with correct proptypes
-  name: PropTypes.string.isRequired,
+  sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
 };
