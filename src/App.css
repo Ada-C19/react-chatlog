@@ -17,7 +17,7 @@
   padding-left: 2em;
   padding-right: 2em;
   padding-bottom: 5rem;
-  padding-top: 10rem;
+  padding-top: 5rem;
 }
 
 #App h1 {
@@ -30,19 +30,21 @@
   background-color: #e0ffff;
 }
 
-#App .widget {
-  display: inline-block;
+.widget {
+  display: block;
   line-height: 0.5em;
   border-radius: 10px;
   color: black;
   font-size:0.8em;
   padding-left: 1em;
   padding-right: 1em;
+  text-align: center;
 }
 
-#App #heartWidget {
+#heartWidget {
   font-size: 1.5em;
-  margin: 1em
+  margin: 1em;
+  text-align:center;
 }
 
 #App span {

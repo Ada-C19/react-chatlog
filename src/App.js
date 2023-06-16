@@ -10,6 +10,7 @@ const App = () => {
         <h1>Chat Log</h1>
       </header>
       <main>
+        <div className='widget' id='heartWidget'>3 ❤️s</div>
         <ChatLog entries={chatMessages}/>
       </main>
     </div>
