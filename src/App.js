@@ -24,7 +24,7 @@ const App = () => {
   return (
     <div id='App'>
       <header>
-        <h1>Updating for Godot</h1>
+        <h1>🤖 Updating for Godot 🤖</h1>
         <p id='heartWidget' className='widget'>
           {`${
             chatBody.filter((message) => message.liked).length
