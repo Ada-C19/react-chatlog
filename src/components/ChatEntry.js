@@ -8,11 +8,10 @@ const ChatEntry = (props) => {
 
   const heartDisplay = props.liked ? '❤️' : '🤍'
   const textClass = props.id % 2 === 0 ? 'remote' : 'local';
-  const textColor = props.colorName === props.sender ? props.textColor : '';
 
 
   return (
-    <div className={`chat-entry ${textClass} ${textColor}`}>
+    <div className={`chat-entry ${textClass}`}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>

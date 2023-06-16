@@ -4,8 +4,7 @@ import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
 
-const ChatLog = ({ entries, onToggleLike, textColor, colorName }) => {
-    console.log('inside chatlog', colorName)
+const ChatLog = ({ entries, onToggleLike }) => {
     const chatEntries = entries.map((entry) => {
         return <ChatEntry
             key={entry.id}
@@ -15,8 +14,6 @@ const ChatLog = ({ entries, onToggleLike, textColor, colorName }) => {
             timeStamp={entry.timeStamp}
             liked={entry.liked}
             onToggleLike={onToggleLike}
-            textColor={textColor}
-            colorName={colorName}
         />
 
     });
@@ -35,7 +32,6 @@ const ChatLog = ({ entries, onToggleLike, textColor, colorName }) => {
 
     return (
         <div className='chat-log'>
-
             <h2>{likeCount} ❤️{likeCount > 1 ? 's' : ''}</h2>
             {chatEntries}
         </div>
