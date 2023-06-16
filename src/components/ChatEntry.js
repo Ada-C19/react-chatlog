@@ -6,6 +6,19 @@ import TimeStamp from './TimeStamp.js';
 const ChatEntry = (props) => {
   const localRemote = props.id % 2 == 0 ? 'remote' : 'local';
 
+  const onLikeButtonClick = () => {
+    const newMessage = {
+      id: props.id,
+      sender: props.sender,
+      body: props.body,
+      timeStamp: props.timeStamp,
+      liked: !props.liked,
+    };
+    props.onLike(newMessage);
+  };
+
+  const likedIcon = props.liked ? '❤️' : '🤍';
+
   return (
     <div className={`chat-entry ${localRemote}`}>
       <h2 className='entry-name'>{props.sender}</h2>
@@ -14,7 +27,9 @@ const ChatEntry = (props) => {
         <p className='entry-time'>
           <TimeStamp time={props.timeStamp} />
         </p>
-        <button className='like'>🤍</button>
+        <button className='like' onClick={onLikeButtonClick}>
+          {likedIcon}
+        </button>
       </section>
     </div>
   );
