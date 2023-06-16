@@ -14,7 +14,6 @@ const ChatLog = (props) => {
         key={message.id}
         liked={message.liked}
         onSetLike={props.onSetLike}
-        onGetTotalLikes={props.onGetTotalLikes}
       />
     ))
     }
@@ -31,7 +30,7 @@ ChatLog.propTypes = {
       id: PropTypes.number.isRequired,
     })
     ).isRequired,
-    onSetLike: PropTypes.func.isRequired
+    onSetLike: PropTypes.func
 };
 
 
