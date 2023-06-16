@@ -21,9 +21,16 @@ const App = () => {
   const likedMessageCount = chatBody.filter((message) => message.liked).length;
   const plural = likedMessageCount == 0 || likedMessageCount > 1 ? 's' : '';
   const firstSender = chatBody[0].sender;
+  const [firstSenderColor, setFirstSenderColor] = useState('');
   const secondSender = chatBody[1].sender;
+  const [secondSenderColor, setSecondSenderColor] = useState('');
 
   const updateMessageColor = (sender, color) => {
+    if (sender === firstSender) {
+      setFirstSenderColor(color);
+    } else {
+      setSecondSenderColor(color);
+    }
     const updatedMessages = chatBody.map((message) => {
       let tempMessage = { ...message };
       tempMessage.color = color;
@@ -37,6 +44,8 @@ const App = () => {
   };
 
   const resetMessageColor = () => {
+    setSecondSenderColor('');
+    setFirstSenderColor('');
     const updatedMessages = chatBody.map((message) => {
       let tempMessage = { ...message };
       tempMessage.color = '';
@@ -59,8 +68,14 @@ const App = () => {
       <header>
         <h1>🤖 Updating for Godot 🤖</h1>
         <h2>
-          A chat between <span className='firstSender'>{firstSender}</span> and{' '}
-          <span className='secondSender'>{secondSender}</span>
+          A chat between{' '}
+          <span className={`firstSender ${firstSenderColor}`}>
+            {firstSender}
+          </span>{' '}
+          and{' '}
+          <span className={`secondSender ${secondSenderColor}`}>
+            {secondSender}
+          </span>
         </h2>
         <div id='colorWidget'>
           <span id='firstSenderColor'>
