@@ -6,7 +6,6 @@ import ColorButtons from './components/ColorButtons.js';
 import { useState } from 'react';
 
 const App = () => {
-  //define function to update message by ID
   const [chatBody, setChatBody] = useState(chatMessages);
   const updateMessage = (newMessage) => {
     const updatedMessages = chatBody.map((message) => {
@@ -63,39 +62,36 @@ const App = () => {
           A chat between <span className='firstSender'>{firstSender}</span> and{' '}
           <span className='secondSender'>{secondSender}</span>
         </h2>
-        <div id='componentContainer'>
-          <span id='colorWidget'>
-            <span id='firstSenderColor'>
-              <p>{firstSender}'s color</p>
-              <ColorButtons
-                sender={firstSender}
-                onUpdateColor={updateMessageColor}
-              />
+        <div id='colorWidget'>
+          <span id='firstSenderColor'>
+            <p>{firstSender}'s color</p>
+            <ColorButtons
+              sender={firstSender}
+              onUpdateColor={updateMessageColor}
+            />
+          </span>
+          <span id='middleSpan'>
+            <span id='heartWidget'>
+              {`${
+                chatBody.filter((message) => message.liked).length
+              } message${plural} liked`}{' '}
+              ❤️
             </span>
             <span>
-              <span id='heartWidget'>
-                {`${
-                  chatBody.filter((message) => message.liked).length
-                } message${plural} liked`}{' '}
-                ❤️
-              </span>
-              <br />
-              <span>
-                <button className='headerButton' onClick={resetMessageColor}>
-                  Reset Colors
-                </button>{' '}
-                <button className='headerButton' onClick={resetLikes}>
-                  Reset Likes
-                </button>
-              </span>
+              <button className='headerButton' onClick={resetMessageColor}>
+                Reset Colors
+              </button>{' '}
+              <button className='headerButton' onClick={resetLikes}>
+                Reset Likes
+              </button>
             </span>
-            <span id='secondSenderColor'>
-              <p>{secondSender}'s color</p>
-              <ColorButtons
-                sender={secondSender}
-                onUpdateColor={updateMessageColor}
-              />
-            </span>
+          </span>
+          <span id='secondSenderColor'>
+            <p>{secondSender}'s color</p>
+            <ColorButtons
+              sender={secondSender}
+              onUpdateColor={updateMessageColor}
+            />
           </span>
         </div>
       </header>

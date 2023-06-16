@@ -9,20 +9,28 @@
   background-repeat: no-repeat;
 }
 
+#colorWidget {
+  display: flex;
+  width: 60%;
+  height: 5.5rem;
+  margin: 0 auto 0.5rem;
+  justify-content: space-around;
+  align-items: space-around;
+}
+
 #App header {
-  background-color: #222;
+  background-color: rgb(34, 34, 34);
   color: #fff;
   position: fixed;
   width: 100%;
   z-index: 100;
   text-align: center;
-  align-items: center;
 }
 
 #App main {
   padding-left: 2em;
   padding-right: 2em;
-  padding-bottom: 5rem;
+  padding-bottom: 4rem;
   padding-top: 12.5rem;
   min-width: 300px;
   max-width: 800px;
@@ -54,20 +62,22 @@
 
 #App #heartWidget {
   font-size: 1.25em;
-  padding: 0 5rem 0 5rem;
   color: #fff;
 }
 
-#firstSenderColor, #secondSenderColor {
-  margin-bottom: 1.75em;
+#App #middleSpan {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
 }
 
 #App span {
-  display: inline-block
+  display: inline-block;
 }
 
 #App header h2 {
-  margin: 0 0 0.5em 0;
+  margin: 0.25rem;
   font-size: 1.25rem;
 }
 
@@ -83,7 +93,7 @@ main p {
   background-color: #7698d3;
   border-radius: 6px;
   color: #222;
-  margin: 0.4rem;
+  margin: 0 0.5rem;
   padding: 0.5rem;
   outline: none;
   text-align: center;
