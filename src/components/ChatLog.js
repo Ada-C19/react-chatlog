@@ -3,10 +3,21 @@ import './ChatEntry.css';
 import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
 
-const ChatLog = (props) => {
+const ChatLog = ( {entries} ) => {
+    const chatEntryComponents = entries.map((entry)=> {
+        return (
+            <ChatEntry 
+                key = {entry.id}
+                sender = {entry.sender}
+                body = {entry.body}
+                timeStamp = {entry.timeStamp}
+            />
+        );
+    }); 
     return (
-        <div>
-
+        <div className="chat-entry local"> Chat Log?
+            <h2>Chat Log...I hope</h2>
+            {chatEntryComponents}
         </div>
     );
 };
