@@ -99,26 +99,54 @@ main p {
   text-align: center;
 }
 
-.red {
+main .red {
   color: #b22222
 }
 
-.orange {
+header .red {
+  color:#da5151
+}
+
+main .orange {
+  color: #d35f00
+}
+
+header .orange {
   color: #e6ac00
 }
 
-.yellow {
+main .yellow {
+  color: #c5a112
+}
+
+header .yellow {
   color: #e6e600
 }
 
-.green {
+main .green {
   color: green
 }
 
-.blue {
-  color: blue
+header .green {
+  color: rgb(73, 198, 73)
 }
 
-.purple {
-  color: purple
+main .blue {
+  color: rgb(21, 21, 185)
 }
+
+header .blue {
+  color: rgb(81, 122, 255)
+}
+
+main .purple {
+  color: rgb(86, 7, 126)
+}
+
+header .purple {
+  color: rgb(148, 52, 192)
+}
+
+
+
+
