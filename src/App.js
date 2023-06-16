@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ChatEntry from './components/ChatEntry';
+import ChatLog from './components/ChatLog';
 import chatMessages from './data/messages.json';
 
 const App = () => {
@@ -13,13 +13,20 @@ const App = () => {
         <h1>🤖 When Robots Collide 🤖 </h1>
       </header>
       <main>
+        
+        {/* Wave 01: Render one ChatEntry component
+        
         <ChatEntry
           sender={firstChatMessage.sender}
           body={firstChatMessage.body}
           timeStamp={firstChatMessage.timeStamp}
-        />
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
+
+        />*/}
+
+        
+       {/* Wave 02: Render ChatLog component */}
+
+      <ChatLog entries = {chatMessages} />
       </main>
     </div>
   );
