@@ -5,7 +5,7 @@ import ChatEntry from './ChatEntry';
 const ChatLog = ({entries, onUpdateChat}) => {
 
     const entriesToRender = entries.map((chat) => {
-        console.log(`Desde ChatLog ${chat.id} ${chat.liked}`)
+        // console.log(`Desde ChatLog ${chat.id} ${chat.liked}`)
         return (
         <div className='chat-log' key={chat.id}>
         <ChatEntry
