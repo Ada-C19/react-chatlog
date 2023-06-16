@@ -18,7 +18,7 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>ConverseBot</h1>
         <div className="liked-count">{renderLikedCount()}</div>
       </header>
       <main>
