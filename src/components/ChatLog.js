@@ -10,6 +10,9 @@ const ChatLog = (props) => {
         sender={message.sender}
         body={message.body}
         timeStamp={message.timeStamp}
+        id={message.id}
+        key={message.id}
+        liked={message.liked}
       />
     ))
     }
