@@ -8,7 +8,7 @@ const ChatEntry = (props) => {
   const buttonContent = props.liked ? '❤️' :  '🤍';
 
   return (
-    <div className={props.id % 2 ? 'chat-entry local' : 'chat-entry remote'}>
+    <div className={props.sender === 'Estragon' ? 'chat-entry local' : 'chat-entry remote'}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
