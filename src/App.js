@@ -1,19 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry.js'
 import ChatLog from './components/ChatLog.js'
 
 const App = () => {
+  const [chatData, setChatData] = useState(chatMessages)
+
+  const updateChatData = (updatedEntry) => {
+    setChatData((prev) => {
+      return prev.map((entry) => {
+        if (entry.id === updatedEntry.id) {
+          return updatedEntry;
+        } else {
+          return entry;
+        };
+      });
+    });
+  };
+
+
   return (
     <div id="App">
       <header>
         <h1>Application title</h1>
       </header>
       <main>
-        <ChatLog entries={chatMessages} />
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
+        <ChatLog entries={chatData} onUpdateEntry={updateChatData} />
       </main>
     </div>
   );
