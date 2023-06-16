@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import ChatLog from './components/ChatLog';
-import chatMessages from './data/messages.json'
+import chatMessages from './data/messages.json';
 
 const App = () => {
+  const [messages, setMessages] = useState(chatMessages);
+  const setLike = (id) => {
+    setMessages((prev) => {
+      return prev.map((entry) => {
+        if (id === entry.id) {
+          return {
+            ...entry,
+            liked: !entry.liked,
+          };
+        } else {
+          return entry;
+        }
+      });
+    });
+  };
   return (
     <div id="App">
       <header>
@@ -11,7 +26,7 @@ const App = () => {
       </header>
       <main>
         <div className='widget' id='heartWidget'>3 ❤️s</div>
-        <ChatLog entries={chatMessages}/>
+        <ChatLog entries={messages} onSetLike={setLike} />
       </main>
     </div>
   );

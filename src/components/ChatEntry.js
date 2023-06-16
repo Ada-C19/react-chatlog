@@ -1,12 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 
 const ChatEntry = (props) => {
-  const [liked, setLiked] = useState(props.liked);
-  const buttonContent = liked ? '❤️' :  '🤍';
+  const buttonContent = props.liked ? '❤️' :  '🤍';
 
   return (
     <div className={props.id % 2 ? 'chat-entry local' : 'chat-entry remote'}>
@@ -14,7 +13,7 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp} /></p>
-        <button className="like" onClick={() => setLiked(!liked)}>{buttonContent}</button>
+        <button className="like" onClick={() => props.onSetLike(props.id)}>{buttonContent}</button>
       </section>
     </div>
   );
