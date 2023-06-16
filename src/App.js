@@ -1,16 +1,22 @@
 import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
+import ChatEntry from './components/ChatEntry.js';
 
 const App = () => {
+  const testMessage = chatMessages[0];
   return (
-    <div id="App">
+    <div id='App'>
       <header>
-        <h1>Application title</h1>
+        <h1>Updating for Godot</h1>
       </header>
       <main>
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
+        <ChatEntry
+          sender={testMessage.sender}
+          body={testMessage.body}
+          timeStamp={testMessage.timeStamp}
+          liked={testMessage.liked}
+        />
       </main>
     </div>
   );
