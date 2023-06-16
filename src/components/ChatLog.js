@@ -13,6 +13,7 @@ const ChatLog = ({ entries, onLikeMessage }) => {
         liked={entry.liked}
         timeStamp={entry.timeStamp}
         onLike={onLikeMessage}
+        color={entry.color ? entry.color : ''}
       />
     );
   });
@@ -26,6 +27,7 @@ ChatLog.propTypes = {
       body: PropTypes.string.isRequired,
       liked: PropTypes.bool.isRequired,
       timeStamp: PropTypes.string.isRequired,
+      color: PropTypes.string,
     })
   ),
   onLikeMessage: PropTypes.func.isRequired,

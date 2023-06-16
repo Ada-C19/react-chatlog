@@ -1,11 +1,17 @@
+@font-face {
+  font-family: Consolas;
+  src: url('../fonts/CONSOLA.TTF');
+}
+
 #App {
-  background-color: #87cefa;
+  background: url('../images/clouds.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 #App header {
   background-color: #222;
   color: #fff;
-  padding-bottom: 0.5rem;
   position: fixed;
   width: 100%;
   z-index: 100;
@@ -17,18 +23,19 @@
   padding-left: 2em;
   padding-right: 2em;
   padding-bottom: 5rem;
-  padding-top: 10rem;
+  padding-top: 12.5rem;
   min-width: 300px;
   max-width: 800px;
   width: 650px;
-  background-color: rgba(255,255,255, 0.3);
+  background-color: rgba(255,255,255, 0.4);
   margin: 0 auto;
 }
 
 #App h1 {
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: center;
   display: inline-block;
+  margin-bottom: 0.25em;
 }
 
 #App header section {
@@ -46,14 +53,40 @@
 }
 
 #App #heartWidget {
-  font-size: 1.5em;
-  margin: 0 0 0.5em 0;
-  display: block;
-  color: white;
+  font-size: 1.25em;
+  padding: 0 5rem 0 5rem;
+  color: #fff;
+}
+
+#firstSenderColor, #secondSenderColor {
+  margin-bottom: 1.75em;
 }
 
 #App span {
   display: inline-block
+}
+
+#App header h2 {
+  margin: 0 0 0.5em 0;
+  font-size: 1.25rem;
+}
+
+#App header h1, #App header h2, .entry-name {
+  font-family: Consolas, 'Courier New', Courier, monospace;
+}
+
+main p {
+  color: #222;
+}
+
+.headerButton {
+  background-color: #7698d3;
+  border-radius: 6px;
+  color: #222;
+  margin: 0.4rem;
+  padding: 0.5rem;
+  outline: none;
+  text-align: center;
 }
 
 .red {
