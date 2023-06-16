@@ -123,7 +123,7 @@ const App = () => {
             {secondSender}
           </span>
         </h2>
-        <div id='colorWidget'>
+        <div id='headerWidgets'>
           <span id='firstSenderColor'>
             <p>{firstSender}'s color</p>
             <ColorButtons

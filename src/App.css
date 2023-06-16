@@ -50,7 +50,7 @@ button:active {
 
 /*Header-specific styles*/
 
-#colorWidget {
+#headerWidgets {
   width: 60%;
   height: 5.5rem;
   margin: 0 auto 0.5rem;
@@ -58,11 +58,11 @@ button:active {
   align-items: space-around;
 }
 
-#App.visible #colorWidget {
+#App.visible #headerWidgets {
   display: flex;
 }
 
-#App.hidden #colorWidget {
+#App.hidden #headerWidgets {
   display: none;
 }
 
