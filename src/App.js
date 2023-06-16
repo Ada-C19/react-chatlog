@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
 
+
 const App = () => {
+  const [likedCount, setLikedCount] = useState(0);
+
+  const handleLikeClick = (liked) => {
+    setLikedCount((prevCount) => prevCount + (liked ? 1 : -1));
+  };
+
   return (
     <div id="App">
       <header>
         <h1>Application title</h1>
+        <div className="liked-count">{likedCount} ❤️</div>
       </header>
       <main>
-        <ChatLog entries={chatMessages} />
+        <ChatLog entries={chatMessages} onLikeClick={handleLikeClick} />
       </main>
     </div>
   );

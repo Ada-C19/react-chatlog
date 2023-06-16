@@ -3,7 +3,7 @@ import ChatEntry from './ChatEntry';
 import './ChatLog.css';
 
 const ChatLog = (props) => {
-    const { entries } = props;
+    const { entries, onLikeClick } = props;
   
     return (
       <div className="chat-log">
@@ -13,6 +13,7 @@ const ChatLog = (props) => {
             sender={entry.sender}
             body={entry.body}
             timeStamp={entry.timeStamp}
+            onLikeClick={onLikeClick}
           />
         ))}
       </div>
