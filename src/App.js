@@ -11,13 +11,9 @@ const App = () => {
         <h1>Application title</h1>
       </header>
       <main>
-        <ChatLog entries={chatMessages} />
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
-        {/* Chatlog entries = {chatMessages} */}
+        <ChatLog entries={chatMessages}/>
       </main>
     </div>
   );
 };
-
 export default App;

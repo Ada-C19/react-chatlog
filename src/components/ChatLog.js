@@ -1,22 +1,24 @@
 import React from 'react';
 import './ChatEntry.css';
-// import PropTypes from 'prop-types';
-// import TimeStamp from './TimeStamp.js'
-// // import chatMessages from './data/messages.json';
+import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
 const ChatLog = (props) => {
-  console.log(props)
-    return props.entries.map((message, index) => (
+  return props.entries.map((message) => (
         <ChatEntry
-            key={index}
+            key={message.id}
+            id={message.id}
             sender={message.sender}
             body={message.body}
             timeStamp={message.timeStamp}
-          // liked={message.liked}
+            liked={message.liked}
         />
       ))
     }
+
+ChatLog.propTypes = {
+  entries: PropTypes.array.isRequired
+};
 
 export default ChatLog
 
