@@ -20,7 +20,7 @@ const ChatEntry = (props) => {
           <TimeStamp time={props.timeStamp} />
         </p>
         <button className={`like ${liked ? 'liked' : ''}`} onClick={handleLikeClick}>
-          {liked ? '❤️' : '🤍'}
+        {liked ? '❤️' : '🤍'}{props.likeCount > 1 ? 's' : ''}
         </button>
       </section>
     </div>
@@ -35,7 +35,6 @@ ChatEntry.propTypes = {
 };
 
 export default ChatEntry;
-
 
 // const ChatEntry = (props) => {
 //   return (

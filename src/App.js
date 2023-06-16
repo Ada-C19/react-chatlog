@@ -11,11 +11,15 @@ const App = () => {
     setLikedCount((prevCount) => prevCount + (liked ? 1 : -1));
   };
 
+  const renderLikedCount = () => {
+    return `${likedCount} ❤️${likedCount !== 1 ? 's' : ''}`;
+  };
+
   return (
     <div id="App">
       <header>
         <h1>Application title</h1>
-        <div className="liked-count">{likedCount} ❤️</div>
+        <div className="liked-count">{renderLikedCount()}</div>
       </header>
       <main>
         <ChatLog entries={chatMessages} onLikeClick={handleLikeClick} />
