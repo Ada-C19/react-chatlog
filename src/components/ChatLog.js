@@ -9,11 +9,11 @@ const ChatLog = (props) => {
    const getMessage = props.messages.map((message) =>{
         return (
             <ChatEntry id={message.id} sender = {message.sender} key = {message.id}
-            body = {message.body} timeStamp = {message.timeStamp }/>
+            body = {message.body} timeStamp = {message.timeStamp } liked ={message.liked}/>
         )
 
     })
-   return <div className='chats'>{getMessage}</div>
+   return <div className='chat-log'>{getMessage}</div>
 };
 
 ChatLog.propTypes = {
