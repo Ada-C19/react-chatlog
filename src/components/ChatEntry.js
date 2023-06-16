@@ -13,6 +13,7 @@ const ChatEntry = ({ id, sender, body, timeStamp, liked, onLike, color }) => {
       body: body,
       timeStamp: timeStamp,
       liked: !liked,
+      color: color ? color : '',
     };
     onLike(newMessage);
   };
