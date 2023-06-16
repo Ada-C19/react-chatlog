@@ -1,22 +1,16 @@
 import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry.js';
+import ChatLog from './components/ChatLog.js';
 
 const App = () => {
-  const testMessage = chatMessages[0];
   return (
     <div id='App'>
       <header>
         <h1>Updating for Godot</h1>
       </header>
       <main>
-        <ChatEntry
-          sender={testMessage.sender}
-          body={testMessage.body}
-          timeStamp={testMessage.timeStamp}
-          liked={testMessage.liked}
-        />
+        <ChatLog className='chat-log' entries={chatMessages} />
       </main>
     </div>
   );
