@@ -1,22 +1,27 @@
 import React from 'react';
+import { useState } from 'react';
 import './App.css';
-// import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry';
-
-
-
-
+import chatMessages from './data/messages.json';
+import ChatLog from './components/ChatLog';
 
 const App = () => {
 
-  const chatMessages = {
-    'id': 4,
-    'sender': 'Estragon',
-    'body': 'A robot.',
-    'timeStamp':'2018-05-29T22:52:21+00:00',
-    'liked': false
+  // Lift state in root function
+  const [chatData, setChatData] = useState(chatMessages);
+
+  // Update chatData LIKED key-value
+  const onUpdateChat = (chatToUpdate) => {
+    console.log(`Desde el App ${chatToUpdate.liked} and id: ${chatToUpdate.id}`)
+    const chats = chatData.map((entry) => {
+      if (entry.id === chatToUpdate.id) {
+        return chatToUpdate
+      } else {
+        return entry
+      }
+    })
+    setChatData(chats)
   }
-  console.log(`chatMessages: ${chatMessages}`)
+
 
   return (
     <div id="App">
@@ -26,10 +31,11 @@ const App = () => {
       <main>
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
-        <ChatEntry
-          sender={chatMessages.sender}
-          body={chatMessages.body}
-          timeStamp={chatMessages.timeStamp} />
+        <ChatLog
+           // Don't forget that var data that gets passed is the one from useState
+          entries={chatData} 
+          onUpdateChat={onUpdateChat}
+        />
       </main>
     </div>
   );
