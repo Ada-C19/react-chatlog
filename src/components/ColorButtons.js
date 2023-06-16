@@ -12,16 +12,20 @@ const ColorButtons = ({ sender, onUpdateColor }) => {
     { color: 'purple', icon: '🟣' },
     /* { color: '#222', icon: '⚫' }, */
   ];
-  return buttons.map((entry) => {
-    return (
-      <ColorButton
-        colorName={entry.color}
-        icon={entry.icon}
-        sender={sender}
-        onUpdate={onUpdateColor}
-      />
-    );
-  });
+  return (
+    <div>
+      {buttons.map((entry) => {
+        return (
+          <ColorButton
+            colorName={entry.color}
+            icon={entry.icon}
+            sender={sender}
+            onUpdate={onUpdateColor}
+          />
+        );
+      })}
+    </div>
+  );
 };
 
 ColorButtons.propTypes = {

@@ -91,6 +91,11 @@ button:active {
 #App header h1, #App header h2, .entry-name {
   font-family: Consolas, 'Courier New', Courier, monospace;
 }
+
+#App #firstSenderColor {
+  display: flex;
+  flex-direction: column;
+}
         /*Buttons for resetting*/
 
 #App .headerButton {
