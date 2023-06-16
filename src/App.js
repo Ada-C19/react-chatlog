@@ -6,7 +6,25 @@ import ColorButtons from './components/ColorButtons.js';
 import { useState } from 'react';
 
 const App = () => {
+  //Used for all changes to message data
   const [chatBody, setChatBody] = useState(chatMessages);
+
+  //Used for displaying like count
+  const likedMessageCount = chatBody.filter((message) => message.liked).length;
+  const plural = likedMessageCount == 0 || likedMessageCount > 1 ? 's' : '';
+
+  //Used for changes to display of sender names
+  const firstSender = chatBody[0].sender;
+  const [firstSenderColor, setFirstSenderColor] = useState('');
+  const secondSender = chatBody[1].sender;
+  const [secondSenderColor, setSecondSenderColor] = useState('');
+
+  //Used for header toggles (hidden/visible, night/day mode)
+  const [menuVisibility, setMenuVisibility] = useState('visible');
+  const collapseIcon = menuVisibility === 'visible' ? '🔽' : '🔼';
+  const [dayNightMode, setDayNightMode] = useState('day');
+  const dayNightIcon = dayNightMode === 'day' ? '☀️' : '🌙';
+
   const updateMessage = (newMessage) => {
     const updatedMessages = chatBody.map((message) => {
       if (message.id === newMessage.id) {
@@ -17,13 +35,6 @@ const App = () => {
     });
     setChatBody(updatedMessages);
   };
-
-  const likedMessageCount = chatBody.filter((message) => message.liked).length;
-  const plural = likedMessageCount == 0 || likedMessageCount > 1 ? 's' : '';
-  const firstSender = chatBody[0].sender;
-  const [firstSenderColor, setFirstSenderColor] = useState('');
-  const secondSender = chatBody[1].sender;
-  const [secondSenderColor, setSecondSenderColor] = useState('');
 
   const updateMessageColor = (sender, color) => {
     if (sender === firstSender) {
@@ -63,9 +74,31 @@ const App = () => {
     setChatBody(updatedMessages);
   };
 
+  const collapseToggle = () => {
+    if (menuVisibility === 'visible') {
+      setMenuVisibility('hidden');
+    } else {
+      setMenuVisibility('visible');
+    }
+  };
+
+  const dayNightToggle = () => {
+    if (dayNightMode === 'day') {
+      setDayNightMode('night');
+    } else {
+      setDayNightMode('day');
+    }
+  };
+
   return (
-    <div id='App'>
+    <div id='App' className={`${menuVisibility} ${dayNightMode}`}>
       <header>
+        <button id='collapseToggle' onClick={collapseToggle}>
+          {collapseIcon}
+        </button>
+        <button id='modeToggle' onClick={dayNightToggle}>
+          {dayNightIcon}
+        </button>
         <h1>🤖 Updating for Godot 🤖</h1>
         <h2>
           A chat between{' '}
