@@ -3,26 +3,52 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = (props) => {
+const ChatEntry = ({id, sender, body, timeStamp, liked, onUpdate }) => {
   const messageColor =
-    props.sender === 'Vladimir' ? 'chat-entry local' : 'chat-entry remote';  
-  return (
-    <div className={messageColor}>
-      <h2 className="entry-name">{props.sender}</h2>
-      <section className="entry-bubble">
-        <p>{props.body}</p>
-        <p className="entry-time">
-          <TimeStamp time={props.timeStamp} />
-        </p>
-        <button className="like">🤍</button>
-      </section>
-    </div>
-  );
-};
+    sender === 'Vladimir' ? 'chat-entry local' : 'chat-entry remote';
+  const changeColor = liked ? 'like' : 'not-liked';
+  const changeText = liked ? '❤️' : '🤍';
 
-// ChatEntry.propTypes = {
-//   sender: PropTypes.string.isRequired,
-//   time: PropTypes.string.isRequired,
-// };
+  const LikeButtonClick = () => {
+      const updatedMessage = {
+        id: id,
+        sender: sender,
+        body: body,
+        timeStamp: timeStamp,
+        liked: !liked,
+      };
+      onUpdate(updatedMessage);
+    }
+
+    return (
+      <div className={messageColor}>
+        <h2 className="entry-name">{sender}</h2>
+        <section className="entry-bubble">
+          <p>{body}</p>
+          <p className="entry-time">
+            <TimeStamp time={timeStamp} />
+          </p>
+          <button className={changeColor} onClick={LikeButtonClick}>
+            {changeText}
+          </button>
+        </section>
+      </div>
+    );
+  };
+
+  ChatEntry.propTypes = {
+    sender: PropTypes.string.isRequired,
+    time: PropTypes.string.isRequired,
+  };
 
 export default ChatEntry;
+
+//   const updatedMessage = (props) => {
+//     if (props.liked === "false") {
+//       return (props.liked = "true");
+//     } else {
+//       return props.liked;
+//     }
+//   };
+//   props.onUpdate(updatedMessage);
+// }
