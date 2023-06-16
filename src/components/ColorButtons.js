@@ -10,7 +10,6 @@ const ColorButtons = ({ sender, onUpdateColor }) => {
     { color: 'green', icon: '🟢' },
     { color: 'blue', icon: '🔵' },
     { color: 'purple', icon: '🟣' },
-    /* { color: '#222', icon: '⚫' }, */
   ];
   return (
     <div>
