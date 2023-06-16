@@ -3,17 +3,22 @@
   src: url('../fonts/CONSOLA.TTF');
 }
 
+button:active {
+  transform: translateY(0.1em);
+}
+
 /*Set background images*/
 
 #App.day {
   background: url('../images/clouds.jpg');
+  background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
 
 #App.night {
   background: url('../images/nightsky.jpg');
-  background-size: 100% auto;
+  background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
@@ -125,8 +130,7 @@
 }
 
 #App.day main .entry-name {
-  color:rgb(26, 26, 72);
-  text-shadow: 0 0.1em 0.2em rgb(157, 157, 157);
+  color:rgb(15, 32, 69);
 }
 
 #App.visible main{
@@ -149,58 +153,62 @@
   flex-direction: column;
 }
 
-main p {
+#App.day main p {
   color: #222;
+}
+
+#App.night main p {
+  color: #eee;
 }
 
 /*Color class definitions*/
 
-main .red {
+#App.day main .red {
   color: #b22222
 }
 
-header .red {
+header .red, #App.night main .red {
   color:#da5151
 }
 
-main .orange {
+#App.day main .orange {
   color: #d35f00
 }
 
-header .orange {
+header .orange, #App.night main .orange {
   color: #e6ac00
 }
 
-main .yellow {
+#App.day main .yellow {
   color: #c5a112
 }
 
-header .yellow {
+header .yellow, #App.night main .yellow {
   color: #e6e600
 }
 
-main .green {
+#App.day main .green {
   color: green
 }
 
-header .green {
+header .green, #App.night main .green {
   color: rgb(73, 198, 73)
 }
 
-main .blue {
-  color: rgb(21, 21, 185)
+#App.day main .blue {
+  color: rgb(8, 8, 92)
 }
 
-header .blue {
+header .blue, #App.night main .blue {
   color: rgb(81, 122, 255)
 }
 
-main .purple {
+#App.day main .purple {
   color: rgb(86, 7, 126)
 }
 
-header .purple {
-  color: rgb(148, 52, 192)
+header .purple, #App.night main .purple {
+  color: rgb(190, 124, 229)
 }
 
 

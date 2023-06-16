@@ -2,3 +2,7 @@
     margin: 0 0.1rem;
     cursor: pointer;
 }
+
+.colorButton:active {
+    font-size: 1.1rem;
+}

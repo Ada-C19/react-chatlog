@@ -17,7 +17,6 @@ button {
 }
 
 .chat-entry .entry-bubble {
-  background-color: #ffffe0;
   border-radius: 30px;
   max-width: 50rem;
   min-width: 10rem;
@@ -26,8 +25,12 @@ button {
   width: fit-content;
 }
 
-.chat-entry .entry-bubble:hover {
-  background-color: #fefea2;
+#App.night .chat-entry .entry-bubble {
+  box-shadow: 0.1em 0.5em 1em rgba(0,0,0,0.8);
+}
+
+#App.day .chat-entry .entry-bubble {
+  box-shadow: 0.1em 0.5em 1em rgba(76, 71, 96, 0.5);
 }
 
 .chat-entry .entry-name {
@@ -62,13 +65,38 @@ button {
   text-align: right;
 }
 
-.chat-entry.local .entry-bubble::before {
+#App.day .chat-entry.local .entry-bubble {
+  background-color: #ffffe0;
+}
+
+#App.night .chat-entry.local .entry-bubble {
+  background-color: #4a1535;
+}
+
+#App.day .chat-entry.local .entry-bubble:hover {
+  background-color: #fefea2;
+}
+
+#App.night .chat-entry.local .entry-bubble:hover {
+  background-color: #5e154d;
+}
+
+#App.day .chat-entry.local .entry-bubble::before {
   background-color: #ffffe0;
   left: -18px;
 }
 
-.chat-entry.local .entry-bubble:hover::before {
+#App.night .chat-entry.local .entry-bubble::before {
+  background-color: #4a1535;
+  left: -18px;
+}
+
+#App.day .chat-entry.local .entry-bubble:hover::before {
   background-color: #fefea2;
+}
+
+#App.night .chat-entry.local .entry-bubble:hover::before {
+  background-color: #5e154d;
 }
 
 /* "remote" messages are shown on the right side, in blue */
@@ -76,25 +104,43 @@ button {
   text-align: right;
 }
 
-.chat-entry.remote .entry-bubble {
+#App.day .chat-entry.remote .entry-bubble {
   background-color: #e0ffff;
   margin-left: auto;
   margin-right: 0;
 }
 
-.chat-entry.remote .entry-bubble:hover {
+#App.night .chat-entry.remote .entry-bubble {
+  background-color: #111838;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+#App.day .chat-entry.remote .entry-bubble:hover {
   background-color: #a9f6f6;
+}
+#App.night .chat-entry.remote .entry-bubble:hover {
+  background-color: #152a4d;
 }
 
 .chat-entry.remote .entry-time {
   text-align: left;
 }
 
-.chat-entry.remote .entry-bubble::before {
+#App.day .chat-entry.remote .entry-bubble::before {
   background-color: #e0ffff;
   right: -18px;
 }
 
-.chat-entry.remote .entry-bubble:hover::before {
+#App.night .chat-entry.remote .entry-bubble::before {
+  background-color: #111838;
+  right: -18px;
+}
+
+#App.day .chat-entry.remote .entry-bubble:hover::before {
   background-color: #a9f6f6;
+}
+
+#App.night .chat-entry.remote .entry-bubble:hover::before {
+  background-color: #152a4d;
 }

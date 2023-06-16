@@ -14,9 +14,16 @@ const App = () => {
   const plural = likedMessageCount == 0 || likedMessageCount > 1 ? 's' : '';
 
   //Used for changes to display of sender names
-  const firstSender = chatBody[0].sender;
+  const uniqueNames = [
+    ...new Set(
+      chatMessages.map((message) => {
+        return message.sender;
+      })
+    ),
+  ];
+  const firstSender = uniqueNames[0];
   const [firstSenderColor, setFirstSenderColor] = useState('');
-  const secondSender = chatBody[1].sender;
+  const secondSender = uniqueNames[1];
   const [secondSenderColor, setSecondSenderColor] = useState('');
 
   //Used for header toggles (hidden/visible, night/day mode)
@@ -25,7 +32,8 @@ const App = () => {
   const [dayNightMode, setDayNightMode] = useState('day');
   const dayNightIcon = dayNightMode === 'day' ? '☀️' : '🌙';
 
-  const updateMessage = (newMessage) => {
+  //Update message body after change in like
+  const updateMessageOnLike = (newMessage) => {
     const updatedMessages = chatBody.map((message) => {
       if (message.id === newMessage.id) {
         return newMessage;
@@ -36,6 +44,7 @@ const App = () => {
     setChatBody(updatedMessages);
   };
 
+  //Update text color in both header and chat entries
   const updateMessageColor = (sender, color) => {
     if (sender === firstSender) {
       setFirstSenderColor(color);
@@ -54,6 +63,7 @@ const App = () => {
     setChatBody(updatedMessages);
   };
 
+  //Reset all colors when reset button is clicked
   const resetMessageColor = () => {
     setSecondSenderColor('');
     setFirstSenderColor('');
@@ -65,6 +75,7 @@ const App = () => {
     setChatBody(updatedMessages);
   };
 
+  //Reset all likes to false when reset button is clicked
   const resetLikes = () => {
     const updatedMessages = chatBody.map((message) => {
       let tempMessage = { ...message };
@@ -74,6 +85,7 @@ const App = () => {
     setChatBody(updatedMessages);
   };
 
+  //Toggle the visibility of the options in the header
   const collapseToggle = () => {
     if (menuVisibility === 'visible') {
       setMenuVisibility('hidden');
@@ -82,6 +94,7 @@ const App = () => {
     }
   };
 
+  //Toggle day vs. night mode
   const dayNightToggle = () => {
     if (dayNightMode === 'day') {
       setDayNightMode('night');
@@ -147,7 +160,7 @@ const App = () => {
         <ChatLog
           className='chat-log'
           entries={chatBody}
-          onLikeMessage={updateMessage}
+          onLikeMessage={updateMessageOnLike}
         />
       </main>
     </div>
