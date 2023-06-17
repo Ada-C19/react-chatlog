@@ -6,10 +6,13 @@ const ChatLog = (props) => {
         return (
             <p>
                 <ChatEntry 
+                    id={message.id}
                     sender={message.sender} 
                     body={message.body} 
-                    timeStamp={message.timeStamp}>
-                </ChatEntry>
+                    timeStamp={message.timeStamp}
+                    liked={message.liked}
+                    updateLiked={props.updateLiked}
+                ></ChatEntry>
             </p>
 
         );

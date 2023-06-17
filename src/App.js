@@ -12,6 +12,7 @@ const App = () => {
       if (messageId === message.id) {
         message.liked = !message.liked;
       }
+      return {...messages}
     });
     setMessages(updatedMessages);
   };
@@ -24,7 +25,7 @@ const App = () => {
       <main>
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
-        <ChatLog entries={chatMessages}></ChatLog>
+        <ChatLog entries={chatMessages} updateLiked={updateLiked}></ChatLog>
       </main>
     </div>
   );

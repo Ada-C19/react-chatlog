@@ -10,6 +10,7 @@ const ChatEntry = (props) => {
   const [isLiked, setIsLiked] = useState(false);
 
   const toggleLikeButton = () => {
+    props.updateLiked(props.id);
     setIsLiked(!isLiked);
   };
 
