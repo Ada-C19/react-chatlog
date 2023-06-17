@@ -7,6 +7,17 @@ const ChatEntry = (props) => {
   const [heart, setHeart] = useState('🤍');
 
   const onLikeButtonClick = () => {
+    const likedMessage = {
+      id: props.id,
+      key: props.id,
+      sender: props.sender,
+      body: props.body,
+      timeStamp: props.timeStamp,
+      liked: !props.liked,
+    };
+    props.onUpdateLike(likedMessage.id);
+    props.onCountLikes(likedMessage.liked);
+
     if (heart === '🤍') {
       return setHeart('❤️');
     } else {
@@ -32,6 +43,8 @@ ChatEntry.propTypes = {
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
+  onUpdateLike: PropTypes.func.isRequired,
+  onCountLikes: PropTypes.func.isRequired,
 };
 
 export default ChatEntry;
