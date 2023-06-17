@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
 
-const ChatLog = ({ entries, onToggleLike }) => {
+const ChatLog = ({ entries, onToggleLike, names }) => {
     const chatEntries = entries.map((entry) => {
         return <ChatEntry
             key={entry.id}
@@ -14,8 +14,8 @@ const ChatLog = ({ entries, onToggleLike }) => {
             timeStamp={entry.timeStamp}
             liked={entry.liked}
             onToggleLike={onToggleLike}
+            names={names}
         />
-
     });
 
     const getCount = (data) => {

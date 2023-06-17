@@ -5,13 +5,13 @@ import TimeStamp from './TimeStamp';
 
 
 const ChatEntry = (props) => {
-
+  const [name1, name2] = props.names;
   const heartDisplay = props.liked ? '❤️' : '🤍'
-  const textClass = props.id % 2 === 0 ? 'remote' : 'local';
+  const textClass = props.sender === name1 ? 'local' : 'remote';
 
 
   return (
-    <div className={`chat-entry ${textClass}`}>
+    <div className={`chat-entry ${textClass} `}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>

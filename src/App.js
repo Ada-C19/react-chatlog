@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
+import './App.css';
 
 const App = () => {
   const [chatData, setChatData] = useState(chatMessages);
-
 
   const onToggleLike = (id) => {
     setChatData((prevData) => {
@@ -37,7 +36,7 @@ const App = () => {
         <h1>Chat between {name1} and {name2}</h1>
       </header>
       <main>
-        <ChatLog entries={chatData} onToggleLike={onToggleLike} />
+        <ChatLog entries={chatData} onToggleLike={onToggleLike} names={[name1, name2]} />
       </main>
     </div>
   );
