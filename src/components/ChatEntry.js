@@ -15,7 +15,7 @@ const ChatEntry = (props) => {
     redFilledHeartCount,
     setRedFilledHeartCount,
   } = props;
-  
+  console.log(props);
   //remember initial state liked = false
   const [isEmptyHeart, setIsEmptyHeart] = useState(liked);
 
@@ -27,6 +27,11 @@ const ChatEntry = (props) => {
     if (!isEmptyHeart) {
       setRedFilledHeartCount(redFilledHeartCount + 1);
     }
+    else {
+      setRedFilledHeartCount(redFilledHeartCount - 1);
+    }
+
+    console.log(isEmptyHeart, redFilledHeartCount);
   }
   return (
     <div className="chat-entry local">
