@@ -17,18 +17,23 @@ const ChatEntry = ({id, sender, body, timeStamp, liked, onUpdateChat}) => {
     onUpdateChat(updatedChatData)
   }
 
-    // Conditional for button heart
+  // Conditional for button heart
   const colorHeart = liked ? '❤️' : '🤍';
-  // console.log(`id: ${id}, heart: ${colorHeart} and ${liked}`)
+
+  const localRemote = sender === 'Vladimir' ? 'chat-entry remote' : 'chat-entry local';
+  console.log(`localRemote ${localRemote}`)
+  console.log(`Sender ${sender}`)
 
     return (
-        <div className='chat-entry local'>
-        <h2 className='entry-name'>{sender}</h2>
-        <section className='entry-bubble'>
-            <p>{body}</p>
-            <p className='entry-time'><TimeStamp time={timeStamp} /></p>
-            <button className='like' onClick={updateLiked}>{colorHeart}</button>
-        </section>
+        <div className={localRemote}>
+          <div className={localRemote}>
+          <h2 className='entry-name'>{sender}</h2>
+          <section className='entry-bubble'>
+              <p>{body}</p>
+              <p className='entry-time'><TimeStamp time={timeStamp} /></p>
+              <button className='like' onClick={updateLiked}>{colorHeart}</button>
+          </section>
+          </div>
         </div>
     );
 };
@@ -43,3 +48,6 @@ ChatEntry.propTypes = {
 };
 
 export default ChatEntry;
+
+// className='entry-name
+// 'chat-entry local'

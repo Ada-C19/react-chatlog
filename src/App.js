@@ -11,7 +11,6 @@ const App = () => {
 
   // Update chatData LIKED key-value
   const onUpdateChat = (chatToUpdate) => {
-    // console.log(`Desde el App ${chatToUpdate.liked} and id: ${chatToUpdate.id}`)
     const updatedChats = chatData.map((entry) => {
       if (entry.id === chatToUpdate.id) {
         return chatToUpdate
@@ -26,11 +25,11 @@ const App = () => {
     let hearts = 0;
     for (let chat of chatData) {
       if (chat.liked) {
-        console.log(`INSIDE FOR ${chat.liked}`)
+        // console.log(`INSIDE FOR ${chat.liked}`)
         hearts += 1
       }
     }
-    console.log(`HEARTS: ${hearts}`)
+    // console.log(`HEARTS: ${hearts}`)
     return hearts
   }
 
