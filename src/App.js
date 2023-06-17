@@ -14,12 +14,20 @@ const App = () => {
   const toggleLiked = (id) => {
     const newMessages = messages.map((message) => {
       if (message.id === id) {
-        message.liked = !message.liked;
+        if (!message.liked) {
+          message.liked = true;
+          setLikesCount(likesCount+1);
+        } else {
+          message.liked = false;
+          setLikesCount(likesCount-1);
+        }
       } 
       return message;
     });
 
     setMessage(newMessages);
+
+    console.log(newMessages)
   }
 
   return (
