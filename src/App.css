@@ -31,8 +31,8 @@
 }
 
 #App .widget {
-  display: inline-block;
-  line-height: 0.5em;
+  /* display: inline-block; */
+  line-height: 2em;
   border-radius: 10px;
   color: black;
   font-size:0.8em;
@@ -42,7 +42,8 @@
 
 #App #heartWidget {
   font-size: 1.5em;
-  margin: 1em
+  margin: .25em;
+  color: black;
 }
 
 #App span {
