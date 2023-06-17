@@ -9,7 +9,7 @@ const App = () => {
 //state variables to use for total red hearts count and to pass to Chatlong and ChatEntry
   const [redFilledHeartCount, setRedFilledHeartCount] = useState(0);
 
-  console.log(redFilledHeartCount, setRedFilledHeartCount);
+
 
 
   // const testMessage = chatMessages[0];

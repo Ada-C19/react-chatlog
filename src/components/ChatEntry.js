@@ -15,7 +15,6 @@ const ChatEntry = (props) => {
     redFilledHeartCount,
     setRedFilledHeartCount,
   } = props;
-  console.log(props);
   //remember initial state liked = false
   const [isEmptyHeart, setIsEmptyHeart] = useState(liked);
 
