@@ -1,16 +1,34 @@
 import './ChatLog.css';
 import ChatEntry from './ChatEntry';
+import PropTypes from 'prop-types';
 
-const ChatLog = (props) => {
-    const chatLogContent = props.chatMessages.map((message) => {
+const ChatLog = ({messages, toggleLiked}) => {
+    const chatLogContent = messages.map((message) => {
         return (
-            <ChatEntry sender={message.sender} body={message.body} timestamp={message.timeStamp} />
+            <ChatEntry 
+            id={message.id} 
+            sender={message.sender} 
+            body={message.body} 
+            timeStamp={message.timeStamp} 
+            liked={message.liked}
+            toggleLiked={toggleLiked} />
         );
     });
 
     return <main>
         {chatLogContent};
     </main>
+}
+
+ChatLog.propTypes = {
+    messages: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        sender: PropTypes.string.isRequired,
+        body: PropTypes.string.isRequired,
+        timeStamp: PropTypes.string.isRequired,
+        liked: PropTypes.bool.isRequired,
+    })).isRequired,
+    toggleLiked: PropTypes.func.isRequired,
 }
 
 export default ChatLog;
