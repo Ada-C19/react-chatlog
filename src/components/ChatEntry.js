@@ -18,10 +18,9 @@ const ChatEntry = (props) => {
   const likeStatus = props.liked ? '❤️' : '🤍';
   
   let entryOrigin;
-
   if (props.sender === props.local) {
     entryOrigin = 'chat-entry local';
-  } else {
+  } else if (props.sender === props.remote){
     entryOrigin = 'chat-entry remote';
   }
 

@@ -5,6 +5,16 @@ import ChatLog from './components/ChatLog.js'
 
 const App = () => {
   const local = chatMessages[0].sender
+  let remote;
+  if (chatMessages.length > 1) {
+    for (const obj of chatMessages) {
+      if (obj.sender !== local) {
+        console.log(obj.sender)
+        remote = obj.sender;
+        break;
+      }
+    }
+  }
 
   const [chatData, setChatData] = useState(chatMessages)
 
@@ -33,7 +43,7 @@ const App = () => {
         <section className="widget" id="heartWidget"> {numLikes} ❤️s </section>
       </header>
       <main>
-        <ChatLog entries={chatData} onUpdateEntry={updateChatData} local={local} />
+        <ChatLog entries={chatData} onUpdateEntry={updateChatData} local={local} remote={remote} />
       </main>
     </div>
   );

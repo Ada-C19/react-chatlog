@@ -14,6 +14,7 @@ const ChatLog = (props) => {
                     liked={entry.liked}
                     onUpdate={props.onUpdateEntry}
                     local={props.local}
+                    remote={props.remote}
                     />
             </section>
         )
