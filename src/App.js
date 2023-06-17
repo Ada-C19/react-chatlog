@@ -17,9 +17,9 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat between Vladimir and Estragon</h1>
+        <h2>{likes} ❤️s</h2>    
       </header>
       <main>
-          {likes} ❤️ 
           <ChatLog entries={chatMessages} incrementLikes={incrementLikes} decrementLikes={decrementLikes} />
       </main>
     </div>
