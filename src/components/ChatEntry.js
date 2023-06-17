@@ -17,7 +17,6 @@ const ChatEntry = (props) => {
   }
 
   const likeStatus = props.liked ? '❤️' : '🤍';
-  console.log(props.id, likeStatus)
 
   return (
     <div className="chat-entry local">
