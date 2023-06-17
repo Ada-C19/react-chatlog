@@ -18,11 +18,17 @@ const App = () => {
     });
   };
 
+  const countLikes = (updatedEntry) => {
+    const likeEntries = updatedEntry.filter(entry => entry.liked === true);
+    return likeEntries.length
+  }
+  const numLikes = countLikes(chatData)
 
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Chat with Vladimir</h1>
+        <section className="widget" id="heartWidget"> {numLikes} ❤️s </section>
       </header>
       <main>
         <ChatLog entries={chatData} onUpdateEntry={updateChatData} />
