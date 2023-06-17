@@ -34,9 +34,9 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Application title</h1>
+        <h2>{likeCount} ❤️s</h2>
       </header>
       <main>
-        <h2>{likeCount} ❤️s</h2>
         <ChatLog entries={messages} onUpdateLike={updateLike} onCountLikes={countLikes} />
       </main>
     </div>
