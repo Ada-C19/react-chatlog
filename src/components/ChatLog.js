@@ -11,7 +11,6 @@ const ChatLog = (props) => {
               sender={data.sender}
               body={data.body}
               timeStamp={data.timeStamp}
-              like={data.like}
               redFilledHeartCount={redFilledHeartCount}
               setredFilledHeartCount={setredFilledHeartCount} />
       ))}
