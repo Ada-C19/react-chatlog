@@ -50,8 +50,7 @@ ChatEntry.propTypes = {
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
   redFilledHeartCount: PropTypes.number.isRequired,
-  setredFilledHeartCount: PropTypes.func.isRequired
-
+  setRedFilledHeartCount: PropTypes.func.isRequired,
 };
 
 export default ChatEntry;
