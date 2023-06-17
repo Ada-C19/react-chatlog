@@ -4,6 +4,9 @@ import ChatEntry from './ChatEntry';
 import { render, screen } from '@testing-library/react';
 
 describe('Wave 01: ChatEntry', () => {
+
+  let redFilledHeartCount;
+  let setRedFilledHeartCount;
   beforeEach(() => {
     render(
       <ChatEntry
@@ -12,6 +15,8 @@ describe('Wave 01: ChatEntry', () => {
         body="Get out by 8am.  I'll count the silverware"
         timeStamp="2018-05-18T22:12:03Z"
         liked={false}
+        redFilledHeartCount={redFilledHeartCount}
+        setRedFilledHeartCount={ setRedFilledHeartCount}
       />
     );
   });
