@@ -7,7 +7,7 @@ import ChatLog from './components/ChatLog';
 const App = () => {
 
 //state variables to use for total red hearts count and to pass to Chatlong and ChatEntry
-  const [redFilledHeartCount, setredFilledHeartCount] = useState(0);
+  const [redFilledHeartCount, setRedFilledHeartCount] = useState(0);
 
 
   // const testMessage = chatMessages[0];
@@ -22,7 +22,7 @@ const App = () => {
         {/* to render that chatlog component */}
         <ChatLog entries={chatMessages}
           redFilledHeartCount={redFilledHeartCount}
-          setredFilledHeartCount={setredFilledHeartCount}
+          setRedFilledHeartCount={setRedFilledHeartCount}
         />
       </main>
     </div>

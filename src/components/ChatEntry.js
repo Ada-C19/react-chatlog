@@ -7,7 +7,14 @@ import { useState } from 'react';
 const ChatEntry = (props) => {
 
   //deconstruct
-  const { sender, body, timeStamp, liked, redFilledHeartCount, setredFilledHeartCount } = props;
+  const {
+    sender,
+    body,
+    timeStamp,
+    liked,
+    redFilledHeartCount,
+    setRedFilledHeartCount,
+  } = props;
   
   //remember initial state liked = false
   const [isEmptyHeart, setIsEmptyHeart] = useState(liked);
@@ -18,7 +25,7 @@ const ChatEntry = (props) => {
     
     //checkpoint - if true
     if (!isEmptyHeart) {
-      setredFilledHeartCount(redFilledHeartCount + 1);
+      setRedFilledHeartCount(redFilledHeartCount + 1);
     }
   }
   return (
