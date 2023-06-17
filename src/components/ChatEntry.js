@@ -9,16 +9,20 @@ const ChatEntry = ({id,sender,body,liked,timeStamp,toggleLiked}) => {
   }
   
   const bottonClass = liked ? 'liked' : '';
+  
+  const localOrRemote = sender==='Vladimir' ? 'local' : 'remote';
+
+  const likeOrNot = liked ? '❤️' : '♡';
 
   return (
-    <div className='chat-entry local'>
+    <div className={`chat-entry ${localOrRemote}`}>
       <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
         <p>{body}</p>
         <p className="entry-time">
           <TimeStamp time={timeStamp} />
         </p>
-        <button className={`like ${bottonClass}`} onClick={updateLiked}>♡</button>
+        <button className={`like ${bottonClass}`} onClick={updateLiked}>{likeOrNot}</button>
       </section>
     </div>
   );
