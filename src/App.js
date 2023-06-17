@@ -4,6 +4,8 @@ import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog.js'
 
 const App = () => {
+  const local = chatMessages[0].sender
+
   const [chatData, setChatData] = useState(chatMessages)
 
   const updateChatData = (updatedEntry) => {
@@ -31,7 +33,7 @@ const App = () => {
         <section className="widget" id="heartWidget"> {numLikes} ❤️s </section>
       </header>
       <main>
-        <ChatLog entries={chatData} onUpdateEntry={updateChatData} />
+        <ChatLog entries={chatData} onUpdateEntry={updateChatData} local={local} />
       </main>
     </div>
   );

@@ -13,6 +13,7 @@ const ChatLog = (props) => {
                     timeStamp={entry.timeStamp}
                     liked={entry.liked}
                     onUpdate={props.onUpdateEntry}
+                    local={props.local}
                     />
             </section>
         )

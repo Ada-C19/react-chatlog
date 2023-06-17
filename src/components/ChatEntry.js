@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp.js'
 
 const ChatEntry = (props) => {
-
   const onLikeButtonClick = () => {
     const updatedEntry = {
       id: props.id,
@@ -17,9 +16,17 @@ const ChatEntry = (props) => {
   }
 
   const likeStatus = props.liked ? '❤️' : '🤍';
+  
+  let entryOrigin;
+
+  if (props.sender === props.local) {
+    entryOrigin = 'chat-entry local';
+  } else {
+    entryOrigin = 'chat-entry remote';
+  }
 
   return (
-    <div className="chat-entry local">
+    <div className={entryOrigin}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
