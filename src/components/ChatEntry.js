@@ -30,7 +30,7 @@ const ChatEntry = (props) => {
       setRedFilledHeartCount(redFilledHeartCount - 1);
     }
 
-    console.log(isEmptyHeart, redFilledHeartCount);
+ 
   }
   return (
     <div className="chat-entry local">
