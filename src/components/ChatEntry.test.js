@@ -5,8 +5,8 @@ import { render, screen } from '@testing-library/react';
 
 describe('Wave 01: ChatEntry', () => {
 
-  let redFilledHeartCount;
-  let setRedFilledHeartCount;
+  let redFilledHeartCount = 0
+  let setRedFilledHeartCount = jest.fn()
   beforeEach(() => {
     render(
       <ChatEntry
