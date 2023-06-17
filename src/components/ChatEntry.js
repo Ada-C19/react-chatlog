@@ -12,7 +12,11 @@ const ChatEntry = (props) => {
         <p className="entry-time">
           <TimeStamp time={props.timeStamp} />
         </p>
-        <button className="like">🤍</button>
+        <button 
+          onClick={props.onToggleLike}
+          className="like"
+          > {props.liked ? '❤️' : '🤍'}
+        </button>
       </section>
     </div>
   );
@@ -23,6 +27,7 @@ ChatEntry.propTypes = {
   sender: PropTypes.string.isRequired, 
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
+  liked: PropTypes.bool 
 };
 
 export default ChatEntry;

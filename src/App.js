@@ -3,8 +3,33 @@ import './App.css';
 import chatMessages from './data/messages.json';
 import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
+import { useState } from 'react';
 
 const App = () => {
+
+  const [entriesData, setEntriesData] = useState(chatMessages);
+  const [likeCount, setLikeCount] = useState(0);
+
+  const updateLike = (id) => {
+    const updatedEntries = entriesData.map((entry) => {
+      if (entry.id === id) {
+        entry.liked = !entry.liked; 
+        entry.liked ? setLikeCount(likeCount + 1) : setLikeCount(likeCount - 1);
+      }
+      
+      setEntriesData(updatedEntries);
+    });
+  };
+
+  // const updateEntriesData = (id) => {
+  //   const newEntries = entriesData.map((entry) => {
+  //     if (entry.id === id) {
+  //       const updatedEntry = { ...entry };
+  //       entry.liked = !newEntries.liked;
+  //   })
+  // }
+
+
   return (
     <div id="App">
       <header>
@@ -16,8 +41,6 @@ const App = () => {
         body = {chatMessages.body}
         timeStamp = {chatMessages.timeStamp}
         /> */}
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
         <ChatLog entries={chatMessages}/>
       </main>
     </div>
