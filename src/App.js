@@ -6,7 +6,7 @@ import ChatLog from './components/ChatLog';
 
 const App = () => {
 
-//state variables to use for total red hearts count and to pass to ChatEntry
+//state variables to use for total red hearts count and to pass to Chatlong and ChatEntry
   const [redFilledHeartCount, setredFilledHeartCount] = useState(0);
 
 
