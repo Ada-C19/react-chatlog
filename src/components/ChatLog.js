@@ -4,7 +4,7 @@ import ChatEntry from './ChatEntry';
 const ChatLog = (props) => {
     const messages = props.entries.map(message => {
         return (
-            <p>
+            <section>
                 <ChatEntry 
                     id={message.id}
                     sender={message.sender} 
@@ -13,7 +13,7 @@ const ChatLog = (props) => {
                     liked={message.liked}
                     updateLiked={props.updateLiked}
                 ></ChatEntry>
-            </p>
+            </section>
 
         );
     })
