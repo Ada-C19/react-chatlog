@@ -4,15 +4,10 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = ({id,sender,body,liked,timeStamp,toggleLiked}) => {
-  const updateLiked = () => {
-    toggleLiked(id)
-  }
-  
-  const bottonClass = liked ? 'liked' : '';
   
   const localOrRemote = sender==='Vladimir' ? 'local' : 'remote';
 
-  const likeOrNot = liked ? '❤️' : '♡';
+  const likeOrNot = liked ? '❤️' : '🤍';
 
   return (
     <div className={`chat-entry ${localOrRemote}`}>
@@ -22,7 +17,7 @@ const ChatEntry = ({id,sender,body,liked,timeStamp,toggleLiked}) => {
         <p className="entry-time">
           <TimeStamp time={timeStamp} />
         </p>
-        <button className={`like ${bottonClass}`} onClick={updateLiked}>{likeOrNot}</button>
+        <button className='like' onClick={() => toggleLiked(id)}>{likeOrNot}</button>
       </section>
     </div>
   );

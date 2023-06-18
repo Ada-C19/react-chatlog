@@ -2,10 +2,11 @@ import './ChatLog.css';
 import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
 
-const ChatLog = ({messages, toggleLiked}) => {
-    const chatLogContent = messages.map((message) => {
+const ChatLog = ({entries, toggleLiked}) => {
+    const chatLogContent = entries.map((message) => {
         return (
             <ChatEntry 
+            key={message.id}
             id={message.id} 
             sender={message.sender} 
             body={message.body} 
@@ -21,7 +22,7 @@ const ChatLog = ({messages, toggleLiked}) => {
 }
 
 ChatLog.propTypes = {
-    messages: PropTypes.arrayOf(PropTypes.shape({
+    entries: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
         sender: PropTypes.string.isRequired,
         body: PropTypes.string.isRequired,
