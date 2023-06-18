@@ -7,7 +7,10 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Chat between {chatMessages[0].sender} and {chatMessages[1].sender}</h1>
+        <section>
+          <h1 id="heartWidget" className="widget">❤️</h1>
+        </section>
       </header>
       <main>
         {/* Wave 01: Render one ChatEntry component

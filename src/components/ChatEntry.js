@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './ChatEntry.css';
 import TimeStamp from './TimeStamp';
 import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
-  //console.log(props.sender);
+  const [liked, setLiked] = useState(props.liked);
 
   const messageSide = props.sender === 'Vladimir' ? 'local' : 'remote';
+
+  const likedColor = liked ? 'like':'unliked';
+  
+  const toggleLiked = () =>{
+    setLiked(!liked);
+  };
 
   return (
     <div className={`chat-entry ${messageSide}`}>
@@ -16,7 +22,7 @@ const ChatEntry = (props) => {
         <p className="entry-time">
           <TimeStamp time={props.timeStamp}></TimeStamp>
         </p>
-        <button className="like">🤍</button>
+        <button className={likedColor} onClick={toggleLiked}></button>
       </section>
     </div>
   );
@@ -25,7 +31,8 @@ const ChatEntry = (props) => {
 ChatEntry.propTypes = {
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
-  timeStamp: PropTypes.string.isRequired
+  timeStamp: PropTypes.string.isRequired,
+  liked: PropTypes.bool.isRequired
 };
 
 export default ChatEntry;
