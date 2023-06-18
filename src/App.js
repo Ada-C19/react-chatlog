@@ -3,17 +3,32 @@ import './App.css';
 import chatMessages from './data/messages.json';
 import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
+import {useState} from 'react'
 
 const App = () => {
+  const bool = false;
+  const num = 1;
+  const[textMessage, setTextMessage] = useState(chatMessages)
+  const likedMessage = (id) => {
+  const isliked = textMessage.map((text) =>{
+    if (text.id === id){
+      return {...text, liked: !text.liked}
+    } else{
+      return text;
+    }
+  })
+    setTextMessage(isliked);
+  }
+
   return (
     <div id="App">
       <header>
         <h1>Chat App</h1>
       </header>
       <main>
-        <ChatEntry timeStamp = "2018-05-29T22:49:06+00:00" body = "why are you arguing with me" 
-        sender = "Vladimir" />
-        <ChatLog messages={ chatMessages}/>
+        <ChatEntry id = {num} timeStamp = "2018-05-29T22:49:06+00:00" body = "why are you arguing with me" 
+        sender = "Vladimir" liked = {bool} onLiked={likedMessage} />
+        <ChatLog entries={textMessage} likedFunc = {likedMessage}/>
       </main>
     </div>
   );

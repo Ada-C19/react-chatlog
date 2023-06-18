@@ -6,10 +6,10 @@ import './ChatLog.css';
 
 
 const ChatLog = (props) => {
-   const getMessage = props.messages.map((message) =>{
+   const getMessage = props.entries.map((message) =>{
         return (
             <ChatEntry id={message.id} sender = {message.sender} key = {message.id}
-            body = {message.body} timeStamp = {message.timeStamp } liked ={message.liked}/>
+            body = {message.body} timeStamp = {message.timeStamp } liked ={message.liked} onLiked = {props.likedFunc} />
         )
 
     })
@@ -17,7 +17,7 @@ const ChatLog = (props) => {
 };
 
 ChatLog.propTypes = {
-    messages: PropTypes.arrayOf(
+    entries: PropTypes.arrayOf(
         PropTypes.shape({
             id:PropTypes.number.isRequired,
             sender: PropTypes.string.isRequired,
@@ -25,8 +25,9 @@ ChatLog.propTypes = {
             timeStamp: PropTypes.string.isRequired
         }
         )
-    ).isRequired
-}
+    ).isRequired,
+    likedFunc: PropTypes.func.isRequired
+};
 
 
 
