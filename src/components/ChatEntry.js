@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
+
 const ChatEntry = (props) => {
+  const [likes, setLikes] = useState(false)
+
+  const toggleLikes = () => {
+    setLikes((prevLiked) => !prevLiked);
+  };
 
   return (
     <div className="chat-entry local">
@@ -13,7 +19,8 @@ const ChatEntry = (props) => {
         <p className="entry-time">
           <TimeStamp time={props.timeStamp} />
         </p>
-        <button className="like">🤍</button>
+        <button className="like" onClick={toggleLikes}>{likes ? '❤️' : '🤍'}
+        </button>
       </section>
     </div>
   );
