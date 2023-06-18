@@ -3,7 +3,7 @@ import './ChatLog.css';
 import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
-const ChatLog = ({ entries, onUpdateChatData }) => {
+const ChatLog = ({ entries, onUpdateChatData, localColor, remoteColor }) => {
   const getMessages = (entries) => {
     return entries.map((message) => {
       return (
@@ -15,6 +15,7 @@ const ChatLog = ({ entries, onUpdateChatData }) => {
           timeStamp={message.timeStamp}
           liked={message.liked}
           onUpdateChatData={onUpdateChatData}
+          color={message.sender === 'Vladimir' ? remoteColor : localColor}
         />
       )
     })

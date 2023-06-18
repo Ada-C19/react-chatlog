@@ -30,6 +30,12 @@
   background-color: #e0ffff;
 }
 
+.widget-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+}
+
 #App .widget {
   display: inline-block;
   line-height: 0.5em;
@@ -45,8 +51,17 @@
   margin: 1em
 }
 
+.color-picker {
+  display: flex;
+  flex-direction: column;
+}
+
 #App span {
   display: inline-block
+}
+
+.black {
+  color: black;
 }
 
 .red {
