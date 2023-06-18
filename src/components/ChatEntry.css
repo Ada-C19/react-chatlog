@@ -98,11 +98,3 @@ button {
 .chat-entry.remote .entry-bubble:hover::before {
   background-color: #a9f6f6;
 }
-
-.like::before {
-  content: '❤️';
-}
-
-.unliked::before {
-  content: '🤍';
-}

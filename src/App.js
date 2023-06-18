@@ -10,14 +10,16 @@ const App = () => {
     setEntriesData((prev)=>{
       return prev.map((entry)=>{
         if(id === entry.id){
-          entry.liked = !entry.liked;
-          return entry;}
+          return{
+            ...entry,
+            liked: !entry.liked
+          };}
         else{
           return entry;
         }
-        })
+        });
     });
-  }
+  };
 
   const totalLikes= entriesData.reduce((total, entry)=>{
     if(entry.liked === true){
@@ -31,7 +33,7 @@ const App = () => {
       <header>
         <h1>Chat between {chatMessages[0].sender} and {chatMessages[1].sender}</h1>
         <section>
-          <h1 id="heartWidget" className="widget">{totalLikes}❤️s</h1>
+          <h1 id="heartWidget" className="widget">{totalLikes} ❤️s</h1>
         </section>
       </header>
       <main>
