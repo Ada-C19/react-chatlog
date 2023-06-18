@@ -5,16 +5,11 @@ import PropTypes from 'prop-types';
 const ChatLog = ({entries}) => {
     return (
         <div className="chat-log">
-            {entries.map((entry) => (
-                <ChatEntry
-                    id={entry.id}
-                    sender={entry.sender}
-                    body={entry.body}
-                    timeStamp={entry.timeStamp}
-                    key={entry.id}
-                />
-            ))}
+            {entries.map((entry) => {
+                return <ChatEntry {...entry} key={entry.id} />;
+            })}
         </div>
+
     );
 };
 
