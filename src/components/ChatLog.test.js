@@ -43,7 +43,13 @@ const LOG = [
 
 describe('Wave 02: ChatLog', () => {
   beforeEach(() => {
-    render(<ChatLog entries={LOG} senders={['Bob', 'Carol']} />);
+    render(
+      <ChatLog
+        entries={LOG}
+        senders={['Bob', 'Carol']}
+        onLikeMessage={() => {}}
+      />
+    );
   });
 
   test('renders without crashing and shows all the names', () => {
@@ -68,7 +74,13 @@ describe('Wave 02: ChatLog', () => {
   });
 
   test('renders an empty list without crashing', () => {
-    const element = render(<ChatLog entries={[]} />);
+    const element = render(
+      <ChatLog
+        entries={[]}
+        senders={['Bob', 'Carol']}
+        onLikeMessage={() => {}}
+      />
+    );
     expect(element).not.toBeNull();
   });
 });
