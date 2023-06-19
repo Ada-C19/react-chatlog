@@ -4,9 +4,9 @@
 
 #App header {
   background-color: #222;
-  color: #fff;
+  color: #ffffffeb;
   padding-bottom: 0.5rem;
-  position: fixed;
+  position: 0;
   width: 100%;
   z-index: 100;
   text-align: center;
@@ -16,14 +16,25 @@
 #App main {
   padding-left: 2em;
   padding-right: 2em;
-  padding-bottom: 5rem;
-  padding-top: 10rem;
+  padding-bottom: 10rem;
+  padding-top: 2rem;
 }
 
 #App h1 {
   font-size: 1.5em;
   text-align: center;
   display: inline-block;
+}
+
+.like-count {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  margin-top: 0px;
+  background-color: #e0ffff;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 }
 
 #App header section {

@@ -9,7 +9,7 @@ button {
 }
 
 .chat-entry {
-  margin: 1rem;
+  margin: 3rem;
 }
 
 .chat-entry:last-child {
@@ -21,8 +21,8 @@ button {
   border-radius: 30px;
   max-width: 50rem;
   min-width: 10rem;
-  padding: 1rem 1rem 0.1rem 1rem;
-  position: relative;
+  padding: 1rem 1rem 1rem 1rem;
+  position:relative;
   width: fit-content;
 }
 
@@ -32,12 +32,12 @@ button {
 
 .chat-entry .entry-name {
   font-size: medium;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem;
 }
 
 .chat-entry .entry-time {
   color: #bbb;
-  font-size: x-small;
+  font-size:x-small;
   margin-bottom: 0.1rem;
   margin-right: 0.5rem;
 }
@@ -48,8 +48,7 @@ button {
   height: 22px;
   width: 44px;
   clip-path: polygon(100% 0, 0 0, 50% 100%);
-
-  position: absolute;
+  position:absolute;
   top: 0;
 }
 
@@ -87,7 +86,7 @@ button {
 }
 
 .chat-entry.remote .entry-time {
-  text-align: left;
+  text-align:left;
 }
 
 .chat-entry.remote .entry-bubble::before {
@@ -98,3 +97,7 @@ button {
 .chat-entry.remote .entry-bubble:hover::before {
   background-color: #a9f6f6;
 }
+
+
+
+
