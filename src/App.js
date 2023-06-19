@@ -32,7 +32,7 @@ const App = () => {
       <header>
         <h1>Chat Between {chatMessages[0].sender} and {chatMessages[1].sender}</h1>
         <section> 
-          <span id="heartWidget" className="widget"> { likeCount() } ❤️'s liked</span>
+          <span id="heartWidget" className="widget"> { `${likeCount()} ❤️s liked`}</span>
         </section>
       </header>
       <main>
