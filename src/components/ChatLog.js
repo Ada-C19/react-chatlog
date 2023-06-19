@@ -7,9 +7,10 @@ const ChatLog = ({ entries, onLikeMessage, senders }) => {
   const isFirstSender = (senderName, arr) => {
     return senderName === arr[0];
   };
-  return entries.map((entry) => {
+  return entries.map((entry, i) => {
     return (
       <ChatEntry
+        key={i}
         id={entry.id}
         sender={entry.sender}
         body={entry.body}

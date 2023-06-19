@@ -13,9 +13,10 @@ const ColorButtons = ({ sender, onUpdateColor }) => {
   ];
   return (
     <div>
-      {buttons.map((entry) => {
+      {buttons.map((entry, i) => {
         return (
           <ColorButton
+            key={i}
             colorName={entry.color}
             icon={entry.icon}
             sender={sender}
