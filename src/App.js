@@ -32,7 +32,7 @@ const App = () => {
       <header>
         <h1>Application title</h1>
         <section> 
-          <span id="heartWidget" className="widget">{ () => likeCount() } ❤️'s liked</span>
+          <span id="heartWidget" className="widget"> { likeCount() } ❤️'s liked</span>
         </section>
       </header>
       <main>
