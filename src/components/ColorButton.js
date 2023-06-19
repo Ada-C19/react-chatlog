@@ -8,9 +8,9 @@ const ColorButton = ({ sender, colorName, icon, onUpdate }) => {
   };
 
   return (
-    <span className='colorButton' onClick={onColorClick}>
+    <button className='colorButton' onClick={onColorClick}>
       {icon}
-    </span>
+    </button>
   );
 };
 

@@ -8,6 +8,37 @@ button {
 	outline: inherit;
 }
 
+.sender {
+  display: flex;
+  flex-direction: row;
+}
+
+.remote .sender {
+  justify-content: right;
+}
+
+.local .icon:first-of-type::before {
+  content: '';
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: url('../../images/vladimir.jpg');
+  background-size: 2.1em;
+  display: inline-block;
+  margin: 0 1em 0.5em 0;
+}
+
+.remote .icon:last-of-type::after {
+  content: '';
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: url('../../images/estragon.jpeg');
+  background-size: 2.1em;
+  display: inline-block;
+  margin: 0 0 0.5em 1em;
+}
+
 .chat-entry {
   margin: 1rem;
 }

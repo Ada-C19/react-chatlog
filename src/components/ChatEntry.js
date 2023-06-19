@@ -3,8 +3,17 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp.js';
 
-const ChatEntry = ({ id, sender, body, timeStamp, liked, onLike, color }) => {
-  const localRemote = id % 2 == 0 ? 'remote' : 'local';
+const ChatEntry = ({
+  id,
+  sender,
+  body,
+  timeStamp,
+  liked,
+  onLike,
+  color,
+  firstSender,
+}) => {
+  const localRemote = firstSender === true ? 'local' : 'remote';
 
   const onLikeButtonClick = () => {
     const newMessage = {
@@ -22,8 +31,11 @@ const ChatEntry = ({ id, sender, body, timeStamp, liked, onLike, color }) => {
 
   return (
     <div className={`chat-entry ${localRemote}`}>
-      <div className='icon'></div>
-      <h2 className='entry-name'>{sender}</h2>
+      <span className='sender'>
+        <span className='icon'></span>
+        <h2 className='entry-name'>{sender}</h2>
+        <span className='icon'></span>
+      </span>
       <section className='entry-bubble'>
         <p className={color}>{body}</p>
         <p className={`entry-time`}>
@@ -45,6 +57,7 @@ ChatEntry.propTypes = {
   liked: PropTypes.bool.isRequired,
   onLike: PropTypes.func.isRequired,
   color: PropTypes.string,
+  firstSender: PropTypes.bool.isRequired,
 };
 
 export default ChatEntry;

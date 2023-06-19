@@ -3,7 +3,10 @@ import ChatEntry from './ChatEntry.js';
 import PropTypes from 'prop-types';
 import './ChatLog.css';
 
-const ChatLog = ({ entries, onLikeMessage }) => {
+const ChatLog = ({ entries, onLikeMessage, senders }) => {
+  const isFirstSender = (senderName, arr) => {
+    return senderName === arr[0];
+  };
   return entries.map((entry) => {
     return (
       <ChatEntry
@@ -14,6 +17,7 @@ const ChatLog = ({ entries, onLikeMessage }) => {
         timeStamp={entry.timeStamp}
         onLike={onLikeMessage}
         color={entry.color ? entry.color : ''}
+        firstSender={isFirstSender(entry.sender, senders)}
       />
     );
   });
@@ -31,6 +35,7 @@ ChatLog.propTypes = {
     })
   ),
   onLikeMessage: PropTypes.func.isRequired,
+  senders: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default ChatLog;

@@ -14,6 +14,7 @@ const App = () => {
   const plural = likedMessageCount == 0 || likedMessageCount > 1 ? 's' : '';
 
   //Used for changes to display of sender names
+  //Later uses assume chat is between exactly two respondents. Local/remote is determined arbitrarily.
   const uniqueNames = [
     ...new Set(
       chatMessages.map((message) => {
@@ -21,10 +22,8 @@ const App = () => {
       })
     ),
   ];
-  const firstSender = uniqueNames[0];
-  const [firstSenderColor, setFirstSenderColor] = useState('');
-  const secondSender = uniqueNames[1];
-  const [secondSenderColor, setSecondSenderColor] = useState('');
+  const senders = [uniqueNames[0], uniqueNames[1]];
+  const [senderColors, setSenderColors] = useState(['', '']);
 
   //Used for header toggles (hidden/visible, night/day mode)
   const [menuVisibility, setMenuVisibility] = useState('visible');
@@ -35,38 +34,29 @@ const App = () => {
   //Update message body after change in like
   const updateMessageOnLike = (newMessage) => {
     const updatedMessages = chatBody.map((message) => {
-      if (message.id === newMessage.id) {
-        return newMessage;
-      } else {
-        return message;
-      }
+      return message.id === newMessage.id ? newMessage : message;
     });
     setChatBody(updatedMessages);
   };
 
   //Update text color in both header and chat entries
   const updateMessageColor = (sender, color) => {
-    if (sender === firstSender) {
-      setFirstSenderColor(color);
+    if (sender === senders[0]) {
+      setSenderColors([color, senderColors[1]]);
     } else {
-      setSecondSenderColor(color);
+      setSenderColors([senderColors[0], color]);
     }
     const updatedMessages = chatBody.map((message) => {
       let tempMessage = { ...message };
       tempMessage.color = color;
-      if (message.sender === sender) {
-        return tempMessage;
-      } else {
-        return message;
-      }
+      return message.sender === sender ? tempMessage : message;
     });
     setChatBody(updatedMessages);
   };
 
   //Reset all colors when reset button is clicked
   const resetMessageColor = () => {
-    setSecondSenderColor('');
-    setFirstSenderColor('');
+    setSenderColors(['', '']);
     const updatedMessages = chatBody.map((message) => {
       let tempMessage = { ...message };
       tempMessage.color = '';
@@ -87,20 +77,14 @@ const App = () => {
 
   //Toggle the visibility of the options in the header
   const collapseToggle = () => {
-    if (menuVisibility === 'visible') {
-      setMenuVisibility('hidden');
-    } else {
-      setMenuVisibility('visible');
-    }
+    menuVisibility === 'visible'
+      ? setMenuVisibility('hidden')
+      : setMenuVisibility('visible');
   };
 
   //Toggle day vs. night mode
   const dayNightToggle = () => {
-    if (dayNightMode === 'day') {
-      setDayNightMode('night');
-    } else {
-      setDayNightMode('day');
-    }
+    dayNightMode === 'day' ? setDayNightMode('night') : setDayNightMode('day');
   };
 
   return (
@@ -115,19 +99,17 @@ const App = () => {
         <h1>🤖 Updating for Godot 🤖</h1>
         <h2>
           A chat between{' '}
-          <span className={`firstSender ${firstSenderColor}`}>
-            {firstSender}
-          </span>{' '}
+          <span className={`firstSender ${senderColors[0]}`}>{senders[0]}</span>{' '}
           and{' '}
-          <span className={`secondSender ${secondSenderColor}`}>
-            {secondSender}
+          <span className={`secondSender ${senderColors[1]}`}>
+            {senders[1]}
           </span>
         </h2>
         <div id='headerWidgets'>
-          <span id='firstSenderColor'>
-            <p>{firstSender}'s color</p>
+          <span>
+            <p>{senders[0]}'s color</p>
             <ColorButtons
-              sender={firstSender}
+              sender={senders[0]}
               onUpdateColor={updateMessageColor}
             />
           </span>
@@ -147,10 +129,10 @@ const App = () => {
               </button>
             </span>
           </span>
-          <span id='secondSenderColor'>
-            <p>{secondSender}'s color</p>
+          <span>
+            <p>{senders[1]}'s color</p>
             <ColorButtons
-              sender={secondSender}
+              sender={senders[1]}
               onUpdateColor={updateMessageColor}
             />
           </span>
@@ -161,6 +143,7 @@ const App = () => {
           className='chat-log'
           entries={chatBody}
           onLikeMessage={updateMessageOnLike}
+          senders={senders}
         />
       </main>
     </div>

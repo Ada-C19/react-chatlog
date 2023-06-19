@@ -92,10 +92,6 @@ button:active {
   font-family: Consolas, 'Courier New', Courier, monospace;
 }
 
-#App #firstSenderColor {
-  display: flex;
-  flex-direction: column;
-}
         /*Buttons for resetting*/
 
 #App .headerButton {
@@ -201,7 +197,7 @@ header .green, #App.night main .green {
 }
 
 #App.day main .blue {
-  color: rgb(8, 8, 92)
+  color: rgb(47, 47, 149)
 }
 
 header .blue, #App.night main .blue {
