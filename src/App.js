@@ -26,8 +26,6 @@ const App = () => {
     });
 
     setMessage(newMessages);
-
-    console.log(newMessages)
   }
 
   return (
