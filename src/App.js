@@ -11,7 +11,7 @@ const App = () => {
 
   //Used for displaying like count
   const likedMessageCount = chatBody.filter((message) => message.liked).length;
-  const plural = likedMessageCount == 0 || likedMessageCount > 1 ? 's' : '';
+  const plural = likedMessageCount === 0 || likedMessageCount > 1 ? 's' : '';
 
   //Used for changes to display of sender names
   //Later uses assume chat is between exactly two respondents. Local/remote is determined arbitrarily.
