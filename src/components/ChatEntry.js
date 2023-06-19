@@ -1,6 +1,7 @@
 import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
+import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
   const id = props.id;
@@ -9,12 +10,15 @@ const ChatEntry = (props) => {
   const timeStamp = props.timeStamp;
   const liked = props.liked;
 
+
   return (
     <div className="chat-entry local">
       <h2 className="entry-name"> {sender} </h2>
       <section className="entry-bubble">
         <p> {body} </p>
-        <p className="entry-time"> {timeStamp} </p>
+        <p className="entry-time">
+          <TimeStamp time={timeStamp}></TimeStamp>
+        </p>
         <button className="like">🤍</button>
       </section>
     </div>
