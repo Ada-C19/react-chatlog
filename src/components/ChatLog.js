@@ -1,7 +1,7 @@
 import React from 'react';
 import './ChatEntry.css';
-import PropTypes from 'prop-types';
-import { DateTime } from 'luxon';
+// import PropTypes from 'prop-types';
+// import { DateTime } from 'luxon';
 import ChatEntry from './ChatEntry';
 
 const ChatLog = (props) => {
@@ -16,6 +16,8 @@ const ChatLog = (props) => {
             timeStamp={entry.timeStamp} 
             liked={entry.liked}
             key={(entry.id)}
+            isLiked={entry.isLiked}
+            updateLikes={props.updateLikes}
             ></ChatEntry>
         );
     });
