@@ -22,6 +22,7 @@ const ChatEntry = ({ id, sender, body, timeStamp, liked, onLike, color }) => {
 
   return (
     <div className={`chat-entry ${localRemote}`}>
+      <div className='icon'></div>
       <h2 className='entry-name'>{sender}</h2>
       <section className='entry-bubble'>
         <p className={color}>{body}</p>
