@@ -6,7 +6,6 @@ import TimeStamp from './TimeStamp';
 const ChatEntry = ({id, sender, body, timeStamp, liked, onUpdate }) => {
   const messageColor =
     sender === 'Vladimir' ? 'chat-entry local' : 'chat-entry remote';
-  const changeColor = liked ? 'like' : 'not-liked';
   const changeText = liked ? '❤️' : '🤍';
 
   const LikeButtonClick = () => {
@@ -28,7 +27,7 @@ const ChatEntry = ({id, sender, body, timeStamp, liked, onUpdate }) => {
           <p className="entry-time">
             <TimeStamp time={timeStamp} />
           </p>
-          <button className={changeColor} onClick={LikeButtonClick}>
+          <button className="like" onClick={LikeButtonClick}>
             {changeText}
           </button>
         </section>
@@ -36,19 +35,14 @@ const ChatEntry = ({id, sender, body, timeStamp, liked, onUpdate }) => {
     );
   };
 
-  ChatEntry.propTypes = {
-    sender: PropTypes.string.isRequired,
-    time: PropTypes.string.isRequired,
+ChatEntry.propTypes = {
+    id: PropTypes.number.isRequired,
+  sender: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+  liked: PropTypes.bool,
+    onUpdate: PropTypes.func.isRequired
   };
 
 export default ChatEntry;
 
-//   const updatedMessage = (props) => {
-//     if (props.liked === "false") {
-//       return (props.liked = "true");
-//     } else {
-//       return props.liked;
-//     }
-//   };
-//   props.onUpdate(updatedMessage);
-// }

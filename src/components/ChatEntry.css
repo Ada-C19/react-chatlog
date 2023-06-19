@@ -1,10 +1,6 @@
-.like {
+.liked{
   color: red;
-}
-.not-liked{
-  color:#0bad0b;
-  
-}
+  }
 
 button {
   background: none;

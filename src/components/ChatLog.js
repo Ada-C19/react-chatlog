@@ -18,12 +18,26 @@ const ChatLog = (props) => {
       </div>
     );
   });
-    return (
-      <section>
-        <div>{chatLogComponents}</div>
-      </section>
-    );
-}
+  return (
+    <section>
+      <div>{chatLogComponents}</div>
+    </section>
+  );
+};
+
+
+ChatLog.propTypes = {
+  messages: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      sender: PropTypes.string.isRequired,
+      body: PropTypes.string.isRequired,
+      time: PropTypes.string.isRequired,
+      liked: PropTypes.bool,
+    })
+  ),
+  onUpdateMessage: PropTypes.func.isRequired,
+};
 
 export default ChatLog;
 
