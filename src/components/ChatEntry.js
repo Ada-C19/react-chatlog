@@ -57,7 +57,7 @@ ChatEntry.propTypes = {
   liked: PropTypes.bool.isRequired,
   onLike: PropTypes.func.isRequired,
   color: PropTypes.string,
-  firstSender: PropTypes.bool.isRequired,
+  firstSender: PropTypes.bool,
 };
 
 export default ChatEntry;
