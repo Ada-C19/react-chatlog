@@ -5,14 +5,14 @@
 //     "timeStamp": "2018-05-29T22:49:06+00:00",
 //     "liked": false
 //   },
-import React from "react";
-import ChatEntry from "./ChatEntry";
+import React from 'react';
+import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
 
 const ChatLog = ({ entries }) => {
 
     const getChatLogJSX = (chatLog) => {
-        chatLog.map((indvChat, index) => {
+        return chatLog.map((indvChat) => {
             return (
                 <ChatEntry
                     id={indvChat.id}
@@ -20,22 +20,20 @@ const ChatLog = ({ entries }) => {
                     body={indvChat.body}
                     timeStamp={indvChat.timeStamp}
                     liked={indvChat.liked}
-                    key={index}
+                    key={indvChat.id}
+                // className={}
                 />
             )
         });
-
     }
 
     return (
         <div>
-            <p>
+            <section>
                 {getChatLogJSX(entries)}
-            </p>
+            </section>
         </div>
     )
-
-
 }
 
 ChatLog.propTypes = {
@@ -45,8 +43,6 @@ ChatLog.propTypes = {
         body: PropTypes.string.isRequired,
         timeStamp: PropTypes.string.isRequired,
         liked: PropTypes.bool.isRequired,
-
-
     })).isRequired
 }
 
