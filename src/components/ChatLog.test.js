@@ -43,7 +43,7 @@ const LOG = [
 
 describe('Wave 02: ChatLog', () => {
   beforeEach(() => {
-    render(<ChatLog entries={LOG} />);
+    render(<ChatLog entries={LOG} senders={['Bob', 'Carol']} />);
   });
 
   test('renders without crashing and shows all the names', () => {
@@ -58,6 +58,7 @@ describe('Wave 02: ChatLog', () => {
       },
     ].forEach((person) => {
       const elementList = screen.getAllByText(new RegExp(person.name));
+      console.log(elementList);
       expect(elementList.length).toEqual(person.numChats);
 
       elementList.forEach((element) => {

@@ -35,7 +35,7 @@ ChatLog.propTypes = {
     })
   ),
   onLikeMessage: PropTypes.func.isRequired,
-  senders: PropTypes.arrayOf(PropTypes.string),
+  senders: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default ChatLog;

@@ -87,7 +87,7 @@ button {
   top: 0;
 }
 
-/* "local" messages are shown on the left side */
+/* "local" messages are shown on the left side in yellow (day) or maroon (night) */
 .chat-entry.local {
   text-align: left;
 }
