@@ -2,14 +2,18 @@ import React from 'react';
 import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
 
-const ChatLog = ({entries}) => {
+const ChatLog = ({ entries, handleLikeClick, totalLikes }) => {
     return (
         <div className="chat-log">
-            {entries.map((entry) => {
-                return <ChatEntry {...entry} key={entry.id} />;
-            })}
+            {entries.map((entry) => (
+                <ChatEntry
+                    {...entry}
+                    key={entry.id}
+                    handleLikeClick={handleLikeClick}
+                    totalLikes={totalLikes}
+                />
+            ))}
         </div>
-
     );
 };
 
@@ -22,6 +26,8 @@ ChatLog.propTypes = {
             timeStamp: PropTypes.string.isRequired,
         })
     ).isRequired,
+    handleLikeClick: PropTypes.func.isRequired,
+    totalLikes: PropTypes.number.isRequired,
 };
 
 export default ChatLog;

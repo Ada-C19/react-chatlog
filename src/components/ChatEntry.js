@@ -3,8 +3,13 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = ({sender, body, timeStamp}) => {
+const ChatEntry = ({ sender, body, timeStamp, handleLikeClick, totalLikes }) => {
   const [liked, setLiked] = useState(false);
+
+  const handleLikeButtonClick = () => {
+    setLiked(!liked);
+    handleLikeClick(liked); 
+  };
 
   return (
     <div className="chat-entry local">
@@ -12,9 +17,10 @@ const ChatEntry = ({sender, body, timeStamp}) => {
       <section className="entry-bubble">
         <p>{body}</p>
         <p className="entry-time"><TimeStamp time={timeStamp}/></p>
-        <button className="like" onClick={() => setLiked(!liked)}>
+        <button className="like" onClick={handleLikeButtonClick}>
           {liked ? '❤️' : '🤍'}
         </button>
+        <p>Total Likes: {totalLikes}</p>
       </section>
     </div>
   );
@@ -24,6 +30,8 @@ ChatEntry.propTypes = {
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
+  handleLikeClick: PropTypes.func.isRequired,
+  totalLikes: PropTypes.number.isRequired,
 };
 
 export default ChatEntry;
