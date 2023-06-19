@@ -6,8 +6,7 @@ import ChatLog from './components/ChatLog';
 import {useState} from 'react'
 
 const App = () => {
-  const bool = false;
-  const num = 1;
+  
   const[textMessage, setTextMessage] = useState(chatMessages)
   const likedMessage = (id) => {
   const isliked = textMessage.map((text) =>{
@@ -26,8 +25,8 @@ const App = () => {
         <h1>Chat App</h1>
       </header>
       <main>
-        <ChatEntry id = {num} timeStamp = "2018-05-29T22:49:06+00:00" body = "why are you arguing with me" 
-        sender = "Vladimir" liked = {bool} onLiked={likedMessage} />
+        {/* <ChatEntry id = 1 timeStamp = "2018-05-29T22:49:06+00:00" body = "why are you arguing with me" 
+        sender = "Vladimir" liked = false/> */}
         <ChatLog entries={textMessage} likedFunc = {likedMessage}/>
       </main>
     </div>
