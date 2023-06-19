@@ -3,6 +3,7 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
+  console.log(`inside chatEntry`, props)
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">Replace with name of sender</h2>
