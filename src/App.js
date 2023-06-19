@@ -3,10 +3,11 @@ import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
 import { useState } from 'react';
+import LikesCounter from './components/LikesCounter';
 
 
 const App = () => {
-  let countLikes = 0
+  // let countLikes = 0
 
   const [messagesData, setMessagesData] = useState(chatMessages)
 
@@ -21,21 +22,21 @@ const App = () => {
     setMessagesData(messages);
     
   };
-  const countMessageLikes = (count) => {
-    console.log('count likes')
-    console.log(countLikes);
-    for (const message of messagesData) {
-      if (message['liked'] === 'true') {
-        count = count + 1;
-        console.log(count)
-        return count
-      }
-    }
-  };
+  // const countMessageLikes = (count) => {
+  //   console.log('count likes')
+  //   console.log(countLikes);
+  //   for (const message of messagesData) {
+  //     if (message['liked'] === 'true') {
+  //       count = count + 1;
+  //       console.log(count)
+  //       return count
+  //     }
+  //   }
+  // };
   return (
     <div id="App">
       <header>
-        <h1>{() => { countMessageLikes(countLikes) }} {countLikes} likes</h1>
+        <LikesCounter entries={messagesData}></LikesCounter>
       </header>
       <main>
         <ChatLog
