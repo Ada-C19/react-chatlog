@@ -10,9 +10,6 @@ const App = () => {
   const [redFilledHeartCount, setRedFilledHeartCount] = useState(0);
 
 
-
-
-  // const testMessage = chatMessages[0];
   return (
     <div id="App">
       <header>
@@ -21,7 +18,7 @@ const App = () => {
       </header>
       <main>
         
-        {/* to render that chatlog component */}
+        {/* to render chatlog component */}
         <ChatLog entries={chatMessages}
           redFilledHeartCount={redFilledHeartCount}
           setRedFilledHeartCount={setRedFilledHeartCount}

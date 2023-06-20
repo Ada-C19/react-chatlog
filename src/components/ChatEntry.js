@@ -7,14 +7,7 @@ import { useState } from 'react';
 const ChatEntry = (props) => {
 
   //deconstruct
-  const {
-    sender,
-    body,
-    timeStamp,
-    liked,
-    redFilledHeartCount,
-    setRedFilledHeartCount,
-  } = props;
+  const { sender, body, timeStamp, liked, redFilledHeartCount, setRedFilledHeartCount } = props;
   //remember initial state liked = false
   const [isEmptyHeart, setIsEmptyHeart] = useState(liked);
 
