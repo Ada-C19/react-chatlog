@@ -28,6 +28,7 @@
 
 #App header section {
   background-color: #e0ffff;
+  color: black;
 }
 
 #App .widget {
@@ -41,6 +42,7 @@
 }
 
 #App #heartWidget {
+  display: inline-block;
   font-size: 1.5em;
   margin: 1em
 }
