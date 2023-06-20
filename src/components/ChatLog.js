@@ -9,40 +9,18 @@ const ChatLog = (props) => {
     const messageLog = entries.map((message, index) => (
         <ChatEntry
             key={index}
+            id={message.id}
             sender={message.sender}
             body={message.body}
             time={message.time}
+            liked={message.liked}
+            onLike={props.countLike}
         />)
     )
     return (
         <section>{messageLog}</section>
     )
 }
-//     return (
-//         <ul>
-//             {
-//                 messageLog.map((message) => (
-//                     <li key={message.id}>
-//                     <ChatEntry
-//                         sender={message.sender}
-//                         body={message.body}
-//                         time={message.time}
-//                     />
-//                     </li>)
-//                 ) 
-//             }
-//         </ul>
-//     );
-// };
 
-// ChatLog.propTypes = {
-//     messageLog: PropTypes.arrayOf(
-//         PropTypes.shape({
-//             sender: PropTypes.string,
-//             body: PropTypes.string,
-//             time: PropTypes.string
-//         })
-//     )
-// }
 
 export default ChatLog;
