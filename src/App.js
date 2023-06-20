@@ -33,7 +33,7 @@ const App = () => {
         <h1>Application title</h1>
       </header>
       <main>
-        <section>Total Likes: {totalLikes()}</section>
+        <section>{totalLikes()} ❤️s</section>
         {/* {chatEntry} */}
         <ChatLog entries={entries} updateLike={updateLike}></ChatLog>
         {/* Wave 01: Render one ChatEntry component

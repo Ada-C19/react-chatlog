@@ -14,7 +14,7 @@ const ChatEntry = (singleEntry) => {
         <p>{singleEntry.body}</p>
         <TimeStamp time= {singleEntry.timeStamp}> </TimeStamp>
         {/* <p className="entry-time">{singleEntry.timeStamp}</p> */}
-        <button className='liked' onClick={() => singleEntry.updateLike(singleEntry.id)}>{heart}</button>
+        <button className='like' onClick={() => singleEntry.updateLike(singleEntry.id)}>{heart}</button>
       </section>
     </div>
   );
