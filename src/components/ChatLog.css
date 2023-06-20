@@ -5,16 +5,31 @@
   color: aliceblue;
 }
 
-#Vladimir {
+/* #Vladimir {
   margin-right: 0;
   margin-left: 280px;
   max-width: 50rem;
   color: black;
+} */
+
+#Vladimir {
+  display: grid;
+  justify-content: right;
+  color: black;
 }
 
 #Estragon {
-  margin-left: 0;
-  margin-right: 280px;
-  max-width: 50rem;
+  display: grid;
+  justify-content: left;
   color: black;
+}
+
+#Estragon.chat-log {
+  margin-left: 0px;
+  width: 20rem;
+}
+
+#Vladimir.chat-log {
+  margin-right: 0px;
+  width: 20rem;
 }

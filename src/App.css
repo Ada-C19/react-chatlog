@@ -49,6 +49,14 @@
   display: inline-block
 }
 
+.hearts-and-color {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+
 .red {
   color: #b22222
 }

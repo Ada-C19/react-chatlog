@@ -3,28 +3,28 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = ({sender, body, timeStamp, id, liked, onUpdateMessage}) => {
+const ChatEntry = ({sender, body, timeStamp, id, liked, updateMessage}) => {
 
 
-  const onUpdateLikeButton = () => {
-    onUpdateMessage({
+  const updateLikeButton = () => {
+    updateMessage({
       sender,
       body,
       timeStamp,
       id,
       liked: !liked,
     });
-    console.log(`updating like status for ${sender}`)
+    // console.log(`updating like status for ${sender}`)
   };
 
   
   return (
-    <div className="chat-entry local" id={ sender}>
+    <div className="chat-entry local" id={ sender }>
       <h2 className="entry-name">{ sender }</h2>
       <section className="entry-bubble" id={`${sender}-bubble`}>
         <p>{ body }</p>
         <p className="entry-time"><TimeStamp time={ timeStamp }/></p>
-        <button onClick={onUpdateLikeButton} className='like'>{liked ? '🩷' : '🤍'}</button>
+        <button onClick={ () => updateLikeButton() } className='like'>{ liked ? '🩷' : '🤍' }</button>
       </section>
     </div>
   );
@@ -36,7 +36,7 @@ ChatEntry.propTypes = {
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   id: PropTypes.number,
-  onUpdateMessage: PropTypes.func,
+  updateMessage: PropTypes.func,
 };
 
 export default ChatEntry;
