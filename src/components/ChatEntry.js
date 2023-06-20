@@ -16,10 +16,12 @@ const ChatEntry = (props) => {
     setIsEmptyHeart(!isEmptyHeart);
     
     //checkpoint - if true
+    //increment
     if (!isEmptyHeart) {
       setRedFilledHeartCount(redFilledHeartCount + 1);
     }
     else {
+      // decrement
       setRedFilledHeartCount(redFilledHeartCount - 1);
     }
 
