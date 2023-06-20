@@ -2,8 +2,8 @@ import React from 'react'
 import ChatEntry from './ChatEntry'
 import PropTypes from 'prop-types'
 
-function ChatLog({ ChatEntries }) {
-    const ChatEntryComponents = ChatEntries.map((chatEntry) => {
+function ChatLog({ entries }) {
+    const ChatEntryComponents = entries.map((chatEntry) => {
 
         return (
             <li key={chatEntry.id}>
