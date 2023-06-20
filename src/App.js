@@ -47,8 +47,6 @@ const App = () => {
         entries={messages} changeLiked={changeLiked}
         />
       </div>
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
       </main>
     </div>
   );
