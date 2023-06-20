@@ -12,12 +12,14 @@ const ChatLog = (props) => {
             body={message.body}
             timeStamp={message.timeStamp}
             liked={message.liked}
+            updateEntry={props.updateChatData}
         />
       ))
     }
 
 ChatLog.propTypes = {
-  entries: PropTypes.array.isRequired
+  entries: PropTypes.array.isRequired,
+  updateChatData: PropTypes.func.isRequired
 };
 
 export default ChatLog
