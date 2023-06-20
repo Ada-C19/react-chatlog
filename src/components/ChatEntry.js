@@ -1,10 +1,14 @@
 import React from 'react';
 import './ChatEntry.css';
 import TimeStamp from './TimeStamp';
+import useSound from 'use-sound';
+
+import bok from '../assets/bok.mp3';
 
 
 const ChatEntry = ({sender, body, timeStamp, liked, id, likeMessage}) => {
 
+  const [play] = useSound(bok);
   const buttonClass = liked ? 'liked' : 'notLiked';
   const heart = liked ? '🐣' : '🥚';
   const messageClass = sender === 'Vladimir' ? 'chat-entry local' : 'chat-entry remote';
@@ -19,7 +23,7 @@ const ChatEntry = ({sender, body, timeStamp, liked, id, likeMessage}) => {
               <TimeStamp time={timeStamp}/>
               </div>
               <button className={`like ${buttonClass}`}
-              onClick={() => likeMessage(id)}>{heart}</button>
+              onClick={() => {likeMessage(id); play()}}>{heart}</button>
             </section>
         </div>
 
