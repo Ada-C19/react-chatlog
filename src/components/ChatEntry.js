@@ -13,11 +13,18 @@ const ChatEntry = (props) => {
           <TimeStamp
           time = {props.timeStamp}/>
           </p>
-        <button className="like" onClick={() => {props.changeLiked(props.id);}}>🤍</button>
+        <button className="like" onClick={() => {props.changeLiked(props.id);}}>{getLikes(props.liked)}</button>
       </section>
     </div>
   );
 };
+
+const getLikes = (liked) => {
+  if (liked) {
+    return '❤️'
+  }
+  return '🤍'
+}
 
 ChatEntry.propTypes = {
   id: PropTypes.number.isRequired,

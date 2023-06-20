@@ -7,12 +7,21 @@ import {useState} from 'react';
 const App = () => {
 
   const [messages, setMessages] = useState(chatMessages)
+
+  const[likeNumber, setNumber] = useState(0)
   
   const changeLiked = (id) => {
     const newMessages = messages.map((message) => {
       if (message.id === id) {
         const updatedMessage = {...message};
         updatedMessage.liked = !updatedMessage.liked;
+        let newLikeNumber = likeNumber
+        if (updatedMessage.liked) {
+          newLikeNumber = likeNumber + 1
+        } else {
+          newLikeNumber = likeNumber - 1
+        }
+        setNumber(newLikeNumber);
         return updatedMessage;
       } else {
         return {...message};
@@ -27,6 +36,9 @@ const App = () => {
         <h1>Application title</h1>
       </header>
       <main>
+      <div>
+      <h1>{likeNumber} ❤️s</h1>
+      </div>
       <div className="App">
         <ChatList
         entries={messages} changeLiked={changeLiked}
