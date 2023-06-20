@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 const App = () => {
   const[entries, setEntries] = useState(chatMessages);
+
   const likeMessage = (id) => {
     const updatedEntries = entries.map((entry) => {
       if (entry.id === id) {
@@ -27,7 +28,7 @@ const App = () => {
       </header>
       <main>
         <div className='chicken-counter'>You have {entries.reduce((accumulator, entry) => entry.liked ? accumulator = accumulator + 1 : accumulator, 0)} chicken(s) </div>
-        <div className='chicken-fren'><img src="https://em-content.zobj.net/source/microsoft-teams/363/chicken_1f414.png" srcset="https://em-content.zobj.net/source/microsoft-teams/363/chicken_1f414.png 2x" alt="Chicken on Microsoft Teams 15.0" width="160" height="160"></img></div>
+        <div className='chicken-fren'><img src="https://em-content.zobj.net/source/microsoft-teams/363/chicken_1f414.png" srcSet="https://em-content.zobj.net/source/microsoft-teams/363/chicken_1f414.png 2x" alt="Chicken on Microsoft Teams 15.0" width="160" height="160"></img></div>
         <div>{<ChatLog entries={entries} likeMessage={likeMessage}/>}</div>
       </main>
     </div>
