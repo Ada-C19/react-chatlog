@@ -11,10 +11,7 @@ const App = () => {
         <h1>Application title</h1>
       </header>
       <main>
-        {chatMessages.map((message, index) => (
-          <ChatLog entries={chatMessages}
-          />
-        ))}
+        <ChatLog entries={chatMessages} />
       </main>
     </div>
   );
