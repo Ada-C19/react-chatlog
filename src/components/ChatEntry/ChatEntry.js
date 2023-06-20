@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ChatLog from './ChatLog/ChatLog';
-import '../ChatEntry.css';
+import ChatLog from '../ChatLog/ChatLog';
+import './ChatEntry.css';
 
 const ChatEntry = props => {
   const getChatLogJSX = chats => {
