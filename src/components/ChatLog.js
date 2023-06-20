@@ -4,7 +4,7 @@ import './ChatLog.css';
 
 // renderChatLog returns a new array of msgs in JSX
 // you can replace entries with props & remove {}, AND add props. in front of entries.map
-const ChatLog = ({ entries }) => {
+const ChatLog = ({ entries, counter, setCounter }) => {
   return (
     entries.map((entry) => {
       return (
@@ -14,8 +14,10 @@ const ChatLog = ({ entries }) => {
             liked = { entry.liked }
             sender = { entry.sender }
             body = { entry.body }
-            timeStamp= { entry.timeStamp }
-            key={ entry.id }
+            timeStamp = { entry.timeStamp }
+            counter = { counter }
+            setCounter = { setCounter }
+            key = { entry.id }
           />
         </div>
       )
