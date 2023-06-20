@@ -2,11 +2,11 @@ import React from 'react';
 import ChatEntry from './ChatEntry';
 
 const ChatLog = (props) => {
-  const { messages, redFilledHeartCount, setRedFilledHeartCount } = props;
+  const { entries, redFilledHeartCount, setRedFilledHeartCount } = props;
 
   return (
     <div>
-      {messages.map((data) => (
+      {entries.map((data) => (
         <ChatEntry
           key={data.id}
           sender={data.sender}

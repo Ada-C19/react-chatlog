@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import messages from './data/messages.json';
+import chatMessages from './data/messages.json';
 import { useState } from 'react';
 import ChatLog from './components/ChatLog';
 
@@ -17,9 +17,9 @@ const App = () => {
         <p>{redFilledHeartCount} ❤️s</p>
       </header>
       <main>
+        
         {/* to render chatlog component */}
-        <ChatLog
-          messages={messages}
+        <ChatLog entries={chatMessages}
           redFilledHeartCount={redFilledHeartCount}
           setRedFilledHeartCount={setRedFilledHeartCount}
         />
