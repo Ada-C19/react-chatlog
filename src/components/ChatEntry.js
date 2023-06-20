@@ -1,20 +1,22 @@
 import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
-import { DateTime } from 'luxon';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = (props) => {
+const ChatEntry = ({id, sender, body, timeStamp, liked, updateLike, color}) => {
 
+  const likedButtonContent = liked ? '❤️' : '🤍';
+  const localOrRemote = (sender === 'Vladimir') ? 'chat-entry local' : 'chat-entry remote';
+  
 
   return (
-    <div className="chat-entry local">
-      <h2 className="entry-name">{props.sender}</h2>
+    <div className={localOrRemote}>
+      <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
-        <p>{props.body}</p>
+        <p className={color}>{body}</p>
           <p className="entry-time">
-              <TimeStamp time={props.timeStamp} /></p>
-        <button className="like">🤍</button>
+              <TimeStamp time={timeStamp} /></p>
+        <button className="like" onClick={() => updateLike(id, !liked)}>{likedButtonContent}</button>
       </section>
     </div>
   );
@@ -26,6 +28,8 @@ ChatEntry.propTypes = {
   "body": PropTypes.string.isRequired, 
   "timeStamp": PropTypes.string.isRequired,
   "liked": PropTypes.bool.isRequired,
+  updateLike: PropTypes.func.isRequired,
+  color: PropTypes.string
 };
 
 export default ChatEntry;

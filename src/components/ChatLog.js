@@ -6,24 +6,42 @@ import ChatEntry from './ChatEntry';
 
 
 
-const ChatLog = (props) => {
-    const {entries} = props;
-    // ^^ This is the same as const entries = props.entries
-    const chatEntries = entries.map((entry) => {
-        return (
-            <ChatEntry 
-            sender={entry.sender} 
-            body={entry.body} 
-            timeStamp={entry.timeStamp} 
-            liked={entry.liked}
-            key={(entry.id)} />
+const ChatLog = ({ entries, updateLike, color }) => {
+    const entryComponents = [];
+    for (const message of entries) {
+        entryComponents.push(
+            <ChatEntry
+                key={message.id}
+                id={message.id}
+                sender={message.sender}
+                body={message.body}
+                timeStamp={message.timeStamp}
+                liked={message.liked}
+                updateLike={updateLike}
+                color={color}
+            />
         );
-    });
-    return (
-        <section>
-            {chatEntries}
-        </section>
-    )
+    }
+    return <div className="chat-log">{entryComponents}</div>;
 };
-
+ChatLog.protoTypes = {
+    messages: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            sender: PropTypes.string.isRequired,
+            body: PropTypes.string.isRequired,
+            timeStamp: PropTypes.string.isRequired,
+            
+        })
+    ),
+    updateLike: PropTypes.func.isRequired,
+    color: PropTypes.func
+}
 export default ChatLog;
+
+
+
+
+
+
+
