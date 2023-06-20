@@ -6,25 +6,22 @@ import TimeStamp from './TimeStamp';
 
 
 const ChatEntry = (props) => {
+  const [liked,setLiked] = useState(false);
   
-  // const [liked,setLiked] = useState()
-  // const [color,setColor] = useState("");
-  
+  const handleLikeButtonClick = () => {
+    setLiked(!liked);
+  };
 
-  //   if ({props.liked} === true) {
-  //       setColor("red");
-  //     } else {
-  //       setColor("white")
-  //     }
-  // }
+  
+  
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp}></TimeStamp></p>
-        <button className="like">🤍</button>
-       {/* <button className="like" onClick={}>🤍</button> */}
+        <button className='like' onClick={handleLikeButtonClick}>{liked ? '❤️' : '🤍'}
+        </button>
       </section>
     </div>
   );

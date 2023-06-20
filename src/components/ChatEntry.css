@@ -42,6 +42,7 @@ button {
   margin-right: 0.5rem;
 }
 
+
 /* Chat bubble arrow styling */
 .chat-entry .entry-bubble::before {
   content: '';
