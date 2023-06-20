@@ -6,16 +6,27 @@ import ChatLog from './components/ChatLog';
 const App = () => {
   const [ chatData, setChatData ] = useState(chatMessages);
 
-  console.log(chatMessages)
-  
+  const updateChatData = updatedChat => {
+    const updatedChats = chatData.map((chat) => {
+      if (chat.id === updatedChat.id) {
+        return updatedChat;
+      } else {
+        return chat;
+      }
+    });
+
+    setChatData(updatedChats);
+  };
+
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Messages</h1>
       </header>
       <main>
         <ChatLog
           entries={chatData}
+          onUpdateChatData={updateChatData}
         />
       </main>
     </div>

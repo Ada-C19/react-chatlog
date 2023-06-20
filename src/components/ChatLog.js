@@ -3,7 +3,7 @@ import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
 import './ChatLog.css';
 
-const ChatLog = ({ entries }) => {
+const ChatLog = ({ entries, onUpdateChatData }) => {
   const getChats = (entries) => {
     return entries.map((entry) => {
       return (
@@ -14,6 +14,7 @@ const ChatLog = ({ entries }) => {
           sender={entry.sender}
           body={entry.body}
           timeStamp={entry.timeStamp}
+          updateChat={onUpdateChatData}
         />
       )
     })
