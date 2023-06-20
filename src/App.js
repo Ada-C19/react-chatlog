@@ -31,7 +31,7 @@ const App = () => {
       </header>
       <main>
         <section id="likes">
-          {likes} ❤️'s
+          {likes} ❤️s
         </section>
         <ChatLog entries={chatData} updateLikeStatus={updateLikeStatus} />
       </main>
