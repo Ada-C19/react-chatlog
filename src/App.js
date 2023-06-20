@@ -17,12 +17,23 @@ const App = () => {
       }
     });
     setChatMessages(chats);
-    console.log(updatedMessage);
+    // console.log(updatedMessage);
   };
+
+
+  let likes = 0;
+  for (let message of chatMessageData ){
+    if (message.liked) {
+      likes++;
+    }
+  }
+
+
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>vladimir</h1>
+        <h3>likes: {likes}  </h3>
       </header>
       <main>
         <ChatLog entries={chatMessageData} onUpdateChat={updateChatMessages}> </ChatLog>
