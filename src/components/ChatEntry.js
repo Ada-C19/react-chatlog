@@ -17,10 +17,12 @@ const ChatEntry = (props) => {
   
   };
 
+  const messageAlign = props.sender === 'Vladimir' ? 'chat-entry local' : 'chat-entry remote';
+
   const heart = props.liked ? '❤️' : '🤍';
 
   return (
-    <div className="chat-entry local">
+    <div className={messageAlign}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
