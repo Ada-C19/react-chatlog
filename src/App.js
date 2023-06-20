@@ -18,10 +18,19 @@ const App = () => {
     setChatData(updatedChats);
   };
 
+  const likedTally = chatData.reduce((tally, chat) => {
+    if (chat.liked) {
+      tally += 1;
+    }
+
+    return tally;
+  }, 0)
+
   return (
     <div id="App">
       <header>
         <h1>Messages</h1>
+        <h4>Liked Messages: {likedTally}</h4>
       </header>
       <main>
         <ChatLog
