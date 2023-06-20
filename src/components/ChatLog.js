@@ -18,7 +18,6 @@ const ChatLog = (props) => {
     }
 
 ChatLog.propTypes = {
-  // entries: PropTypes.array.isRequired,
   entries: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
