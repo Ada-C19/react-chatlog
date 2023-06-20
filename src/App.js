@@ -1,28 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry';
+import ChatLog from './components/ChatLog';
 
 const App = () => {
-
-  const testChat = chatMessages[0];
+  const [ chatData, setChatData ] = useState(chatMessages);
 
   console.log(chatMessages)
+  
   return (
     <div id="App">
       <header>
         <h1>Application title</h1>
       </header>
       <main>
-        <ChatEntry
-          id={testChat.id}
-          liked={testChat.liked}
-          sender={testChat.sender}
-          body={testChat.body}
-          timeStamp={testChat.timeStamp}
+        <ChatLog
+          entries={chatData}
         />
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
       </main>
     </div>
   );
