@@ -21,7 +21,9 @@ const ChatEntry = (props) => {
 ChatEntry.propTypes = {
   sender: PropTypes.string,
   body: PropTypes.string,
-  timeStamp: PropTypes.string
+  timeStamp: PropTypes.string,
+  id: PropTypes.number,
+  liked: PropTypes.bool
 };
 
 export default ChatEntry;

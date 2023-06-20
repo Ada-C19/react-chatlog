@@ -1,17 +1,23 @@
 import React from 'react';
-import chatMessages from '../data/messages.json';
 import ChatEntry from './ChatEntry';
+import './ChatLog.css';
 
 // renderChatLog returns a new array of msgs in JSX
-const ChatLog = () => {
+// you can replace entries with props & remove {}, AND add props. in front of entries.map
+const ChatLog = ({ entries }) => {
   return (
-    chatMessages.map((message) => {
+    entries.map((entry) => {
       return (
-        <ChatEntry 
-          sender = { message.sender }
-          body = { message.body }
-          timeStamp= { message.timeStamp }
-        />
+        <div className='chat-log'>
+          <ChatEntry 
+            id = { entry.id }
+            liked = { entry.liked }
+            sender = { entry.sender }
+            body = { entry.body }
+            timeStamp= { entry.timeStamp }
+            key={ entry.id }
+          />
+        </div>
       )
     })
   )
