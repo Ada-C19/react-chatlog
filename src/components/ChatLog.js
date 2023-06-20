@@ -11,6 +11,7 @@ const ChatLog = ({entries}) => {
                 sender={chat.sender} 
                 body={chat.body} 
                 timeStamp={chat.timeStamp} 
+                isLiked={chat.liked}
             />
         );
     });
