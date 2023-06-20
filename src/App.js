@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json'
 import ChatEntry from './components/ChatEntry'
+import ChatLog from './components/ChatLog'
 
 const App = () => {
   return (
@@ -11,11 +12,7 @@ const App = () => {
       </header>
       <main>
         {chatMessages.map((message, index) => (
-          <ChatEntry
-            key={index}
-            sender={message.sender}
-            body={message.body}
-            timeStamp={message.timeStamp}
+          <ChatLog entries={chatMessages}
           />
         ))}
       </main>
