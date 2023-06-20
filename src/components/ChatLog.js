@@ -2,6 +2,7 @@ import React from 'react';
 import ChatEntry from './ChatEntry';
 
 const ChatLog = (props) => {
+  //learned another way to deconstruct 
   const { entries, redFilledHeartCount, setRedFilledHeartCount } = props;
 
   return (
