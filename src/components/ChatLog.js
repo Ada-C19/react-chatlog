@@ -6,14 +6,13 @@ const ChatLog = ({entries, likeMessage}) => {
         return entries.map((message) => {
             return(
                 <ChatEntry
-                entry = {message}
-                key={message.id}
-                sender={message.sender}
-                body={message.body}
-                timeStamp={message.timeStamp}
-                liked={message.liked}
-                messageClass={message.sender === 'Vladimir' ? 'chat-entry local' : 'chat-entry remote'}
-                likeMessage={likeMessage}
+                    key={message.id}
+                    id={message.id}
+                    sender={message.sender}
+                    body={message.body}
+                    timeStamp={message.timeStamp}
+                    liked={message.liked}
+                    likeMessage={likeMessage}
                 />
 
             );
