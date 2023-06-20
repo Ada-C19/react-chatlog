@@ -1,17 +1,18 @@
 import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
 
 const App = () => {
   console.log('Hello World')
   console.log(chatMessages)
+  const local = chatMessages[0].sender
+  const remote = chatMessages[1].sender
 
   return (
     <div id="App">
       <header>
-        <h1>Chat Between Vladimir and Estragon</h1>
+        <h1>Chat Between {local} and {remote}</h1>
       </header>
       <main>
         <ChatLog chatMessages={ chatMessages }></ChatLog>
