@@ -4,12 +4,14 @@ import PropTypes from 'prop-types';
 import { DateTime } from 'luxon';
 
 const ChatEntry = (props) => {
+  const yearsSince = ( 2023 - Number(props.timeStamp.slice(0,4)) )
+
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
-        <p className="entry-time">{props.timeStamp}</p>
+        <p className="entry-time">{ yearsSince } years ago</p>
         <button className="like">🤍</button>
       </section>
     </div>
