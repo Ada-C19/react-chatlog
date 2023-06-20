@@ -1,8 +1,6 @@
 import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
-import chatMessages from '../data/messages.json';
-import ChatList from './ChatList.js';
 import TimeStamp from './TimeStamp.js';
 
 const ChatEntry = (props) => {
@@ -13,7 +11,7 @@ const ChatEntry = (props) => {
         <p>{props.body}</p>
         <p className="entry-time">
           <TimeStamp
-          timestamp = {props.timeStamp}/>
+          time = {props.timeStamp}/>
           </p>
         <button className="like" onClick={() => {props.changeLiked(props.id);}}>🤍</button>
       </section>

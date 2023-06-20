@@ -1,15 +1,14 @@
 import React from 'react';
 import './App.css';
-import ChatEntry from './components/ChatEntry.js';
 import chatMessages from './data/messages.json';
-import ChatList from './components/ChatList.js'
+import ChatList from './components/ChatLog.js'
 import {useState} from 'react';
 
 const App = () => {
 
   const [messages, setMessages] = useState(chatMessages)
   
-  const changeLiked = id => {
+  const changeLiked = (id) => {
     const newMessages = messages.map((message) => {
       if (message.id === id) {
         const updatedMessage = {...message};
