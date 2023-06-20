@@ -8,8 +8,11 @@ const ChatEntry = props => {
     props.updateLike({ ...props, liked: !props.liked });
   };
 
+  const sender =
+    props.local === props.sender ? 'chat-entry local' : 'chat-entry remote';
+
   return (
-    <section>
+    <section className={sender}>
       <h2 className='entry-name'>{props.sender}</h2>
       <section className='entry-bubble'>
         <p>{props.body}</p>

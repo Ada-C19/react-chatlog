@@ -7,6 +7,7 @@ import './App.css';
 const App = () => {
   const [chatLogs, setChatLogs] = useState(chatMessages);
   const [likesCount, setlikesCount] = useState(0);
+  // const [local, setLocal] = useState('');
 
   const updateLike = logToUpdate => {
     const updatedLogs = chatLogs.map(log => {
@@ -21,26 +22,24 @@ const App = () => {
     setChatLogs(updatedLogs);
   };
 
-  const updateLikesCount = currentCount => setlikesCount();
-
   const getNames = logs => {
     const namesSet = new Set(logs.map(data => data.sender));
-    const namesString = [...namesSet].join(' and ');
-    return namesString;
+    return [...namesSet];
   };
+
+  // setLocal(getNames(chatLogs)[0]);
+  const namesString = getNames(chatLogs).join(' and ');
+  // console.log(local);
+  const local = getNames(chatLogs)[0];
 
   return (
     <section id='App'>
       <header>
-        <h1 className='chat-description'>Chat between {getNames(chatLogs)}</h1>
+        <h1 className='chat-description'>Chat between {namesString}</h1>
         {likesCount ? <p className='like-display'>{likesCount} ❤️s</p> : <></>}
       </header>
       <main>
-        <ChatLog
-          entries={chatLogs}
-          updateLike={updateLike}
-          updateLikesCount={updateLikesCount}
-        />
+        <ChatLog entries={chatLogs} updateLike={updateLike} local={local} />
       </main>
     </section>
   );

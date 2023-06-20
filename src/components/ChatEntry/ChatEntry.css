@@ -10,6 +10,7 @@ button {
 
 .chat-entry {
   margin: 1rem;
+  list-style-type: none;
 }
 
 .chat-entry:last-child {
