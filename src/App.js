@@ -5,11 +5,13 @@ import ChatLog from './components/ChatLog';
 
 const App = () => {
   const [messages, setMessages] = useState(chatMessages);
+  const [likes, setLikes] = useState(0);
 
   const updateHeart = (messageToUpdate) => {
     const updateMessages = messages.map(message => {
       if (message.id === messageToUpdate.id) {
-          return {...message, liked: !message.liked}
+        messageToUpdate.liked ? setLikes(likes - 1) : setLikes(likes + 1)
+        return {...message, liked: !message.liked}
       }; 
     return message
   });
@@ -19,8 +21,11 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>ChatLog.com</h1>
-        <h1></h1>
+        <h1>Chat between Vladimir and Estragon</h1>
+        <h2>
+          {likes}
+          ❤️s
+        </h2>
       </header>
       <main>
         <ChatLog entries={messages} updateHeart={updateHeart}/>
