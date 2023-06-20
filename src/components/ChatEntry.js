@@ -24,7 +24,7 @@ const ChatEntry = (props) => {
         <p className="entry-time">
           <TimeStamp time={props.timeStamp}></TimeStamp>
         </p>
-        <button className="like" onClick={handleLikeClick}>{isLiked ? '❤️' : '🤍'}</button>
+        <button className="like" onClick={handleLikeClick}>{props.liked ? '❤️' : '🤍'}</button>
       </section>
     </div>
   );

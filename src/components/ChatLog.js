@@ -23,19 +23,19 @@ const ChatLog = (props) => {
     )
 }
 
-ChatLog.propTypes = {
-    entries: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.number.isRequired,
-            sender: PropTypes.string.isRequired,
-            body: PropTypes.string.isRequired,
-            time: PropTypes.string.isRequired,
-            liked: PropTypes.bool,
-        })
-    ).isRequired,
-    updateMessage: PropTypes.func.isRequired,
-    handleLikeClick: PropTypes.func.isRequired
-};
+// ChatLog.propTypes = {
+//     entries: PropTypes.arrayOf(
+//         PropTypes.shape({
+//             id: PropTypes.number.isRequired,
+//             sender: PropTypes.string.isRequired,
+//             body: PropTypes.string.isRequired,
+//             time: PropTypes.string.isRequired,
+//             liked: PropTypes.bool,
+//         })
+//     ).isRequired,
+//     updateMessage: PropTypes.func.isRequired,
+//     handleLikeClick: PropTypes.func.isRequired
+// };
 
 
 export default ChatLog;
