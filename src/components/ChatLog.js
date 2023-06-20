@@ -1,5 +1,6 @@
 import ChatEntry from './ChatEntry.js';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ChatLog = ({entries, likeMessage}) => {
     const chatEntries= (entries) => {
@@ -21,5 +22,17 @@ const ChatLog = ({entries, likeMessage}) => {
         return <div className='chat-log'>{chatEntries(entries)} </div>;
 };
 
+ChatLog.propTypes = {
+    tasks: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        sender: PropTypes.string.isRequired,
+        body: PropTypes.string.isRequired,
+        liked: PropTypes.bool.isRequired,
+      })
+    ).isRequired,
+    likeMessage: PropTypes.func.isRequired,
+  };
+  
 
 export default ChatLog;

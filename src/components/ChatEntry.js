@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './ChatEntry.css';
 import TimeStamp from './TimeStamp';
 import useSound from 'use-sound';
@@ -32,7 +33,13 @@ const ChatEntry = ({sender, body, timeStamp, liked, id, likeMessage}) => {
 };
 
 ChatEntry.propTypes = {
-  //Fill with correct proptypes
+  id: PropTypes.number.isRequired,
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  liked: PropTypes.bool.isRequired,
+  likeMessage: PropTypes.func.isRequired,
 };
+
+
 
 export default ChatEntry;
