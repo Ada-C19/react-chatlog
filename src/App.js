@@ -32,8 +32,8 @@ const App = () => {
   return (
     <section id='App'>
       <header>
-        <h1>Chat between {getNames(chatLogs)}</h1>
-        {likesCount ? <p>{likesCount} ❤️s</p> : <></>}
+        <h1 className='chat-description'>Chat between {getNames(chatLogs)}</h1>
+        {likesCount ? <p className='like-display'>{likesCount} ❤️s</p> : <></>}
       </header>
       <main>
         <ChatLog
