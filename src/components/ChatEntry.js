@@ -12,7 +12,7 @@ const ChatEntry = (singleEntry) => {
       <h2 className="entry-name">{singleEntry.sender}</h2>
       <section className="entry-bubble">
         <p>{singleEntry.body}</p>
-        <TimeStamp time = {singleEntry.time}> </TimeStamp>
+        <TimeStamp time= {singleEntry.timeStamp}> </TimeStamp>
         {/* <p className="entry-time">{singleEntry.timeStamp}</p> */}
         <button className='liked' onClick={() => singleEntry.updateLike(singleEntry.id)}>{heart}</button>
       </section>
