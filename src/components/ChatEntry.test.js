@@ -28,3 +28,5 @@ describe('Wave 01: ChatEntry', () => {
     expect(screen.getByText(/\d+ years ago/)).toBeInTheDocument();
   });
 });
+
+
