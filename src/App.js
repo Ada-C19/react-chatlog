@@ -14,10 +14,11 @@ const App = () => {
       if (message.id === messageId) {
         message.liked = !message.liked;
       }
-      return {...message};
+      return {...messages};
     });
     setMessages(updatedMessages);
   };
+  console.log(chatMessages[0].liked)
 
   return (
     <div id="App">
@@ -25,12 +26,7 @@ const App = () => {
         <h1>Chat Between {local} and {remote}</h1>
       </header>
       <main>
-        <ChatLog chatMessages={ chatMessages } updateLikes={ updateLikes } ></ChatLog>
-        
-        {/* <ChatEntry sender={chatMessage1.sender} body={chatMessage1.body} timeStamp={chatMessage1.timeStamp}></ChatEntry>
-        <ChatEntry sender={chatMessage2.sender} body={chatMessage2.body} timeStamp={chatMessage2.timeStamp}></ChatEntry> */}
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
+        <ChatLog chatMessages={ messages } updateLikes={ updateLikes } ></ChatLog>
       </main>
     </div>
   );

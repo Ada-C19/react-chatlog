@@ -12,14 +12,6 @@ const ChatEntry = (props) => {
     props.updateLikes(props.id, isLiked)
   }
 
-  const displayLike = () => {
-    if (isLiked === true) {
-      return '❤️';
-    } else {
-      return '🤍';
-    }
-  }
-
   return (
     <div className={props.id % 2 === 0 ? 'chat-entry local' : 'chat-entry remote'}>
       <h2 className="entry-name"> { props.sender } </h2>
@@ -27,8 +19,7 @@ const ChatEntry = (props) => {
         <p> {props.body} </p>
         <TimeStamp className="entry-time" time={props.timeStamp}> </TimeStamp>
         <button onClick={toggleLikes} className="like">
-          { displayLike() }</button> 
-        {/* call props.liked boolean and use for like button */}
+        {isLiked ? '❤️' : '🤍'}</button>
       </section>
     </div>
   );
