@@ -6,6 +6,7 @@ import './ChatLog.css';
 
 const ChatLog = (props) => {
     const {entries} = props;
+    console.log(props)
     const messageLog = entries.map((message, index) => (
         <ChatEntry
             key={index}
@@ -14,7 +15,7 @@ const ChatLog = (props) => {
             body={message.body}
             timeStamp={message.timeStamp}
             liked={message.liked}
-            handleLikeClick={props.handleLikeClick}
+            // handleLikeClick={props.handleLikeClick}
             updateMessage={props.updateMessage}
         />)
     )
