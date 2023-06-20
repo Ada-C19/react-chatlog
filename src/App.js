@@ -23,11 +23,16 @@ const App = () => {
 
   const updateLikesCount = currentCount => setlikesCount();
 
-  const names = [];
+  const getNames = logs => {
+    const namesSet = new Set(logs.map(data => data.sender));
+    const namesString = [...namesSet].join(' and ');
+    return namesString;
+  };
+
   return (
     <section id='App'>
       <header>
-        <h1>Chat between Vladimir and Estragon</h1>
+        <h1>Chat between {getNames(chatLogs)}</h1>
         {likesCount ? <p>{likesCount} ❤️s</p> : <></>}
       </header>
       <main>
