@@ -1,12 +1,18 @@
+.liked{
+  color: red;
+  }
+
 button {
   background: none;
-	color: inherit;
+	/* color: inherit; */
+  /* color:#0bad0b; */
 	border: none;
 	padding: 10px;
 	font: inherit;
 	cursor: pointer;
 	outline: inherit;
 }
+
 
 .chat-entry {
   margin: 1rem;
@@ -98,3 +104,5 @@ button {
 .chat-entry.remote .entry-bubble:hover::before {
   background-color: #a9f6f6;
 }
+
+
