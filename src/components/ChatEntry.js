@@ -5,19 +5,12 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 import { useState } from 'react';
 
-const ChatEntry = (props) => {
-  const [isLiked, setMessages] = useState(props.isLiked);
-
-  // Event handler should do 2 things: 
-  // 1) update component's internal state
-  // 2) update infomration to SSOT
-  const toggleLiked = () => {
-    setMessages(!isLiked);
-    props.updatedLikes(props.id);
-  }
+const ChatEntry = ({id, sender, body, timeStamp, liked, updateLikes}) => {
+  const likedButtonContent = liked ? ' ': ' ';
+  const localOrRemote = (sender === 'Vladimir') ? 'chat-entry local' : 'chat-entry remote';
   
   return (
-    <div className="chat-entry local">
+    <div className={localOrRemote}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>

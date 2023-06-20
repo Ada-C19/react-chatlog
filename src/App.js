@@ -6,36 +6,50 @@ import ChatLog from './components/ChatLog';
 import { useState } from 'react';
 import ChatEntry from './components/ChatEntry';
 
-function App() {
-  const[chatMessages, setMessages] = useState(chatMessages);
+const App = () => {
+  const initialCopy = chatMessages.map((chat) => {
+    return {...chat};
+  });
+  const[chatData, setChatData] = useState(initialCopy);
+  const [likedCount, setLikedCount] = useState(0);
 
-  const updatedLikes = (messageId) => {
-
+    const heartWidget = likedCount !== 0 ? `${likedCount} ❤️s` : '';
     // create a new list of entries with updated likes 
-    const updatedLikes = chatMessages.map(ChatEntry => {
-      if (messageId.id === messageId) {
-        messageId.isLiked = !messageId.isLiked;
-      };
-      return {...messageId}
-    });
-
-    setMessages(updatedLikes);
-  }
-
-    const filteredUpdatedData = updatedLikes.filter(function (element) {
-      return element !== undefined;
-    });
-
-    setMessages(filteredUpdatedData);
-  
+    const updateLikes = (chatEntryId, updatedLikes) => {
+      let newLikeCount = likedCount;
+      const newChatData = chatData.map((ChatEntry) => {
+        if (ChatEntry.id !== chatEntryId) {
+          return ChatEntry;
+        } else {
+          if (updatedLikes) {
+            newLikeCount++;
+          } else {
+            newLikeCount--;
+          }
+          const newChat = {
+            ...ChatEntry,
+            liked: updatedLikes,
+          };
+          return newChat;
+        }
+      });
+    setChatData(newChatData);
+    setLikedCount(newLikeCount);
+    };
 
 return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Vladimir and Estragon's Chatty Chisme Chat</h1>
+        <section>
+          <span className='widget' id="heartWidget">
+            {heartWidget}
+          </span>
+        </section>
       </header>
+
       <main>
-        <ChatLog entries={chatMessages} />    
+        <ChatLog entries={chatData} updateLike={updateLikes} />    
       </main>
     </div>
   );
