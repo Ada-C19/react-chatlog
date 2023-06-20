@@ -2,7 +2,7 @@ import React from 'react';
 import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
 
-const ChatLog = ({ entries }) => {
+const ChatLog = ({ entries, onLike }) => {
   return (
     <section className="chat-log">
       <ul>
@@ -13,6 +13,8 @@ const ChatLog = ({ entries }) => {
             sender={entry.sender}
             body={entry.body}
             timeStamp={entry.timeStamp}
+            liked={entry.liked}
+            onLike={onLike}
           />
         ))};
       </ul>
@@ -26,9 +28,11 @@ ChatLog.propTypes = {
       sender: PropTypes.string.isRequired,
       body: PropTypes.string.isRequired,
       timeStamp: PropTypes.string.isRequired,
-      id: PropTypes.number
+      id: PropTypes.number.isRequired,
+      liked: PropTypes.bool.isRequired,
     })
-  )
+  ).isRequired,
+  onLike: PropTypes.func.isRequired,
 };
 
 export default ChatLog;
