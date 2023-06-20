@@ -34,11 +34,14 @@ const App = () => {
     <div id="App">
       <header>
         <h1>GPT Chatting</h1>
+        <section>
+          <span className= "widget" id= "heartWidget">
+          {NumberOfLikes} ❤️s
+          </span>
+        </section>
       </header>
       <main>
-        <section className= "widget" classId= "heartWidget"> {NumberOfLikes} ❤️s </section>
         <ChatLog entries= {chatEntries} updateLikes= {updateLikes}></ChatLog>
-
       </main>
     </div>
   );
