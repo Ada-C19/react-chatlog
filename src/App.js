@@ -3,12 +3,8 @@ import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
 
-
 const App = () => {
   const [counter, setCounter] = useState(0);
-
-  
-
   return (
     <div id="App">
       <header>

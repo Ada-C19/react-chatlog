@@ -3,7 +3,6 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-
 // Declared const w/ 2 values in array [what you name variable, how you update that variable] 
 // and set it to useState. The () hold default value.
 // Created handleSetLiked() to call setLiked (which is 2nd value in array for useState
