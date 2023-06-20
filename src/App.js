@@ -30,7 +30,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Funky Convo</h1>
-        <p>Likes: {likeNum}</p>
+        <p>{likeNum} ❤️s</p>
       </header>
       <main>
         <ChatLog 
