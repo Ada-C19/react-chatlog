@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 // import TimeStamp from './TimeStamp';
 // import chatMessages from '../data/messages.json';
 
-const ChatEntry = ({ sender, body, timeStamp }) => {
+const ChatEntry = ({ sender, body, timeStamp, liked, onLikeClick }) => {
   const isLocal = sender === 'Estragon';
 
   return (
@@ -13,7 +13,7 @@ const ChatEntry = ({ sender, body, timeStamp }) => {
       <section className="entry-bubble">
         <p>{body}</p>
         <p className="entry-time">{timeStamp}</p>
-        <button className="like">🤍</button>
+        <button onClick={onLikeClick}>{liked ? '❤️': '🤍'}</button>
       </section>
     </div>
   );
@@ -23,6 +23,7 @@ ChatEntry.propTypes = {
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
+  liked: PropTypes.bool,
 };
 
 export default ChatEntry;
