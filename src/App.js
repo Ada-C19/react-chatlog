@@ -6,7 +6,16 @@ import { useState } from 'react';
 
 
 const App = () => {
-  const [like, setLike] = useState(liked)
+  // const updateChatMesagges = updatedMessage => {
+  //   const chats = chatMessages.map(message => {
+  //     if (message.id === updatedMessage.id) {
+  //       return updatedMessage;
+  //     } else {
+  //       return message;
+  //     }
+  //   });
+  //   setChatMessages(chats);
+  // };
   return (
     <div id="App">
       <header>
