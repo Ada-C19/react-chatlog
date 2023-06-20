@@ -8,36 +8,37 @@ const App = () => {
   const remote = chatMessages[1].sender
 
   const [messages, setMessages] = useState(chatMessages);
-  
-  const updateLikes = (messageId) => {
-    const updatedMessages = messages.map(message => {
-      if (message.id === messageId) {
-        message.liked = !message.liked;
-      }
-      return {...message};
-    });
-    setMessages(updatedMessages);
-  };
-  
   const [likesCount, setLikesCount] = useState(0);
   
-  
-  let count = 0;
-  messages.forEach(message => {
-    if (message.liked === true) {
-      count++;
-    }
-  });
-  console.log(count)
+  const updateLikes = (messageId, isLiked) => {
     
-  
+    const updatedMessages = messages.map((message) => {
+      if (message.id === messageId) {
+        return {
+          ...message,
+          liked: isLiked };
+      }
+      return message;
+    });
+    setMessages(updatedMessages);
+
+    updatedMessages.forEach((message) => {
+      if (message.id === messageId) {
+        if (message.liked) {
+          setLikesCount(oldLikes => oldLikes + 1);
+        } else {
+          setLikesCount(oldLikes => oldLikes - 1);
+        }
+      }
+    })
+  };
   
   return (
     <div id="App">
       <header>
         <h1>Chat Between {local} and {remote}</h1>
         <section  >
-          <h2 id='heartWidget' className='widget'>Heart Count {count} ❤️s</h2>
+          <span id='heartWidget' className='widget'>Heart Count {likesCount} ❤️s</span>
       </section>
       </header>
       

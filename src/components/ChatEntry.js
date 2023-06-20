@@ -8,8 +8,10 @@ const ChatEntry = (props) => {
   const [isLiked, setIsLiked] = useState(props.liked);
 
   const toggleLikes = () => {
-    // setIsLiked(!isLiked);
-    props.updateLikes(props.id, isLiked)
+    const newIsLiked = !isLiked;
+    setIsLiked(newIsLiked);
+    props.updateLikes(props.id, newIsLiked)
+    // send to updateMessages
   }
 
   return (
@@ -19,7 +21,7 @@ const ChatEntry = (props) => {
         <p> {props.body} </p>
         <TimeStamp className="entry-time" time={props.timeStamp}> </TimeStamp>
         <button onClick={toggleLikes} className="like">
-        {props.liked ? '❤️' : '🤍'}</button>
+        {isLiked ? '❤️' : '🤍'}</button>
       </section>
     </div>
   );
