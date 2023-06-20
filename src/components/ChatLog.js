@@ -11,11 +11,10 @@ function ChatLog({ ChatEntries }) {
                 id={chatEntry.id}
                 sender={chatEntry.sender}
                 body={chatEntry.body}
-                timestamp={chatEntry.timestamp}
+                timeStamp={chatEntry.timeStamp}
                 liked={chatEntry.liked}
             />
             </li>
-        
         );
     })
     return (
@@ -32,7 +31,7 @@ ChatLog.propTypes = {
             id: PropTypes.number.isRequired,
             sender: PropTypes.string.isRequired,
             body: PropTypes.string.isRequired,
-            timestamp: PropTypes.string.isRequired,
+            timeStamp: PropTypes.string.isRequired,
             liked: PropTypes.number.isRequired
         })
     )
