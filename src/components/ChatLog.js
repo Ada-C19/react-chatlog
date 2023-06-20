@@ -7,7 +7,7 @@ const ChatLog = ({chatMessages, handleLikeClick}) => {
     return (
         <div>
         <h1>Chat Log</h1>
-        {chatMessages.map((message,index) => (
+        {chatMessages && chatMessages.map((message,index) => (
         <ChatEntry
         key={message.id}
         sender={message.sender}
