@@ -12,7 +12,7 @@ const App = () => {
         <h1>Chat between Vladimir and Estragon</h1>
       </header>
       <main>
-        <ChatLog logs={chatLogs} />
+        <ChatLog entries={chatLogs} />
       </main>
     </section>
   );

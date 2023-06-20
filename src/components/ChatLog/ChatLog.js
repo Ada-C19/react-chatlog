@@ -16,7 +16,9 @@ const ChatLog = props => {
   };
 
   return (
-    <section className='chat-entry local'>{getChatLogJSX(props.logs)}</section>
+    <section className='chat-entry local'>
+      {getChatLogJSX(props.entries)}
+    </section>
     /* <h2 className='entry-name'>Replace with name of sender</h2>
     <section className='entry-bubble'>
       <p>Replace with body of ChatEntry</p>
