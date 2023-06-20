@@ -47,9 +47,7 @@ const App = () => {
       setSenderColors([senderColors[0], color]);
     }
     const updatedMessages = chatBody.map((message) => {
-      let tempMessage = { ...message };
-      tempMessage.color = color;
-      return message.sender === sender ? tempMessage : message;
+      return message.sender === sender ? { ...message, color: color } : message;
     });
     setChatBody(updatedMessages);
   };
@@ -58,9 +56,7 @@ const App = () => {
   const resetMessageColor = () => {
     setSenderColors(['', '']);
     const updatedMessages = chatBody.map((message) => {
-      let tempMessage = { ...message };
-      tempMessage.color = '';
-      return tempMessage;
+      return { ...message, color: '' };
     });
     setChatBody(updatedMessages);
   };
@@ -68,9 +64,7 @@ const App = () => {
   //Reset all likes to false when reset button is clicked
   const resetLikes = () => {
     const updatedMessages = chatBody.map((message) => {
-      let tempMessage = { ...message };
-      tempMessage.liked = false;
-      return tempMessage;
+      return { ...message, liked: false };
     });
     setChatBody(updatedMessages);
   };
