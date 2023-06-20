@@ -12,6 +12,7 @@ const App = () => {
   const updateLikeStatus = (entryId) => {
     const updatedEntries = chatData.map(entry => {
       if (entry.id === entryId) {
+        setLikes(likes + 1);
         return {
           ...entry,
           liked: !entry.liked
