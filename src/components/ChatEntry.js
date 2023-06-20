@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp'
 
 const ChatEntry = (singleEntry) => {
+  const senderName = 
+    singleEntry.sender === 'Vladimir' ? 'remote' : 'local';
 
   const heart = singleEntry.liked ? '❤️' : '🤍'; 
 
   return (
-    <div className="chat-entry local">
+    <div className={`chat-entry ${senderName}`}>
       <h2 className="entry-name">{singleEntry.sender}</h2>
       <section className="entry-bubble">
         <p>{singleEntry.body}</p>
