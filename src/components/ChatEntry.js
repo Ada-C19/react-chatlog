@@ -6,9 +6,10 @@ import { DateTime } from 'luxon';
 const ChatEntry = (props) => {
   const yearsSince = ( 2023 - Number(props.timeStamp.slice(0,4)) )
   const likeDisplay = props.liked ? '❤️' : '🤍';
+  const localRemote = (props.sender === 'Vladimir') ? 'chat-entry local' : 'chat-entry remote';
 
   return (
-    <div className="chat-entry local">
+    <div className={localRemote}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
