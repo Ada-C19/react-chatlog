@@ -6,8 +6,7 @@ import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
 
-  // const [likesCount, setLikesCount] = useState(0);
-  const [isLiked, setIsLiked] = useState(false);
+  const [isLiked, setIsLiked] = useState(props.liked);
 
   const toggleLikeButton = () => {
     props.updateLiked(props.id);
@@ -15,7 +14,7 @@ const ChatEntry = (props) => {
   };
 
   return (
-    <div className="chat-entry local">
+    <div className={ props.id % 2 ? 'chat-entry local' : 'chat-entry remote' }>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
