@@ -8,18 +8,13 @@ const ChatLog =  ({ chatMessages }) => {
             <>
                 <ChatEntry
                     message = {message}
-                    // id={message.id}
-                    // sender={message.sender}
-                    // body={message.body}
-                    // timeStamp={message.timeStamp}
-                    // liked={message.liked}
                 /> 
             </>
         );
     });
     return (
         <section>
-            <h2> Chat Log</h2>
+            <h2 className='chat-log'>Chat Log</h2>
             {chatComponents}
         </section>
 

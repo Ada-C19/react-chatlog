@@ -1,18 +1,19 @@
 import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
-// import TimeStamp from './TimeStamp'
+import TimeStamp from './TimeStamp'
 
 
 
 const ChatEntry = ({ message }) => {
-  // console.log(props)
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{message.sender}</h2>
       <section className="entry-bubble">
         <p>{message.body}</p>
-        <p className="entry-time">{message.timeStamp}</p>
+        {/* <p className="entry-time">{message.timeStamp}</p>
+         */}
+         <TimeStamp message = {message}/>
         <button className="like">🤍</button>
       </section>
     </div>
