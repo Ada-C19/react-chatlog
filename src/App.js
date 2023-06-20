@@ -4,13 +4,19 @@ import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog'
 
 const App = () => {
+  const [messages, setMessages] = React.useState(chatMessages)
+
+  const likeMessage = (id) => {
+    
+  }
+
   return (
     <div id="App">
       <header>
         <h1>Estragon</h1>
       </header>
       <main>
-        <ChatLog entries={chatMessages}/>
+        <ChatLog entries={messages} />
       </main>
     </div>
   );
