@@ -1,8 +1,6 @@
 import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
-// import TimeStamp from './TimeStamp';
-// import chatMessages from '../data/messages.json';
 
 const ChatEntry = ({ sender, body, timeStamp, liked, onLikeClick }) => {
   const isLocal = sender === 'Estragon';
