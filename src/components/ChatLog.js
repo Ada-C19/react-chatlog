@@ -3,13 +3,14 @@ import './ChatEntry.css';
 import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
 
-const ChatLog = (entries) => {
-  const {chatMessages, updateLikes} = entries;
+const ChatLog = (props) => {
+  const {entries, updateLikes} = props;
+  // entries 
 
   return (
     <div className="chat-entry local">
       {
-        chatMessages.map(entry => (
+        entries.map(entry => (
           <ChatEntry id={entry.id} sender={entry.sender} body={entry.body} timeStamp={entry.timeStamp} liked={entry.liked} updateLikes={updateLikes}></ChatEntry>
         ))
       }
@@ -27,7 +28,8 @@ ChatLog.propTypes = {
       timeStamp: PropTypes.string.isRequired,
       liked: PropTypes.bool
     })
-  )
+  ).isRequired,
+  updateLikes: PropTypes.func.isRequired
 
 };
 
