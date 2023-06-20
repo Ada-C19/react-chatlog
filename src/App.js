@@ -4,24 +4,27 @@ import chatMessages from './data/messages.json';
 import ChatList from './components/ChatLog.js'
 import {useState} from 'react';
 
+const calculateLikeNumber = (chatMessages) => {
+  let likeNumber = 0
+  for (let i = 0; i < chatMessages.length; i++) {
+    if (chatMessages[i].liked) {
+      likeNumber += 1
+    }
+  }
+  return likeNumber
+}
+
 const App = () => {
 
   const [messages, setMessages] = useState(chatMessages)
 
-  const[likeNumber, setNumber] = useState(0)
+  const likeNumber = calculateLikeNumber(messages)
   
   const changeLiked = (id) => {
     const newMessages = messages.map((message) => {
       if (message.id === id) {
         const updatedMessage = {...message};
         updatedMessage.liked = !updatedMessage.liked;
-        let newLikeNumber = likeNumber
-        if (updatedMessage.liked) {
-          newLikeNumber = likeNumber + 1
-        } else {
-          newLikeNumber = likeNumber - 1
-        }
-        setNumber(newLikeNumber);
         return updatedMessage;
       } else {
         return {...message};
