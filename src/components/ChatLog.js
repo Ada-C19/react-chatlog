@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry.js';
+import './ChatLog.css';
 
-const ChatList = ({messages, changeLiked}) => {
+const ChatList = ({entries, changeLiked}) => {
     const getChatComponents = (messages) => {
         return messages.map((chat) => {
             return (
@@ -19,13 +20,13 @@ const ChatList = ({messages, changeLiked}) => {
 
     return (
         <div>
-            {getChatComponents(messages)}
+            {getChatComponents(entries)}
         </div>
     )
 }
 
 ChatList.propTypes = {
-    messages: PropTypes.arrayOf(
+    entries: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,
             sender: PropTypes.string.isRequired,

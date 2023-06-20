@@ -29,7 +29,7 @@ const App = () => {
       <main>
       <div className="App">
         <ChatList
-        messages={messages} changeLiked={changeLiked}
+        entries={messages} changeLiked={changeLiked}
         />
       </div>
         {/* Wave 01: Render one ChatEntry component
