@@ -9,8 +9,6 @@ const LikesCounter = (props) => {
         countLikes = countLikes + 1
       }
     }
-      
-    console.log(countLikes)
     return countLikes;
   };
   return (
