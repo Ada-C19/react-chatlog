@@ -11,7 +11,7 @@ const ChatLog = (props) => {
     <div className="chat-entry local">
       {
         entries.map(entry => (
-          <ChatEntry id={entry.id} sender={entry.sender} body={entry.body} timeStamp={entry.timeStamp} liked={entry.liked} updateLikes={updateLikes}></ChatEntry>
+          <ChatEntry key={entry.id} id={entry.id} sender={entry.sender} body={entry.body} timeStamp={entry.timeStamp} liked={entry.liked} updateLikes={updateLikes}></ChatEntry>
         ))
       }
     </div>
@@ -29,7 +29,7 @@ ChatLog.propTypes = {
       liked: PropTypes.bool
     })
   ).isRequired,
-  updateLikes: PropTypes.func.isRequired
+  updateLikes: PropTypes.func
 
 };
 
