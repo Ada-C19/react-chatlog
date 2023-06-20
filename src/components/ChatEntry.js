@@ -19,15 +19,18 @@ const ChatEntry = (props) => {
     setIsLiked(!isLiked);
   };
   
-  // Change heart emoji from white to red if message is liked
+  // Need to change heart emoji from white to red if message is liked
   const heart = isLiked ? '❤️' : '🤍';
 
+  // Need to assign class 'local' if the sender is Vladimir and 'remote' if it's Estragon
+  const messageSide = props.sender === 'Vladimir' ? 'local' : 'remote';
+
   return (
-    <div className="chat-entry local">
+    <div className={`chat-entry ${messageSide}`}>
       <h2 className="entry-name">
         { props.sender }
       </h2>
-      <section className="entry-bubble">
+      <section className='entry-bubble'>
         <p>{ props.body }</p>
         <p className="entry-time">
           <TimeStamp time={ props.timeStamp }/>
@@ -35,7 +38,7 @@ const ChatEntry = (props) => {
         <button 
           onClick={ updateChatLog }
           className='like'
-          >
+        >
             { heart }
         </button>
       </section>
