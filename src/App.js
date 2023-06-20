@@ -20,7 +20,16 @@ const App = () => {
     setChatData(chats);
 };
 
-  const [color, setColor] = useState()
+const [localColor, setLocal] = useState('');
+const [remoteColor, setRemote] = useState('')
+
+  const updateColor = (user, newColor) => {
+      if (user === 1) {
+        setLocal(newColor);
+      } else {
+        setRemote(newColor);
+      };
+  };
 
   const countLikes = (arr) => {
     let count = 0;
@@ -30,22 +39,22 @@ const App = () => {
       }
     });
     return count;
-  }
+  };
 
-  const likes = countLikes(chatData);
+  const likes = countLikes(chatData); 
 
   return (
     <div id="App">
       <header>
         <h1>Chat between {chatMessages[0].sender} and {chatMessages[1].sender}</h1>
         <section>
-        <span className='widget'><p>{chatMessages[0].sender}'s color</p><ColorChoice></ColorChoice></span>
+        <span className='widget'><p>{chatMessages[0].sender}'s color</p><ColorChoice user={1} updateColor={updateColor}></ColorChoice></span>
         <span className='widget'><h2 id="heartWidget">{likes} ❤️s</h2></span>
-        <span className='widget'><p>{chatMessages[1].sender}'s color</p><ColorChoice></ColorChoice></span>
+        <span className='widget'><p>{chatMessages[1].sender}'s color</p><ColorChoice user={0} updateColor={updateColor}></ColorChoice></span>
         </section>
       </header>
       <main>
-        <ChatLog entries={chatData} onUpdateChat={updateChatData}></ChatLog>
+        <ChatLog entries={chatData} onUpdateChat={updateChatData} local={localColor} remote={remoteColor}></ChatLog>
       </main>
     </div>
   );

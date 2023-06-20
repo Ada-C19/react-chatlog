@@ -3,16 +3,10 @@ import './ColorChoice.css';
 
 const ColorChoice = (props) => {
     const colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple'];
-
-    // const onColorButtonClick = () => {
-    //     const updatedColor  = {
-          
-    //     };
-    //     props.setColorCallback(updatedColor);
-    //   };
+    let buttonContent = null;
+    const user = props.user;
 
     const colorButtons = colors.map(color => {
-        let buttonContent = undefined;
         if (color === 'red') {
             buttonContent = '🔴';
         } else if (color === 'orange') {
@@ -27,9 +21,10 @@ const ColorChoice = (props) => {
             buttonContent = '🟣';
         }
         return (
-            <button /*onClick={onColorButtonClick}*/>{buttonContent}</button>
+            <button key={color} onClick={() => {props.updateColor(user, color)}}>{buttonContent}</button>
         )
     });
+
     
     return (
         <div>
