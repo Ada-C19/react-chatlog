@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry';
+import ChatLog from './components/ChatLog.js'
 
 const App = () => {
   return (
@@ -10,8 +10,7 @@ const App = () => {
         <h1>Application title</h1>
       </header>
       <main>
-        <ChatEntry sender="Maz" body="Help, I took too many mushrooms and I'm having a bad trip :'(" timeStamp="2018-05-29T22:49:06+00:00"></ChatEntry>
-        <ChatEntry sender="Winslow" body="Sorry, I thought I replied" timeStamp="2022-05-29T22:49:06+00:00"></ChatEntry>
+        <ChatLog chatEntries={chatMessages}></ChatLog>
       </main>
     </div>
   );
