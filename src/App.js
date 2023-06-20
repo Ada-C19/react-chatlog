@@ -6,23 +6,26 @@ import { useState } from 'react';
 
 
 const App = () => {
-  // const updateChatMesagges = updatedMessage => {
-  //   const chats = chatMessages.map(message => {
-  //     if (message.id === updatedMessage.id) {
-  //       return updatedMessage;
-  //     } else {
-  //       return message;
-  //     }
-  //   });
-  //   setChatMessages(chats);
-  // };
+  const [chatMessageData, setChatMessages] = useState(chatMessages);
+
+  const updateChatMessages = updatedMessage => {
+    const chats = chatMessageData.map(message => {
+      if (message.id === updatedMessage.id) {
+        return updatedMessage;
+      } else {
+        return message;
+      }
+    });
+    setChatMessages(chats);
+    console.log(updatedMessage);
+  };
   return (
     <div id="App">
       <header>
         <h1>Application title</h1>
       </header>
       <main>
-        <ChatLog entries={chatMessages}> </ChatLog>
+        <ChatLog entries={chatMessageData} onUpdateChat={updateChatMessages}> </ChatLog>
       </main>
     </div>
   );
