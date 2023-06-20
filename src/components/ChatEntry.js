@@ -37,6 +37,8 @@ ChatEntry.propTypes = {
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
+  likeMessage: PropTypes.func.isRequired,
+
 };
 
 

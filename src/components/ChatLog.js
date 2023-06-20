@@ -23,7 +23,7 @@ const ChatLog = ({entries, likeMessage}) => {
 };
 
 ChatLog.propTypes = {
-    tasks: PropTypes.arrayOf(
+    entries: PropTypes.arrayOf(
       PropTypes.shape({
         id: PropTypes.number.isRequired,
         sender: PropTypes.string.isRequired,
