@@ -14,7 +14,9 @@ const ChatLog = ({ entries }) => {
         )
     })
     return (
-    <div>ChatLog</div>
+    <div>ChatLog
+        <section>{entryComponents}</section>
+    </div>
     )
 }
 
