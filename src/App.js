@@ -7,9 +7,12 @@ import { useState } from 'react';
 
 const App = () => {
   const [entryData, setEntryData] = useState(chatMessages);
+  const [likeCount, setLikeCount] = useState(0);
+
   const updateEntryData = updatedEntry => {
     const entries = entryData.map(entry => {
       if (entry.id === updatedEntry.id) {
+        toggleLike(updatedEntry.liked);
         return updatedEntry;
       } else {
         return entry;
@@ -17,17 +20,18 @@ const App = () => {
     });
 
     setEntryData(entries);
+
   };
 
-  let likeCount = 0;
-  const countLikes = () => {
-    for (let entry of entryData) {
-      if (entry.liked === true) {
-        likeCount++;
-      }
+  
+  const toggleLike = (liked) => {
+    if (liked) {
+      setLikeCount(likeCount+1);
+    } else {
+      setLikeCount(likeCount-1);
     }
   };
-  countLikes();
+
 
   return (
     <div id="App">
