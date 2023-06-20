@@ -2,18 +2,17 @@ import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 // import TimeStamp from './TimeStamp';
-import chatMessages from '../data/messages.json';
+// import chatMessages from '../data/messages.json';
 
-const ChatEntry = (props) => {
-  
-  const oneMessage = chatMessages[0];
-  console.log(oneMessage);
+const ChatEntry = ({ sender, body, timeStamp }) => {
+  const isLocal = sender === 'Estragon';
+
   return (
-    <div className="chat-entry local">
-      <h2 className="entry-name">{oneMessage.sender}</h2>
+    <div className={`chat-entry ${isLocal ? 'local' : 'remote'}`}>
+      <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
-        <p>{oneMessage.body}</p>
-        <p className="entry-time">{oneMessage.timeStamp}</p>
+        <p>{body}</p>
+        <p className="entry-time">{timeStamp}</p>
         <button className="like">🤍</button>
       </section>
     </div>
@@ -21,7 +20,9 @@ const ChatEntry = (props) => {
 };
 
 ChatEntry.propTypes = {
-  //Fill with correct proptypes
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  timeStamp: PropTypes.string.isRequired,
 };
 
 export default ChatEntry;
