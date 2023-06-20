@@ -8,7 +8,6 @@ const ChatLog = ({entries, updateLike}) => {
         return (
             <div key={entry.id}>
                 <ChatEntry
-                    // key={entry.id}
                     id={entry.id}
                     sender={entry.sender}
                     body={entry.body}

@@ -7,8 +7,7 @@ import { useState } from 'react';
 
 const ChatEntry = ({id, sender, body, timeStamp, updateLike}) => {
   const [changeHeart, setChangeHeart] = useState('🤍');
-  const colorHeart = () => (changeHeart === '🤍' ? setChangeHeart('❤️') : setChangeHeart('🤍'));
-
+  const fillHeart = () => (changeHeart === '🤍' ? setChangeHeart('❤️') : setChangeHeart('🤍'));
   
   return (
     <div className="chat-entry local">
@@ -20,7 +19,7 @@ const ChatEntry = ({id, sender, body, timeStamp, updateLike}) => {
         </p>
         <button className="like" onClick={() => {
             updateLike({id, liked: !changeHeart});
-            colorHeart();
+            fillHeart();
           }}
           >{changeHeart}
         </button>
