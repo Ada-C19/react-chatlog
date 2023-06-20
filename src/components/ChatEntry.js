@@ -5,8 +5,10 @@ import TimeStamp from './TimeStamp.js';
 
 
 const ChatEntry = (props) => {
+  const localSender = props.sender === 'Vladimir';
+
   return (
-    <div className="chat-entry local">
+    <div className={`chat-entry ${localSender ? 'local' : 'remote'}`}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
