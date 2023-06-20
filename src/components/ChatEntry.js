@@ -3,8 +3,7 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = ({ sender, timeStamp, body }) => {
-  // const firstChat = chatData[0];
+const ChatEntry = ({ sender, timeStamp, body, id }) => {
 
   return (
     <div className="chat-entry local">
@@ -19,13 +18,10 @@ const ChatEntry = ({ sender, timeStamp, body }) => {
 };
 
 ChatEntry.propTypes = {
-  chatData: PropTypes.arrayOf(
-    PropTypes.shape({
-      sender: PropTypes.string.isRequired,
-      body: PropTypes.string.isRequired,
-      timeStamp: PropTypes.string.isRequired,
-    })
-  )
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  timeStamp: PropTypes.string.isRequired,
+  id: PropTypes.number,
 };
 
 export default ChatEntry;
