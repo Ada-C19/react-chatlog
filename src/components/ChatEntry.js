@@ -5,10 +5,11 @@ import TimeStamp from './TimeStamp';
 
 
 const ChatEntry = (props) => {
-  const [likes, setLikes] = useState(false)
+  const [likes, setLikes] = useState(props.likes)
 
   const toggleLikes = () => {
     setLikes((prevLiked) => !prevLiked);
+    props.updateLikes(!likes);
   };
 
   return (
@@ -30,6 +31,8 @@ ChatEntry.propTypes = {
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
+  likes: PropTypes.bool.isRequired,
+  updateLikes: PropTypes.func.isRequired,
 };
 
 export default ChatEntry;
