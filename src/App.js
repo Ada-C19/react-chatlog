@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import ChatLog from './components/ChatLog';
+import TimeStamp from './components/TimeStamp';
 import chatMessages from './data/messages.json';
 
 
@@ -34,6 +35,7 @@ const App = () => {
       </header>
       <main>
         <ChatLog entries={chatMessages} updateMessage={updateMessage}></ChatLog>
+        <TimeStamp></TimeStamp>
       </main>
     </div>
   );
