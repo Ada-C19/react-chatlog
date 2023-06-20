@@ -3,7 +3,6 @@ import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
 import { useState } from 'react';
-import Color from './components/Color';
 
 
 const App = () => {
@@ -32,16 +31,12 @@ const App = () => {
 
   
 
-
-
   return (
     <div id="App">
       <header>
         <h1>Application title</h1>
         <div className='hearts-and-color'>
-          <Color className='Estragon' />
           <h2>{ likeCount } 🩷s </h2>
-          <Color className='Vladimir' />
         </div>
       </header>
 
