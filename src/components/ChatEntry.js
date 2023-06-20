@@ -5,13 +5,16 @@ import TimeStamp from './TimeStamp.js';
 // import timestamp component
 
 const ChatEntry = (props) => {
+  const buttonText =
+    props.liked ? '❤️' : '🤍';
+
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp}></TimeStamp></p>
-        <button className="like">🤍</button>
+        <button onClick={()=> props.toggleLike(props.id)}>{buttonText}</button>
       </section>
     </div>
   );
