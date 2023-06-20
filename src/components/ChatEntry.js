@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ChatEntry.css';
 import TimeStamp from './TimeStamp';
 import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
+
+  const [isLiked, setIsLiked] = useState(props.liked);
+
+  const toggleLikes = () => {
+    setIsLiked(!isLiked);
+    props.updateLikes(props.id, isLiked)
+  }
+
+  const displayLike = () => {
+    if (isLiked === true) {
+      return '❤️';
+    } else {
+      return '🤍';
+    }
+  }
 
   return (
     <div className={props.id % 2 === 0 ? 'chat-entry local' : 'chat-entry remote'}>
@@ -11,7 +26,8 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p> {props.body} </p>
         <TimeStamp className="entry-time" time={props.timeStamp}> </TimeStamp>
-        <button className="like">🤍</button> 
+        <button onClick={toggleLikes} className="like">
+          { displayLike() }</button> 
         {/* call props.liked boolean and use for like button */}
       </section>
     </div>

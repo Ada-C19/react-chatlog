@@ -1,13 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
 
 const App = () => {
-  console.log('Hello World')
-  console.log(chatMessages)
   const local = chatMessages[0].sender
   const remote = chatMessages[1].sender
+
+  const [messages, setMessages] = useState(chatMessages);
+
+  const updateLikes = (messageId) => {
+    const updatedMessages = messages.map(message => {
+      if (message.id === messageId) {
+        message.liked = !message.liked;
+      }
+      return {...message};
+    });
+    setMessages(updatedMessages);
+  };
 
   return (
     <div id="App">
@@ -15,7 +25,7 @@ const App = () => {
         <h1>Chat Between {local} and {remote}</h1>
       </header>
       <main>
-        <ChatLog chatMessages={ chatMessages }></ChatLog>
+        <ChatLog chatMessages={ chatMessages } updateLikes={ updateLikes } ></ChatLog>
         
         {/* <ChatEntry sender={chatMessage1.sender} body={chatMessage1.body} timeStamp={chatMessage1.timeStamp}></ChatEntry>
         <ChatEntry sender={chatMessage2.sender} body={chatMessage2.body} timeStamp={chatMessage2.timeStamp}></ChatEntry> */}
