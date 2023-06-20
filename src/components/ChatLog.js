@@ -8,6 +8,7 @@ const ChatLog = ( {entries} ) => {
         return (
             <ChatEntry 
                 key = {entry.id}
+                id = {entry.id}
                 sender = {entry.sender}
                 body = {entry.body}
                 timeStamp = {entry.timeStamp}
@@ -15,8 +16,7 @@ const ChatLog = ( {entries} ) => {
         );
     }); 
     return (
-        <div className="chat-entry local"> Chat Log?
-            <h2>Chat Log...I hope</h2>
+        <div className="chat-entry local">
             {chatEntryComponents}
         </div>
     );
