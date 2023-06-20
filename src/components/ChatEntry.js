@@ -1,5 +1,6 @@
 import React from 'react';
 import './ChatEntry.css';
+
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 import { useState } from 'react';
@@ -48,8 +49,7 @@ ChatEntry.propTypes = {
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
-  redFilledHeartCount: PropTypes.number.isRequired,
-  setRedFilledHeartCount: PropTypes.func.isRequired,
+  
 };
 
 export default ChatEntry;
