@@ -2,7 +2,7 @@ import React from 'react'
 import ChatEntry from './ChatEntry'
 import PropTypes from 'prop-types'
 
-function ChatLog({ entries }) {
+function ChatLog({ entries, setLikes }) {
     const ChatEntryComponents = entries.map((chatEntry) => {
 
         return (
@@ -13,6 +13,7 @@ function ChatLog({ entries }) {
                 body={chatEntry.body}
                 timeStamp={chatEntry.timeStamp}
                 liked={chatEntry.liked}
+                setLikes = {setLikes}
             />
             </li>
         );
@@ -34,7 +35,8 @@ ChatLog.propTypes = {
             timeStamp: PropTypes.string.isRequired,
             liked: PropTypes.number.isRequired
         })
-    )
+    ),
+    setLikes : PropTypes.func.isRequired
 }
 
 export default ChatLog
