@@ -21,7 +21,7 @@ const ChatEntry = ({ id, sender, body, timeStamp, onLikeChange }) => {
         <p>{body}</p>
         <p className="entry-time">{timeAgo}</p>
         <button
-          className="like-button"
+          className="like-button like"
           onClick={handleLikeClick}
           id={`like-button-${id}`}
         >
