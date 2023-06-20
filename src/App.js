@@ -28,11 +28,13 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Application title</h1>
+        <section>
+          <span className='widget' id="heartWidget">
+            {likes} ❤️s
+          </span>
+        </section>
       </header>
       <main>
-        <section id="likes">
-          {likes} ❤️s
-        </section>
         <ChatLog entries={chatData} updateLikeStatus={updateLikeStatus} />
       </main>
     </div>
