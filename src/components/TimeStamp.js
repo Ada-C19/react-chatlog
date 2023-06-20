@@ -5,8 +5,6 @@ const TimeStamp = (props) => {
   const time = DateTime.fromISO(props.time);
   const absolute = time.toFormat('MMMM Do YYYY, h:mm:ss a');
   const relative = time.toRelative();
-  console.log(props)
-  console.log(relative)
   return <span title={absolute}>{relative}</span>;
 };
 
