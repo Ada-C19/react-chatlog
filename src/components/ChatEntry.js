@@ -6,6 +6,11 @@ import TimeStamp from './TimeStamp'
 
 
 const ChatEntry = ({ message }) => {
+
+  const handleLike = (id) => {
+    console.log('liked')
+  }
+  
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{message.sender}</h2>
@@ -13,8 +18,8 @@ const ChatEntry = ({ message }) => {
         <p>{message.body}</p>
         {/* <p className="entry-time">{message.timeStamp}</p>
          */}
-         <TimeStamp message = {message}/>
-        <button className="like">🤍</button>
+         <TimeStamp className="entry-time" message={message}/>
+        <button className="like" onClick={() => {handleLike(message.id)}}>🤍</button>
       </section>
     </div>
   );
