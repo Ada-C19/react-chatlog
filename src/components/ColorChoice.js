@@ -1,12 +1,11 @@
 import './ColorChoice.css';
-import { useState } from 'react';
 
 
-const ColorChoice = ({ name, onColorClicked }) => {
-
+const ColorChoice = ({ name, onColorClicked, textColor, names }) => {
+    const textColorClass = name === names[0] ? textColor[names[0]] : textColor[names[1]];
     return (
         <div className='color-choice'>
-            <p>{name}'s color</p>
+            <p className={textColorClass}>{name}'s color</p>
             <div className='choices'>
                 <span onClick={() => onColorClicked('red', name)}>🔴</span>
                 <span onClick={() => onColorClicked('orange', name)}>🟠</span>

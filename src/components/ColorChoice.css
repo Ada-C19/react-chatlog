@@ -19,3 +19,7 @@
 .choices span {
     margin: 3px;
 }
+
+.choices span:hover {
+    cursor: pointer;
+}
