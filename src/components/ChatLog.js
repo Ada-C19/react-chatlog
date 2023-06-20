@@ -34,6 +34,7 @@ ChatLog.propTypes = {
         })
     ).isRequired,
     updateMessage: PropTypes.func.isRequired,
+    handleLikeClick: PropTypes.func.isRequired
 };
 
 
