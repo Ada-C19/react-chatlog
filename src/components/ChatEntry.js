@@ -7,11 +7,18 @@ import { useState } from 'react';
 
 const ChatEntry = ({ sender, body, timeStamp }) => {
   const [isLiked, setIsLiked] = useState(false);
+  const [buttonText, setButtonText] = useState('🤍');
   const likeMessage = () => {
     setIsLiked(!isLiked);
+    if (isLiked === true) {
+      setButtonText('❤️');
+    }
+    else {
+      setButtonText('🤍')
+    }
   };
+ 
   
-  const likeDisplay = isLiked ? '❤️' : '🤍';
   
   return (
     <div className="chat-entry local">
@@ -19,7 +26,7 @@ const ChatEntry = ({ sender, body, timeStamp }) => {
       <section className="entry-bubble">
         <p>{body}</p>
         <p className="entry-time"><TimeStamp time={timeStamp}></TimeStamp></p>
-        <button className={likeDisplay} onClick={likeMessage}>🤍</button>
+        <button className="like" onClick={likeMessage}>{buttonText}</button>
       </section>
     </div>
   );
