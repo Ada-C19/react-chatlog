@@ -18,9 +18,15 @@ function ChatLog(props) {
     <ChatEntry updateLike = {props.updateLike} sender={chat.sender} body={chat.body} timeStamp={chat.timeStamp} liked={chat.liked} id={chat.id} ></ChatEntry>
     </section>) : null
   })
+    const chatComponent1 = props.entries.map((chat, index) => {
+    return ( <section key={chat.id}>
+    <ChatEntry updateLike = {props.updateLike} sender={chat.sender} body={chat.body} timeStamp={chat.timeStamp} liked={chat.liked} id={chat.id} ></ChatEntry>
+    </section>) 
+  })
+
   return (
     <section> 
-        {chatComponent}
+        {chatComponent1}
     </section>
     
   )
