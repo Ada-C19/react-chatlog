@@ -9,13 +9,18 @@ const ChatEntry = (props) => {
     props.updateLiked(props.id);
   };
 
-  const textColor = props.colorData[props.sender];
+  // Note: Tests for waves don't pass if I have the commented-out lines :,( 
+  // But if I don't use colorData, the tests will pass. 
+  // Just wanted to do the optional enhancement. It works in browser!
+
+  // const textColor = props.colorData[props.sender];
 
   return (
     <div className={ props.id % 2 ? 'chat-entry local' : 'chat-entry remote' }>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
-        <p className={ textColor }> {props.body} </p>
+        {/* <p className={ textColor }> {props.body} </p> */}
+        <p> {props.body} </p>
         <p className="entry-time">
           <TimeStamp time={props.timeStamp}></TimeStamp>
         </p>
