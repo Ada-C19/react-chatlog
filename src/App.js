@@ -1,58 +1,43 @@
 import React from 'react';
+import { useState } from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-// import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
 
 const App = () => {
+  const [messages, setMessages] = useState(chatMessages);
 
-  const [messages, setMessages] = React.useState(chatMessages);
   let total = 0;
   const totalLikes = () => {
-    // let total = 0;
     for (const msg of messages){
-      if (msg.liked == true) {
+      if (msg.liked === true) {
         total += 1;
-      }
-      }
+      };
+    };
       return total;
-  }
+  };
 
   const increaseLikes = (id) => {
     setMessages(prevMessages => {
       const updatedMessages = prevMessages.map(message => {
-        return message.id  === id ?  {...message, liked: !message.liked} : message
-      })
-      // console.log(updatedMessages)
-      return updatedMessages
-    }) 
-  }
+        return message.id  === id ?  {...message, liked: !message.liked} : message;
+      });
+      return updatedMessages;
+    });
+  };
 
-  // const totalLikes = () => {
-  //   // go through the messages and if liked == true, total += 1
-  //   let total = 0;
+  const sender1 = messages[0].sender;
+  const sender2 = messages[1].sender;
 
-  //   for (let message of messages) {
-  //     console.log('message.liked', message.liked)
-  //     if (message.liked == true) {
-  //       total += 1;
-  //     } 
-  //   return total;
-  //   }
-  // }
-
-
-
-  // console.log('chat messages in app.js:', chatMessages)
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
-        <p>{totalLikes()} ❤️s</p>
-      
+        <h1>{`Chat between ${sender1} and ${sender2}`} </h1>
+        <section>
+        <p className='widget' id='heartWidget'>{totalLikes()} ❤️s</p>
+        </section>
       </header>
       <main>
-
         <ChatLog chatMessages={messages} increaseLikes={increaseLikes} />
       </main>
     </div>
