@@ -29,7 +29,7 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Chat Log</h1>
+        <h1>Chat Log between {messages[0].sender} & {messages[1].sender}</h1>
         <div className='widget' id='heartWidget'>{totalLikes} ❤️s</div>
       </header>
       <main>

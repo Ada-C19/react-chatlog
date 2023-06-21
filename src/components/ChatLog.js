@@ -4,7 +4,7 @@ import './ChatLog.css';
 import PropTypes from 'prop-types';
 
 const ChatLog = (props) => {
-  return <div className='chat-log '>
+  return <div className='chat-log'>
     {props.entries.map((message) => (
       <ChatEntry
         sender={message.sender}

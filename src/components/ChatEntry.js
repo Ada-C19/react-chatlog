@@ -8,10 +8,10 @@ const ChatEntry = (props) => {
   const buttonContent = props.liked ? '❤️' :  '🤍';
 
   return (
-    <div className={props.sender === 'Estragon' ? 'chat-entry local' : 'chat-entry remote'}>
+    <div className={props.sender === 'Estragon' ? 'chat-entry remote' : 'chat-entry local'}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
-        <p>{props.body}</p>
+        <p className=''>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp} /></p>
         <button className="like" onClick={() => props.onSetLike(props.id)}>{buttonContent}</button>
       </section>

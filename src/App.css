@@ -39,12 +39,14 @@
   padding-left: 1em;
   padding-right: 1em;
   text-align: center;
+  align-content: center;
+  justify-content: space-between;
 }
 
 #heartWidget {
   font-size: 1.5em;
   margin: 1em;
-  text-align:center;
+  text-align: center;
   color: whitesmoke;
 }
 
@@ -53,25 +55,25 @@
 }
 
 .red {
-  color: #b22222
+  color: #b22222;
 }
 
 .orange {
-  color: #e6ac00
+  color: #e6ac00;
 }
 
 .yellow {
-  color: #e6e600
+  color: #e6e600;
 }
 
 .green {
-  color: green
+  color: green;
 }
 
 .blue {
-  color: blue
+  color: blue;
 }
 
 .purple {
-  color: purple
+  color: purple;
 }
