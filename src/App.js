@@ -6,27 +6,29 @@ import ChatLog from './components/ChatLog';
 
 const App = () => {
   // probably needs a 'state' and a method to update state
-  const [likes, setLikes] = React.useState(chatMessages);
+  const [messages, setMessages] = React.useState(chatMessages);
   const [total, setTotal] = React.useState(0)
 
   const increaseLikes = (id) => {
-    // console.log('clicked!')
-    setLikes(prevLikes => {
+    console.log('clicked!')
+    setMessages(prevMessages => {
       // const redHeart = prevLikes.map (msg => {
       //   return msg.liked == '🤍'? {...msg, liked: '❤️'}: msg
       // })
       // const updatedLikes = prevLikes.map(msg => {
       //   return msg.id == id ? {...msg, liked: msg.liked + 1}: msg
       // })
-      const updatedLikes = prevLikes.map(msg => {
-        return msg.liked == '🤍'? {...msg, liked: '❤️'}: msg
+      const updatedMessages = prevMessages.map(msg => {
+        // if (msg.id == id)
+        // {return msg.liked = !msg.liked}
+        return msg.id == id ? {...msg, liked: !msg.liked} : msg
       })
-      return updatedLikes
+      return updatedMessages
     })
   }
 
   const totalLikes = () => {
-    // go through the messages and if liked == '❤️', total += 1
+    // go through the messages and if liked == true, total += 1
   }
 
   console.log('chat messages in app.js:', chatMessages)
@@ -34,13 +36,13 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Application title</h1>
-        <p>{totalLikes()} ❤️s</p>
+        <p>{total} ❤️s</p>
         {/* <ChatEntry></ChatEntry> */}
       </header>
       <main>
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
-        <ChatLog chatMessages = {chatMessages} increaseLikes={increaseLikes} />
+        <ChatLog chatMessages={messages} increaseLikes={increaseLikes} />
       </main>
     </div>
   );

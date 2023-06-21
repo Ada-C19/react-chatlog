@@ -13,6 +13,7 @@ const ChatEntry = ({id,sender, body, timeStamp, liked, increaseLikes}) => {
   // console.log(liked)
 
   const sendReceive = sender === 'Estragon' ? 'remote': 'local'
+  const heart = liked ? '❤️' : '🤍'
 
   return (
     <div className={`chat-entry ${sendReceive}`}>
