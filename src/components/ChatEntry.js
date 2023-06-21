@@ -4,10 +4,15 @@ import TimeStamp from './TimeStamp'
 import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
-
+  let senderClass;
+        if (props.sender === 'Vladimir'){
+            senderClass = 'chat-entry local'
+        } else{
+            senderClass = 'chat-entry remote'
+        }
   const heartColor = props.liked ? '❤️' : '🤍'
   return (
-    <div className="chat-entry local">
+    <div className={senderClass}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>

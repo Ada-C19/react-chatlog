@@ -6,7 +6,9 @@ import './ChatLog.css';
 
 
 const ChatLog = (props) => {
+   
    const getMessage = props.entries.map((message) =>{
+        
         return (
             <ChatEntry id={message.id} sender = {message.sender} key = {message.id}
             body = {message.body} timeStamp = {message.timeStamp } liked ={message.liked} onLiked = {props.likedFunc} />
