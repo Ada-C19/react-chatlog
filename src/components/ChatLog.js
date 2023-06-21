@@ -8,7 +8,7 @@ const ChatLog = ( props ) => {
     const [entries, setEntries] = useState(props.entries);
 
     const setLiked = (id, value) => {
-        let numLikes = 0;
+        let numLikes = false;
         entries.forEach(element => {
             if(element.id === id){
             element.liked = value;
@@ -47,9 +47,10 @@ const ChatLog = ( props ) => {
                 body: PropTypes.string.isRequired,
                 timeStamp: PropTypes.string.isRequired,
                 liked: PropTypes.bool.isRequired,
+                
                 })
-        ).isRequired,
-        // setTotalLikes: PropTypes.func.isRequired,
-        };
+        ), setTotalLikes: PropTypes.func
+            }
+        
     
     export default ChatLog; 

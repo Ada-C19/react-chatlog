@@ -9,6 +9,7 @@ import TimeStamp from './TimeStamp';
 const ChatEntry = (props) => {
 
   const heart = props.liked ? '❤️' : '🤍';
+  
 
 
   return (
@@ -22,7 +23,7 @@ const ChatEntry = (props) => {
         />
           
         </p>
-        <button onClick={() => props.setLiked(props.id, !props.liked)} className='like'>{heart}</button>
+        <button className='like' onClick={() => props.setLiked(props.id, !props.liked)}>{heart}</button>
       </section>
     </div>
   );
@@ -33,7 +34,9 @@ ChatEntry.propTypes = {
   id: PropTypes.number.isRequired,
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
-  timeStamp: PropTypes.string.isRequired
+  timeStamp: PropTypes.string.isRequired,
+  liked: PropTypes.bool.isRequired,
+  setLiked: PropTypes.func,
 };
 
 export default ChatEntry;

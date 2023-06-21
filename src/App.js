@@ -10,7 +10,7 @@ const App = () => {
 
 
   let initialLikes = 0;
-    console.log('intial likes...')
+    // console.log('intial likes...')
     chatMessages.forEach(message => {
     if(message.liked){
       initialLikes++;
@@ -23,8 +23,11 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
-        <div className='likes'>{totalLikes} ❤️s</div>
+        <h1>Vlad and Estra Chat</h1>
+        <section>
+        {/* <div className='widget' id='widgetheart'>{totalLikes}  {totalLikes ? '❤️' : '🤍'}s</div> */}
+        <div className='widget' id='widgetheart'> {totalLikes} ❤️s</div>
+        </section>
       </header>
       <main>
         
