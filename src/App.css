@@ -72,3 +72,9 @@
 .purple {
   color: purple
 }
+
+#LikeCount {
+  color: #222;
+  font-weight: bold;
+  font-size: 18px;
+}

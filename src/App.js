@@ -33,7 +33,8 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat Between Vladimir and Estragon</h1>
-        <h2>{likeCount(entryData)} 🖤s</h2>
+        {/* <h2>{likeCount(entryData)} 🖤s</h2> */}
+        <section id='LikeCount' >{likeCount(entryData)} 🖤s</section>
       </header>
       <main>
         {/* <ChatEntry 
