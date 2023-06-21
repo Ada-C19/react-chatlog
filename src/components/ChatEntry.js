@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
@@ -11,7 +11,7 @@ const ChatEntry = ({id, sender, body, timeStamp, liked, setLikes }) => {
       <section className="entry-bubble">
         <p> { body } </p>
         <TimeStamp time = {timeStamp} className="entry-time"></TimeStamp>
-        <button className="like" onClick = { () => setLikes(id) } > {buttonClass}
+        <button className="like" onClick = { () => setLikes(id)}>{buttonClass}
         </button>
       </section>
     </div>
