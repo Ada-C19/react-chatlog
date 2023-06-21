@@ -19,10 +19,10 @@ const App = () => {
     setLikeStatus(chats);
   };
 
-  let totalBoos = 0;
+  let totalHearts = 0;
   for (let entry of chatEntryData){
     if (entry.liked === true){
-      totalBoos++;
+      totalHearts++;
     };
   };
   return (
@@ -30,7 +30,7 @@ const App = () => {
       <header>
         <h1> Vladmir vs. Estragon</h1>
         <section>
-          <h2 id="heartWidget" className="widget">{totalBoos}👎s</h2>
+          <h2 id="heartWidget" className="widget">{totalHearts} ❤️s</h2>
         </section>
       </header>
       <main>
