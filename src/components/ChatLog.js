@@ -1,7 +1,7 @@
 import React from 'react';
 import ChatEntry from './ChatEntry';
 
-const ChatLog = ({ entries }) => {
+const ChatLog = ({entries, onLike, likedMessages = new Set()}) => {
   return (
     <div className="chat-log">
       {entries.map((entry) => (
@@ -10,6 +10,8 @@ const ChatLog = ({ entries }) => {
           sender={entry.sender}
           body={entry.body}
           timeStamp={entry.timeStamp}
+          liked={likedMessages.has(entry.id)}
+          onLike={() => onLike(entry.id)}
         />
       ))}
     </div>
