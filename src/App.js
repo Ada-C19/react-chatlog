@@ -24,7 +24,6 @@ const App = () => {
           ...message,
           liked: !message.liked
         }
-        
       }
 
       return message;
@@ -42,12 +41,14 @@ const App = () => {
     return likeCount;
   };
 
+  // Function to pass to ColorChoice to change colorData
   const setColorCallback = (sender, color) => {
     const updatedColorData = {...colorData};
     updatedColorData[sender] = color;
     setColorData(updatedColorData);
   };
 
+  // Functions to get colors for each sender
   const setColorForSender1Callback = (color) => setColorCallback(SENDER_1, color);
   const setColorForSender2Callback = (color) => setColorCallback(SENDER_2, color);
 
