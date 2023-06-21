@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
+
+  const [heart, setHeart] = useState(props.entries.liked)
   // console.log(chatMessages)
   // const senderPerson = props.entries.sender.map()
   // const{sender, body, timestamp} = props;
+  const changeHeart = () => {
+    setHeart(prevHeart => !prevHeart)
+  }
+
 
 
   if (props.entries.sender === 'Vladimir') {
@@ -19,7 +25,7 @@ const ChatEntry = (props) => {
             {props.entries.body}
           </p>
           <p className="entry-time"><TimeStamp time={props.entries.timeStamp}/></p>
-          <button className="like">🤍</button>
+          <button onClick={changeHeart} className="like">{heart ? '❤️': '🤍'}</button>
         </section>
       </div>
       )
@@ -32,7 +38,7 @@ const ChatEntry = (props) => {
             {props.entries.body}
           </p>
           <p className="entry-time"><TimeStamp time={props.entries.timeStamp}/></p>
-          <button className="like">🤍</button>
+          <button onClick={changeHeart} className="like">{heart ? '❤️': '🤍'}</button>
         </section>
       </div>
   )};
