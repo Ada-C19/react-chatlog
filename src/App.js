@@ -17,7 +17,6 @@ const App = () => {
       }
     });
     setChatMessages(chats);
-    // console.log(updatedMessage);
   };
 
 
@@ -32,8 +31,8 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>vladimir</h1>
-        <h3>likes: {likes}  </h3>
+        <h1>Chat</h1>
+        <h3>Likes: {likes} ❤️s  </h3>
       </header>
       <main>
         <ChatLog entries={chatMessageData} onUpdateChat={updateChatMessages}> </ChatLog>

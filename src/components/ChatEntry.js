@@ -6,7 +6,7 @@ import TimeStamp from './TimeStamp'
 
 const ChatEntry = (props) => {
 
-    const onHearteButtonClick = () => {
+    const onHeartButtonClick = () => {
         const updatedHeart = {
             id: props.id,
             sender: props.sender,
@@ -18,13 +18,13 @@ const ChatEntry = (props) => {
         props.onUpdateChat(updatedHeart);
     };
 
-  const heartColor = props.liked ? '💝'  : '🤍';
+  const heartColor = props.liked ? '❤️':'🤍';
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">{props.body}
         <p className="entry-time"><TimeStamp time={props.timeStamp}> </TimeStamp></p>
-        <button className="like" onClick={onHearteButtonClick}>{heartColor} </button>
+        <button className="like" onClick={onHeartButtonClick}>{heartColor}</button>
       </section>
     </div>
   );
