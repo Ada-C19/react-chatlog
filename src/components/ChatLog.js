@@ -1,11 +1,14 @@
 import React from 'react';
 import './ChatLog.css';
 import ChatEntry from './ChatEntry';
-import chatMessages from '../data/messages.json';
 
-const ChatLog = chatMessages.map(entries => {
+
+const ChatLog = ({ entries }) => {
+    const entryComponents = entries.map(entry => {
         return <ChatEntry 
-        entries={entries} />
+        entry={entry} />
     })
+    return entryComponents
+}
 
 export default ChatLog;
