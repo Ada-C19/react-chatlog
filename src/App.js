@@ -18,7 +18,7 @@ const App = () => {
         Wave 02: Render ChatLog component */}
         
         <ChatLog
-        allMessages={chatMessages}>
+        entries={chatMessages}>
         </ChatLog>
       </main>
     </div>

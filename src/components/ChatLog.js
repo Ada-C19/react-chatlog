@@ -4,7 +4,9 @@ import PropTypes from 'prop-types';
 
 const ChatLog =(props) => {
   
-  return props.allMessages.map((oneMessage) => {
+  // console.log(props)
+  // console.log(props.allMessages)
+  return props.entries.map((oneMessage) => {
     return (
       <ChatEntry
         sender={oneMessage['sender']}
@@ -17,8 +19,18 @@ const ChatLog =(props) => {
   })
   }
 
+  // ChatLog.propTypes = {
+  //   entries: PropTypes.isRequired,
+  // };
   ChatLog.propTypes = {
-    allMessage: PropTypes.array.isRequired,
-  };
+    entries: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            sender: PropTypes.string.isRequired,
+            body: PropTypes.string.isRequired,
+            timeStamp: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+};
 
 export default ChatLog;

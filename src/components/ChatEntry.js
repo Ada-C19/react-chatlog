@@ -8,7 +8,7 @@ const ChatEntry = (props) => {
   console.log(props)
 
   return (
-    <div className="chat-entry local">
+    <div className="chat-entry local" key={props.id}>
       <h2 className="entry-name">{props['sender']}</h2>
       <section className="entry-bubble">
         <p>{props['body']}</p>
