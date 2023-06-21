@@ -10,22 +10,22 @@ const ChatEntry = (props) => {
 
   return (
     <div className={localRemote}>
-      <h2 className="entry-name">{props.sender}</h2>
-      <section className="entry-bubble">
+      <h2 className='entry-name'>{props.sender}</h2>
+      <section className='entry-bubble'>
         <p>{props.body}</p>
-        <p className="entry-time">{ yearsSince } years ago</p>
-        <button className="like" onClick={() => props.updateLikeStatus(props.id)}>{likeDisplay}</button>
+        <p className='entry-time'>{yearsSince} years ago</p>
+        <button className='like' onClick={() => props.updateLikeStatus(props.id)}>{likeDisplay}</button>
       </section>
     </div>
   );
 };
 
 ChatEntry.propTypes = {
-  "id": Number.isRequired,
-  "sender": String.isRequired,
-  "body": String.isRequired,
-  "timeStamp": DateTime.isRequired,
-  "liked": Boolean.isRequired,
+  'id': Number.isRequired,
+  'sender': String.isRequired,
+  'body': String.isRequired,
+  'timeStamp': DateTime.isRequired,
+  'liked': Boolean.isRequired,
   updateLikeStatus: PropTypes.func.isRequired
 };
 

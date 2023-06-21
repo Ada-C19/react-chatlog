@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
 import { useState } from 'react';
 
 const App = () => {
   const [chatData, setChatData] = useState(chatMessages);
-  const [likes, setLikes] = useState(0)
+  const [likes, setLikes] = useState(0);
 
   const updateLikeStatus = (entryId) => {
     const updatedEntries = chatData.map(entry => {
@@ -25,11 +24,11 @@ const App = () => {
   }
 
   return (
-    <div id="App">
+    <div id='App'>
       <header>
-        <h1>Application title</h1>
+        <h1>Chat Log</h1>
         <section>
-          <span className='widget' id="heartWidget">
+          <span className='widget' id='heartWidget'>
             {likes} ❤️s
           </span>
         </section>
