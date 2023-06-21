@@ -24,8 +24,10 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Chatlog</h1>
-        <section>{countLikedChatEntries} ❤️s</section>
+        <h1>Vladimir & Estragon's Chatlog</h1>
+        <section>
+          <span id="heartWidget">{countLikedChatEntries} ❤️s</span>
+        </section>
       </header>
       <main>
         {/* Wave 01: Render one ChatEntry component
