@@ -3,7 +3,7 @@ import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types'
 import './ChatLog.css'
 
-const ChatLog = ({ entries, updateMessage, selectedColor }) => {
+const ChatLog = ({ entries, updateMessage, vladimirFontColor, estragonFontColor }) => {
 
     const chatComponents = entries.map((message) => {
         return (
@@ -16,7 +16,8 @@ const ChatLog = ({ entries, updateMessage, selectedColor }) => {
                 id={ message.id }
                 liked={ message.liked }
                 updateMessage={ updateMessage }
-                selectedColor={ selectedColor }
+                vladimirFontColor={vladimirFontColor}
+                estragonFontColor={estragonFontColor}
                 />
             </section>
         )

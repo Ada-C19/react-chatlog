@@ -12,7 +12,8 @@ const App = () => {
 
   const [likeCount, setLikeCount] = useState(0)
 
-  const [fontColor, setFontColor] = useState('black')
+  const [vladimirFontColor, setVladimirFontColor] = useState('black');
+  const [estragonFontColor, setEstragonFontColor] = useState('black');
 
   const updateMessage = (messageToUpdate) => {
     const messages = messageData.map((message) => {
@@ -31,8 +32,12 @@ const App = () => {
     setMessages(messages)
   }
 
-  const setColorCallback = (color) => {
-    setFontColor(color);
+  const setColorCallback = (color, sender) => {
+    if (sender === 'Vladimir') {
+      setVladimirFontColor(color);
+    } else if (sender === 'Estragon') {
+      setEstragonFontColor(color);
+    }
   };
 
 
@@ -44,11 +49,11 @@ const App = () => {
           {/* ran out of time to figure out logic for separate colors for different senders */}
           Set color for Vladimir
           <ColorChoice 
-          setColorCallback={ setColorCallback } />
+          setColorCallback={(color) => setColorCallback(color, 'Vladimir')} />
           <span className='widget' id='heartWidget'>{ likeCount } 🩷s </span>
           Set Color for Estragon
           <ColorChoice 
-          setColorCallback={ setColorCallback } /> 
+          setColorCallback={(color) => setColorCallback(color, 'Estragon')} /> 
         </section>
         
       </header>
@@ -59,7 +64,8 @@ const App = () => {
         <ChatLog
         entries={ messageData }
         updateMessage={ updateMessage }
-        selectedColor={ fontColor }
+        vladimirFontColor={vladimirFontColor}
+        estragonFontColor={estragonFontColor}
         />
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
