@@ -1,35 +1,4 @@
 .chat-log {
   margin: auto;
   max-width: 50rem;
-  text-align: center;
-  color: aliceblue;
-}
-
-/* #Vladimir {
-  margin-right: 0;
-  margin-left: 280px;
-  max-width: 50rem;
-  color: black;
-} */
-
-#Vladimir {
-  display: grid;
-  justify-content: right;
-  color: black;
-}
-
-#Estragon {
-  display: grid;
-  justify-content: left;
-  color: black;
-}
-
-#Estragon.chat-log {
-  margin-left: 0px;
-  width: 20rem;
-}
-
-#Vladimir.chat-log {
-  margin-right: 0px;
-  width: 20rem;
 }

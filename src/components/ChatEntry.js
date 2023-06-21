@@ -17,11 +17,13 @@ const ChatEntry = ({sender, body, timeStamp, id, liked, updateMessage}) => {
     // console.log(`updating like status for ${sender}`)
   };
 
+  const localOrRemote = (sender === 'Vladimir') ?  'chat-entry local' : 'chat-entry remote';
+
   
   return (
-    <div className="chat-entry local" id={ sender }>
+    <div className={localOrRemote}>
       <h2 className="entry-name">{ sender }</h2>
-      <section className="entry-bubble" id={`${sender}-bubble`}>
+      <section className="entry-bubble">
         <p>{ body }</p>
         <p className="entry-time"><TimeStamp time={ timeStamp }/></p>
         <button onClick={ () => updateLikeButton() } className='like'>{ liked ? '🩷' : '🤍' }</button>

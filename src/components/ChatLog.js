@@ -6,8 +6,6 @@ import './ChatLog.css'
 const ChatLog = ({ entries, updateMessage }) => {
 
     const chatComponents = entries.map((message) => {
-
-
         return (
             <section className='chat-log' id={ message.sender } key={ message.id }>
                 <ChatEntry
@@ -26,10 +24,7 @@ const ChatLog = ({ entries, updateMessage }) => {
 
     return (
         <section>
-            <h2 className='chat-log'>Chat Log</h2>
-            <ul className='chat-log'>
-                { chatComponents }
-            </ul>
+            { chatComponents }
         </section>
     );
 
@@ -45,6 +40,7 @@ ChatLog.propTypes = {
         liked: PropTypes.bool,
     })).isRequired,
     updateMessage: PropTypes.func,
+    updateColor: PropTypes.func,
 
 };
 

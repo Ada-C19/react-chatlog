@@ -3,13 +3,14 @@ import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
 import { useState } from 'react';
+// import Color from './components/Color';
 
 
 const App = () => {
 
-  const[messageData, setMessages] = useState(chatMessages)
+  const [messageData, setMessages] = useState(chatMessages)
 
-  const[likeCount, setLikeCount] = useState(0)
+  const [likeCount, setLikeCount] = useState(0)
 
   const updateMessage = (messageToUpdate) => {
     const messages = messageData.map((message) => {
@@ -19,6 +20,7 @@ const App = () => {
       }else {
         setLikeCount(likeCount - 1);
       }
+
       if(message.id === messageToUpdate.id) {
         return messageToUpdate;
       }
@@ -34,10 +36,27 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
-        <div className='hearts-and-color'>
-          <h2>{ likeCount } 🩷s </h2>
-        </div>
+        <h1>Vladimir and Estragon's Chat</h1>
+        <section>
+          {/* <span id='left'>
+            <button onClick={console.log('changeFontcolor')}className='green' >🟢</button>
+            <button className='yellow'>🟡</button>
+            <button className='red'>🔴</button>
+            <button className='blue'>🔵</button>
+            <button className='purple'>🟣</button>
+            <button className='orange'>🟠</button>
+          </span> */}
+          <span className='widget' id='heartWidget'>{ likeCount } 🩷s </span>
+          {/* <span id='right'>
+            <button className='green' >🟢</button>
+            <button className='yellow'>🟡</button>
+            <button className='red'>🔴</button>
+            <button className='blue'>🔵</button>
+            <button className='purple'>🟣</button>
+            <button className='orange'>🟠</button>
+          </span> */}
+        </section>
+        
       </header>
 
         
