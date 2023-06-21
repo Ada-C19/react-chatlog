@@ -1,14 +1,21 @@
 import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
-import TimeStamp from './TimeStamp.js';
+import TimeStamp from './TimeStamp';
 
 
 const ChatEntry = (props) => {
   const heart = props.liked ? '❤️' : '🤍';
+  const user = () => {
+    if (props.sender === 'Vladimir') {
+      return 'local';
+    } else {
+      return 'remote';
+    }
+  }
 
   return (
-    <div className="chat-entry local">
+    <div className={`chat-entry ${user()}`}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>

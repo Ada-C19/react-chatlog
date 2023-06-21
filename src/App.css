@@ -3,9 +3,10 @@
 }
 
 #App header {
+  display: flex;
+  flex-direction: column;
   background-color: #222;
   color: #fff;
-  padding-bottom: 0.5rem;
   position: fixed;
   width: 100%;
   z-index: 100;
@@ -24,6 +25,7 @@
   font-size: 1.5em;
   text-align: center;
   display: inline-block;
+  height: 10px;
 }
 
 #App header section {
@@ -34,15 +36,21 @@
   display: inline-block;
   line-height: 0.5em;
   border-radius: 10px;
-  color: black;
   font-size:0.8em;
   padding-left: 1em;
   padding-right: 1em;
 }
 
 #App #heartWidget {
+  display:flex;
+  width: 100%;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  color: black;
   font-size: 1.5em;
-  margin: 1em
+  margin: 1em;
+  background-color: aquamarine;
 }
 
 #App span {
