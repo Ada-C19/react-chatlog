@@ -23,7 +23,12 @@ const ChatEntry = (singleEntry) => {
 };
 
 ChatEntry.propTypes = {
-  //Fill with correct proptypes
+  sender: PropTypes.string.isRequired,
+  timeStamp: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  liked: PropTypes.bool.isRequired,
+  id: PropTypes.number.isRequired,
+  updateLike: PropTypes.func.isRequired
 };
 
 export default ChatEntry;
