@@ -31,6 +31,6 @@ ChatLog.propTypes = {
         timeStamp: PropTypes.string.isRequired,
         liked: PropTypes.bool.isRequired,
 })),
-onUpdateChat: PropTypes.func.isRequired
+onUpdateChat: PropTypes.func
 };
 export default ChatLog;
