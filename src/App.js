@@ -1,23 +1,19 @@
 import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry';
+import ChatLog from './components/ChatLog.js';
 
 const App = () => {
-  // console.log((chatMessages))
-  const testMessage = chatMessages[0];
   return (
     <div id="App">
       <header>
-        <h1>Chat 123</h1>
+        <h1>🤖 Chatterbot 🤖</h1>
       </header>
       <main>
-        <ChatEntry 
-        sender= {testMessage.sender} 
-        body= {testMessage.body}
-        timeStamp= {testMessage.timeStamp}>
-        </ChatEntry>
-        <ChatEntry></ChatEntry>
+        <ChatLog 
+        className='chat-log' 
+        entries={chatMessages}> 
+        </ChatLog>
       </main>
     </div>
   );
