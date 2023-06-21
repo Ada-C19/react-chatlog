@@ -9,8 +9,8 @@ const ChatLog = (props) => {
     const ChatEntryComponents = props.entries.map((entry) =>{
     
         return (
-        <div key={entry.id}>
         <ChatEntry
+            key={entry.id}
             id= {entry.id}
             sender={entry.sender}
             body={entry.body}
@@ -18,7 +18,6 @@ const ChatLog = (props) => {
             liked={entry.liked}
             onUpdate={props.onUpdateChatEntry}
         />
-        </div>
     );
     });
 
