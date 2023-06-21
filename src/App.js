@@ -1,10 +1,9 @@
 import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-// import ChatEntry from './components/ChatEntry';
+import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
 import { useState } from 'react';
-import ChatEntry from './components/ChatEntry';
 
 const App = () => {
   const initialCopy = chatMessages.map((chat) => {
@@ -13,13 +12,13 @@ const App = () => {
   const[chatData, setChatData] = useState(initialCopy);
   const [likedCount, setLikedCount] = useState(0);
 
-    const heartWidget = likedCount !== 0 ? `${likedCount} ❤️s` : '';
+    const heartWidget = likedCount !== 0 ? `${likedCount} ❤️s`: '';
     // create a new list of entries with updated likes 
     const updateLikes = (chatEntryId, updatedLikes) => {
       let newLikeCount = likedCount;
-      const newChatData = chatData.map((ChatEntry) => {
-        if (ChatEntry.id !== chatEntryId) {
-          return ChatEntry;
+      const newChatData = chatData.map((chatEntry) => {
+        if (chatEntry.id !== chatEntryId) {
+          return chatEntry;
         } else {
           if (updatedLikes) {
             newLikeCount++;
@@ -27,7 +26,7 @@ const App = () => {
             newLikeCount--;
           }
           const newChat = {
-            ...ChatEntry,
+            ...chatEntry,
             liked: updatedLikes,
           };
           return newChat;
@@ -49,7 +48,7 @@ return (
       </header>
 
       <main>
-        <ChatLog entries={chatData} updateLike={updateLikes} />    
+        <ChatLog entries={chatData} updateLikes={updateLikes} />    
       </main>
     </div>
   );
