@@ -3,7 +3,7 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = ({ id, sender, body, timeStamp, liked }) => {
+const ChatEntry = ({ id, sender, body, timeStamp, liked, likeMessage }) => {
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{sender}</h2>
