@@ -30,7 +30,7 @@ const App = () => {
   const totalLikeCount = calcTotalLikes(chatData);
 
   return (
-    <div id="App">
+    <div id='App'>
       <header>
         <h1>Chat between Vladimir and Estragon</h1>
         <section>
@@ -40,7 +40,8 @@ const App = () => {
       <main>
         <ChatLog 
         entries={chatData}
-        onUpdateChat={updateChatData}/>
+        onUpdateChat={updateChatData}>
+        </ChatLog>
       </main>
     </div>
   );
