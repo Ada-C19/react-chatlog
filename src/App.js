@@ -1,16 +1,44 @@
-import React from 'react';
 import './App.css';
+import React, {useState} from 'react';
 import chatMessages from './data/messages.json';
+import ChatLog from './components/ChatLog';
+
 
 const App = () => {
+  //const likedMessagesCount = chatMessages.filter(message => message.liked).length;
+ 
+  const [entries, setEntriesData] = useState(chatMessages);
+
+  const updateLikedMessagesCount = (id) => {
+    setEntriesData((prev) => {
+      return prev.map((entry) => {
+        if (id === entry.id) {
+          return {
+            ...entry,
+            liked: !entry.liked,
+          };
+        } else {
+          return entry;
+        }
+      });
+    });
+  };
+  
+  const totalLikeTally = entries.reduce((total, entry) => {
+    if (entry.liked === true){
+      total += 1;
+    }
+    return total;
+  }, 0);
+  
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Chat between Vladimir and Estragon </h1>
+        <section className="header section">{totalLikeTally} ❤️s</section>
       </header>
       <main>
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
+      <ChatLog entries={entries} updateLikedMessagesCount={updateLikedMessagesCount}/>
       </main>
     </div>
   );
