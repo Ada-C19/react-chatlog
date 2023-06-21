@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry';
+import ChatLog from './components/ChatLog';
 
 const App = () => {
   return (
@@ -10,7 +10,7 @@ const App = () => {
         <h1>Waiting for Chat Godot</h1>
       </header>
       <main>
-        <ChatEntry chatData ={chatMessages[0]}/>
+        <ChatLog entries ={chatMessages}/>
       </main>
     </div>
   );

@@ -1,10 +1,39 @@
-// import ChatEntry from './ChatEntry';
-// import PropTypes from 'prop-types';
-// import './ChatEntry.css'
+import './ChatEntry.css'
+import ChatEntry from './ChatEntry';
+import PropTypes from 'prop-types';
 
-// const Chatlog = (props) => {
-//     return (
-//     <ChatEntry/>
 
-//     );
-// };
+const Chatlog = ({entries}) => {
+    const  getEntries = () => {
+        return entries.map((entry, index) => {
+        return (
+            <ChatEntry 
+            key={index}
+            id={entry.id}
+            sender={entry.sender} 
+            body={entry.body}
+            timeStamp={entry.timeStamp}
+            liked={entry.liked}
+            />
+        );
+    });
+}
+    return <main>
+        <section className= 'chat-log'>
+            {getEntries()}
+        </section>
+        </main>
+};
+
+Chatlog.propTypes = {
+    entries: PropTypes.arrayOf (
+        PropTypes.shape (
+            {   
+                sender: PropTypes.string.isRequired,
+                body: PropTypes.string.isRequired,
+                timeStamp: PropTypes.string.isRequired,
+            })
+    )
+};
+
+export default Chatlog;
