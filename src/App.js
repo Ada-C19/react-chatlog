@@ -3,6 +3,7 @@ import './App.css';
 import chatMessages from './data/messages.json';
 import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
+// import numOfHearts from ChatEntry;
 
 const App = () => {
   // const chatEntries = chatMessages.map(message => {
@@ -18,6 +19,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>AI Take Over</h1>
+        {/* <p className = "number of likes">{numOfHearts}</p> */}
       </header>
       <main>
         <div className="contacts">

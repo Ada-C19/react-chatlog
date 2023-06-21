@@ -9,6 +9,7 @@ const ChatEntry = (props) => {
   // console.log(chatMessages)
   // const senderPerson = props.entries.sender.map()
   // const{sender, body, timestamp} = props;
+  
   const changeHeart = () => {
     setHeart(prevHeart => !prevHeart)
   }
@@ -17,6 +18,8 @@ const ChatEntry = (props) => {
   
   // const numOfHearts = () => {
   //   if (props.entries.liked) {
+  //     console.log (props.entries.liked)}
+
   //     let count
   //     count +
   //     return (
