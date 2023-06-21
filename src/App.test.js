@@ -14,7 +14,7 @@ describe('Wave 03: clicking like button and rendering App', () => {
     fireEvent.click(buttons[10]);
 
     // Assert
-    const countScreen = screen.getByText(/3 ❤️s/);
+    const countScreen = screen.getByText(/3 🖤s/);
     expect(countScreen).not.toBeNull();
   });
 
@@ -29,7 +29,7 @@ describe('Wave 03: clicking like button and rendering App', () => {
 
     // click the first button
     fireEvent.click(firstButton);
-    expect(firstButton.innerHTML).toEqual('❤️');
+    expect(firstButton.innerHTML).toEqual('🖤');
 
     // check that all other buttons haven't changed
     for (let i = 1; i < buttons.length; i++) {
@@ -40,13 +40,13 @@ describe('Wave 03: clicking like button and rendering App', () => {
     fireEvent.click(firstButton);
     expect(firstButton.innerHTML).toEqual('🤍');
     fireEvent.click(firstButton);
-    expect(firstButton.innerHTML).toEqual('❤️');
+    expect(firstButton.innerHTML).toEqual('🖤');
     fireEvent.click(firstButton);
     expect(firstButton.innerHTML).toEqual('🤍');
 
     // click the last button a couple times
     fireEvent.click(lastButton);
-    expect(lastButton.innerHTML).toEqual('❤️');
+    expect(lastButton.innerHTML).toEqual('🖤');
     fireEvent.click(lastButton);
     expect(lastButton.innerHTML).toEqual('🤍');
   });

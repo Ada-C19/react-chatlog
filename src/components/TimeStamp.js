@@ -6,7 +6,7 @@ const TimeStamp = (props) => {
   const absolute = time.toFormat('MMMM Do YYYY, h:mm:ss a');
   const relative = time.toRelative();
 
-  return <span title={absolute}>{relative}</span>;
+  return <span title={absolute} >{relative} </span>;
 };
 
 TimeStamp.propTypes = {
