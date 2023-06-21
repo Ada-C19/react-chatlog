@@ -20,15 +20,18 @@ const ChatLog = props => {
     ));
   };
 
-  return (
-    <section className='chat-entry local'>
-      {getChatLogJSX(props.entries)}
-    </section>
-  );
+  return <section className='chat-log'>{getChatLogJSX(props.entries)}</section>;
 };
 
 ChatEntry.propTypes = {
-  //Fill with correct proptypes
+  entries: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      sender: PropTypes.string,
+      liked: PropTypes.bool,
+    })
+  ),
+  updateLike: PropTypes.func,
 };
 
 export default ChatLog;

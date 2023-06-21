@@ -9,7 +9,7 @@ const ChatEntry = props => {
   };
 
   const sender =
-    props.local === props.sender ? 'chat-entry local' : 'chat-entry remote';
+    props.sender === props.local ? 'chat-entry local' : 'chat-entry remote';
 
   return (
     <section className={sender}>
@@ -28,7 +28,10 @@ const ChatEntry = props => {
 };
 
 ChatEntry.propTypes = {
-  //Fill with correct proptypes
+  id: PropTypes.number.isRequired,
+  sender: PropTypes.string,
+  liked: PropTypes.bool,
+  updateLike: PropTypes.func,
 };
 
 export default ChatEntry;

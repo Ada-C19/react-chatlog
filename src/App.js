@@ -7,7 +7,6 @@ import './App.css';
 const App = () => {
   const [chatLogs, setChatLogs] = useState(chatMessages);
   const [likesCount, setlikesCount] = useState(0);
-  // const [local, setLocal] = useState('');
 
   const updateLike = logToUpdate => {
     const updatedLogs = chatLogs.map(log => {
@@ -27,9 +26,7 @@ const App = () => {
     return [...namesSet];
   };
 
-  // setLocal(getNames(chatLogs)[0]);
   const namesString = getNames(chatLogs).join(' and ');
-  // console.log(local);
   const local = getNames(chatLogs)[0];
 
   return (
