@@ -30,7 +30,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Messages</h1>
-        <h4>Liked Messages: {likedTally}</h4>
+        <h4>{likedTally} ❤️s</h4>
       </header>
       <main>
         <ChatLog
