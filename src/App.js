@@ -4,25 +4,31 @@ import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
 
 const App = () => {
-  console.log(chatMessages);
-  const [totalLikes, setTotalLikes] = useState(0);
+  const [messages, setMessages] = useState(chatMessages);
 
-  const handleLikeClick = () => {
-    setTotalLikes(totalLikes + 1);
+  const handleLikeClick = (id) => {
+    setMessages((prevMessages) => {
+      const updatedMessages = prevMessages.map((entry) => {
+        if (entry.id === id) {
+          return {...entry, liked: !entry.liked };
+        } else {
+          return entry;
+        }
+      });
+      return updatedMessages;
+    });
   };
+
+  const totalLikes = messages.filter((entry) => entry.liked).length;
 
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Vladmir & Estragon's Chat</h1>
         <p>{totalLikes} ❤️s</p>
       </header>
       <main>
-        <ChatLog
-          entries={chatMessages}
-          handleLikeClick={handleLikeClick}
-          totalLikes={totalLikes}
-        />
+        <ChatLog entries={messages} handleLikeClick={handleLikeClick} />
       </main>
     </div>
   );
