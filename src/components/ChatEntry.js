@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import ReacT from 'react';
 import './ChatEntry.css';
 
 import PropTypes from 'prop-types';
@@ -11,15 +11,14 @@ const ChatEntry = (props) => {
 };
 
   const chatEntryClass = props.sender === 'Estragon' ? 'chat-entry remote' : 'chat-entry local';
-  console.log('hello!!!!!!')
-  console.log(props.timeStamp)
+
   return (
     <div className={chatEntryClass}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp}></TimeStamp></p>
-        <button onClick={handleClick}>
+        <button className='like' onClick={handleClick}>
           {props.liked ? '❤️' : '🤍'}
         </button>
       </section>
