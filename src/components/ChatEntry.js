@@ -15,7 +15,7 @@ const ChatEntry = ({ id, sender, body, timeStamp, isLikedData, onChatState}) => 
     onChatState(newEntry); 
   };
 
-  const heartfilled = isLikedData ? '👎' : '✋';
+  const heartfilled = isLikedData ? '❤️' : '🤍';
   return ( 
     <div className="chat-entry local">
       <h2 className="entry-name">{sender}</h2>
