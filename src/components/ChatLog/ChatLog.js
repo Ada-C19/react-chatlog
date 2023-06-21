@@ -27,11 +27,11 @@ ChatEntry.propTypes = {
   entries: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      sender: PropTypes.string,
-      liked: PropTypes.bool,
+      sender: PropTypes.string.isRequired,
+      liked: PropTypes.bool.isRequired,
     })
-  ),
-  updateLike: PropTypes.func,
+  ).isRequired,
+  updateLike: PropTypes.func.isRequired,
 };
 
 export default ChatLog;
