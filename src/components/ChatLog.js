@@ -3,7 +3,7 @@ import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
 
 
-const Chatlog = ({entries}) => {
+const Chatlog = ({entries, toggleLike}) => {
     const  getEntries = () => {
         return entries.map((entry, index) => {
         return (
@@ -14,6 +14,7 @@ const Chatlog = ({entries}) => {
             body={entry.body}
             timeStamp={entry.timeStamp}
             liked={entry.liked}
+            toggleLike={toggleLike}
             />
         );
     });
@@ -32,8 +33,10 @@ Chatlog.propTypes = {
                 sender: PropTypes.string.isRequired,
                 body: PropTypes.string.isRequired,
                 timeStamp: PropTypes.string.isRequired,
+                liked: PropTypes.boo
             })
-    )
+    ).isRequired,
+    toggleLike: PropTypes.func.isRequired,
 };
 
 export default Chatlog;

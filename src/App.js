@@ -1,10 +1,24 @@
 import React from 'react';
+import { useState } from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
 
 const App = () => {
-  // const [isLiked, setIsLiked] = useState(liked);
+  const [messages, setMessages] = useState(chatMessages);
+
+  const toggleLike = (id) => {
+    setMessages(
+      messages.map((message) => 
+        message.id === id ? { ...message, liked: !message.liked } : message
+      )
+    );
+  };
+
+  // const countLikes = () => {
+    
+  // };
+
   return (
     <div id="App">
       <header>
@@ -14,7 +28,7 @@ const App = () => {
         </section>
       </header>
       <main>
-        <ChatLog entries ={chatMessages}/>
+        <ChatLog entries ={messages} toggleLike={toggleLike}/>
       </main>
     </div>
   );
