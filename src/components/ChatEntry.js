@@ -1,5 +1,5 @@
 import React from 'react';
-import {useState} from 'react';
+// import {useState} from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
@@ -8,9 +8,8 @@ import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
 
-  const [liked, setLiked] = useState(props.isliked)
+  const heart = props.liked ? '❤️' : '🤍';
 
-  const heart = liked ? '❤️' : '🤍';
 
   return (
     <div className="chat-entry local">
@@ -23,8 +22,7 @@ const ChatEntry = (props) => {
         </TimeStamp>
           
         </p>
-        {/* <button className="like">🤍</button> */}
-        <button onClick={() => setLiked(!liked)} className='like-heart'> {heart} </button>
+        <button onClick={() => props.setLiked(props.id, !props.liked)} className='like-heart'> {heart} </button>
       </section>
     </div>
   );
