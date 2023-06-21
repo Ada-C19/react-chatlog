@@ -4,10 +4,9 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
-
-  const [heart, setHeart] = useState(props.entries.liked)
+  const [heart, setHeart] = useState(props.entry.liked)
   // console.log(chatMessages)
-  // const senderPerson = props.entries.sender.map()
+  // const senderPerson = props.entry.sender.map()
   // const{sender, body, timestamp} = props;
   
   const changeHeart = () => {
@@ -16,29 +15,17 @@ const ChatEntry = (props) => {
 
   let heartIcon = heart ? '❤️': '🤍'
   
-  // const numOfHearts = () => {
-  //   if (props.entries.liked) {
-  //     console.log (props.entries.liked)}
-
-  //     let count
-  //     count +
-  //     return (
-  //       <div className="number of likes">
-
-  //       </div>
-  //     )
-  //   }
   // }
-  if (props.entries.sender === 'Vladimir') {
+  if (props.entry.sender === 'Vladimir') {
     return (
       <div className="chat-entry local">
-        {/* {props.entries.name === 'Estragon && <div className="Estragon-right"></div>} */}
-        {props.entries.sender === 'Vladimir' && <h2 className="entry-name">{props.entries.sender}</h2>}
+        {/* {props.entry.name === 'Estragon && <div className="Estragon-right"></div>} */}
+        {props.entry.sender === 'Vladimir' && <h2 className="entry-name">{props.entry.sender}</h2>}
         <section className="entry-bubble">
           <p>
-            {props.entries.body}
+            {props.entry.body}
           </p>
-          <p className="entry-time"><TimeStamp time={props.entries.timeStamp}/></p>
+          <p className="entry-time"><TimeStamp time={props.entry.timeStamp}/></p>
           <button onClick={changeHeart} className="like">{heartIcon}</button>
         </section>
       </div>
@@ -46,12 +33,12 @@ const ChatEntry = (props) => {
   } else {
     return (
       <div className="chat-entry remote">
-        {props.entries.sender === 'Estragon' && <h2 className="entry-name">{props.entries.sender}</h2>}
+        {props.entry.sender === 'Estragon' && <h2 className="entry-name">{props.entry.sender}</h2>}
         <section className="entry-bubble">
           <p>
-            {props.entries.body}
+            {props.entry.body}
           </p>
-          <p className="entry-time"><TimeStamp time={props.entries.timeStamp}/></p>
+          <p className="entry-time"><TimeStamp time={props.entry.timeStamp}/></p>
           <button onClick={changeHeart} className="like">{heartIcon}</button>
         </section>
       </div>
@@ -59,12 +46,12 @@ const ChatEntry = (props) => {
 };
 
 
-ChatEntry.propTypes = {
-  id: PropTypes.number.isRequired,
-  sender: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
-  timestamp: PropTypes.string.isRequired,
-  liked:PropTypes.bool.isRequired
-};
+// ChatEntry.propTypes = {
+//   id: PropTypes.number.isRequired,
+//   sender: PropTypes.string.isRequired,
+//   body: PropTypes.string.isRequired,
+//   timestamp: PropTypes.string.isRequired,
+//   liked:PropTypes.bool.isRequired
+// };
 
 export default ChatEntry;
