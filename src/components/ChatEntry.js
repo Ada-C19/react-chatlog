@@ -1,22 +1,44 @@
 import React from 'react';
-import './ChatEntry.css';
 import PropTypes from 'prop-types';
+import './ChatEntry.css';
+import TimeStamp from './TimeStamp';
+import useSound from 'use-sound';
 
-const ChatEntry = (props) => {
+import bok from '../assets/bok.mp3';
+
+
+const ChatEntry = ({sender, body, timeStamp, liked, id, likeMessage}) => {
+
+  const [play] = useSound(bok);
+  // const buttonClass = liked ? 'liked' : 'notLiked';
+  const heart = liked ? '🐣' : '🥚';
+  const messageClass = sender === 'Vladimir' ? 'chat-entry local' : 'chat-entry remote';
+
   return (
-    <div className="chat-entry local">
-      <h2 className="entry-name">Replace with name of sender</h2>
-      <section className="entry-bubble">
-        <p>Replace with body of ChatEntry</p>
-        <p className="entry-time">Replace with TimeStamp component</p>
-        <button className="like">🤍</button>
-      </section>
+    <div className="chat-entry">
+        <div className={messageClass}>
+            <h2 className="entry-name">{sender}</h2>
+            <section className="entry-bubble">
+              <p>{body}</p>
+              <div className="entry-time">
+              <TimeStamp time={timeStamp}/>
+              </div>
+              <button onClick={() => {likeMessage(id); play()}}>{heart}</button>
+            </section>
+        </div>
+
     </div>
   );
 };
 
 ChatEntry.propTypes = {
-  //Fill with correct proptypes
+  id: PropTypes.number.isRequired,
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  liked: PropTypes.bool.isRequired,
+  likeMessage : PropTypes.func,
 };
+
+
 
 export default ChatEntry;

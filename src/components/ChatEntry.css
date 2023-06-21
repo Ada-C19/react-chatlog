@@ -4,6 +4,7 @@ button {
 	border: none;
 	padding: 10px;
 	font: inherit;
+  font-size: 50px;
 	cursor: pointer;
 	outline: inherit;
 }
@@ -37,7 +38,7 @@ button {
 
 .chat-entry .entry-time {
   color: #bbb;
-  font-size: x-small;
+  font-size: 12px;
   margin-bottom: 0.1rem;
   margin-right: 0.5rem;
 }

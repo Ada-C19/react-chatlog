@@ -49,6 +49,19 @@
   display: inline-block
 }
 
+.like {
+  font-size: 50px;
+}
+
+.chicken-fren {
+  text-align: center;
+}
+
+.chicken-counter {
+  font-size: 50px;
+  text-align: center;
+}
+
 .red {
   color: #b22222
 }
