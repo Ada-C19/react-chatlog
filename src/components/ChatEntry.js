@@ -6,22 +6,21 @@ import TimeStamp from './TimeStamp';
 
 
 const ChatEntry = (props) => {
-  const [liked,setLiked] = useState(false);
-  
-  const handleLikeButtonClick = () => {
-    setLiked(!liked);
-  };
+  const handleClick = () => {
+    props.updateLikedMessagesCount(props.id);
+};
 
   const chatEntryClass = props.sender === 'Estragon' ? 'chat-entry remote' : 'chat-entry local';
-  
-  
+  console.log('hello!!!!!!')
+  console.log(props.timeStamp)
   return (
     <div className={chatEntryClass}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp}></TimeStamp></p>
-        <button className='like' onClick={handleLikeButtonClick}>{liked ? '❤️' : '🤍'}
+        <button onClick={handleClick}>
+          {props.liked ? '❤️' : '🤍'}
         </button>
       </section>
     </div>
