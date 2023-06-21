@@ -11,14 +11,23 @@ const App = () => {
       const updatedChatEntries = prevChatEntries.map(ChatEntry =>{
         return ChatEntry.id === id ? {...ChatEntry, liked: !ChatEntry.liked} : ChatEntry;
       })
-      console.log(updatedChatEntries);
       return updatedChatEntries;
-    });
+    })
   }
+  const totalLikes = () =>{
+    let counter = 0
+    for (let chat of chatEntries){
+      if(chat.liked){
+        counter += 1
+      }
+    }
+    return counter
+  };
+  
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>{totalLikes()} ❤️s</h1>
       </header>
       <main>
         {/* Wave 01: Render one ChatEntry component
