@@ -5,8 +5,8 @@ import TimeStamp from './TimeStamp.js'
 
 
 const ChatEntry = (props) => {
- 
-   const onLikeButtonClick = () => {
+
+  const onLikeButtonClick = () => {
     const updatedChatEntry = {
       id: props.id,
       sender: props.sender,
@@ -17,7 +17,7 @@ const ChatEntry = (props) => {
     props.onUpdate(updatedChatEntry);
   }
 
-  const like = props.liked ? '❤️': '🤍'
+  const like = props.liked ? '❤️' : '🤍'
   const formatMessages = props.sender === 'Vladimir' ? 'chat-entry local' : 'chat-entry remote';
   return (
     <div className={formatMessages}>
@@ -35,11 +35,11 @@ const ChatEntry = (props) => {
 ChatEntry.propTypes = {
   //Fill with correct proptypes
   id: PropTypes.number.isRequired,
-  sender:PropTypes.string.isRequired,
-  body:PropTypes.string.isRequired,
-  timeStamp:PropTypes.string.isRequired,
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
-  onUpdate:PropTypes.func.isRequired
+  onUpdate: PropTypes.func.isRequired
 };
 
 export default ChatEntry;
