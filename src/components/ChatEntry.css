@@ -33,6 +33,7 @@ button {
 .chat-entry .entry-name {
   font-size: medium;
   margin-bottom: 0.5rem;
+  list-style-type: none;
 }
 
 .chat-entry .entry-time {
