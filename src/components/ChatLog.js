@@ -7,7 +7,7 @@ import {DateTime} from 'luxon';
 const ChatLog = (props) => {
     const chatComponents = entries => (entries.map(entry => {
         return (
-            <li key={props.id}>
+            <li key={entry.id}>
                 <ChatEntry
                 id={entry.id}
                 sender={entry.sender}
