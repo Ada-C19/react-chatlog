@@ -40,7 +40,6 @@ const App = () => {
       </header>
       <main>
         <ChatLog entries={messages} updateMessage={updateMessage}></ChatLog>
-        <TimeStamp></TimeStamp>
       </main>
     </div>
   );
