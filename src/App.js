@@ -21,6 +21,7 @@ const App = () => {
     setEntries(updatedEntries);
   };
 
+  
   return (
     <div id="App">
       <header>
