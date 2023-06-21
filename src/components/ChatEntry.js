@@ -2,24 +2,8 @@ import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
-import { useState } from 'react';
 
 const ChatEntry = (props) => {
-  // const [isLiked, setLiked] = useState(false);
-  // const [heartColor, setHeartColor] = useState('🤍');
-
-  // const changeLiked = () => {
-  //   setLiked(!isLiked);
-  //   changeHeartColor();
-  // };
-
-  // const changeHeartColor = () => {
-  //   if (isLiked === true) {
-  //     setHeartColor('❤️');
-  //   } else {
-  //     setHeartColor('🤍');
-  //   }
-  // }
 
   const onLikeButtonClicked = () => {
     const updatedChatEntry = {
