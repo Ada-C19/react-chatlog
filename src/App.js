@@ -33,7 +33,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat Between Vladimir and Estragon</h1>
-        <h2>{likeCount(entryData)} ❤️s</h2>
+        <h2>{likeCount(entryData)} 🖤s</h2>
       </header>
       <main>
         {/* <ChatEntry 
@@ -51,6 +51,7 @@ const App = () => {
           updateLikeData = {updateLikeData}
         />
       </main>
+      <footer>Ana</footer>
     </div>
   );
 };

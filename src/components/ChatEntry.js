@@ -15,18 +15,23 @@ const ChatEntry = (props) => {
     props.updateLikeData(updatedLike);
   };
 
-  const heartColor = props.liked ? '❤️': '🤍';
+  const entrySender = props.sender === 'Vladimir' ? 'chat-entry local': 'chat-entry remote';
+
+  const heartColor = props.liked ? '🖤': '🤍';
+
 
   return (
-    <div className="chat-entry local">
-      <h2 className="entry-name">{props.sender}</h2>
-      <section className="entry-bubble">
-        <p>{props.body}</p>
-        <p className="entry-time"><TimeStamp time ={props.timeStamp}/></p>
-        {/* <button className="like">🤍</button> */}
-        <button className="like" onClick={onLikeButtonClick}>{heartColor}</button>
-      </section>
-    </div>
+    // <div className="chat-entry local">
+      <div className={entrySender}>
+        <h2 className="entry-name">{props.sender}</h2>
+        <section className="entry-bubble">
+          <p>{props.body}</p>
+          <p className="entry-time"><TimeStamp time ={props.timeStamp}/></p>
+          {/* <button className="like">🤍</button> */}
+          <button className="like" onClick={onLikeButtonClick}>{heartColor}</button>
+        </section>
+      </div>
+    //</div>
   );
 };
 
