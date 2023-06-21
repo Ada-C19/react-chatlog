@@ -3,12 +3,12 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = ({ sender, body, timeStamp, handleLikeClick, totalLikes }) => {
-  const [liked, setLiked] = useState(false);
+const ChatEntry = ({ sender, body, timeStamp, liked, handleLikeClick }) => {
+  const [isLiked, setIsLiked] = useState(liked);
 
   const handleLikeButtonClick = () => {
-    setLiked(!liked);
-    handleLikeClick(liked); 
+    setIsLiked(!isLiked);
+    handleLikeClick();
   };
 
   return (
@@ -18,9 +18,8 @@ const ChatEntry = ({ sender, body, timeStamp, handleLikeClick, totalLikes }) => 
         <p>{body}</p>
         <p className="entry-time"><TimeStamp time={timeStamp}/></p>
         <button className="like" onClick={handleLikeButtonClick}>
-          {liked ? '❤️' : '🤍'}
+          {isLiked ? '❤️' : '🤍'}
         </button>
-        <p>Total Likes: {totalLikes}</p>
       </section>
     </div>
   );
@@ -30,8 +29,8 @@ ChatEntry.propTypes = {
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
+  liked: PropTypes.bool.isRequired,
   handleLikeClick: PropTypes.func.isRequired,
-  totalLikes: PropTypes.number.isRequired,
 };
 
 export default ChatEntry;
