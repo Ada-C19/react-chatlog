@@ -1,11 +1,13 @@
 import './ChatLog.css';
 import ChatEntry from './ChatEntry';
+import PropTypes from 'prop-types';
+import {DateTime} from 'luxon';
 
 
 const ChatLog = (props) => {
     const chatComponents = entries => (entries.map(entry => {
         return (
-            <li>
+            <li key={props.id}>
                 <ChatEntry
                 id={entry.id}
                 sender={entry.sender}
@@ -29,15 +31,16 @@ const ChatLog = (props) => {
 };
 
 
-// ChatLog.propTypes = {
-//     messages: PropTypes.arrayOf(PropTypes.shape({
-//         id: Number.isRequired,
-//         sender: String.isRequired,
-//         body: String.isRequired, 
-//         timeStamp: DateTime.isRequired,
-//         liked: Boolean.isRequired,
-//     }))
-// };
+ChatLog.propTypes = {
+    messages: PropTypes.arrayOf(PropTypes.shape({
+        id: Number.isRequired,
+        sender: String.isRequired,
+        body: String.isRequired, 
+        timeStamp: DateTime.isRequired,
+        liked: Boolean.isRequired,
+        
+    }))
+};
 
 
 export default ChatLog; 

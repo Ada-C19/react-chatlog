@@ -24,7 +24,7 @@ const App = () => {
         <h1>Chat between Vladimir and Estragon</h1>
         <h2>
           {likes}
-          ❤️s
+          &nbsp;❤️s
         </h2>
       </header>
       <main>
