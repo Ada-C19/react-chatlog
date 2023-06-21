@@ -6,7 +6,12 @@ const ChatLog = (props) => {
         return (
             <ChatEntry
                 key={index}
-                chatData={chat}/>
+                sender={chat.sender}
+                body={chat.body}
+                timeStamp={chat.timeStamp}
+                liked={chat.liked}
+                chatData={chat}
+                toggleLike={props.toggleLike}/>
         )
   });
 }
