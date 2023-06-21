@@ -5,33 +5,33 @@ import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
   // console.log(chatMessages)
-  // const senderPerson = props.sender.map()
+  // const senderPerson = props.entries.sender.map()
   // const{sender, body, timestamp} = props;
 
 
-  if (props.sender === 'Vladimir') {
+  if (props.entries.sender === 'Vladimir') {
     return (
       <div className="chat-entry local">
-        {/* {props.name === 'Estragon && <div className="Estragon-right"></div>} */}
-        {props.sender === 'Vladimir' && <h2 className="entry-name">{props.sender}</h2>}
+        {/* {props.entries.name === 'Estragon && <div className="Estragon-right"></div>} */}
+        {props.entries.sender === 'Vladimir' && <h2 className="entry-name">{props.entries.sender}</h2>}
         <section className="entry-bubble">
           <p>
-            {props.body}
+            {props.entries.body}
           </p>
-          <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
+          <p className="entry-time"><TimeStamp time={props.entries.timeStamp}/></p>
           <button className="like">🤍</button>
         </section>
       </div>
-    )
+      )
   } else {
     return (
       <div className="chat-entry remote">
-        {props.sender === 'Estragon' && <h2 className="entry-name">{props.sender}</h2>}
+        {props.entries.sender === 'Estragon' && <h2 className="entry-name">{props.entries.sender}</h2>}
         <section className="entry-bubble">
           <p>
-            {props.body}
+            {props.entries.body}
           </p>
-          <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
+          <p className="entry-time"><TimeStamp time={props.entries.timeStamp}/></p>
           <button className="like">🤍</button>
         </section>
       </div>
