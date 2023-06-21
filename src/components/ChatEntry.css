@@ -98,3 +98,16 @@ button {
 .chat-entry.remote .entry-bubble:hover::before {
   background-color: #a9f6f6;
 }
+
+.🤍{
+  /* background-color: black; */
+  color: none;
+}
+
+.❤️{
+  /* background-color: red; */
+  /* content: '❤️'; */
+  text-color: red
+
+}
+

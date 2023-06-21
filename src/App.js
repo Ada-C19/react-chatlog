@@ -36,6 +36,7 @@ import ChatLog from './components/ChatLog';
 // Wave 02
 const App = () => {
   const title = 'Some title that we need to come up with';
+  
 
   return (
     <div id="App">
