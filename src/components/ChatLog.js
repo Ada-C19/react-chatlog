@@ -3,7 +3,7 @@ import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
 import './ChatLog.css';
 
-const ChatLog = ({ entries, onUpdateChatData }) => {
+const ChatLog = ({ entries, onUpdateChatData, localName }) => {
   const getChats = (entries) => {
     return entries.map((entry) => {
       return (
@@ -14,18 +14,20 @@ const ChatLog = ({ entries, onUpdateChatData }) => {
           sender={entry.sender}
           body={entry.body}
           timeStamp={entry.timeStamp}
+          localName={localName}
           updateChat={onUpdateChatData}
         />
       )
     })
   }
-    return (
-        <div>
-            <ul>
-              {getChats(entries)}
-            </ul>
-        </div>
-    );
+
+  return (
+      <div>
+          <ul>
+            {getChats(entries)}
+          </ul>
+      </div>
+  );
 };
 
 ChatLog.propTypes = {
@@ -35,9 +37,11 @@ ChatLog.propTypes = {
       liked: PropTypes.bool.isRequired,
       sender: PropTypes.string.isRequired,
       body: PropTypes.string.isRequired,
-      timeStamp: PropTypes.string.isRequired
+      timeStamp: PropTypes.string.isRequired,
+      localName: PropTypes.string
     })
-  )
+  ),
+  onUpdateChatData: PropTypes.func.isRequired
 };
 
 export default ChatLog;

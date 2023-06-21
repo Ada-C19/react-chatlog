@@ -26,6 +26,8 @@ const App = () => {
     return tally;
   }, 0)
 
+  const localName = chatData[0].sender
+  
   return (
     <div id="App">
       <header>
@@ -36,6 +38,7 @@ const App = () => {
         <ChatLog
           entries={chatData}
           onUpdateChatData={updateChatData}
+          localName={localName}
         />
       </main>
     </div>

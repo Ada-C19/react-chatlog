@@ -11,7 +11,8 @@ const ChatEntry = (props) => {
       sender: props.sender,
       body: props.body,
       timeStamp: props.timeStamp,
-      liked: !props.liked
+      liked: !props.liked,
+      localName: props.localName
     };
 
     props.updateChat(updatedChat)
@@ -19,8 +20,10 @@ const ChatEntry = (props) => {
 
   const heartColor = props.liked ? '❤️' : '🤍'
 
+  const alignment = (props.sender === props.localName) ? 'local' : 'remote'
+
   return (
-    <div className="chat-entry local">
+    <div className={`chat-entry ${alignment}`}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
@@ -38,7 +41,8 @@ ChatEntry.propTypes = {
   liked: PropTypes.bool,
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
-  timeStamp: PropTypes.string.isRequired
+  timeStamp: PropTypes.string.isRequired,
+  localName: PropTypes.string
 };
 
 export default ChatEntry;
