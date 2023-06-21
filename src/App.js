@@ -8,7 +8,6 @@ import chatMessages from './data/messages.json';
 const App = () => {
 
   const [messages, setMessages] = useState(chatMessages);
-  // const [count, setCount] = useState(0)
 
   const updateMessage = (messageId) => {
 
@@ -16,15 +15,9 @@ const App = () => {
       const newMessage = {...message}
       if (message.id === messageId) {
         newMessage.liked = !newMessage.liked;
-        // if(newMessage.liked) {
-        //   setCount((count) => count + 1);
-        // } else {
-        //   setCount((count) => count - 1)
-        // }
       }
       return newMessage
     })
-    console.log(updatedMessages)
     setMessages(updatedMessages);
   }
 

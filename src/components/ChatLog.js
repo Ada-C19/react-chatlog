@@ -6,7 +6,6 @@ import './ChatLog.css';
 
 const ChatLog = (props) => {
     const {entries} = props;
-    console.log(props)
     const messageLog = entries.map((message, index) => (
         <ChatEntry
             key={index}
@@ -15,7 +14,6 @@ const ChatLog = (props) => {
             body={message.body}
             timeStamp={message.timeStamp}
             liked={message.liked}
-            // handleLikeClick={props.handleLikeClick}
             updateMessage={props.updateMessage}
         />)
     )
@@ -23,20 +21,5 @@ const ChatLog = (props) => {
         <section>{messageLog}</section>
     )
 }
-
-// ChatLog.propTypes = {
-//     entries: PropTypes.arrayOf(
-//         PropTypes.shape({
-//             id: PropTypes.number.isRequired,
-//             sender: PropTypes.string.isRequired,
-//             body: PropTypes.string.isRequired,
-//             time: PropTypes.string.isRequired,
-//             liked: PropTypes.bool,
-//         })
-//     ).isRequired,
-//     updateMessage: PropTypes.func.isRequired,
-//     handleLikeClick: PropTypes.func.isRequired
-// };
-
 
 export default ChatLog;
