@@ -1,22 +1,43 @@
-import React from 'react';
-import './ChatEntry.css';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { formatDistanceToNow } from 'date-fns';
+import './ChatEntry.css';
 
-const ChatEntry = (props) => {
+const ChatEntry = ({ id, sender, body, timeStamp, onLikeChange }) => {
+  const timeAgo = formatDistanceToNow(new Date(timeStamp), { addSuffix: true });
+  const [isLiked, setIsLiked] = useState(false);
+
+  const handleLikeClick = () => {
+    setIsLiked(!isLiked);
+    onLikeChange(!isLiked);
+  };
+
+  const bubbleClass = sender === 'Vladimir' ? 'local' : 'remote';
+
   return (
-    <div className="chat-entry local">
-      <h2 className="entry-name">Replace with name of sender</h2>
+    <div className={`chat-entry ${bubbleClass}`}>
+      <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
-        <p>Replace with body of ChatEntry</p>
-        <p className="entry-time">Replace with TimeStamp component</p>
-        <button className="like">🤍</button>
+        <p>{body}</p>
+        <p className="entry-time">{timeAgo}</p>
+        <button
+          className="like-button like"
+          onClick={handleLikeClick}
+          id={`like-button-${id}`}
+        >
+          {isLiked ? '❤️' : '🤍'}
+        </button>
       </section>
     </div>
   );
 };
 
 ChatEntry.propTypes = {
-  //Fill with correct proptypes
+  id: PropTypes.number.isRequired,
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  timeStamp: PropTypes.string.isRequired,
+  onLikeChange: PropTypes.func,
 };
 
 export default ChatEntry;
