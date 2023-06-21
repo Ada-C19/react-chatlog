@@ -17,12 +17,12 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{ props.body } </p>
         <p className="entry-time">
-          <TimeStamp>
+          <TimeStamp
           time={ props.timeStamp }
-        </TimeStamp>
+        />
           
         </p>
-        <button onClick={() => props.setLiked(props.id, !props.liked)} className='like-heart'> {heart} </button>
+        <button onClick={() => props.setLiked(props.id, !props.liked)} className='like'>{heart}</button>
       </section>
     </div>
   );
@@ -30,7 +30,7 @@ const ChatEntry = (props) => {
 
 ChatEntry.propTypes = {
   //Fill with correct proptypes
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired

@@ -8,20 +8,23 @@ import ChatLog from './components/ChatLog';
 
 const App = () => {
 
+
   let initialLikes = 0;
-  chatMessages.forEach(message => {
+    console.log('intial likes...')
+    chatMessages.forEach(message => {
     if(message.liked){
       initialLikes++;
     }
   });
 
   const [totalLikes, setTotalLikes] = useState(initialLikes);
+  
 
   return (
     <div id="App">
       <header>
         <h1>Application title</h1>
-        <div className='likes'>{totalLikes} ❤️</div>
+        <div className='likes'>{totalLikes} ❤️s</div>
       </header>
       <main>
         

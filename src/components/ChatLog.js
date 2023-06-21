@@ -8,19 +8,15 @@ const ChatLog = ( props ) => {
     const [entries, setEntries] = useState(props.entries);
 
     const setLiked = (id, value) => {
-        setEntries((entries) => {
-            let numLikes = 0;
-            entries.forEach(element => {
-                if(element.id === id){
-                element.liked = value;
-                } 
-                if(element.liked) numLikes++;
-            });
-    
-            props.setTotalLikes(() => numLikes)
-             // Force re-render https://stackoverflow.com/a/56266640
-                return [...entries];
+        let numLikes = 0;
+        entries.forEach(element => {
+            if(element.id === id){
+            element.liked = value;
+            } 
+            if(element.liked) numLikes++;
         });
+        setEntries([...entries]); // Force re-render https://stackoverflow.com/a/56266640
+        props.setTotalLikes(numLikes);
     }
 
     return entries.map((entry) => (
@@ -53,7 +49,7 @@ const ChatLog = ( props ) => {
                 liked: PropTypes.bool.isRequired,
                 })
         ).isRequired,
-        setTotalLikes: PropTypes.func.isRequired,
+        // setTotalLikes: PropTypes.func.isRequired,
         };
     
     export default ChatLog; 
