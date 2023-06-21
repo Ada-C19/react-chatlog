@@ -41,6 +41,7 @@ const App = () => {
       <header>
         <h1>Vladimir and Estragon's Chat</h1>
         <section id='label'>
+          {/* ran out of time to figure out logic for separate colors for different senders */}
           Set color for Vladimir
           <ColorChoice 
           setColorCallback={ setColorCallback } />
