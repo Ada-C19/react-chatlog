@@ -2,7 +2,6 @@ import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
-import { DateTime } from 'luxon';
 
 const ChatLog = ({entries, updateLikes}) => {
     const entryComponents = [];

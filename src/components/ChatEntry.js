@@ -1,9 +1,7 @@
 import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
-// import { DateTime } from 'luxon';
 import TimeStamp from './TimeStamp';
-// import { useState } from 'react';
 
 const ChatEntry = ({id, sender, body, timeStamp, liked, updateLikes}) => {
   const senderName =
