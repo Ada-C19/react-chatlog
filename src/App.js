@@ -43,11 +43,11 @@ const App = () => {
         <section id='label'>
           Set color for Vladimir
           <ColorChoice 
-          setColorCallback={setColorCallback} />
+          setColorCallback={ setColorCallback } />
           <span className='widget' id='heartWidget'>{ likeCount } 🩷s </span>
           Set Color for Estragon
           <ColorChoice 
-          setColorCallback={setColorCallback} /> 
+          setColorCallback={ setColorCallback } /> 
         </section>
         
       </header>
@@ -58,7 +58,7 @@ const App = () => {
         <ChatLog
         entries={ messageData }
         updateMessage={ updateMessage }
-        selectedColor={fontColor}
+        selectedColor={ fontColor }
         />
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}

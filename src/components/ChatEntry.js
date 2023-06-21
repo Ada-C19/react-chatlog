@@ -42,6 +42,7 @@ ChatEntry.propTypes = {
   timeStamp: PropTypes.string.isRequired,
   id: PropTypes.number,
   updateMessage: PropTypes.func,
+  selectedColor: PropTypes.string,
 };
 
 export default ChatEntry;
