@@ -3,10 +3,10 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = ({sender, body, timeStamp, id, liked, updateMessage, color}) => {
+const ChatEntry = ({sender, body, timeStamp, id, liked, updateMessage, selectedColor}) => {
   
   const style = {
-    color: color || 'black',
+    color: selectedColor,
   };
   
   const updateLikeButton = () => {

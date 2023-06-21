@@ -12,7 +12,7 @@ const App = () => {
 
   const [likeCount, setLikeCount] = useState(0)
 
-  const [senderColors, setSenderColors] = useState({})
+  const [fontColor, setFontColor] = useState('black')
 
   const updateMessage = (messageToUpdate) => {
     const messages = messageData.map((message) => {
@@ -31,33 +31,23 @@ const App = () => {
     setMessages(messages)
   }
 
-  // const setColorCallback = (color) => {
-  //   setFontColor(color);
-  // };
-
-  const setColorCallback = (sender, color) => {
-    setSenderColors((prevColors) => ({
-      ...prevColors,
-      [sender]: color,
-
-    }));
+  const setColorCallback = (color) => {
+    setFontColor(color);
   };
 
 
   return (
     <div id="App">
       <header>
-        <h1 className={senderColors['Vladimir']}>Vladimir</h1> <h1>and</h1> <h1 className={senderColors['Estragon']}>Estragon's</h1> <h1>Chat</h1>
-        <section>
+        <h1>Vladimir and Estragon's Chat</h1>
+        <section id='label'>
+          Set color for Vladimir
           <ColorChoice 
-          sender='Vladimir'
-          color={senderColors['Vladimir']}
           setColorCallback={setColorCallback} />
-          <span className='widget' id='heartWidget'>{ likeCount } 🩷s </span> 
+          <span className='widget' id='heartWidget'>{ likeCount } 🩷s </span>
+          Set Color for Estragon
           <ColorChoice 
-          sender='Estragon'
-          color={senderColors['Estragon']}
-          setColorCallback={setColorCallback} />
+          setColorCallback={setColorCallback} /> 
         </section>
         
       </header>
@@ -68,7 +58,7 @@ const App = () => {
         <ChatLog
         entries={ messageData }
         updateMessage={ updateMessage }
-        senderColors={senderColors}
+        selectedColor={fontColor}
         />
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}

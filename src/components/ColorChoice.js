@@ -1,17 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import './ColorChoice.css'
 
-const ColorChoice= ( { sender, color, setColorCallback } ) => {
+const ColorChoice= ( { setColorCallback } ) => {
 
     const handleColorChange = (color) => {
-        setColorCallback(sender, color);
+        setColorCallback(color);
     }
 
     
     return (
     <span>
-        <label>Pick a color for {sender}:</label>
         <button onClick={() => handleColorChange('green')} >🟢</button>
         <button onClick={() => handleColorChange('yellow')}>🟡</button>
         <button onClick={() => handleColorChange('red')}>🔴</button>
