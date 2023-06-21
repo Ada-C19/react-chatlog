@@ -3,7 +3,7 @@ import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types'
 import './ChatLog.css'
 
-const ChatLog = ({ entries, updateMessage }) => {
+const ChatLog = ({ entries, updateMessage}) => {
 
     const chatComponents = entries.map((message) => {
         return (
@@ -40,7 +40,6 @@ ChatLog.propTypes = {
         liked: PropTypes.bool,
     })).isRequired,
     updateMessage: PropTypes.func,
-    updateColor: PropTypes.func,
 
 };
 

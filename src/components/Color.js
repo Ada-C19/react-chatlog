@@ -1,27 +1,28 @@
 // import React from 'react';
 // import { useState } from 'react';
+// import PropTypes from 'prop-types'
 
-// const Color = () => {
+// const Color = ( ) => {
+
     
-//     // const [fontColor, setFontColor] = useState('black')
+//     const [fontColor, setFontColor] = useState('black')
 
-//     // updateColor({
-//     //     sender,
-//     //     body,
-//     //   });
-
-
+   
     
 //     return (
-//     <span id='left'>
-//         <button onClick={console.log('changeFontcolor')}className='green' >🟢</button>
-//         <button className='yellow'>🟡</button>
-//         <button className='red'>🔴</button>
-//         <button className='blue'>🔵</button>
-//         <button className='purple'>🟣</button>
-//         <button className='orange'>🟠</button>
+//     <span>
+//         <button onClick={() => setFontColor('green')} >🟢</button>
+//         <button onClick={() => handleButtonColorClick('yellow')}>🟡</button>
+//         <button onClick={() => handleButtonColorClick('red')}>🔴</button>
+//         <button onClick={() => handleButtonColorClick('blue')}>🔵</button>
+//         <button onClick={() => handleButtonColorClick('purple')}>🟣</button>
+//         <button onClick={() => handleButtonColorClick('orange')}>🟠</button>
 //     </span> 
 //     )
 // };
+
+// Color.propTypes= {
+//     handleColorChange: PropTypes.func, 
+// }
 
 // export default Color;

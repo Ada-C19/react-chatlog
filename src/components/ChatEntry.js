@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = ({sender, body, timeStamp, id, liked, updateMessage}) => {
-
+  
 
   const updateLikeButton = () => {
     updateMessage({
