@@ -27,7 +27,6 @@ const App = () => {
       <header>
         <h1>Chat between Vladimir and Estragon</h1>
         <p>{countLikes} ❤️s</p>
-        {/* <p>{`${countLikes} ❤️s`}</p> */}
       </header>
       <main>
         <ChatLog 
