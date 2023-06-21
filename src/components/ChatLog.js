@@ -1,7 +1,7 @@
 import React from 'react';
 import ChatEntry from './ChatEntry';
 
-const ChatLog = ({ chatMessages }) => {
+const ChatLog = ({ chatMessages, increaseLikes }) => {
 
   const chatComponents = chatMessages.map((message)=> {
     // console.log('sender', message.sender)
@@ -18,6 +18,7 @@ const ChatLog = ({ chatMessages }) => {
       body={message.body}
       timeStamp={message.timeStamp}
       liked = {message.liked}
+      increaseLikes={increaseLikes}
     />
     )})
 
