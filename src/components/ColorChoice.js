@@ -21,7 +21,7 @@ const ColorChoice= ( { setColorCallback } ) => {
 };
 
 ColorChoice.propTypes= {
-    handleColorChange: PropTypes.func, 
+    setColorCallback: PropTypes.func.isRequired, 
 }
 
 export default ColorChoice;

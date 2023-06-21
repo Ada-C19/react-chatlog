@@ -38,12 +38,12 @@ ChatLog.propTypes = {
         sender: PropTypes.string.isRequired,
         body: PropTypes.string.isRequired,
         timeStamp: PropTypes.string.isRequired,
-        id: PropTypes.number,
+        id: PropTypes.number.isRequired,
         liked: PropTypes.bool,
     })).isRequired,
     updateMessage: PropTypes.func,
     vladimirFontColor: PropTypes.string,
-    estragonFontColor: PropTypes.string,
+    estragonFontColor: PropTypes.string
 
 };
 
