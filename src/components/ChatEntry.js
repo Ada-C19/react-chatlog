@@ -15,7 +15,7 @@ const ChatEntry = (props) => {
     props.updateLikeData(updatedLike);
   };
 
-  const heartColor = props.liked ? 'pleasechange': '🤍';
+  const heartColor = props.liked ? '❤️': '🤍';
 
   return (
     <div className="chat-entry local">

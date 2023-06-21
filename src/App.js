@@ -20,10 +20,20 @@ const App = () => {
     setEntryData(newLike);
   };
 
+  const likeCount = (entryData) => {
+    let likeNumber = 0
+    for (let entry of entryData) {
+      if (entry.liked) {
+        likeNumber += 1;
+      }
+    }; return likeNumber
+  }
+
   return (
     <div id="App">
       <header>
-        <h1>Chat Between Vladimir and Estrogen</h1>
+        <h1>Chat Between Vladimir and Estragon</h1>
+        <h2>{likeCount(entryData)} ❤️s</h2>
       </header>
       <main>
         {/* <ChatEntry 
