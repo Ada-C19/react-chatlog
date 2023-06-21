@@ -1,29 +1,31 @@
-import React from 'react';
+import React,{useState} from 'react';
 import './App.css';
-import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
-// import numOfHearts from ChatEntry;
+import chatMessages from './data/messages.json'
 
 const App = () => {
-  // const chatEntries = chatMessages.map(message => {
-  //   return <ChatEntry 
-  //   key={message.id}
-  //   id={message.id}
-  //   sender={message.sender}
-  //   body={message.body}
-  //   timeStamp={message.timeStamp}
-  //   liked={message.liked} />
-  // })
+  const [entries, setEntries] = useState(chatMessages)
+  console.log(`I'm in app ${entries}`)
+  const totalLikes = () => {
+    let total = 0;
+    for (let entry of entries) {
+      if (entry.liked === true) {
+        total += 1;
+      }
+    }
+
+    return total;
+  };
+
   return (
     <div id="App">
       <header>
-        <h1>AI Take Over</h1>
-        {/* <p className = "number of likes">{numOfHearts}</p> */}
+        <h1>Chat Between Vladimir and Estragon</h1>
+        <h1 className = "number of likes">{totalLikes()} ❤️s</h1>
       </header>
       <main>
         <div className="contacts">
-          {ChatLog}
+          <ChatLog entries={entries}/>
         </div>
       </main>
     </div>
