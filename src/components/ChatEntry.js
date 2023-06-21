@@ -10,7 +10,7 @@ const ChatEntry = (props) => {
       id: props.id,
       sender: props.sender,
       body: props.body,
-      time: props.timeStamp,
+      timeStamp: props.timeStamp,
       liked: !props.isliked
     };
 
