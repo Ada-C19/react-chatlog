@@ -35,7 +35,7 @@ const App = () => {
   return (
     <div id="App">
       <header>
-      <h1>{generateTitle()}</h1>
+      <h1>Chat between {generateTitle()}</h1>
         <p>{`${likedMessages} ❤️s`}</p>
       </header>
       <main>
