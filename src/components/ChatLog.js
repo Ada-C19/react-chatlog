@@ -42,7 +42,8 @@ ChatLog.propTypes = {
         liked: PropTypes.bool,
     })).isRequired,
     updateMessage: PropTypes.func,
-    selectedColor: PropTypes.string,
+    vladimirFontColor: PropTypes.string,
+    estragonFontColor: PropTypes.string,
 
 };
 
