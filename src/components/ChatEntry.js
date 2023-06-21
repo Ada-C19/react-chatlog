@@ -9,16 +9,18 @@ const ChatEntry = (props) => {
     props.updateLiked(props.id);
   };
 
+  const textColor = props.colorData[props.sender];
+
   return (
     <div className={ props.id % 2 ? 'chat-entry local' : 'chat-entry remote' }>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
-        <p /*className={props.textColor}*/>{props.body}</p>
+        <p className={ textColor }> {props.body} </p>
         <p className="entry-time">
           <TimeStamp time={props.timeStamp}></TimeStamp>
         </p>
         <button className="like" onClick={toggleLikeButton}>{props.liked ? '❤️' : '🤍'}</button>
-      </section>
+      </section> 
     </div>
   );
 };

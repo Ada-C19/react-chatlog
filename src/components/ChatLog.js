@@ -12,6 +12,7 @@ const ChatLog = (props) => {
                     timeStamp={message.timeStamp}
                     liked={message.liked}
                     updateLiked={props.updateLiked}
+                    colorData={props.colorData}
                 ></ChatEntry>
             </section>
 
