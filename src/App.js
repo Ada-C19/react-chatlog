@@ -1,11 +1,25 @@
 import React from 'react';
+import { useState } from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
 // import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
 
+
 const App = () => {
-  
+  const [entryData, setEntryData] = useState(chatMessages);
+
+  const updateLikeData = updatedLike => {
+    const newLike = entryData.map(entry => {
+      if (entry.id === updatedLike.id) {
+        return updatedLike;
+      } else {
+        return entry;
+      }
+    });
+    setEntryData(newLike);
+  };
+
   return (
     <div id="App">
       <header>
@@ -22,7 +36,10 @@ const App = () => {
           body = {chatMessages[0].body}
           timeStamp = {chatMessages[0].timeStamp}
         /> */}
-        <ChatLog entries = {chatMessages} />
+        <ChatLog 
+          entries = {entryData} 
+          updateLikeData = {updateLikeData}
+        />
       </main>
     </div>
   );
