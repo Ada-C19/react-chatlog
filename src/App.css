@@ -49,6 +49,7 @@
   display: inline-block
 }
 
+
 .red {
   color: #b22222
 }
@@ -71,4 +72,12 @@
 
 .purple {
   color: purple
+}
+
+.black {
+  color:#222
+}
+
+#label {
+  color:black;
 }
