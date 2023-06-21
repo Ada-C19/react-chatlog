@@ -1,10 +1,10 @@
 #App {
-  background-color: #87cefa;
+  background-color: #f882b9;
 }
 
 #App header {
-  background-color: #222;
-  color: #fff;
+  background-color: #da0195;
+  color: #ffffff;
   padding-bottom: 0.5rem;
   position: fixed;
   width: 100%;
@@ -24,6 +24,11 @@
   font-size: 1.5em;
   text-align: center;
   display: inline-block;
+}
+
+#App h2 {
+margin: 0;
+padding: 0px;
 }
 
 #App header section {
