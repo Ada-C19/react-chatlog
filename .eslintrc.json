@@ -18,11 +18,11 @@
     "no-console": "off",
     "func-names": "off",
     "comma-dangle": ["warn", "only-multiline"],
-    "quotes": [
-      "error",
-      "single",
-      { "allowTemplateLiterals": true, "avoidEscape": true }
-    ],
+    // "quotes": [
+    //   "single-quotes",
+    //   "error",
+    //   { "allowTemplateLiterals": true, "avoidEscape": true }
+    // ],
     "camelcase": "error"
   }
 }
