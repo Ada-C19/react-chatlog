@@ -28,7 +28,7 @@ ChatLog.propTypes = {
         }
         )
     ).isRequired,
-    likedFunc: PropTypes.func.isRequired
+    likedFunc: PropTypes.func
 };
 
 
