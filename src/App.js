@@ -29,7 +29,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat Between Vladimir and Estragon </h1>
-        <h1>{totalLikes()} ❤️s</h1>
+        <h2>{totalLikes()} ❤️s</h2>
       </header>
       <main>
         <div className="contacts">

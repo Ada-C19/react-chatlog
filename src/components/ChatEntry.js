@@ -1,48 +1,23 @@
-import React, {useState} from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
-  // const [heart, setHeart] = useState(props.entry.liked)
-  // console.log(chatMessages)
-  // const senderPerson = props.entry.sender.map()
-  // const{sender, body, timestamp} = props;
-  
-  // const changeHeart = () => {
-  //   setHeart(prevHeart => !prevHeart)
-  // }
-
   let heartIcon = props.liked ? '❤️': '🤍'
-  
-  // }
-  if (props.sender === 'Vladimir') {
-    return (
-      <div className="chat-entry local">
-        {/* {props.entry.name === 'Estragon && <div className="Estragon-right"></div>} */}
-        {props.sender === 'Vladimir' && <h2 className="entry-name">{props.sender}</h2>}
+  const side = props.sender === 'Vladimir' ? 'local' : 'remote'
+
+  return  (
+        <div className={`chat-entry ${side}`}>
+        <h2>{props.sender}</h2>
         <section className="entry-bubble">
           <p>
             {props.body}
           </p>
           <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
-          <button onClick={() => props.toggleLikes(props.id)} className="like">{heartIcon}</button>
+            <button onClick={() => props.toggleLikes(props.id)} className="like">{heartIcon}</button>
         </section>
       </div>
-      )
-  } else {
-    return (
-      <div className="chat-entry remote">
-        {props.sender === 'Estragon' && <h2 className="entry-name">{props.sender}</h2>}
-        <section className="entry-bubble">
-          <p>
-            {props.body}
-          </p>
-          <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
-          <button onClick={() => props.toggleLikes(props.id)} className="like">{heartIcon}</button>
-        </section>
-      </div>
-  )};
+  )
 };
 
 
