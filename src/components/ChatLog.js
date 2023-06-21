@@ -2,23 +2,30 @@ import React from 'react';
 import ChatEntry from './ChatEntry';
 
 const ChatLog = ({ chatMessages }) => {
-  // console.log("chatMessages in chatlog", chatMessages);
-  // console.log("chatmessages.chatmessages:", chatMessages.chatMessages);
 
-  const chatComponents = chatMessages.map((chat) => {
-    console.log(chat);
+  const chatComponents = chatMessages.map((message)=> {
+    // console.log('sender', message.sender)
+    // console.log('body', message.body)
+    // console.log('timeStamp', message.timeStamp)
+    // console.log('id ', message.id)
+    // console.log('liked', message.liked)
+
     return (
-      <ChatEntry
-        key = {chat.id}
-        sender={chat.sender}
-        body={chat.body}
-        timestamp={chat.timeStamp}
-        liked={chat.like}
-      />
-    );
-  });
+    <ChatEntry
+      key = {message.id}
+      id = {message.id}
+      sender={message.sender}
+      body={message.body}
+      timeStamp={message.timeStamp}
+      liked = {message.liked}
+    />
+    )})
 
-  return <div>{chatComponents}</div>;
+  return (
+    <div className='chat-log'>
+      {chatComponents}
+    </div>
+  )
 };
 
 export default ChatLog;

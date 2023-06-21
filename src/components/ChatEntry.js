@@ -1,18 +1,25 @@
 import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
-// import chatMessages from '../data/messages.json'
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = (props) => {
+const ChatEntry = ({id,sender, body, timeStamp, liked}) => {
   // const firstElement = chatMessages[0];
   // console.log(firstElement);
+  // console.log(id)
+  // console.log(sender)
+  // console.log(body)
+  // console.log(timeStamp)
+  // console.log(liked)
+
+  const sendReceive = sender === 'Estragon' ? 'remote': 'local'
+
   return (
-    <div className="chat-entry local">
-      <h2 className="entry-name">{props.sender}</h2>
+    <div className={`chat-entry ${sendReceive}`}>
+      <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
-        <p>{props.body}</p>
-        <p className="entry-time"><TimeStamp time={props.timeStamp} /></p>
+        <p>{body}</p>
+        <p className="entry-time"><TimeStamp time={timeStamp} /></p>
         <button className="like">🤍</button>
       </section>
     </div>
