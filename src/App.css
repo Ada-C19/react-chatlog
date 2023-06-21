@@ -30,7 +30,7 @@
   background-color: #e0ffff;
 }
 
-#App .widget {
+.widget {
   display: inline-block;
   line-height: 0.5em;
   border-radius: 10px;
