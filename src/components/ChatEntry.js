@@ -13,8 +13,19 @@ const ChatEntry = (props) => {
     setHeart(prevHeart => !prevHeart)
   }
 
+  let heartIcon = heart ? '❤️': '🤍'
+  
+  // const numOfHearts = () => {
+  //   if (props.entries.liked) {
+  //     let count
+  //     count +
+  //     return (
+  //       <div className="number of likes">
 
-
+  //       </div>
+  //     )
+  //   }
+  // }
   if (props.entries.sender === 'Vladimir') {
     return (
       <div className="chat-entry local">
@@ -25,7 +36,7 @@ const ChatEntry = (props) => {
             {props.entries.body}
           </p>
           <p className="entry-time"><TimeStamp time={props.entries.timeStamp}/></p>
-          <button onClick={changeHeart} className="like">{heart ? '❤️': '🤍'}</button>
+          <button onClick={changeHeart} className="like">{heartIcon}</button>
         </section>
       </div>
       )
@@ -38,7 +49,7 @@ const ChatEntry = (props) => {
             {props.entries.body}
           </p>
           <p className="entry-time"><TimeStamp time={props.entries.timeStamp}/></p>
-          <button onClick={changeHeart} className="like">{heart ? '❤️': '🤍'}</button>
+          <button onClick={changeHeart} className="like">{heartIcon}</button>
         </section>
       </div>
   )};
