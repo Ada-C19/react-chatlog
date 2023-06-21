@@ -1,15 +1,15 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
 import ChatEntry from './components/ChatEntry';
 
-import ChatLog from './components/ChatLog.js';
+import ChatLog from './components/ChatLog';
 
 const App = () => {
 
-  const [messageData, setMessageData] = useState(chatMessages)
-  
+  // const [messageData, setMessageData] = useState(chatMessages)
+
   return (
     <div id="App">
       <header>
