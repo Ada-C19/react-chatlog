@@ -2,19 +2,11 @@ import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp.js'
-import { useState } from 'react';
+
 
 const ChatEntry = (props) => {
-  /*
-  const [isLiked, setIsLiked] = useState(false);
-
-  const toggleHeart = () => {
-    setIsLiked(!isLiked);
-  };
-
-  */
-
-  const onLikeButtonClick = () => {
+ 
+   const onLikeButtonClick = () => {
     const updatedChatEntry = {
       id: props.id,
       sender: props.sender,
@@ -26,9 +18,9 @@ const ChatEntry = (props) => {
   }
 
   const like = props.liked ? '❤️': '🤍'
-  const messagesFormat = props.sender === 'Vladimir' ? 'chat-entry local' : 'chat-entry remote';
+  const formatMessages = props.sender === 'Vladimir' ? 'chat-entry local' : 'chat-entry remote';
   return (
-    <div className={messagesFormat}>
+    <div className={formatMessages}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
