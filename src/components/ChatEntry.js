@@ -4,54 +4,55 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
-  const [heart, setHeart] = useState(props.entry.liked)
+  // const [heart, setHeart] = useState(props.entry.liked)
   // console.log(chatMessages)
   // const senderPerson = props.entry.sender.map()
   // const{sender, body, timestamp} = props;
   
-  const changeHeart = () => {
-    setHeart(prevHeart => !prevHeart)
-  }
+  // const changeHeart = () => {
+  //   setHeart(prevHeart => !prevHeart)
+  // }
 
-  let heartIcon = heart ? '❤️': '🤍'
+  let heartIcon = props.liked ? '❤️': '🤍'
   
   // }
-  if (props.entry.sender === 'Vladimir') {
+  if (props.sender === 'Vladimir') {
     return (
       <div className="chat-entry local">
         {/* {props.entry.name === 'Estragon && <div className="Estragon-right"></div>} */}
-        {props.entry.sender === 'Vladimir' && <h2 className="entry-name">{props.entry.sender}</h2>}
+        {props.sender === 'Vladimir' && <h2 className="entry-name">{props.sender}</h2>}
         <section className="entry-bubble">
           <p>
-            {props.entry.body}
+            {props.body}
           </p>
-          <p className="entry-time"><TimeStamp time={props.entry.timeStamp}/></p>
-          <button onClick={changeHeart} className="like">{heartIcon}</button>
+          <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
+          <button onClick={() => props.toggleLikes(props.id)} className="like">{heartIcon}</button>
         </section>
       </div>
       )
   } else {
     return (
       <div className="chat-entry remote">
-        {props.entry.sender === 'Estragon' && <h2 className="entry-name">{props.entry.sender}</h2>}
+        {props.sender === 'Estragon' && <h2 className="entry-name">{props.sender}</h2>}
         <section className="entry-bubble">
           <p>
-            {props.entry.body}
+            {props.body}
           </p>
-          <p className="entry-time"><TimeStamp time={props.entry.timeStamp}/></p>
-          <button onClick={changeHeart} className="like">{heartIcon}</button>
+          <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
+          <button onClick={() => props.toggleLikes(props.id)} className="like">{heartIcon}</button>
         </section>
       </div>
   )};
 };
 
 
-// ChatEntry.propTypes = {
-//   id: PropTypes.number.isRequired,
-//   sender: PropTypes.string.isRequired,
-//   body: PropTypes.string.isRequired,
-//   timestamp: PropTypes.string.isRequired,
-//   liked:PropTypes.bool.isRequired
-// };
+ChatEntry.propTypes = {
+  id: PropTypes.number.isRequired,
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  timestamp: PropTypes.string.isRequired,
+  liked:PropTypes.bool.isRequired,
+  setEntries: PropTypes.func
+};
 
 export default ChatEntry;

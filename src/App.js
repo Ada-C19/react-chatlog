@@ -6,10 +6,18 @@ import chatMessages from './data/messages.json'
 const App = () => {
   const [entries, setEntries] = useState(chatMessages)
   console.log(`I'm in app ${entries}`)
+  const toggleLikes = (id) => {
+    setEntries(prevEntries => {
+      const updatedEntries = prevEntries.map(entry => {
+        return entry.id === id ? {...entry, liked: !entry.liked} : entry
+      })
+      return updatedEntries
+    })
+  }
   const totalLikes = () => {
     let total = 0;
     for (let entry of entries) {
-      if (entry.liked === true) {
+      if (entry.liked){
         total += 1;
       }
     }
@@ -20,12 +28,12 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Chat Between Vladimir and Estragon</h1>
-        <h1 className = "number of likes">{totalLikes()} ❤️s</h1>
+        <h1>Chat Between Vladimir and Estragon </h1>
+        <h1>{totalLikes()} ❤️s</h1>
       </header>
       <main>
         <div className="contacts">
-          <ChatLog entries={entries}/>
+          <ChatLog entries={entries} toggleLikes={toggleLikes}/>
         </div>
       </main>
     </div>
