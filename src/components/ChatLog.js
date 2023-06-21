@@ -12,7 +12,6 @@ function ChatLog(props) {
   })
   return (
     <section> 
-        <div>ChatLog</div>  
         {chatComponent}
     </section>
     

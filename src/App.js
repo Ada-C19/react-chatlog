@@ -30,10 +30,10 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Chat Between Vladimir and Estragon</h1>
+        <section className="total-likes">{totalLikes()} ❤️s</section>
       </header>
       <main>
-        <section>{totalLikes()} ❤️s</section>
         {/* {chatEntry} */}
         <ChatLog entries={entries} updateLike={updateLike}></ChatLog>
         {/* Wave 01: Render one ChatEntry component
