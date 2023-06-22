@@ -50,7 +50,7 @@
 }
 
 .red {
-  color: #b22222
+  color: #c83b3b
 }
 
 .orange {
@@ -62,7 +62,7 @@
 }
 
 .green {
-  color: green
+  color: rgb(36, 122, 86)
 }
 
 .blue {
@@ -70,5 +70,5 @@
 }
 
 .purple {
-  color: purple
+  color: rgb(128, 100, 167)
 }

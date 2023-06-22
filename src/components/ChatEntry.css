@@ -58,7 +58,7 @@ button {
   text-align: left;
 }
 
-.chat-entry.local .entry-time {
+.chat-entry.local .local-entry-time {
   text-align: right;
 }
 
@@ -86,7 +86,7 @@ button {
   background-color: #a9f6f6;
 }
 
-.chat-entry.remote .entry-time {
+.chat-entry.remote .remote-entry-time {
   text-align: left;
 }
 
@@ -97,4 +97,14 @@ button {
 
 .chat-entry.remote .entry-bubble:hover::before {
   background-color: #a9f6f6;
+}
+
+.local-body-color{
+  color:rgb(207, 103, 120);
+  font-weight: bold;
+}
+
+.remote-body-color{
+  color:rgba(92, 95, 137, 0.678);
+  font-weight: bold;
 }
