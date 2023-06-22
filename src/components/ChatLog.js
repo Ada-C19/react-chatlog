@@ -39,7 +39,7 @@ ChatLog.propTypes = {
         timeStamp: PropTypes.string.isRequired,
         liked: PropTypes.bool.isRequired,
     })).isRequired,
-    onChangeLike: PropTypes.func.isRequired,
+    // onChangeLike: PropTypes.func.isRequired,
 
 }
 
