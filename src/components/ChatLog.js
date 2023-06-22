@@ -3,16 +3,18 @@ import './ChatLog.css';
 import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
-// Ask why line 7 needs the brackets around entries unlike using props when passing it in as parameter
-const ChatLog = ({entries}) => {
+const ChatLog = ({entries, updateChatData}) => {
     console.log(entries)
     const getChatLogJSX = (messages) => {
         return messages.map((message) => {
             return (
                 <ChatEntry 
+                    id={message.id}
                     sender={message.sender}
                     body={message.body}
                     time={message.timeStamp}
+                    liked={message.liked}
+                    updateChatData={updateChatData}
                 />
             );
         });
@@ -20,7 +22,6 @@ const ChatLog = ({entries}) => {
 
     return (
         <div>
-            <h2>Chats Log component here!!</h2>
             <ul>{getChatLogJSX(entries)}</ul>
         </div>
     );
@@ -29,11 +30,14 @@ const ChatLog = ({entries}) => {
 ChatLog.propTypes = {
     entries: PropTypes.arrayOf(
         PropTypes.shape({
+            id: PropTypes.number.isRequired,
             sender: PropTypes.string.isRequired,
             body: PropTypes.string.isRequired,
-            timeStamp: PropTypes.string.isRequired,
+            time: PropTypes.string.isRequired,
+            liked: PropTypes.bool.isRequired,
         })
     ).isRequired,
+    updateChatData: PropTypes.func.isRequired,
 };
 
 export default ChatLog;
