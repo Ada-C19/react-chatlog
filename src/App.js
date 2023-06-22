@@ -26,11 +26,11 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>😤 ClashMates ⚔️</h1>
+        <h1>😤 ClashMates ⚔️ : A Battle Between {entries[0].sender} and {entries[1].sender}</h1>
         <h2>{totalLikes()} ❤️s</h2>
       </header>
       <main>
-        <ChatLog entries={entries} toggleLike={toggleLike}></ChatLog>
+        <ChatLog chatEntries={entries} toggleLike={toggleLike}></ChatLog>
       </main>
     </div>
   );
