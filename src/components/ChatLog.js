@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 import './ChatLog.css';
 
-const ChatLog = ({ entries, updateHeart }) => {
+const ChatLog = ({ entries, updateHeart, localColor, remoteColor, userList, storeUsers }) => {
   const getChatLogJSX = (entries) => {
     return entries.map((entry) => {
       return (
@@ -14,6 +14,9 @@ const ChatLog = ({ entries, updateHeart }) => {
           body={entry.body}
           timeStamp={entry.timeStamp}
           updateHeart={updateHeart}
+          localColor={localColor}
+          remoteColor={remoteColor}
+          userList={userList}
         />
       );
     });
@@ -31,7 +34,10 @@ ChatLog.propTypes = {
             timeStamp: PropTypes.string.isRequired
         })
     ).isRequired,
-    updateHeart: PropTypes.func.isRequired
+    updateHeart: PropTypes.func.isRequired,
+    localColor: PropTypes.string.isRequired,
+    remotecolor: PropTypes.string.isRequired,
+    userList: PropTypes.array.isRequired,
 };
 
 export default ChatLog;

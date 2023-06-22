@@ -6,10 +6,13 @@ import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
   const heart = props.liked ? '❤️' : '🤍';
+  let color = 'black';
   const user = () => {
-    if (props.sender === 'Vladimir') {
+    if (props.sender === props.userList[0]) {
+      color = props.localColor;
       return 'local';
     } else {
+      color = props.remoteColor;
       return 'remote';
     }
   }
@@ -18,7 +21,7 @@ const ChatEntry = (props) => {
     <div className={`chat-entry ${user()}`}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
-        <p>{props.body}</p>
+        <p className={color}>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
         <button className="like" onClick={() => {props.updateHeart(props.id)}}>{heart}</button>
       </section>
@@ -32,7 +35,10 @@ ChatEntry.propTypes = {
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
-  updateHeart: PropTypes.func.isRequired
+  updateHeart: PropTypes.func.isRequired,
+  localColor: PropTypes.string.isRequired,
+  remotecolor: PropTypes.string.isRequired,
+  userList: PropTypes.array.isRequired,
 };
 
 export default ChatEntry;

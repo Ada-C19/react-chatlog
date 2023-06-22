@@ -5,19 +5,19 @@ const ColorChoice = (props) => {
     return (
       <div>
         <h3>{props.user}'s color:</h3>
-        <button>🔴</button>
-        <button>🟠</button>
-        <button>🟡</button>
-        <button>🟢</button>
-        <button>🔵</button>
-        <button>🟣</button>
+        <button onClick={() => {props.changeColor(props.user, 'red')}}>🔴</button>
+        <button onClick={() => {props.changeColor(props.user, 'orange')}}>🟠</button>
+        <button onClick={() => {props.changeColor(props.user, 'yellow')}}>🟡</button>
+        <button onClick={() => {props.changeColor(props.user, 'green')}}>🟢</button>
+        <button onClick={() => {props.changeColor(props.user, 'blue')}}>🔵</button>
+        <button onClick={() => {props.changeColor(props.user, 'purple')}}>🟣</button>
       </div>
     );
 };
-  
 
 ColorChoice.propTypes = {
-    setColorCallback: PropTypes.string.isRequired
+    user: PropTypes.string.isRequired,
+    changeColor: PropTypes.func.isRequired
 };
 
 export default ColorChoice;
