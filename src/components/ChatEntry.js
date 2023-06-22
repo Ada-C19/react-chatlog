@@ -6,7 +6,6 @@ import TimeStamp from './TimeStamp';
 const ChatEntry = (props) => {
 	return (
 		<div className='chat-entry local'>
-			{console.log(props)}
 			<h2 className='entry-name'>{props.sender}</h2>
 			<section className='entry-bubble'>
 				<p>{props.body}</p>
@@ -22,6 +21,7 @@ const ChatEntry = (props) => {
 ChatEntry.propTypes = {
 	sender: PropTypes.string.isRequired,
 	body: PropTypes.string.isRequired,
+	timeStamp: PropTypes.string.isRequired,
 };
 
 export default ChatEntry;
