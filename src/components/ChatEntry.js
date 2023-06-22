@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
@@ -24,14 +24,39 @@ import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
   const entryClassName = props.sender === 'Vladimir'? 'chat-entry local': 'chat-entry remote';
-  // const heartColor = props.liked === true? '❤️' : '🤍';
+
+  const [likeCount, setLikeCount] = useState(0);
+  const increaseLikeCount = () => {
+    setLikeCount(likeCount + 1);
+  }
+  const [heartColor, setHeartColor] = useState('🤍')
+  const changeHeartColor = () => {
+    setHeartColor(heartColor === '❤️'? '🤍' : '❤️') 
+  }
+  const clickLike = () => {
+    increaseLikeCount();
+    changeHeartColor();
+  }
+
+  const onLikeButtonClick = () => {
+    const updateLike = {
+      id: props.id,
+      sender: props.sender,
+      body: props.body,
+      timeStamp: props.timeStamp,
+      liked: !props.liked
+    }
+
+  };
+
+
   return (
     <div className={entryClassName}>
       <h2 className="entry-name">{props['sender']}</h2>
       <section className="entry-bubble">
         <p>{props['body']}</p>
         <p><TimeStamp time={props.timeStamp}/></p>
-        <button className="like">{heartColor}</button>
+        <button className="like" onClick={clickLike}>{heartColor}</button>
       </section>
     </div>
   );

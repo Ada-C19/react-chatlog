@@ -20,6 +20,7 @@
 
 import React from 'react';
 import ChatEntry from './ChatEntry';
+import PropTypes from 'prop-types';
 
 const ChatLog = ({entries}) => {
     return (
@@ -32,10 +33,18 @@ const ChatLog = ({entries}) => {
                     body={entry.body}
                     timeStamp={entry.timeStamp}
                     liked={entry.liked}
-                />
+                ></ChatEntry>
             ))}
         </div>
     );
+};
+
+ChatLog.propTypes = {
+    id: PropTypes.number.isRequired,
+    sender: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+    timeStamp: PropTypes.string.isRequired,
+    liked: PropTypes.bool
 };
 
 export default ChatLog;
