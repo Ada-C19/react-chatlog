@@ -26,12 +26,18 @@ const App = () => {
       }, initialLikes);
   };
 
-  const totalLikes = calcTotalLikes(chatData)
+  const totalLikes = calcTotalLikes(chatData);
+
+  
+  const senderInfo = {
+    localSender: chatMessages[0].sender,
+    remoteSender: chatMessages[1].sender
+  };
   
   return (
     <div id="App">
       <header>
-        <h1>Chat Log</h1>
+        <h1>Chat between {senderInfo.localSender} and {senderInfo.remoteSender}</h1>
         <h2>{totalLikes} ❤️s</h2>
       </header>
       <main>
