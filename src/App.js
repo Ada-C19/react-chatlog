@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
+import ColorChoice from './components/ColorChoice';
 
 const App = () => {
   const[entriesData, setEntriesData] = useState(chatMessages);
@@ -27,41 +28,44 @@ const App = () => {
     }
     return total;
   }, 0);
-   
+
+  const [senderColors, setSenderColors] = useState({
+    [chatMessages[0].sender]: 'red',
+    [chatMessages[1].sender]: 'blue'
+  });
+
+  const setSenderColor = (sender, color) => {
+    setSenderColors((prevColors) => ({
+      ...prevColors,
+      [sender]: color
+    }));
+  };
+
   return (
     <div id="App">
       <header>
-        <h1>Chat between {chatMessages[0].sender} and {chatMessages[1].sender}</h1>
+        <h1>
+          Chat between{' '}
+          <span style={{ color: senderColors.Vladimir }}>{chatMessages[0].sender}</span>{' '}
+          and{' '}
+          <span style={{ color: senderColors.Estragon }}>{chatMessages[1].sender}</span>
+        </h1>
         <section>
           <div  className="user">
-            <h3>Vladimir</h3>
-            <div className='color-picker-container'>
-              <span className="circle red"></span>
-              <span className="circle orange"></span>
-              <span className="circle yellow"></span>
-              <span className="circle green"></span>
-              <span className="circle blue"></span>
-              <span className="circle purple"></span>
-            </div>
+            <h3 style={{ color: senderColors[chatMessages[0].sender] }}>{chatMessages[0].sender}</h3>
+            <ColorChoice setColorCallback={(color) => setSenderColor(chatMessages[0].sender, color)} />
           </div>
           <h1 id="heartWidget" className="widget">{totalLikes} ❤️s</h1>
           <div className="user">
-            <h3 >Estragon</h3>
-            <div className='color-picker-container'>
-              <span className="circle red"></span>
-              <span className="circle orange"></span>
-              <span className="circle yellow"></span>
-              <span className="circle green"></span>
-              <span className="circle blue"></span>
-              <span className="circle purple"></span>
-            </div>
+            <h3 style={{ color: senderColors[chatMessages[1].sender] }}>{chatMessages[1].sender}</h3>
+            <ColorChoice senderColors={entriesData} />
           </div>
         </section>
       </header>
       <main>
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
-        <ChatLog entries={entriesData} onLikeEntry = {likeEntry}></ChatLog> 
+        <ChatLog entries={entriesData} onLikeEntry = {likeEntry} senderColors= {senderColors}></ChatLog> 
       </main>
     </div>
   );
