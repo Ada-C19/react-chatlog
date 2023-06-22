@@ -44,9 +44,9 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Estragon</h1>
+        <h1>Chat between {messages[0].sender} and {messages[1].sender}</h1>
         <section>
-          <span className={setColorChoice}>
+          <span>
             <ColorChoice sender={messages[0].sender} setColorCallback={setColorChoice}/>
           </span>
           <span id="heartWidget">
