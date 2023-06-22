@@ -15,16 +15,22 @@ const App = () => {
     );
   };
 
-  // const countLikes = () => {
-    
-  // };
+  const countLikes = () => {
+    let heartCount = 0;
+    for (let message of messages) {
+      if (message.liked) {
+        heartCount += 1;
+      }
+    }return heartCount;
+  };
+
 
   return (
     <div id="App">
       <header>
         <h1>Waiting for Chat GDT</h1>
         <section> 
-          <h2>1 ❤️s</h2>
+          <h2>{countLikes()} ❤️s</h2>
         </section>
       </header>
       <main>

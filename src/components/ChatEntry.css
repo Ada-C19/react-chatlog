@@ -26,6 +26,7 @@ button {
   width: fit-content;
 }
 
+
 .chat-entry .entry-bubble:hover {
   background-color: #fefea2;
 }

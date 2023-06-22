@@ -8,8 +8,15 @@ const ChatEntry = ({id, sender, body, timeStamp, liked, toggleLike}) => {
     toggleLike(id);
   };
 
+const localOrRemote = (sender) => {
+if (sender === 'Vladimir') {
+  return 'chat-entry local';
+} else if (sender === 'Estragon') {
+  return 'chat-entry remote';
+};
+};
   return (
-    <div className="chat-entry local">
+    <div className= {localOrRemote(sender)}>
       <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
         <p>{body}</p>
