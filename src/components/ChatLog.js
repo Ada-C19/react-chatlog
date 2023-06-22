@@ -1,50 +1,40 @@
-// import React from 'react';
-// import ChatEntry from './ChatEntry';
-
-// const ChatLog = ({ entries }) => {
-//     return (
-//         <div className="chat-log">
-//         {entries.map((entry) => (
-//             <ChatEntry
-//             key={entry.id}
-//             sender={entry.sender}
-//             body={entry.body}
-//             timeStamp={entry.timeStamp}
-//             />
-//         ))}
-//         </div>
-//     );
-// };
-
-// export default ChatLog;
 
 import React from 'react';
 import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
 
-const ChatLog = ({entries}) => {
-    return (
-        <div className='chat-log'>
-            {entries.map((entry) => (
+const ChatLog = (props) => {
+    const entryComponents = props.entries.map((entry) => {
+
+        return (
+            <div className='chat-log' key={entry.id}>
                 <ChatEntry
-                    key={entry.id}
                     id={entry.id}
                     sender={entry.sender}
                     body={entry.body}
                     timeStamp={entry.timeStamp}
                     liked={entry.liked}
+                    onUpdateEntry={props.onUpdateEntry}
                 ></ChatEntry>
-            ))}
-        </div>
-    );
+            </div>
+        );
+    });
+    return <div>{entryComponents}</div>;
 };
 
+
 ChatLog.propTypes = {
-    id: PropTypes.number.isRequired,
-    sender: PropTypes.string.isRequired,
-    body: PropTypes.string.isRequired,
-    timeStamp: PropTypes.string.isRequired,
-    liked: PropTypes.bool
+    entries: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        sender: PropTypes.string.isRequired,
+        body: PropTypes.string.isRequired,
+        timeStamp: PropTypes.string.isRequired,
+        liked: PropTypes.bool
+    })),
+    onUpdateEntry: PropTypes.func.isRequired
 };
 
 export default ChatLog;
+
+
+
