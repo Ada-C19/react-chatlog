@@ -16,10 +16,15 @@ const App = () => {
     setNewChatMessages(newChatData)
   }
 
+  const likesCount = newChatMessages.reduce((likeTotal, currentMessage) => {
+    return likeTotal + currentMessage.liked;
+  },0)
+
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Luwams Chatlog </h1>
+        <div>{likesCount} ❤️s</div>
       </header>
       <main>
         {/* Wave 01: Render one ChatEntry component
