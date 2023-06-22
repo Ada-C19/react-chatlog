@@ -1,5 +1,5 @@
 #App {
-  background-color: #87cefa;
+  background: linear-gradient(red, rgb(235, 79, 105), pink)
 }
 
 #App header {

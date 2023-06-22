@@ -27,7 +27,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>😤 ClashMates ⚔️</h1>
-        <h2>{totalLikes()}</h2>
+        <h2>❤️ Count: {totalLikes()}</h2>
       </header>
       <main>
         <ChatLog chatEntries={entries} toggleLike={toggleLike}></ChatLog>

@@ -6,9 +6,15 @@ import TimeStamp from './TimeStamp.js';
 const ChatEntry = (props) => {
   const buttonText =
     props.liked ? '❤️' : '🤍';
+  
+  let entryClass = 'chat-entry local'  
+  
+  if (props.sender !== 'Lichen') {
+    entryClass = 'chat-entry remote';
+  }
 
   return (
-    <div className="chat-entry local">
+    <div className={entryClass}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
