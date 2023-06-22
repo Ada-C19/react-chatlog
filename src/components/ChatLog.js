@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 
 const ChatLog =(props) => {
   
+  const forLike = (value) => {alert(value)}
+
   // console.log(props)
   // console.log(props.allMessages)
   return props.entries.map((oneMessage) => {
@@ -13,7 +15,8 @@ const ChatLog =(props) => {
         body={oneMessage['body']}
         timeStamp={oneMessage['timeStamp']}
         id={oneMessage['id']}
-        liked={oneMessage['liked']}
+        // liked={oneMessage['liked']}
+        onLike={forLike}
     ></ChatEntry>
     )
   })
