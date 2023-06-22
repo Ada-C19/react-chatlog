@@ -5,21 +5,19 @@ import TimeStamp from './TimeStamp'
 
 
 
-const ChatEntry = ({ message }) => {
+const ChatEntry = ({ message, handleLike }) => {
 
-  const handleLike = (id) => {
-    console.log('liked')
-  }
-  
+  // const handleLike = (id) => {
+  //   console.log(id)
+  // }
+  const heart = message.liked ? '❤️' :'🤍'
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{message.sender}</h2>
       <section className="entry-bubble">
         <p>{message.body}</p>
-        {/* <p className="entry-time">{message.timeStamp}</p>
-         */}
          <TimeStamp className="entry-time" message={message}/>
-        <button className="like" onClick={() => {handleLike(message.id)}}>🤍</button>
+        <button className="like" onClick={() => handleLike(message.id)}>{heart}</button>
       </section>
     </div>
   );

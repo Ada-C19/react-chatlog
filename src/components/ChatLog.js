@@ -2,20 +2,22 @@ import React from 'react';
 import './ChatLog.css';
 import ChatEntry from './ChatEntry';
 
-const ChatLog =  ({ chatMessages }) => {
-    const chatComponents = chatMessages.map((message, index) => {
+const ChatLog =  ({ entries, handleLike }) => {
+    const chatComponents = entries.map((message, index) => {
         return (
-            <>
+            <li key={index}>
                 <ChatEntry
-                    message = {message}
+                    handleLike={handleLike}
+                    message={message}
+                    // id={message.id}
                 /> 
-            </>
+            </li>
         );
     });
     return (
         <section>
             <h2 className='chat-log'>Chat Log</h2>
-            {chatComponents}
+            <ul>{chatComponents}</ul>
         </section>
 
     );

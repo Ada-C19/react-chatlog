@@ -7,7 +7,16 @@ import ChatLog from './components/ChatLog';
 
 
 const App = () => {
-  // const [likesCount, setLikesCount] = React.useState(chatMessages)
+  const [messages, setMessages] = React.useState(chatMessages)
+
+  const handleLike = (id) => {
+    setMessages(prevMessages => {
+      const updatedMessages = prevMessages.map(message => {
+        return message.id === id ? {...message, liked: !message.liked} : message
+      })
+      return updatedMessages
+    })
+  }
 
   return (
     <div id="App">
@@ -16,11 +25,7 @@ const App = () => {
       </header>
       <main>
         {/* <h3>Total Likes: {likesCount}</h3> */}
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
-        {/* console.log({chatMessages[0]['sender']}) */}
-      
-        <ChatLog chatMessages={chatMessages}/>
+        <ChatLog entries={messages} handleLike={handleLike}/>
 
 
       </main>
