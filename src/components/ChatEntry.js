@@ -3,22 +3,23 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp.js';
 
-// const ChatEntry = ({ sender, body, timeStamp }) => {
+
 const ChatEntry = (props) => {
 
-  const msgDateFormat = new Date(props.timeStamp)
-  const currentDate = new Date()
-  const msgYear = msgDateFormat.getFullYear();
-  const currYear = currentDate.getFullYear();
-  // const seconds = dateFormat.getSeconds();
+
+
+  const chatColor = props.sender === 'Vladimir' ? 'local' : 'remote'
+  const buttonShape = props.liked ? '❤️' : '🤍'
 
   return (
-    <div className="chat-entry local">
+
+    <div className={`chat-entry ${chatColor}`}>
+
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
-        <p className="entry-time">{currYear - msgYear} years ago</p>
-        <button className="like" onClick={() => null}>🤍</button>
+        <p className="entry-time"><TimeStamp time={props.timeStamp} /></p>
+        <button className="like" onClick={() => props.onChangeLike(props.id)}>{buttonShape}</button>
       </section>
     </div >
   );
@@ -27,12 +28,12 @@ const ChatEntry = (props) => {
 
 ChatEntry.propTypes = {
 
-  // id: PropTypes.number.isRequired,
+  id: PropTypes.number.isRequired,
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
-  // like: PropTypes.bool.isRequired,
-
+  onChangeLike: PropTypes.func.isRequired,
+  liked: PropTypes.bool.isRequired,
 
 }
 

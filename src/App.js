@@ -1,30 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
 // import TimeStamp from './components/TimeStamp';
 
-// {
 
-const chatData = chatMessages[0]
-const chatLogData = chatMessages
+const chatLogData = chatMessages;
 
 const App = () => {
-  const onChangeLike = () => {
+  const [updatedChatLogData, setChangeLikeState] = useState(chatLogData)
+
+  const onChangeLike = (id) => {
+    setChangeLikeState(() => updatedChatLogData.map(chat => {
+      if (chat.id === id) {
+        return { ...chat, liked: !chat.liked };
+      }
+      else {
+        return chat;
+      }
+    }
+    ))
+  }
+
+  const calcTotalLike = (updatedChatLogData) => {
+    const initialValue = 0
+    return updatedChatLogData.reduce((total, chat) => {
+      if (chat.liked === true) {
+        return total + 1;
+      } else {
+        return total;
+      }
+    }, initialValue);
 
   }
 
   return (
     <div id="App">
       <header>
-        <h1>Messenger</h1>
+        {/* <h1>Messenger</h1> */}
+        <h1>{calcTotalLike(updatedChatLogData)} ❤️s</h1>
       </header>
       <main >
-        <ChatLog entries={chatLogData} />
-        <ChatEntry sender={chatData.sender} body={chatData.body} timeStamp={chatData.timeStamp} />
-
-
+        <ChatLog entries={updatedChatLogData} onChangeLike={onChangeLike} />
       </main>
     </div>
   );
