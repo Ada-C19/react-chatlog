@@ -30,7 +30,6 @@ ChatEntry.propTypes = {
   timeStamp: PropTypes.string.isRequired,
   onChangeLike: PropTypes.func.isRequired,
   liked: PropTypes.bool.isRequired,
-
 }
 
 

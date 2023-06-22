@@ -3,7 +3,7 @@ import React from 'react';
 import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
 
-const ChatLog = ({ entries, onChangeLike, changeHeartColor, buttonShape }) => {
+const ChatLog = ({ entries, onChangeLike }) => {
 
     const getChatLogJSX = (chatLog) => {
         return chatLog.map((indvChat) => {
