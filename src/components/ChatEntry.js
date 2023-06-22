@@ -2,7 +2,6 @@ import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp.js';
-// import timestamp component
 
 const ChatEntry = (props) => {
   const buttonText =
