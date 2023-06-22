@@ -33,7 +33,29 @@ const App = () => {
       <header>
         <h1>Chat between {chatMessages[0].sender} and {chatMessages[1].sender}</h1>
         <section>
+          <div  className="user">
+            <h3>Vladimir</h3>
+            <div className='color-picker-container'>
+              <span className="circle red"></span>
+              <span className="circle orange"></span>
+              <span className="circle yellow"></span>
+              <span className="circle green"></span>
+              <span className="circle blue"></span>
+              <span className="circle purple"></span>
+            </div>
+          </div>
           <h1 id="heartWidget" className="widget">{totalLikes} ❤️s</h1>
+          <div className="user">
+            <h3 >Estragon</h3>
+            <div className='color-picker-container'>
+              <span className="circle red"></span>
+              <span className="circle orange"></span>
+              <span className="circle yellow"></span>
+              <span className="circle green"></span>
+              <span className="circle blue"></span>
+              <span className="circle purple"></span>
+            </div>
+          </div>
         </section>
       </header>
       <main>

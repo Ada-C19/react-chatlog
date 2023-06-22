@@ -38,6 +38,9 @@
   font-size:0.8em;
   padding-left: 1em;
   padding-right: 1em;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1rem;
 }
 
 #App #heartWidget {
@@ -45,30 +48,58 @@
   margin: 1em
 }
 
+#App .user {
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+}
+
+#App .color-picker-container {
+  display: inline-block;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+#App .user h3 {
+  margin-bottom: 0.5rem;
+  color: black;
+}
+
 #App span {
   display: inline-block
 }
 
+.circle {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+  position: relative;
+  background-color: #ccc;
+  box-shadow: inset 1px 3px 3px rgba(255, 255, 255, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
 .red {
-  color: #b22222
+  background-color: #b22222
 }
 
 .orange {
-  color: #e6ac00
+  background-color: #e6ac00
 }
 
 .yellow {
-  color: #e6e600
+  background-color: #e6e600
 }
 
 .green {
-  color: green
+  background-color: green
 }
 
 .blue {
-  color: blue
+  background-color: blue
 }
 
 .purple {
-  color: purple
+  background-color: purple
 }
