@@ -4,7 +4,7 @@ import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
 
 const App = () => {
-  const title = 'Some title that we need to come up with';
+  const title = 'Who\'s the robot?';
 
   const [entryData, setEntryData] = useState(chatMessages);
 
