@@ -16,9 +16,22 @@ const App = () => {
     );
   };
 
-  const setColor = (colorChoice) => {
+  const [colorChoice, setColor] = React.useState({
+    [messages[0].sender]: 'red',
+    [messages[1].sender]: 'green'
+  })
 
+  const setColorChoice = (sender, chosenColor) => {
+    console.log(sender, chosenColor)
+    setColor(prevColor => {
+      return {
+        ...prevColor,
+        [sender]: chosenColor
+      }
+    })
   }
+
+  console.log(colorChoice)
 
   let totalHearts = 0;
 
@@ -33,13 +46,19 @@ const App = () => {
       <header>
         <h1>Estragon</h1>
         <section>
-          <ColorChoice setColorCallback={setColor}/>
-          <p>Total Likes: {totalHearts} ❤️s</p>
-          <ColorChoice setColorCallback={setColor}/>
+          <span className={setColorChoice}>
+            <ColorChoice sender={messages[0].sender} setColorCallback={setColorChoice}/>
+          </span>
+          <span id="heartWidget">
+            <p>{totalHearts} ❤️s</p>
+          </span>
+          <span>
+            <ColorChoice sender={messages[1].sender} setColorCallback={setColorChoice}/>
+          </span>
         </section>
       </header>
       <main>
-        <ChatLog entries={messages} likeMessage={likeMessage} />
+        <ChatLog entries={messages} colorChoice={colorChoice} likeMessage={likeMessage} />
       </main>
     </div>
   );

@@ -2,7 +2,7 @@ import React from 'react'
 import './ChatLog.css'
 import ChatEntry from './ChatEntry'
 
-const ChatLog = ({ entries, likeMessage }) => {
+const ChatLog = ({ entries, likeMessage, colorChoice }) => {
     const entryComponents = entries.map(entry => {
         return (
             <ChatEntry 
@@ -12,6 +12,7 @@ const ChatLog = ({ entries, likeMessage }) => {
             timeStamp= {entry.timeStamp}
             liked= {entry.liked}
             likeMessage= {likeMessage} 
+            colorChoice={colorChoice}
             />
         )
     })

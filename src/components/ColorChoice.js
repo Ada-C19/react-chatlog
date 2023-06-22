@@ -1,18 +1,21 @@
 import React from 'react';
 import './ColorChoice.css'
 
-const ColorChoice = ({ setColorCallback }) => {
+const ColorChoice = ({ setColorCallback, sender }) => {
     return (
-        <div id="color-picker">color:
+        <section>
+            <p>{`${sender}'s Color:`}</p>
             <ul>
-                <li>🔴</li>
-                <li>🟠</li>
-                <li>🟡</li>
-                <li>🟢</li>
-                <li>🔵</li>
-                <li>🟣</li>
+                <li onClick={() => setColorCallback(sender, 'red')}>🔴</li>
+                <li onClick={() => setColorCallback(sender, 'orange')}>🟠</li>
+                <li onClick={() => setColorCallback(sender, 'yellow')}>🟡</li>
+                <li onClick={() => setColorCallback(sender, 'green')}>🟢</li>
+                <li onClick={() => setColorCallback(sender, 'blue')}>🔵</li>
+                <li onClick={() => setColorCallback(sender,'purple')}>🟣</li>
             </ul>
-        </div>
+
+        </section>
+
     )
 }
 
