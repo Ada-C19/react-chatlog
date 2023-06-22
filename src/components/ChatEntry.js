@@ -36,11 +36,11 @@ const ChatEntry = (props) => {
   return (
     <div className="chat-entry local">
     {/* <div className={determineClassName()}> */}
-      {/* <h2 className="entry-name">{props.sender}</h2> */}
+      <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time">{getTimeAgo(props.timeStamp)}</p>
-        <button onClick={onHeartClick}>{heartColor}</button>
+        <button className="like" onClick={onHeartClick}>{heartColor}</button>
         {/* {likeColor} */}
       </section>
     </div>

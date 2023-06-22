@@ -10,7 +10,9 @@ const App = () => {
   const [chatData, setChatData] = useState(chatMessages);
   const [likeCount, setLikeCount] = useState(0);
 
+
   const updateEntryData = updatedEntry => {
+    // const entry = chatData.find((e) => e.id === updatedEntry.id)
     const entries = chatData.map(entry => {
       if (entry.id === updatedEntry.id) {
         if (entry.liked !== updatedEntry.liked) {
@@ -36,7 +38,7 @@ const App = () => {
       <header>
         <h1>Chat between Vladimir and Estragon</h1>
         <section>
-          <h2 className="widget" id="heartWidget">{likeCount}❤️s</h2>
+          <h2 className="widget" id="heartWidget">{likeCount} ❤️s</h2>
         </section>
       </header>
       <main>
