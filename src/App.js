@@ -31,6 +31,7 @@ const App = () => {
     })
   }
 
+
   console.log(colorChoice)
 
   let totalHearts = 0;
@@ -44,15 +45,16 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Chat between {messages[0].sender} and {messages[1].sender}</h1>
+        <h1>Chat between 
+          <i className={colorChoice[messages[0].sender]}>{messages[0].sender}</i> and <i className={colorChoice[messages[1].sender]}>{messages[1].sender}</i></h1>
         <section>
-          <span>
+          <span className="widget">
             <ColorChoice sender={messages[0].sender} setColorCallback={setColorChoice}/>
           </span>
           <span id="heartWidget">
             <p>{totalHearts} ❤️s</p>
           </span>
-          <span>
+          <span className="widget">
             <ColorChoice sender={messages[1].sender} setColorCallback={setColorChoice}/>
           </span>
         </section>

@@ -18,7 +18,7 @@ const ChatLog = ({ entries, likeMessage, colorChoice }) => {
     })
 
     return (
-    <div>ChatLog
+    <div className="chat-log">
         <section>{entryComponents}</section>
     </div>
     )

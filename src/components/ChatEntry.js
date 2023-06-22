@@ -18,7 +18,7 @@ const ChatEntry = ({ id, sender, body, timeStamp, liked, likeMessage, colorChoic
 
 	return (
 		<div className={'chat-entry ' + stateMessage(sender)}>
-			<h2 className="entry-name">{sender}</h2>
+			<h2 className={`entry-name ${bubbleClass}`}>{sender}</h2>
 			<section className={`entry-bubble ${bubbleClass}`}>
 				<p>{body}</p>
 				<p className="entry-time">

@@ -3,7 +3,7 @@ import './ColorChoice.css'
 
 const ColorChoice = ({ setColorCallback, sender }) => {
     return (
-        <section>
+        <div>
             <p>{`${sender}'s Color:`}</p>
             <ul>
                 <li onClick={() => setColorCallback(sender, 'red')}>🔴</li>
@@ -13,8 +13,7 @@ const ColorChoice = ({ setColorCallback, sender }) => {
                 <li onClick={() => setColorCallback(sender, 'blue')}>🔵</li>
                 <li onClick={() => setColorCallback(sender,'purple')}>🟣</li>
             </ul>
-
-        </section>
+        </div>
 
     )
 }
