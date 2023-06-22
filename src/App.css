@@ -11,6 +11,8 @@
   z-index: 100;
   text-align: center;
   align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 #App main {
@@ -71,4 +73,11 @@
 
 .purple {
   color: purple
+}
+
+.likes-count {
+  color: black;
+  background-color: #e0ffff;
+  flex-grow: 1;
+  width: 100%;
 }
