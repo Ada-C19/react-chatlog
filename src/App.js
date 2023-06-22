@@ -38,7 +38,7 @@ const App = () => {
         </section>
       </header>
       <main>
-        <ChatLog chatMessages={messages} increaseLikes={increaseLikes} />
+        <ChatLog entries={messages} increaseLikes={increaseLikes} />
       </main>
     </div>
   );

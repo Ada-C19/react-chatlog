@@ -3,9 +3,9 @@ import './ChatLog.css'
 import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
 
-const ChatLog = ({ chatMessages, increaseLikes }) => {
+const ChatLog = ({ entries, increaseLikes }) => {
 
-  const chatComponents = chatMessages.map((message)=> {
+  const chatComponents = entries.map((message)=> {
 
     return (
     <ChatEntry
