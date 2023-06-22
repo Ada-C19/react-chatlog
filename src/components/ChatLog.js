@@ -4,21 +4,21 @@ import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry.js';
 // import timestamp component
 
-const ChatLog = ({entries, toggleLike}) => {
-  const chatComponents = entries.map(chatInstance => {
-    return(
-        <li key={chatInstance.id}>
-            <ChatEntry
-            id={chatInstance.id}
-            sender={chatInstance.sender}
-            body={chatInstance.body}
-            liked={chatInstance.liked}
-            timeStamp={chatInstance.timeStamp}
-            toggleLike={toggleLike}>
-            </ChatEntry>
-        </li>
-    )
-  })
+const ChatLog = ({chatEntries, toggleLike}) => {
+    const chatComponents = chatEntries.map(chatInstance => {
+        return(
+            <li key={chatInstance.id}>
+                <ChatEntry
+                id={chatInstance.id}
+                sender={chatInstance.sender}
+                body={chatInstance.body}
+                liked={chatInstance.liked}
+                timeStamp={chatInstance.timeStamp}
+                toggleLike={toggleLike}>
+                </ChatEntry>
+            </li>
+        )
+    })
     return (
         <section>
             <ul>
@@ -26,7 +26,7 @@ const ChatLog = ({entries, toggleLike}) => {
                 {chatComponents}
             </ul>
         </section>
-  );
+    );
 };
 
 ChatLog.propTypes = {
