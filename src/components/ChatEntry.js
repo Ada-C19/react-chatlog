@@ -18,9 +18,8 @@ const ChatEntry = (props) => {
       liked: !isLiked,
     };
     props.updatedMessage(messageData)
-    console.log(messageData)
-    // console.log(updatedLiked)
-    // props.onLike( !isLiked );
+    // console.log(messageData)
+    
   }
 
   return (
@@ -38,10 +37,12 @@ const ChatEntry = (props) => {
 
 ChatEntry.propTypes = {
   //Fill with correct proptypes
-  // time: PropTypes.TimeStamp.isRequired,
+  timeStamp: PropTypes.string.isRequired,
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
-
+  id: PropTypes.number.isRequired,
+  liked: PropTypes.bool.isRequired,
+  updatedMessage: PropTypes.func.isRequired
 };
 
 export default ChatEntry;
