@@ -5,7 +5,6 @@ import ChatLog from './components/ChatLog';
 
 
 const App = () => {
-  // const likedMessagesCount = chatMessages.filter(message => message.liked).length;
   const [entries,setEntriesData] = useState(chatMessages);
 
   const updateLikedMessagesCount = (id) => {
