@@ -7,7 +7,7 @@ const ChatLog = (props) => {
   
   const chatComponents =  props.entries.map(entry => {
     return (
-      <div className="chat-log">
+      <div className="chat-log" key={entry.id}>
         <ChatEntry 
         id={entry.id} 
         sender={entry.sender}
