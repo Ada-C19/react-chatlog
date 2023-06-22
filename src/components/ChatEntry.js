@@ -3,9 +3,8 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-
 const ChatEntry = (props) => {
-  const heart = props.liked ? '❤️' : '🤍';
+  let heart = props.liked ? '❤️' : '🤍';
 
   const handleLikes = () => {
     const updatedEntry = {
@@ -20,8 +19,10 @@ const ChatEntry = (props) => {
     props.toggleLikes(updatedEntry);
   };
 
+  const userStatus = props.sender === 'Vladimir' ? 'local' : 'remote';
+
   return (
-    <div className="chat-entry local">
+    <div className={`chat-entry ${userStatus}`}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
@@ -37,6 +38,7 @@ ChatEntry.propTypes = {
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
+  liked: PropTypes.bool.isRequired,
   updateEntryData: PropTypes.func.isRequired,
   likesCount: PropTypes.number.isRequired,
   toggleLikes: PropTypes.func.isRequired

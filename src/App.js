@@ -3,7 +3,6 @@ import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
 
-
 const App = () => {
   const [entriesData, setEntriesData] = useState(chatMessages);
   const [likesCount, setLikesCount] = useState(0);
@@ -18,14 +17,15 @@ const App = () => {
         return entry;
       }
     });
+    
     setEntriesData(entries);
   };
 
   const toggleLikes = updatedEntry => {
     if (updatedEntry.liked) {
-      setLikesCount(likesCount => likesCount + 1);
+      setLikesCount(prevLikesCount => prevLikesCount + 1);
     } else {
-      setLikesCount(likesCount => likesCount - 1);
+      setLikesCount(prevLikesCount => prevLikesCount - 1);
     }
   };
   

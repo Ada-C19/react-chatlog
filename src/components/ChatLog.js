@@ -3,21 +3,21 @@ import ChatEntry from './ChatEntry';
 import PropTypes from 'prop-types';
 import './ChatLog.css';
 
-
-const ChatLog = (props) => { 
+const ChatLog = (props) => {  
     return (
         <div className='chat-log'>
             {props.entries.map(entry => (
                 <ChatEntry
-                id={entry.id}
-                sender={entry.sender} 
-                body={entry.body} 
-                timeStamp={entry.timeStamp}
-                liked={entry.liked}
-                updateEntryData={props.updateEntryData} 
-                likesCount={props.likesCount}
-                toggleLikes={props.toggleLikes}
+                    id={entry.id}
+                    sender={entry.sender} 
+                    body={entry.body} 
+                    timeStamp={entry.timeStamp}
+                    liked={entry.liked}
+                    updateEntryData={props.updateEntryData} 
+                    likesCount={props.likesCount}
+                    toggleLikes={props.toggleLikes}
                 />
+            
             ))}
         </div>
     );
@@ -29,7 +29,7 @@ ChatLog.propTypes = {
         sender: PropTypes.string.isRequired,
         body: PropTypes.string.isRequired,
         timeStamp: PropTypes.string.isRequired,
-        liked: PropTypes.bool
+        liked: PropTypes.bool.isRequired
     })),
     updateEntryData: PropTypes.func.isRequired,
     likesCount: PropTypes.number.isRequired,
