@@ -7,12 +7,7 @@ const ChatLog = ({ entries, onChangeLike, changeHeartColor, buttonShape }) => {
 
     const getChatLogJSX = (chatLog) => {
         return chatLog.map((indvChat) => {
-            if (!indvChat) {
-                console.log('It is Empty')
-                return ('')
-            };
             return (
-
                 <ChatEntry
                     id={indvChat.id}
                     sender={indvChat.sender}

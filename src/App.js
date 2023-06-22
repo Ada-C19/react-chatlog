@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
-// import TimeStamp from './components/TimeStamp';
-
 
 const chatLogData = chatMessages;
 
@@ -37,7 +35,6 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        {/* <h1>Messenger</h1> */}
         <h1>{calcTotalLike(updatedChatLogData)} ❤️s</h1>
       </header>
       <main >

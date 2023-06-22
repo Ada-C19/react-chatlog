@@ -6,15 +6,11 @@ import TimeStamp from './TimeStamp.js';
 
 const ChatEntry = (props) => {
 
-
-
   const chatColor = props.sender === 'Vladimir' ? 'local' : 'remote'
   const buttonShape = props.liked ? '❤️' : '🤍'
 
   return (
-
     <div className={`chat-entry ${chatColor}`}>
-
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
