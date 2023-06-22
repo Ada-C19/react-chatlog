@@ -35,7 +35,7 @@ const App = () => {
         <h2>{totalLikes} ❤️s</h2>
       </header>
       <main>
-        <ChatLog updateChatData={updateChatData} entries={chatMessages} />
+        <ChatLog updateChatData={updateChatData} entries={chatData} />
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
       </main>
