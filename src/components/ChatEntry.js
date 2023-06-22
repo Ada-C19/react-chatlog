@@ -9,7 +9,6 @@ const ChatEntry = (props) => {
   const onLikeButtonClick = () => {
     const likedMessage = {
       id: props.id,
-      key: props.id,
       sender: props.sender,
       body: props.body,
       timeStamp: props.timeStamp,
