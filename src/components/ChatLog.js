@@ -8,8 +8,12 @@ const ChatLog =  ({ entries, handleLike }) => {
             <li key={index}>
                 <ChatEntry
                     handleLike={handleLike}
-                    message={message}
-                    // id={message.id}
+                    id={message.id}
+                    sender={message.sender}
+                    body={message.body}
+                    timeStamp={message.timeStamp}
+                    liked={message.liked}
+
                 /> 
             </li>
         );
