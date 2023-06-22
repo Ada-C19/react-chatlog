@@ -3,19 +3,22 @@ import './ChatLog.css';
 import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
-const ChatLog = ({entries}) => {
+// const ChatLog = ({entries, onUpdateEntry}) => {
+    const ChatLog = (props) => {
+    // console.log({onUpdateEntry});
 
-    const chatComponents = entries.map((entry) => {
+    // const chatComponents = entries.map((entry) => {
+        const chatComponents = props.entries.map((entry, i) => {
 
         return (
-            <li key={entry.id} className="chat-log">
+            <li key={i} className="chat-log">
                 <ChatEntry
                     id={entry.id}
                     sender={entry.sender}
                     body={entry.body}
                     timeStamp={entry.timeStamp}
-                    liked={entry.liked}>
-                    onUpdate={entries.onUpdateChatEntry}    
+                    liked={entry.liked}
+                    onUpdate={props.onUpdateEntry}>
                 </ChatEntry>
             </li>
         );
