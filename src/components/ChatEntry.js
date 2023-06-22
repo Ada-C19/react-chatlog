@@ -16,15 +16,13 @@ const ChatEntry = (props) => {
     props.onUpdate(updatedEntry);
   };
 
-  const likeBtn = props.liked ? '❤️' : '🤍';
-
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp}></TimeStamp></p>
-        <button className="likeBtn" onClick={onLikeBtnClick}>{likeBtn}</button>
+        <button className="likeBtn" onClick={onLikeBtnClick}>{props.liked ? '❤️' : '🤍'}</button>
       </section>
     </div>
   );
