@@ -15,6 +15,7 @@ const ChatLog = ({ entries, likeMessage }) => {
             />
         )
     })
+
     return (
     <div>ChatLog
         <section>{entryComponents}</section>

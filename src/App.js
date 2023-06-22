@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
-import { getByLabelText } from '@testing-library/react';
+import ColorChoice from './components/ColorChoice';
 
 const App = () => {
   const [messages, setMessages] = React.useState(chatMessages);
@@ -16,6 +16,10 @@ const App = () => {
     );
   };
 
+  const setColor = (colorChoice) => {
+
+  }
+
   let totalHearts = 0;
 
   for (let message of messages) {
@@ -28,7 +32,11 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Estragon</h1>
-        <p>Total Likes: {totalHearts} ❤️s</p>
+        <section>
+          <ColorChoice setColorCallback={setColor}/>
+          <p>Total Likes: {totalHearts} ❤️s</p>
+          <ColorChoice setColorCallback={setColor}/>
+        </section>
       </header>
       <main>
         <ChatLog entries={messages} likeMessage={likeMessage} />

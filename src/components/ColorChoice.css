@@ -1,0 +1,19 @@
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow: hidden;
+    padding: 0
+}
+
+#color-picker {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    float: left;
+}
