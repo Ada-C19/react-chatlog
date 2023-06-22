@@ -3,6 +3,7 @@ import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog.js';
 import {useState} from 'react';
+
 const App = () => {
   const [messages, setMessages] = useState(chatMessages);
   const [likedCount, setLikedCount] = useState(0);

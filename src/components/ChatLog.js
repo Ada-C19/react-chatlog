@@ -13,6 +13,7 @@ const ChatLog = ({ entries, calculateLikedCount }) => {
         timeStamp={chat.timeStamp} 
         calculateLikedCount={calculateLikedCount}
         liked={chat.liked}
+        type={chat.sender === 'Vladimir' ? 'local' : 'remote'}
         />
         );
     });

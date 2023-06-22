@@ -4,13 +4,15 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 
-const ChatEntry = ({ id, sender, body, timeStamp, calculateLikedCount, liked }) => {  
+const ChatEntry = ({ id, sender, body, timeStamp, calculateLikedCount, liked, type }) => {  
   const toggleLike = () => {
     calculateLikedCount(id);
   };
-  
+  // type  = 'local' ? 'local' : 'remote';
+
   return (
-    <div className="chat-entry local">
+    // <div className="chat-entry local">
+      <div className={`chat-entry ${type}`}>
       <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
         <p>{body}</p>
@@ -29,6 +31,8 @@ ChatEntry.propTypes = {
   timeStamp: PropTypes.string.isRequired,
   calculateLikedCount: PropTypes.func.isRequired,
   liked: PropTypes.bool.isRequired,
+  type: PropTypes.oneOf(['local', 'remote']).isRequired,
+
 };
 
 export default ChatEntry;
