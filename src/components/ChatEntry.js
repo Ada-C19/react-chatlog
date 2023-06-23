@@ -12,7 +12,7 @@ const ChatEntry = (props) => {
         <p>{props.body}</p>
         <p className="entry-time">{props.timeStamp}</p>
         {/* <button className="like">🤍</button> */}
-        <button onClick={() => props.updateChatData(props.id)} className="like">
+        <button onClick={() => props.onUpdateChatData(props.id)} className="like">
           {heartType}
         </button>
       </section>
