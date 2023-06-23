@@ -11,8 +11,9 @@ const ChatLog = (props) => {
       sender={entry.sender}
       body={entry.body}
       liked={entry.liked}
-      time={entry.timeStamp}/>
-        );
+      timeStamp={entry.timeStamp}
+      updateLikedCount={props.updateLikedCount}/>
+      );
     });
     return (
         <section>
