@@ -6,14 +6,15 @@ import ChatLog from './components/ChatLog';
 const App = () => {
   const [chatData, setChatData] = useState(chatMessages);
 
-  const like = (id) => {
+  const handleLike = (id) => {
     setChatData((prev) => {
       return prev.map((chat) => {
         if (chat.id === id) {
           return { ...chat, liked: !chat.liked };
-        }
+        } else {
         return chat;
-      })
+        }
+      });
     });
   };
 
@@ -32,7 +33,7 @@ const App = () => {
       <main>
         <ChatLog 
             entries={chatData}
-            onLike={like}
+            onLike={handleLike}
         />
       </main>
     </div>
