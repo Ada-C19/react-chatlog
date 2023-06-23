@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
-  const [heart, setHeart] = useState('🤍');
 
   const onLikeButtonClick = () => {
     const likedMessage = {
@@ -17,14 +16,11 @@ const ChatEntry = (props) => {
     props.onUpdateLike(likedMessage.id);
     props.onCountLikes(likedMessage.liked);
 
-    if (heart === '🤍') {
-      return setHeart('❤️');
-    } else {
-      return setHeart('🤍');
-    }
   };
 
   const senderClass = (props.id % 2) ? 'chat-entry remote' : 'chat-entry local';
+
+  const heart = props.liked ? '❤️' : '🤍';
 
   return (
     <div className={senderClass}>
