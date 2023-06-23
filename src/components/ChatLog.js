@@ -7,7 +7,7 @@ import './ChatLog.css';
 
 const ChatLog = (props) => {
    
-   const getMessage = props.entries.map((message) =>{
+    const getMessage = props.entries.map((message) =>{
         
         return (
             <ChatEntry id={message.id} sender = {message.sender} key = {message.id}
@@ -15,7 +15,7 @@ const ChatLog = (props) => {
         )
 
     })
-   return <div className='chat-log'>{getMessage}</div>
+    return <div className='chat-log'>{getMessage}</div>
 };
 
 ChatLog.propTypes = {

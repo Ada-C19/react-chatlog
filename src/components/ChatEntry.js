@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 const ChatEntry = (props) => {
   let senderClass;
         if (props.sender === 'Vladimir'){
-            senderClass = 'chat-entry local'
+            senderClass = 'chat-entry local red'
         } else{
-            senderClass = 'chat-entry remote'
+            senderClass = 'chat-entry remote green'
         }
   const heartColor = props.liked ? '❤️' : '🤍'
   return (
