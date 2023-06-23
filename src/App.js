@@ -46,7 +46,6 @@ const App = () => {
           <ColorChoice setColorCallback={setColorLocal} title={"Vladimir's color:"} color={colorLocal}/>
           <p>{likedCount} {likedCount === 1 ? '❤️' : '❤️s'}</p>
           <ColorChoice setColorCallback={setColorRemote} title={"Estragon's color:"} color={colorRemote}  />
-          {colorLocal}{colorRemote}
         </div>
         
       </header>
