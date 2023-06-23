@@ -30,7 +30,7 @@ const App = () => {
         <h2>{totalLikes()} ❤️s</h2>
       </header>
       <main>
-        <ChatLog chatEntries={entries} toggleLike={toggleLike}></ChatLog>
+        <ChatLog entries={entries} toggleLike={toggleLike}></ChatLog>
       </main>
     </div>
   );
