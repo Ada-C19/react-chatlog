@@ -13,6 +13,8 @@ const ChatLog = (props) => {
                         timeStamp={entry.timeStamp}
                         liked={entry.liked}
                         key={entry.id}
+                        onLikeToggle={props.onLikeToggle}
+                        id={entry.id}
                     />
                 ))}
             </ul>
@@ -29,6 +31,7 @@ ChatLog.propTypes = {
             liked: PropTypes.bool.isRequired
         })
     ).isRequired,
+    onLikeToggle: PropTypes.func.isRequired,
 };
 
 export default ChatLog;
