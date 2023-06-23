@@ -41,11 +41,17 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Chat between <span className={colorLocal}>Vladimir</span> and <span className={colorRemote}>Estragon</span></h1>
-        <div>
-          <ColorChoice setColorCallback={setColorLocal} title={"Vladimir's color:"} color={colorLocal}/>
-          <p>{likedCount} {likedCount === 1 ? '❤️' : '❤️s'}</p>
-          <ColorChoice setColorCallback={setColorRemote} title={"Estragon's color:"} color={colorRemote}  />
+        <h1>Chat between{' '}  
+        <span className={colorLocal}>Vladimir {' '} </span> 
+        {' '} and {' '}  <span className={colorRemote}>Estragon</span></h1>
+        <div className="header-info">
+          <div className="color-info" style={{ display: 'inline-block' }}>
+          <ColorChoice setColorCallback={setColorLocal} title={"Vladimir's color:"} color={colorLocal}/></div>
+          <div className="like-count" style={{ display: 'inline-block' }}>
+          <p >{likedCount} {likedCount === 1 ? '❤️' : '❤️s'}</p>
+          </div>
+          <div className="color-info" style={{ display: 'inline-block' }}>
+          <ColorChoice setColorCallback={setColorRemote} title={"Estragon's color:"} color={colorRemote}  /> </div>
         </div>
         
       </header>
