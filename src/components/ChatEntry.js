@@ -4,21 +4,22 @@ import TimeStamp from './TimeStamp';
 import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
-  const messageSide = props.sender === 'Vladimir' ? 'local' : 'remote';
-  const textColorStyle = {
-    color: props.sender === 'Vladimir' ? props.senderColors.Vladimir : props.senderColors.Estragon
-  };
+
+  const messageSide = props.id % 2 !== 0 ? 'local' : 'remote';
 
   const toggleLiked = () => {
     props.onLikeEntry(props.id);
   };
+
+  // console.log('color prop:', props.color);
+  // console.log('senderColors prop:', props.senderColors);
   const likedColor = props.liked? '❤️':'🤍';
 
   return (
     <div className={`chat-entry ${messageSide}`}>
-      <h2 className="entry-name" style={textColorStyle}>{props.sender}</h2>
+      <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
-        <p style={textColorStyle}>{props.body}</p>
+        <p className={props.senderColors[props.sender]}>{props.body}</p>
         <p className="entry-time">
           <TimeStamp time={props.timeStamp}></TimeStamp>
         </p>
@@ -35,7 +36,8 @@ ChatEntry.propTypes = {
   liked: PropTypes.bool.isRequired,
   onLikeEntry: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
-  senderColors: PropTypes.object.isRequired,
+  color: PropTypes.string,
+  senderColors: PropTypes.object,
 };
 
 export default ChatEntry;

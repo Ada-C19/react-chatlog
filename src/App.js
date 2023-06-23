@@ -30,15 +30,30 @@ const App = () => {
   }, 0);
 
   const [senderColors, setSenderColors] = useState({
-    [chatMessages[0].sender]: 'red',
-    [chatMessages[1].sender]: 'blue'
+    [chatMessages[0].sender]: 'black',
+    [chatMessages[1].sender]: 'black'
   });
 
-  const setSenderColor = (sender, color) => {
+  const handleSenderColor = (sender, color) => {
     setSenderColors((prevColors) => ({
       ...prevColors,
       [sender]: color
     }));
+    
+    //I updated the data to set the text color dinamically
+    const updatedEntriesData = entriesData.map((entry) => {
+      if (entry.sender === sender) {
+        return {
+          ...entry,
+          color: color
+        };
+      } else {
+        return entry;
+      }
+    });
+  
+    setEntriesData(updatedEntriesData);
+    console.log(setEntriesData)
   };
 
   return (
@@ -46,26 +61,26 @@ const App = () => {
       <header>
         <h1>
           Chat between{' '}
-          <span style={{ color: senderColors.Vladimir }}>{chatMessages[0].sender}</span>{' '}
+          <span className={senderColors[chatMessages[0].sender]}>{chatMessages[0].sender}</span>{' '}
           and{' '}
-          <span style={{ color: senderColors.Estragon }}>{chatMessages[1].sender}</span>
+          <span className={senderColors[chatMessages[1].sender]}>{chatMessages[1].sender}</span>
         </h1>
         <section>
           <div  className="user">
-            <h3 style={{ color: senderColors[chatMessages[0].sender] }}>{chatMessages[0].sender}</h3>
-            <ColorChoice setColorCallback={(color) => setSenderColor(chatMessages[0].sender, color)} />
+            <h3 className={senderColors[chatMessages[0].sender]}>{chatMessages[0].sender}</h3>
+            <ColorChoice senderColors={senderColors} onSenderColors={handleSenderColor} sender={chatMessages[0].sender}/>
           </div>
           <h1 id="heartWidget" className="widget">{totalLikes} ❤️s</h1>
           <div className="user">
-            <h3 style={{ color: senderColors[chatMessages[1].sender] }}>{chatMessages[1].sender}</h3>
-            <ColorChoice senderColors={entriesData} />
+            <h3 className={senderColors[chatMessages[1].sender]}>{chatMessages[1].sender}</h3>
+            <ColorChoice senderColors={senderColors} onSenderColors={handleSenderColor} sender={chatMessages[1].sender} />
           </div>
         </section>
       </header>
       <main>
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
-        <ChatLog entries={entriesData} onLikeEntry = {likeEntry} senderColors= {senderColors}></ChatLog> 
+        <ChatLog entries={entriesData} onLikeEntry = {likeEntry} senderColors={senderColors}></ChatLog> 
       </main>
     </div>
   );

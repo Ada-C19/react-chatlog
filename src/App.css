@@ -69,37 +69,74 @@
   display: inline-block
 }
 
-.circle {
+.dot {
   display: inline-block;
+  align-items: center;
   width: 10px;
   height: 10px;
-  border-radius: 50%;
   margin-right: 5px;
   position: relative;
-  background-color: #ccc;
-  box-shadow: inset 1px 3px 3px rgba(255, 255, 255, 0.6), 0 1px 3px rgba(0, 0, 0, 0.4);
+  color: #ccc;
+  font-size: 0px;
+  line-height: 0.5;
+  text-shadow: 1px 3px 3px rgba(255, 255, 255, 0.6), 1px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.dot::before {
+  content: "\00B7"; /* Unicode character for middle dot */
+  display: inline-block;
+  font-size: 70px; /* Adjust the size of the dot */
 }
 
 .red {
-  background-color: #b22222
+  color: #b22222;
 }
 
 .orange {
-  background-color: #e6ac00
+  color: #e6ac00;
 }
 
 .yellow {
-  background-color: #e6e600
+  color: #e6e600;
+
 }
 
 .green {
-  background-color: green
+  color: green;
 }
 
 .blue {
-  background-color: blue
+  color: blue;
 }
 
 .purple {
-  background-color: purple
+  color: purple;
+}
+
+#App .user h3 {
+  margin-bottom: 0.5rem;
+}
+
+#App .user .red {
+  color: #b22222;
+}
+
+#App .user .orange {
+  color: #e6ac00;
+}
+
+#App .user .yellow {
+  color: #e6e600;
+}
+
+#App .user .green {
+  color: green;
+}
+
+#App .user .blue {
+  color: blue;
+}
+
+#App .user .purple {
+  color: purple;
 }
