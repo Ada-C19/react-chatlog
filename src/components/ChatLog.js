@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import './ChatLog.css';
 import React from 'react';
 
-const ChatLog = ({ entries, calculateLikedCount }) => {
+const ChatLog = ({ entries, calculateLikedCount,colorLocal,colorRemote }) => {
     const chatComponents = entries.map((chat) => {
         return (<ChatEntry 
         key={chat.id}
@@ -14,6 +14,7 @@ const ChatLog = ({ entries, calculateLikedCount }) => {
         calculateLikedCount={calculateLikedCount}
         liked={chat.liked}
         type={chat.sender === 'Vladimir' ? 'local' : 'remote'}
+        color={chat.sender === 'Vladimir' ? colorLocal : colorRemote}
         />
         );
     });
@@ -30,7 +31,9 @@ ChatLog.propTypes = {
         body: PropTypes.string.isRequired,
         timeStamp: PropTypes.string.isRequired,
     })).isRequired,
-    calculateLikedCount: PropTypes.func.isRequired
+    calculateLikedCount: PropTypes.func.isRequired,
+    colorLocal: PropTypes.string.isRequired,
+    colorRemote: PropTypes.string.isRequired,
 };
 export default ChatLog;
 

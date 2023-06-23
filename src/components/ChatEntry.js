@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 
-const ChatEntry = ({ id, sender, body, timeStamp, calculateLikedCount, liked, type }) => {  
+
+const ChatEntry = ({ id, sender, body, timeStamp, calculateLikedCount, liked, type, color }) => {  
   const toggleLike = () => {
     calculateLikedCount(id);
   };
@@ -15,7 +16,7 @@ const ChatEntry = ({ id, sender, body, timeStamp, calculateLikedCount, liked, ty
       <div className={`chat-entry ${type}`}>
       <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
-        <p>{body}</p>
+        <p className={color} >{body}</p>
         <TimeStamp className="entry-time" time={timeStamp} />
         <button onClick={toggleLike} className="like">
           {liked ? '❤️' : '🤍'}
@@ -32,6 +33,7 @@ ChatEntry.propTypes = {
   calculateLikedCount: PropTypes.func.isRequired,
   liked: PropTypes.bool.isRequired,
   type: PropTypes.oneOf(['local', 'remote']).isRequired,
+  color: PropTypes.string.isRequired,
 
 };
 
