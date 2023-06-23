@@ -7,12 +7,8 @@ const ChatEntry = (props) => {
 
   const likeButtonPress = () => {
     const updatedChat = {
-      id: props.id,
-      sender: props.sender,
-      body: props.body,
-      timeStamp: props.timeStamp,
+      ...props,
       liked: !props.liked,
-      localName: props.localName
     };
 
     props.updateChat(updatedChat)
