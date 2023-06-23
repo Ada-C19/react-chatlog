@@ -2,3 +2,14 @@
   margin: auto;
   max-width: 50rem;
 }
+
+.messages {
+  position: relative;
+  right: 90px;
+  margin: auto;
+  max-width: 50rem;
+}
+
+.messages li {
+  list-style-type: none;
+}

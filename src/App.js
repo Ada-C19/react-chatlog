@@ -18,9 +18,6 @@ const App = () => {
     })
   }
 
-
-
-
   const totalLikes = () => {
     let total = 0;
     for (let message of messages) {
@@ -34,7 +31,7 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Messages to Vladimir</h1>
       </header>
       <main>
         <h3>Total Likes: {totalLikes()}  ❤️s </h3>
