@@ -29,9 +29,9 @@ ChatLog.propTypes = {
         timeStamp: PropTypes.string.isRequired,
         liked: PropTypes.bool.isRequired
     })),
-    updateEntryData: PropTypes.func.isRequired,
-    likesCount: PropTypes.number.isRequired,
-    toggleLikes: PropTypes.func.isRequired
+    updateEntryData: PropTypes.func,
+    likesCount: PropTypes.number,
+    toggleLikes: PropTypes.func
 };
   
 export default ChatLog;
