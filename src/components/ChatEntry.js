@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = ( {sender, body, timeStamp, liked, onClick, id}) => {
-  let chatLocal = sender === 'Vladimir' ? 'local' : 'remote';
-  let heartIndicator = liked === false ? '🤍' : '❤️';
+  const chatLocal = sender === 'Vladimir' ? 'local' : 'remote';
+  const heartIndicator = liked === false ? '🤍' : '❤️';
 
   const onLikeWithId = () => {onClick(id)};
 
@@ -26,7 +26,8 @@ ChatEntry.propTypes = {
       sender: PropTypes.string.isRequired,
       body: PropTypes.string.isRequired,
       timeStamp: PropTypes.string.isRequired,
-      liked: PropTypes.bool.isRequired
+      liked: PropTypes.bool.isRequired,
+      onClick: PropTypes.func
     };
 
 export default ChatEntry;
