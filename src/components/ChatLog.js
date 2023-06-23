@@ -28,10 +28,10 @@ ChatLog.propTypes = {
             sender: PropTypes.string.isRequired,
             body: PropTypes.string.isRequired,
             timeStamp: PropTypes.string.isRequired,
-            likes: PropTypes.bool.isRequired,
+            // likes: PropTypes.bool.isRequired,
         })
     ).isRequired,
-    updateLikes: PropTypes.func.isRequired,
+    updateLikes: PropTypes.func
 };
 
 export default ChatLog;
