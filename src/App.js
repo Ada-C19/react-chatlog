@@ -42,8 +42,18 @@ const App = () => {
   }, [chatData]);
 
   useEffect(() => {
-    setRemoteName(chatData[0].sender)
-    setLocalName(chatData[1].sender)
+    const firstName = chatData[0].sender;
+    const secondName = chatData[1].sender;
+    setRemoteName(firstName);
+    setLocalName(secondName);
+
+    for (let i = 0; i < chatData.length; i++) {
+      if (chatData[i].sender === firstName) {
+        chatData[i].user = 'local'
+      } else {
+        chatData[i].user = 'remote'
+      }
+    }
   }, [chatData]);
 
   return (

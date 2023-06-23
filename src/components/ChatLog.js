@@ -6,6 +6,7 @@ import ChatEntry from './ChatEntry';
 const ChatLog = ({ entries, onUpdateChatData, localColor, remoteColor }) => {
   const getMessages = (entries) => {
     return entries.map((message) => {
+      console.log(message)
       return (
         <ChatEntry
           key={message.id}
@@ -15,7 +16,8 @@ const ChatLog = ({ entries, onUpdateChatData, localColor, remoteColor }) => {
           timeStamp={message.timeStamp}
           liked={message.liked}
           onUpdateChatData={onUpdateChatData}
-          color={message.sender === 'Vladimir' ? remoteColor : localColor}
+          user={message.user}
+          color={message.user === 'local' ? remoteColor : localColor}
         />
       )
     })
