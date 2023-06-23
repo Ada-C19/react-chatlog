@@ -13,7 +13,7 @@ const ChatLog = (props) => {
       sender={chat.sender}
       body={chat.body}
       timeStamp={chat.timeStamp}
-      // liked{chat.liked}
+      liked={chat.liked}
       onUpdateChatData={props.onUpdateChatData}
       key={chat.id}
       />
@@ -29,6 +29,7 @@ ChatLog.propTypes = {
       id: PropTypes.number.isRequired,
       sender: PropTypes.string.isRequired,
       body: PropTypes.string.isRequired,
+      liked: PropTypes.bool,
       timeStamp: PropTypes.string.isRequired
     })
   ),

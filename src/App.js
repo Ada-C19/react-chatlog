@@ -19,10 +19,23 @@ const App = () => {
         }}));
   };
 
+const totalOfHearts = (chatData) => {
+  let total = 0;
+  for (const element of chatData) {
+    if (element.liked === true) {
+      total += 1;
+    }
+  }
+  return total;
+};
+
+const allHearts = totalOfHearts(chatData);
+
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        {allHearts} ❤️s
+        {/* <h1>Robo Convo's</h1> */}
       </header>
       <main>
         <ChatLog entries={chatData} onUpdateChatData={updateChatData} ></ChatLog>
