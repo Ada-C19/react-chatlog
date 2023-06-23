@@ -44,7 +44,7 @@ const App = () => {
     });
   };
 
-  const numLikes = (chatData.filter(entry => entry.liked === true)).length
+  const numLikes = (chatData.filter(entry => entry.liked)).length
   
   return (
     <div id="App">

@@ -8,8 +8,8 @@ import './ChatLog.css';
 const ChatLog = (props) => {
     const chatComponents = props.entries.map((entry) => {
         return (
-            <section key={entry.id}>
                 <ChatEntry 
+                    key={entry.id}
                     id={entry.id}
                     sender={entry.sender}
                     body={entry.body}
@@ -20,7 +20,6 @@ const ChatLog = (props) => {
                     local={props.local}
                     remote={props.remote}
                     />
-            </section>
         )
     })
 
