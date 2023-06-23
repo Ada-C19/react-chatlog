@@ -53,7 +53,6 @@ const App = () => {
     });
   
     setEntriesData(updatedEntriesData);
-    console.log(setEntriesData)
   };
 
   return (
