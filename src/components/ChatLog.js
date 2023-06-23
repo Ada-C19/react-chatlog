@@ -36,4 +36,9 @@ ChatLog.propTypes = {
   onUpdateLikeCount: PropTypes.func.isRequired,
 };
 
+ChatLog.defaultProps = {
+  onHandleLikeUpdate: () => {},
+  onUpdateLikeCount: () => {},
+};
+
 export default ChatLog;
