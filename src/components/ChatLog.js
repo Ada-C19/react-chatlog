@@ -29,6 +29,7 @@ ChatLog.propTypes = {
         timeStamp: PropTypes.string.isRequired,
         liked: PropTypes.bool.isRequired
     })),
+    // these were failing the Learn submission tests with 'isRequired' 
     updateEntryData: PropTypes.func,
     likesCount: PropTypes.number,
     toggleLikes: PropTypes.func
