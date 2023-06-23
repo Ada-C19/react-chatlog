@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 import './ChatLog.css';
 
 const ChatLog = (props) => {  
-    return (
-        <div className='chat-log'>
-            {props.entries.map(entry => (
+    return (props.entries.map(entry => (
+            <div className='chat-log' key={entry.id}>
                 <ChatEntry
                     id={entry.id}
                     sender={entry.sender} 
@@ -17,9 +16,8 @@ const ChatLog = (props) => {
                     likesCount={props.likesCount}
                     toggleLikes={props.toggleLikes}
                 />
-            
-            ))}
-        </div>
+            </div>
+            ))
     );
 };
 
