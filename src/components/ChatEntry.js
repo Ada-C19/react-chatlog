@@ -5,12 +5,24 @@ import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
   const timeEntry=props.timeStamp
+  if (props.sender==='Vladimir') {
+    return (
+      <div className="chat-entry local">
+        <h2 className="entry-name">{props.sender}</h2>
+        <section className="entry-bubble">
+          <p>{props.body}</p>
+          <p className="entry-time"><TimeStamp time={timeEntry}></TimeStamp></p>
+          <button className="like">🤍</button>
+        </section>
+      </div>
+    );
+    };
+
   return (
-    <div className="chat-entry local">
+    <div className="chat-entry remote">
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
-        {/* <p className="entry-time">Replace with TimeStamp component</p> */}
         <p className="entry-time"><TimeStamp time={timeEntry}></TimeStamp></p>
         <button className="like">🤍</button>
       </section>
