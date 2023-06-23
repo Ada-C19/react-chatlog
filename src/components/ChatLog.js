@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 
 const ChatLog = (props) => {
     const chatEntryComponents = props.entries.map((entry, index) =>{
-        console.log('color:', props.senderColors[entry.sender])
-        console.log('Sender:', entry.sender)
+        // console.log('color:', props.senderColors[entry.sender])
+        // console.log('Sender:', entry.sender)
         return(
             <div key={entry.id}>
                 <ChatEntry
