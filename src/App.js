@@ -33,7 +33,7 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>{messages[0]['sender']} and {messages[1]['sender']} Chat</h1>
         <h2>{likeCount} ❤️s</h2>
       </header>
       <main>
