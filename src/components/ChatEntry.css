@@ -9,6 +9,8 @@ button {
 }
 
 .chat-entry {
+  position: relative;
+  left: 50px;
   margin: 1rem;
 }
 
