@@ -10,6 +10,9 @@ const ChatLog = (props) => {
                     body={entry.body}
                     sender={entry.sender}
                     timeStamp={entry.timeStamp}
+                    liked={entry.liked}
+                    setLikes={props.setLikes}
+                    id={entry.id}
                 ></ChatEntry>
             </li>
         );
@@ -27,7 +30,8 @@ ChatLog.propTypes = {
     entries: PropTypes.arrayOf(PropTypes.shape({
         body: PropTypes.string.isRequired,
         sender: PropTypes.string.isRequired,
-        timeStamp: PropTypes.string.isRequired
+        timeStamp: PropTypes.string.isRequired,
+        liked: PropTypes.bool.isRequired
     }))
 };
 
