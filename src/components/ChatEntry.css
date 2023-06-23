@@ -62,6 +62,7 @@ button {
   text-align: right;
 }
 
+
 .chat-entry.local .entry-bubble::before {
   background-color: #ffffe0;
   left: -18px;
@@ -97,4 +98,10 @@ button {
 
 .chat-entry.remote .entry-bubble:hover::before {
   background-color: #a9f6f6;
+}
+.red{
+  color: red;
+}
+.yellow{
+  color: green;
 }
