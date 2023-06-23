@@ -1,6 +1,9 @@
 import React from 'react';
-import './ChatLog.css';
+
 import ChatEntry from './ChatEntry.js'
+
+import './ChatLog.css';
+
 
 const ChatLog = (props) => {
     const chatComponents = props.entries.map((entry) => {
@@ -12,6 +15,7 @@ const ChatLog = (props) => {
                     body={entry.body}
                     timeStamp={entry.timeStamp}
                     liked={entry.liked}
+                    colorChoices={props.colorChoices}
                     onUpdate={props.onUpdateEntry}
                     local={props.local}
                     remote={props.remote}

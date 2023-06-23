@@ -58,6 +58,7 @@ button {
   text-align: left;
 }
 
+
 .chat-entry.local .entry-time {
   text-align: right;
 }
@@ -97,4 +98,32 @@ button {
 
 .chat-entry.remote .entry-bubble:hover::before {
   background-color: #a9f6f6;
+}
+
+.text-black {
+  color: black;
+}
+
+.text-red {
+  color: red;
+}
+
+.text-orange {
+  color: orange;
+}
+
+.text-yellow {
+  color: #FFCC00;
+}
+
+.text-green {
+  color: green;
+}
+
+.text-blue {
+  color: blue;
+}
+
+.text-purple {
+  color: #7600bc;
 }

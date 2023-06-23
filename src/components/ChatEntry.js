@@ -1,7 +1,9 @@
 import React from 'react';
-import './ChatEntry.css';
 import PropTypes from 'prop-types';
+
 import TimeStamp from './TimeStamp.js'
+
+import './ChatEntry.css';
 
 const ChatEntry = (props) => {
   const onLikeButtonClick = () => {
@@ -18,17 +20,19 @@ const ChatEntry = (props) => {
   const likeStatus = props.liked ? '❤️' : '🤍';
   
   let entryOrigin;
+  let textColor;
   if (props.sender === props.local) {
     entryOrigin = 'chat-entry local';
+    textColor = props.colorChoices.local;
   } else if (props.sender === props.remote){
     entryOrigin = 'chat-entry remote';
+    textColor = props.colorChoices.remote;
   }
-
   return (
     <div className={entryOrigin}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
-        <p>{props.body}</p>
+        <p className={textColor}>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp} /></p>
         <button onClick={onLikeButtonClick}>{likeStatus}</button>
       </section>

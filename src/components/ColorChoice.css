@@ -1,0 +1,9 @@
+.color-choice-container {
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    align-items: center;
+}
+
+.color-choice-container p {
+    margin: 5px;
+}

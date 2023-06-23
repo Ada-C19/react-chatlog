@@ -36,8 +36,9 @@
   border-radius: 10px;
   color: black;
   font-size:0.8em;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: .5em;
+  padding-right: .5em;
+
 }
 
 #App #heartWidget {

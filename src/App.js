@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import './App.css';
+
 import chatMessages from './data/messages.json';
-import ChatLog from './components/ChatLog.js'
+import ChatLog from './components/ChatLog.js';
+import ColorChoice from './components/ColorChoice.js'
+
+import './App.css';
 
 const App = () => {
   const local = chatMessages[0].sender
@@ -9,7 +12,6 @@ const App = () => {
   if (chatMessages.length > 1) {
     for (const obj of chatMessages) {
       if (obj.sender !== local) {
-        console.log(obj.sender)
         remote = obj.sender;
         break;
       }
@@ -17,6 +19,13 @@ const App = () => {
   }
 
   const [chatData, setChatData] = useState(chatMessages)
+  const [textColorData, setTextColorData] = useState({remote: 'text-black', local: 'text-black'})
+
+  const updateColorChoice = colorChoice => {
+    setTextColorData(prev => ({
+      ...prev, ...colorChoice
+    }));      
+  }
 
   const updateChatData = (updatedEntry) => {
     setChatData((prev) => {
@@ -39,11 +48,13 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Chat with Vladimir</h1>
-        <section className="widget" id="heartWidget"> {numLikes} ❤️s </section>
+        <h1>Chat between <span className={textColorData.local}>{local}</span> and <span className={textColorData.remote}>{remote}</span></h1>
+        <section className="widget">        
+        <ColorChoice local={local} remote={remote} updateColorChoice={updateColorChoice} numLikes={numLikes}/>
+        </section>
       </header>
       <main>
-        <ChatLog entries={chatData} onUpdateEntry={updateChatData} local={local} remote={remote} />
+        <ChatLog entries={chatData} onUpdateEntry={updateChatData} local={local} remote={remote} colorChoices={textColorData}/>
       </main>
     </div>
   );
