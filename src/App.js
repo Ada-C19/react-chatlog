@@ -33,8 +33,10 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Chat Log, total likes: {likeCount} ❤️s</h1>
-        <h2> </h2>
+        <h1>
+          Chat between {chatData[0].sender} and {chatData[1].sender}
+        </h1>
+        <h2> {likeCount} ❤️s </h2>
       </header>
       <main>
         {/* Wave 01: Render one ChatEntry component
