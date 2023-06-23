@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry.js';
 // import timestamp component
 
-const ChatLog = ({chatEntries, toggleLike}) => {
-    const chatComponents = chatEntries.map(chatInstance => {
+const ChatLog = ({entries, toggleLike}) => {
+    const chatComponents = entries.map(chatInstance => {
         return(
             <li key={chatInstance.id}>
                 <ChatEntry
