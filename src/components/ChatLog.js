@@ -3,18 +3,26 @@ import PropTypes from 'prop-types'
 import ChatEntry from './ChatEntry';
 
 const ChatLog = ({ entries, onLikeChange }) => {
+    let isLocal = false;
+
     return (
         <div className='chat-log'>
-            {entries.map((entry) => (
-                <ChatEntry
-                    key={entry.id}
-                    sender={entry.sender}
-                    body={entry.body}
-                    timeStamp={entry.timeStamp}
-                    liked={entry.liked}
-                    onLikeChange={onLikeChange}
-                />
-            ))}
+            {
+                entries.map((entry) => {
+                // Toggle the value of isLocal for each entry
+                isLocal = !isLocal;
+                return (
+                    <ChatEntry
+                        key={entry.id}
+                        sender={entry.sender}
+                        body={entry.body}
+                        timeStamp={entry.timeStamp}
+                        liked={entry.liked}
+                        onLikeChange={onLikeChange}
+                        isLocal={isLocal} // Pass the isLocal value to ChatEntry
+                    />
+                );
+            })}
         </div>
     );
 };
