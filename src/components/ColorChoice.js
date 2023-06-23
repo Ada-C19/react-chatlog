@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 import './ColorChoice.css'
 
 const ColorChoice = (props) => {
@@ -37,11 +38,10 @@ const ColorChoice = (props) => {
     )
 }
 
-export default ColorChoice;
+ColorChoice.propTypes = {
+    local: PropTypes.string.isRequired,
+    remote: PropTypes.string.isRequired,
+    updateColorChoice: PropTypes.func.isRequired
+}
 
-//<input type='radio' value='red' name='color' /> 🔴
-//<input type='radio' value='orange' name='color' /> 🟠
-//<input type='radio' value='yellow' name='color' /> 🟡
-//<input type='radio' value='green' name='color' /> 🟢
-//<input type='radio' value='red' name='color' /> 🔵
-//<input type='radio' value='orange' name='color' /> 🟣 
+export default ColorChoice;

@@ -28,6 +28,7 @@ const ChatEntry = (props) => {
     entryOrigin = 'chat-entry remote';
     textColor = props.colorChoices.remote;
   }
+  
   return (
     <div className={entryOrigin}>
       <h2 className="entry-name">{props.sender}</h2>

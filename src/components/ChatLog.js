@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry.js'
 
 import './ChatLog.css';
@@ -31,5 +31,11 @@ const ChatLog = (props) => {
         
     );
 }
-
+ChatLog.propTypes = {
+    entries: PropTypes.array.isRequired,
+    colorChoices: PropTypes.object.isRequired,
+    onUpdateEntry: PropTypes.func.isRequired,
+    local: PropTypes.string.isRequired,
+    remote: PropTypes.string.isRequired
+}
 export default ChatLog;
