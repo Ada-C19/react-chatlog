@@ -24,7 +24,7 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Vladimir's Phone</h1>
         <div>Total Number of Likes: {addHearts()}</div>
       </header>
       <main>

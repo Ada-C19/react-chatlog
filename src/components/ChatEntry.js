@@ -12,8 +12,10 @@ const ChatEntry = (props) => {
     props.updateLikes(!likes);
   };
 
+  const bubbleClass = props.isRemote ? 'chat-entry remote' : 'chat-entry local';
+
   return (
-    <div className="chat-entry local">
+    <div className="{bubbleClass}">
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
@@ -33,6 +35,7 @@ ChatEntry.propTypes = {
   timeStamp: PropTypes.string.isRequired,
   likes: PropTypes.bool.isRequired,
   updateLikes: PropTypes.func.isRequired,
+  isRemote: PropTypes.bool.isRequired,
 };
 
 export default ChatEntry;
