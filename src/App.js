@@ -1,10 +1,27 @@
 import React, { useState } from 'react';
+import './App.css';
 import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
-import './App.css';
+import ColorChoice from './components/ColorChoice';
+
+
 
 const App = () => {
   const [chatData, setChatData] = useState(chatMessages);
+  const [textColor, setTextColor] = useState({});
+
+  const getNames = () => {
+    const names = [];
+    for (const message of chatMessages) {
+      if (!names.includes(message.sender)) {
+        names.push(message.sender)
+      }
+    };
+    return names;
+  };
+
+  const names = getNames();
+
 
   const onToggleLike = (id) => {
     setChatData((prevData) => {
@@ -18,25 +35,26 @@ const App = () => {
     });
   };
 
-  const getNames = () => {
-    const names = [];
-    for (const message of chatMessages) {
-      if (!names.includes(message.sender)) {
-        names.push(message.sender)
-      }
-    };
-    return names;
+  const onColorClicked = (color, name) => {
+    setTextColor((prevTextColor) => {
+      return { ...prevTextColor, [name]: color }
+    })
   };
 
-  const [name1, name2] = getNames();
+  console.log(textColor)
+
 
   return (
     <div id="App">
       <header>
-        <h1>Chat between {name1} and {name2}</h1>
+        <h1>Chat between <span>{names[0]}</span> and <span>{names[1]}</span></h1>
       </header>
       <main>
-        <ChatLog entries={chatData} onToggleLike={onToggleLike} names={[name1, name2]} />
+        <div className='color-choice-box'>
+          <ColorChoice name={names[0]} names={names} onColorClicked={onColorClicked} textColor={textColor} />
+          <ColorChoice name={names[1]} names={names} onColorClicked={onColorClicked} textColor={textColor} />
+        </div>
+        <ChatLog entries={chatData} onToggleLike={onToggleLike} names={names} textColor={textColor} />
       </main>
     </div>
   );

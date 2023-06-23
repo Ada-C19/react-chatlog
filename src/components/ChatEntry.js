@@ -5,18 +5,19 @@ import TimeStamp from './TimeStamp';
 
 
 const ChatEntry = (props) => {
-  const [name1, name2] = props.names;
-  const heartDisplay = props.liked ? '❤️' : '🤍'
-  const textClass = props.sender === name1 ? 'local' : 'remote';
-
+  const { id, sender, body, timeStamp, liked, onToggleLike, names, textColor } = props
+  const heartDisplay = liked ? '❤️' : '🤍'
+  const textClass = sender === (names && names[0]) ? 'local' : 'remote';
+  const textColorClass =
+    sender === (names && names[0]) ? textColor[names[0]] : (names && textColor[names[1]]);
 
   return (
-    <div className={`chat-entry ${textClass} `}>
-      <h2 className="entry-name">{props.sender}</h2>
+    <div className={`chat-entry ${textClass}`}>
+      <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
-        <p>{props.body}</p>
-        <p className="entry-time"><TimeStamp time={props.timeStamp} /></p>
-        <button onClick={() => props.onToggleLike(props.id)} className="like">
+        <p className={textColorClass}>{body}</p>
+        <p className="entry-time"><TimeStamp time={timeStamp} /></p>
+        <button onClick={() => onToggleLike(id)} className="like">
           {heartDisplay}
         </button>
       </section>
