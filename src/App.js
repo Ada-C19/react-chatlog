@@ -5,38 +5,23 @@ import ChatLog from './components/ChatLog';
 
 
 const App = () => {
-  const [messages, setMessages] = useState(chatMessages);
-  
-  const updateLikes = (id) => {
-    setMessages((prev) => {
-      return prev.map((entry) => {
-        if (id === entry.id) {
-          return {
-            ...entry,
-            liked: !entry.liked};
-        } else {
-          return entry;
-        };
-      });
-    });
-  };
-
-  const totalLikesCount = messages.reduce((total, entry) => {
-    if (entry.liked === true) {
-      total += 1;
-    }
-    return total;
-  },0);
+  const [likes, setLikes] = useState(0);
+  const addLikes = () => {
+    setLikes(likes + 1);
+  }
+  const takeLikes = () => {
+    setLikes(likes - 1);
+  }
 
   return (
     <div id="App">
       <header>
         <h1>Magic Messenger</h1>
         <h2>Chat between you and Vladmir</h2>
-        <div id='heartWidget' className='widget'>{totalLikesCount} ❤️s</div>
+        <div id='heartWidget' className='widget'>{likes} ❤️s</div>
       </header>
       <main>
-      <ChatLog entries={chatMessages} onUpdateLikes={updateLikes}/>
+      <ChatLog entries={chatMessages} addLikes={addLikes} takeLikes={takeLikes}/>
       </main>
     </div>
   );
