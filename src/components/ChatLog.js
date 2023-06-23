@@ -32,13 +32,8 @@ ChatLog.propTypes = {
     })
   )
   .isRequired,
-  onHandleLikeUpdate: PropTypes.func.isRequired,
-  onUpdateLikeCount: PropTypes.func.isRequired,
-};
-
-ChatLog.defaultProps = {
-  onHandleLikeUpdate: () => {},
-  onUpdateLikeCount: () => {},
+  onHandleLikeUpdate: PropTypes.func,
+  onUpdateLikeCount: PropTypes.func,
 };
 
 export default ChatLog;
