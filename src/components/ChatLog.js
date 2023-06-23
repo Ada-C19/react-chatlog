@@ -15,7 +15,6 @@ const ChatLog = (props) => {
                 timeStamp={entry.timeStamp}
                 likes={entry.likes}
                 updateLikes={props.updateLikes}
-                isRemote={entry.isRemote}
                 />
             ))}
         </div>
@@ -30,7 +29,6 @@ ChatLog.propTypes = {
             body: PropTypes.string.isRequired,
             timeStamp: PropTypes.string.isRequired,
             likes: PropTypes.bool.isRequired,
-            isRemote: PropTypes.bool.isRequired, 
         })
     ).isRequired,
     updateLikes: PropTypes.func.isRequired,

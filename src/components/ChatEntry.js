@@ -12,10 +12,8 @@ const ChatEntry = (props) => {
     props.updateLikes(!likes);
   };
 
-  const bubbleClass = props.isRemote ? 'chat-entry remote' : 'chat-entry local';
-
   return (
-    <div className="{bubbleClass}">
+    <div className="chat-entry local">
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
