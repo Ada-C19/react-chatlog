@@ -20,7 +20,7 @@ const Chatlog = ({entries, toggleLike}) => {
     });
 }
     return <main>
-        <section className= 'chat-log'>
+        <section className='chat-log'>
             {getEntries()}
         </section>
         </main>

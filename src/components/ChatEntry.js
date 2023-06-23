@@ -23,7 +23,7 @@ if (sender === 'Vladimir') {
         <p className="entry-time">    
         <TimeStamp time ={timeStamp}/>
         </p>
-        <button className="like" onClick={handleLikeClick}>  {liked ? '❤️' : '🤍'} </button>
+        <button className="like" onClick={handleLikeClick}>{liked ? '❤️' : '🤍'}</button>
       </section>
     </div>
   );
