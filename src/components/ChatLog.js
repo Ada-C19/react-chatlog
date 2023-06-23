@@ -3,7 +3,7 @@ import './ChatLog.css';
 import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
-const ChatLog = ({ entries }) => {
+const ChatLog = ({ entries, onClick }) => {
     const getChatLogJSX = (entries) => {
         return entries.map((entry) => {
             return (
@@ -14,6 +14,7 @@ const ChatLog = ({ entries }) => {
                     body={entry.body}
                     timeStamp={entry.timeStamp}
                     liked={entry.liked}
+                    onClick={onClick}
                 />
             );
         });
@@ -34,7 +35,8 @@ ChatLog.propTypes = {
             body: PropTypes.string.isRequired,
             timeStamp: PropTypes.string.isRequired,
             liked: PropTypes.bool.isRequired
-        })).isRequired
+        })).isRequired,
+    onClick: PropTypes.func.isRequired
 };
 
 export default ChatLog;
