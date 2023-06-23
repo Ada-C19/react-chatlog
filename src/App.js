@@ -13,8 +13,7 @@ const App = () => {
           return {
             ...entry,
             liked: !entry.liked,
-          };
-        } else {
+          };        } else {
           return entry;
         }
       });

@@ -27,7 +27,7 @@ button {
 }
 
 .chat-entry .entry-bubble:hover {
-  background-color: #fefea2;
+  background-color: hsl(60, 98%, 82%);
 }
 
 .chat-entry .entry-name {

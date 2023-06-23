@@ -8,16 +8,6 @@ const ChatEntry = (props) => {
     props.updateLikedCount(props.id);
   }
 
-  //   const updateChat = {
-  //     id: props.id,
-  //     sender: props.sender,
-  //     body: props.body,
-  //     timeStamp: props.timeStamp,
-  //     liked: !props.liked,
-  //   };
-  // };
-  //   props.onLike(updateChat);
-
   const formatMessages = props.sender === 'Vladimir' ? 'chat-entry local' : 'chat-entry remote';
     return (
       <div className={formatMessages}>
@@ -33,7 +23,6 @@ const ChatEntry = (props) => {
         </section>
       </div>
     )};
-
 
 ChatEntry.propTypes = {
   id: PropTypes.number.isRequired,
