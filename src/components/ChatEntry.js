@@ -5,7 +5,7 @@ import TimeStamp from './TimeStamp.js';
 
 const ChatEntry = (props) => {
   const buttonText =
-    props.liked ? '❤️' : '🤍';
+    props.liked ? '🏳️‍⚧️' : '🤍';
   
   let entryClass = 'chat-entry local'  
   
