@@ -6,7 +6,8 @@ import ChatEntry from './ChatEntry.js';
 const ChatLog = (props) => {
   const chatComponents = props.entries.map(entry => {
     return (
-      <ChatEntry 
+      <ChatEntry
+      key={entry.id} 
       id={entry.id}  
       sender={entry.sender}
       body={entry.body}
@@ -16,11 +17,11 @@ const ChatLog = (props) => {
       );
     });
     return (
-        <section>
-          {chatComponents}
-        </section>
-    );
-}
+      <div>
+        {chatComponents}
+      </div>
+  );
+};
 
 ChatLog.propTypes = {
     entries: PropTypes.arrayOf(PropTypes.shape({
