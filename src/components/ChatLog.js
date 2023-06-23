@@ -36,7 +36,7 @@ Chatlog.propTypes = {
                 liked: PropTypes.bool,
             })
     ).isRequired,
-    toggleLike: PropTypes.func.isRequired,
+    toggleLike: PropTypes.func,
 };
 
 export default Chatlog;
