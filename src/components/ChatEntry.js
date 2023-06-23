@@ -5,6 +5,7 @@ import TimeStamp from './TimeStamp';
 
 const ChatEntry = ({ sender, timeStamp, body, id, onLike, liked }) => {
   const heart = liked ? '❤️' : '🤍';
+  // const localOrRemote = sender === 'Estragon' ? 
 
   return (
     <div className="chat-entry local">

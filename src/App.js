@@ -5,34 +5,29 @@ import ChatLog from './components/ChatLog';
 
 const App = () => {
   const [chatData, setChatData] = useState(chatMessages);
-  const [heartCount, setHeartCount] = useState(0);
 
   const like = (id) => {
-    const chats = chatData.map(chat => {
-      if (chat.id === id) {
-        chat.liked = !chat.liked;
-      }
-      return chat;
+    setChatData((prev) => {
+      return prev.map((chat) => {
+        if (chat.id === id) {
+          return { ...chat, liked: !chat.liked };
+        }
+        return chat;
+      })
     });
-    setChatData(chats);
-    countHearts();
   };
 
-  const countHearts = () => {
-    let currentHeartCount = 0;
-    for (const chat of chatData) {
-      if (chat.liked) {
-        currentHeartCount += 1;
-      }
-    }
-    setHeartCount(currentHeartCount);
+  const heartCount = () => {
+    return chatData.reduce((total, chat) => {
+      return chat.liked ? total + 1 : total;
+    }, 0)
   };
 
   return (
     <div id="App">
       <header>
         <h1>Chat between Vladimir & Estragon</h1>
-        <section className="App header section">{heartCount} ❤️s</section>
+        <section className="App header section"> {heartCount()} ❤️s</section>
       </header>
       <main>
         <ChatLog 
