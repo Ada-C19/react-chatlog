@@ -9,7 +9,8 @@ const ChatLog = (props) => {
         sender={chat.sender} 
         body={chat.body}
         timeStamp={chat.timeStamp}
-        liked={chat.liked} />
+        liked={chat.liked} 
+        />
     })
     return <div className='chat-log'>{getChat}</div>
 };
