@@ -2,25 +2,54 @@ import React from 'react';
 import ChatEntry from './ChatEntry';
 
 const ChatLog = () => {
-	return (
-		<section>
+	const chatMessages = [
+		{
+			id: 1,
+			sender: 'Vladimir',
+			body: 'why are you arguing with me',
+			timeStamp: '2018-05-29T22:49:06+00:00',
+			liked: false,
+		},
+		{
+			id: 2,
+			sender: 'Estragon',
+			body: 'Because you are wrong.',
+			timeStamp: '2018-05-29T22:49:33+00:00',
+			liked: false,
+		},
+		{
+			id: 3,
+			sender: 'Vladimir',
+			body: 'because I am what',
+			timeStamp: '2018-05-29T22:50:22+00:00',
+			liked: false,
+		},
+		{
+			id: 4,
+			sender: 'Estragon',
+			body: 'A robot.',
+			timeStamp: '2018-05-29T22:52:21+00:00',
+			liked: false,
+		},
+		{
+			id: 5,
+			sender: 'Vladimir',
+			body: 'Notabot',
+			timeStamp: '2019-07-23T22:52:21+00:00',
+			liked: false,
+		},
+	];
+
+	const chatComponents = chatMessages.map((message) => {
+		return (
 			<ChatEntry
-				sender={'Joe Biden'}
-				body={"Get out by 8am.  I'll count the silverware"}
-				timeStamp={'2018-05-18T22:12:03Z'}
+				sender={message.sender}
+				body={message.body}
+				timeStamp={message.timeStamp}
 			></ChatEntry>
-			<ChatEntry
-				sender={'Vladimir'}
-				body={'why are you arguing with me'}
-				timeStamp={'2018-05-29T22:49:06+00:00'}
-			></ChatEntry>
-			<ChatEntry
-				sender={'Estragon'}
-				body={'Because you are wrong.'}
-				timeStamp={'2018-05-29T22:50:22+00:00'}
-			></ChatEntry>
-		</section>
-	);
+		);
+	});
+	return chatComponents;
 };
 
 export default ChatLog;
