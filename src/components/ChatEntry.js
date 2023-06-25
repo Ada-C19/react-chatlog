@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
   const heartType = props.liked ? '❤️' : '🤍';
+  const chatEntryClass = props.sender === 'Vladimir' ? 'local' : 'remote';
+  // const colorClass = chatEntryClass === 'local' ? localColor : remoteColor;
 
   return (
-    <div className="chat-entry local">
+    <div className={`chat-entry ${chatEntryClass}`}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
