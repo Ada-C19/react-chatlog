@@ -15,12 +15,19 @@ const App = () => {
   });
 
   const [color, setColor] = useState('#000000'); 
+  const [heartCount, setHeartCount] = useState(0);
 
   const toggleLike = (id) => {
     setMessages((prevMessages) => {
       return prevMessages.map((message) => {
         if (message.id === id) {
-          return { ...message, liked: !message.liked };
+          const updatedMessage = { ...message, liked: !message.liked };
+          if (updatedMessage.liked) {
+            setHeartCount((prevCount) => prevCount + 1);
+          } else {
+            setHeartCount((prevCount) => prevCount - 1);
+          }
+          return updatedMessage;
         }
         return message;
       });
@@ -40,6 +47,9 @@ const App = () => {
       <header>
         <h1>Say What</h1>
         <h3>{headerTitle}</h3>
+        <div>
+          <h2>{heartCount} ❤️s</h2>
+        </div>
         <ColorChoice setColorCallback={setParticipantColor} />
       </header>
       <main>
