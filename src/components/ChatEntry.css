@@ -59,7 +59,7 @@ button {
 }
 
 .chat-entry.local .entry-time {
-  text-align: right;
+  text-align: left;
 }
 
 .chat-entry.local .entry-bubble::before {
@@ -87,7 +87,7 @@ button {
 }
 
 .chat-entry.remote .entry-time {
-  text-align: left;
+  text-align: right;
 }
 
 .chat-entry.remote .entry-bubble::before {
