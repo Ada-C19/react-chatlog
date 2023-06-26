@@ -2,11 +2,11 @@ import { DateTime } from 'luxon';
 import PropTypes from 'prop-types';
 
 const TimeStamp = (props) => {
-  const time = DateTime.fromISO(props.time);
-  const absolute = time.toFormat('MMMM Do YYYY, h:mm:ss a');
-  const relative = time.toRelative();
+  const compTime = DateTime.fromISO(props.time);
+  const absolute = compTime.toFormat('MMMM Do YYYY, h:mm:ss a');
+  const relative = compTime.toRelative();
 
-  return <span title={absolute}>{relative}</span>;
+  return <span className="entry-time" title={absolute}>{relative}</span>;
 };
 
 TimeStamp.propTypes = {
