@@ -20,23 +20,10 @@ const ChatEntry = (props) => {
   };
 
   const heartColor = props.liked ? '❤️' : '🤍';
-
-
-  if (props.sender==='Vladimir') {
-    return (
-      <div className="chat-entry local">
-        <h2 className="entry-name">{props.sender}</h2>
-        <section className="entry-bubble">
-          <p>{props.body}</p>
-          <p className="entry-time"><TimeStamp time={timeEntry}></TimeStamp></p>
-          <button className="like" onClick={onLikeButtonClick}>{heartColor}</button>
-        </section>
-      </div>
-    );
-    };
+  // const chatEntry = props.sender==='Vladimir' ? 'chat-entry local' : 'chat-entry remote';
 
   return (
-    <div className="chat-entry remote">
+    <div className={props.chatEntry}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>

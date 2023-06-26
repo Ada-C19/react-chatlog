@@ -1,15 +1,12 @@
 import React, {useState} from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry.js';
 import ChatLog from './components/ChatLog.js'
 
 
 const App = () => {
-  const firstPerson = chatMessages[0].sender
-  const secondPerson = chatMessages[1].sender
-
-
+  const localUser = chatMessages[0].sender
+  const remoteUser = chatMessages[1].sender
 
   const [chatData, setChatData] = useState(chatMessages);
 
@@ -36,8 +33,8 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Chat between {firstPerson} and {secondPerson}</h1>
-        <p>{totalLikes} ❤️s</p>
+        <h1>Chat between {localUser} and {remoteUser}</h1>
+        <p id="heartWidget">{totalLikes} ❤️s</p>
       </header>
       <main>
         <ChatLog        

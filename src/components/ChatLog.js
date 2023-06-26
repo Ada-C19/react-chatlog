@@ -17,6 +17,7 @@ const ChatLog = (props) => {
                     body={entry.body} 
                     liked={entry.liked}
                     onUpdateChat={props.onUpdateChat}
+                    chatEntry={entry.sender===props.chatData[0].sender ? 'chat-entry local' : 'chat-entry remote'}
                 ></ChatEntry>
             </div>
         );
