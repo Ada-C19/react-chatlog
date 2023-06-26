@@ -16,11 +16,9 @@ const ChatEntry = (props) => {
     };
 
     props.onUpdateChat(updatedChat);
-
   };
 
   const heartColor = props.liked ? '❤️' : '🤍';
-  // const chatEntry = props.sender==='Vladimir' ? 'chat-entry local' : 'chat-entry remote';
 
   return (
     <div className={props.chatEntry}>

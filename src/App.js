@@ -34,7 +34,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat between {localUser} and {remoteUser}</h1>
-        <p id="heartWidget">{totalLikes} ❤️s</p>
+        <section>{totalLikes} ❤️s</section>
       </header>
       <main>
         <ChatLog        
