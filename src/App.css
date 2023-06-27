@@ -1,9 +1,9 @@
 #App {
-  background-color: #87cefa;
+  background: linear-gradient(to bottom right, lightblue, rgb(252, 163, 178))
 }
 
 #App header {
-  background-color: #222;
+  background: rgba(84, 190, 225, 0.517);
   color: #fff;
   padding-bottom: 0.5rem;
   position: fixed;
