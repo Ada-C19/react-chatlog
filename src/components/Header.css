@@ -1,0 +1,41 @@
+#App header {
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  text-align: center;
+  align-items: center;
+}
+
+h1, #App header section:first-of-type {
+  font-size: 24px;
+}
+
+#App header section:first-of-type {
+  display: flex;
+  align-items: center;
+}
+
+#App header h1::before, #App header h1::after {
+  content: '·';
+  margin: 0 2rem;
+}
+
+#App header section {
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+}
+
+#App header section:last-of-type {
+  padding: 1rem 0;
+  gap: 3rem;
+}
+
+.sender-span {
+  background: var(--color);
+  padding: .3rem;
+  border-radius: .5rem;
+}
+
+#settings.hidden {
+  display: none;
+}
