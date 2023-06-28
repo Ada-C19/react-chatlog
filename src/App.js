@@ -6,6 +6,28 @@ import ChatLog from './components/ChatLog';
 import messages from './data/messages.json'
 
 const App = () => {
+  const [chatData, setChatData] = useState(chatMessages);
+
+  const printLike = () => {
+    console.log('i like that a lot');
+  };
+
+  const likeMessage = (id) => {
+    setChatData((prev) => {
+        printLike();
+        return prev.map((message) => {
+          if (id === message.id) {
+            return {
+              ...message,
+              liked: !message.liked,
+            };
+          } else {
+            return message;
+          }
+        })
+    });
+  };
+
 
   return (
     

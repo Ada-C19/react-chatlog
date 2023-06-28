@@ -15,14 +15,14 @@ const setMessageLocation = (userName) => {
 }
 
 const ChatEntry = (props) => {
-  const toggleHeart = () => {
-    const updatedMessage = {
-      ...props,
-      liked: !props.liked
-    };
+  // const toggleHeart = () => {
+  //   const updatedMessage = {
+  //     ...props,
+  //     liked: !props.liked
+  //   };
 
-    props.onUpdate(updatedMessage);
-  };
+  //   props.onUpdate(updatedMessage);
+  // };
   
   const senderLocation = setMessageLocation(props.sender);
 
@@ -32,7 +32,7 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
-        <button className="like" onClick={(event) => toggleHeart()}>🤍</button>
+        <button className="like" onClick={() => console.log('shout out to hearts')}>🤍</button>
       </section>
     </div>
   );
