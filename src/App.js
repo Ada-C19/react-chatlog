@@ -9,7 +9,7 @@ const App = () => {
   const [chatData, setChatData] = useState(chatMessages);
 
   const printLike = () => {
-    console.log('i like that a lot');
+    console.log('shout out to hearts');
   };
 
   const likeMessage = (id) => {
@@ -36,7 +36,7 @@ const App = () => {
         <h1>Application title</h1>
       </header>
       <main>
-        <ChatLog entries={messages} />
+        <ChatLog entries={messages} onLikeMessage={() => printLike()}/>
       </main>
     </div>
   );

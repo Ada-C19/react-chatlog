@@ -14,9 +14,9 @@ const setMessageLocation = (userName) => {
 
 }
 
-const printLike = () => {
-  console.log('shout out to hearts');
-}
+// const printLike = () => {
+//   console.log('shout out to hearts');
+// }
 
 const ChatEntry = (props) => {
   const senderLocation = setMessageLocation(props.sender);
@@ -27,7 +27,7 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
-        <button className="like" onClick={() => printLike()}>🤍</button>
+        <button className="like" onClick={(event) => props.onLikeMessage()}>🤍</button>
       </section>
     </div>
   );
