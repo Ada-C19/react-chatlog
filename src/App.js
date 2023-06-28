@@ -14,9 +14,9 @@ import messages from './data/messages.json'
 //   liked: false
 // };
 
-const messageComponents = {
+// const messageComponents = {
   
-}
+// }
 
 const App = () => {
   const [chatMessages, setChatMessages] = useState(chatMessages)
