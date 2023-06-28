@@ -3,6 +3,8 @@ import './App.css';
 import chatMessages from './data/messages.json';
 import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
+import messages from './data/messages.json'
+// import './components/ChatLog.css';
 
 const testMessage = {
   id: 1,
@@ -26,8 +28,8 @@ const App = () => {
       <main>
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
-        <ChatLog />
-        <ChatEntry sender={testMessage.sender} body={testMessage.body} timeStamp={testMessage.timeStamp} />
+        <ChatLog entries={messages} />
+        {/* <ChatEntry sender={testMessage.sender} body={testMessage.body} timeStamp={testMessage.timeStamp} /> */}
       </main>
     </div>
   );
