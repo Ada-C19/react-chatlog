@@ -25,7 +25,7 @@ const App = () => {
       <main>
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
-        <ChatEntry messageData={testMessage} />
+        <ChatEntry sender={testMessage.sender} body={testMessage.body} timeStamp={testMessage.timeStamp} />
       </main>
     </div>
   );
