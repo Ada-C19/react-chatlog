@@ -32,7 +32,7 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
-        <button className="like" onClick={() => toggleHeart()}>🤍</button>
+        <button className="like" onClick={(event) => toggleHeart()}>🤍</button>
       </section>
     </div>
   );

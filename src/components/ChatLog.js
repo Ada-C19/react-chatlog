@@ -13,6 +13,8 @@ const ChatLog = (props) => {
           sender={message.sender}
           body={message.body}
           timeStamp={message.timeStamp}
+          onLikeMessage={props.onLikeMessage}
+          liked={message.liked}
         />
       </div>
     );
