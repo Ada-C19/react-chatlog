@@ -2,7 +2,7 @@ import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
-import './ChatEntry.css';
+// import './ChatEntry.css';
 
 const setMessageLocation = (userName) => {
 
@@ -12,11 +12,17 @@ const setMessageLocation = (userName) => {
     return 'chat-entry remote'; 
   };
 
-};
+}
 
 const ChatEntry = (props) => {
-  // const userName = props.sender;
-  // const senderLocation = props.sender
+  const toggleHeart = () => {
+    const updatedMessage = {
+      ...props,
+      liked: !props.liked
+    };
+
+    props.onUpdate(updatedMessage);
+  };
   
   const senderLocation = setMessageLocation(props.sender);
 
@@ -26,7 +32,7 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
-        <button className="like" onClick={() => console.log('look at me! its me da heart')}>🤍</button>
+        <button className="like" onClick={() => toggleHeart()}>🤍</button>
       </section>
     </div>
   );
