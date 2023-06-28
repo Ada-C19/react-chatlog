@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
+import ChatEntry from './components/ChatEntry';
 
 const testMessage = {
-  "id": 1,
-  "sender":"Vladimir",
-  "body":"why are you arguing with me",
-  "timeStamp":"2018-05-29T22:49:06+00:00",
-  "liked": false
+  'id': 1,
+  'sender':'Vladimir',
+  'body':'why are you arguing with me',
+  'timeStamp':'2018-05-29T22:49:06+00:00',
+  'liked': false
 };
 
 const App = () => {
