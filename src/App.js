@@ -6,21 +6,6 @@ import ChatLog from './components/ChatLog';
 import messages from './data/messages.json'
 
 const App = () => {
-  const [chatMessages, setChatMessages] = useState(chatMessages)
-  const likeMessage = (id) => {
-    setChatMessages((prev) => {
-        return prev.map((message) => {
-          if (id === message.id) {
-            return {
-              ...message,
-              liked: !message.liked,
-            };
-          } else {
-            return message;
-          }
-        })
-    });
-  };
 
   return (
     
@@ -29,7 +14,7 @@ const App = () => {
         <h1>Application title</h1>
       </header>
       <main>
-        <ChatLog entries={messages} onLikeMessage={likeMessage} />
+        <ChatLog entries={messages} />
       </main>
     </div>
   );
