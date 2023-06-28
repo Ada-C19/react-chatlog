@@ -1,16 +1,63 @@
 import React from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
+import ChatLog from './components/ChatLog.js';
+import {useState} from 'react';
+import ColorChoice from './components/ColorChoice.js';
 
 const App = () => {
+  const [messages, setMessages] = useState(chatMessages);
+  const [likedCount, setLikedCount] = useState(0);
+  const [colorLocal, setColorLocal] = useState('green');
+  const [colorRemote, setColorRemote] = useState('blue');
+
+  const calculateLikedCount = (id) => {
+    console.log('calculateLikedCount')
+    const newMessages = messages.map((message) => {
+      if (message.id === id) {
+        return {
+          ...message,
+          liked: !message.liked
+        };
+      }
+      return message;
+    });
+  
+    setMessages(newMessages);
+  
+    let count = 0;
+
+    newMessages.forEach((message) => {
+      if (message.liked) {
+        count++;
+      }
+    });
+    setLikedCount(count);
+  };
+
+
+
+  // const entries = chatMessages;
   return (
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Chat between{' '}  
+        <span className={colorLocal}>Vladimir {' '} </span> 
+        {' '} and {' '}  <span className={colorRemote}>Estragon</span></h1>
+        <div className="header-info">
+          <div className="color-info" style={{ display: 'inline-block' }}>
+          <ColorChoice setColorCallback={setColorLocal} title={"Vladimir's color:"} color={colorLocal}/></div>
+          <div className="like-count" style={{ display: 'inline-block' }}>
+          <p >{likedCount} {likedCount === 1 ? '❤️' : '❤️s'}</p>
+          </div>
+          <div className="color-info" style={{ display: 'inline-block' }}>
+          <ColorChoice setColorCallback={setColorRemote} title={"Estragon's color:"} color={colorRemote}  /> </div>
+        </div>
+        
       </header>
       <main>
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
+      <ChatLog entries ={messages} calculateLikedCount = {calculateLikedCount} colorLocal={colorLocal} colorRemote={colorRemote}
+        />
       </main>
     </div>
   );
