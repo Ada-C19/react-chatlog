@@ -2,6 +2,7 @@ import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
+import './ChatEntry.css';
 
 const ChatEntry = (props) => {
   // const message = props.messageData;
