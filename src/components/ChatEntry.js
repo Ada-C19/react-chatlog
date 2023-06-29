@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp'; 
 import './ChatEntry.css';
 
-const ChatEntry = ({ sender, body, timeStamp, liked, onLikeChange, isLocal}) => {
-  const [isLiked, setLiked] = useState(liked); 
-
+const ChatEntry = ({ id, sender, body, timeStamp, liked, onLikeChange, isLocal}) => {
+ 
   const handleLikeToggle = () => {
-    setLiked((prevLiked) => !prevLiked); 
-    onLikeChange(!isLiked);
+    onLikeChange(id);
   };
 
   return (
@@ -22,7 +20,7 @@ const ChatEntry = ({ sender, body, timeStamp, liked, onLikeChange, isLocal}) => 
         <button 
             className="like"
             onClick={handleLikeToggle}>
-            {isLiked ? '❤️' : '🤍'} 
+            {liked ? '❤️' : '🤍'}
         </button>
       </section>
     </div>
