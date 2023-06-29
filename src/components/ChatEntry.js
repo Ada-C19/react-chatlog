@@ -18,13 +18,6 @@ const ChatEntry = (props) => {
   const senderLocation = setMessageLocation(props.sender);
 
   const onLikeMessage = () => {
-    // const updatedMessage = {
-    //   id: props.id,
-    //   sender: props.sender,
-    //   body: props.body,
-    //   timeStamp: props.timeStamp,
-    //   liked: !props.liked
-    // }
     console.log('hey ,im chatting here!!!!!');
   }
 
