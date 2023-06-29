@@ -15,39 +15,40 @@ const setMessageLocation = (userName) => {
 
 }
 
-const ChatEntry = (props) => {
-  const [likeBool, setLikeBool] = useState(false);
+const ChatEntry = ({id, sender, body, timeStamp, onLikeMessage, isLiked}) => {
+  // const [likeBool, setLikeBool] = useState(false);
 
   // setLikeBool(!likeBool);
   const updateLike = () => {
-    setLikeBool(!likeBool);
+    // setLikeBool(!likeBool);
+    console.log(`thats a nice like. itd be a ${isLiked} shame if somebody updated it...`)
   };
 
-  const senderLocation = setMessageLocation(props.sender);
+  const senderLocation = setMessageLocation(sender);
 
   // const heartVersion = props.liked ? '❤️' : '🤍';
 
-  const onLikeMessage = () => {
-    const updatedMessage = {
-      id: props.id,
-      sender: props.sender,
-      body: props.body,
-      timeStamp: props.timeStamp,
-      liked: !props.liked,
-    };
+  // const onLikeMessage = () => {
+  //   const updatedMessage = {
+  //     id: props.id,
+  //     sender: props.sender,
+  //     body: props.body,
+  //     timeStamp: props.timeStamp,
+  //     liked: !props.liked,
+  //   };
     
-    props.onLikeMessage(updatedMessage);
-  };
+  //   props.onLikeMessage(updatedMessage);
+  // };
 
   return (
     <div className={senderLocation}>
-      <h2 className="entry-name">{props.sender}</h2>
+      <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
-        <p>{props.body}</p>
-        <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
-        <p>it is {`${likeBool}`} that u like this message</p>
+        <p>{body}</p>
+        <p className="entry-time"><TimeStamp time={timeStamp}/></p>
+        {/* <p>it is {`${likeBool}`} that u like this message</p> */}
         {/* <button className="like" onClick={updateLike}>🤍</button> */}
-        <LikeButton heartCondition={likeBool} updateLike={updateLike}/>
+        <LikeButton heartCondition={isLiked} updateLike={updateLike}/>
       </section>
     </div>
   );
