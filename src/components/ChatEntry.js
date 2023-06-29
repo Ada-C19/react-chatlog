@@ -14,10 +14,10 @@ const setMessageLocation = (userName) => {
 
 }
 
-const heartVersion = props.liked ? '❤️' : '🤍';
-
 const ChatEntry = (props) => {
   const senderLocation = setMessageLocation(props.sender);
+
+  const heartVersion = props.liked ? '❤️' : '🤍';
 
   const onLikeMessage = (name) => {
     console.log(`Hello ${name}! We\'re in printMessage!`);
