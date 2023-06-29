@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import ChatLog from './components/ChatLog';
+import HeartCounter from './components/HeartCounter'
 import messagesJSON from './data/messages.json'
 
 const App = () => {
@@ -24,8 +25,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat with Vladimir</h1>
-        <br></br>
-        <p className='heartWidget'>shout out to a certain amount of likes clicked</p>
+        <HeartCounter />
       </header>
       <main>
         <ChatLog entries={messagesJSON} onLikeMessage={toggleLiked}/>
