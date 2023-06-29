@@ -6,24 +6,20 @@ import ChatLog from './components/ChatLog';
 import messages from './data/messages.json'
 
 const App = () => {
-  const [chatData, setChatData] = useState(messages);
+  const [messageData, setMessageData] = useState(messages);
 
-  const printLike = (id) => {
-    console.log('shout out to hearts');
-    // setChatData((prev) => {
-    //   return prev.map((message) => {
-    //     if (id === message.id) {
-    //       return {
-    //         ...message,
-    //         likeCount: true,
-    //       };
-    //     } else {
-    //       return message;
-    //     }
-    //   })
-    // })
+  const updateMessageData = updatedMessage => {
+    console.log('shout out to updateMessageData');
+    const tempMessages = messageData.map(message => {
+      if (message.id === updatedMessage.id) {
+        return updatedMessage;
+      } else {
+        return message;
+      }
+    });
+
+    setMessageData(tempMessages)
   };
-
 
   return (
     
@@ -32,7 +28,7 @@ const App = () => {
         <h1>Application title</h1>
       </header>
       <main>
-        <ChatLog entries={messages} onLikeMessage={() => printLike()}/>
+        <ChatLog entries={messages} onLikeMessage={updateMessageData}/>
       </main>
     </div>
   );

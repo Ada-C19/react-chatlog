@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
@@ -15,13 +15,28 @@ const setMessageLocation = (userName) => {
 }
 
 const ChatEntry = (props) => {
+  const [likeBool, setLikeBool] = useState(false);
+
+  // setLikeBool(!likeBool);
+  const updateLike = () => {
+    setLikeBool(!likeBool);
+  };
+
   const senderLocation = setMessageLocation(props.sender);
 
-  const heartVersion = props.liked ? '❤️' : '🤍';
+  // const heartVersion = props.liked ? '❤️' : '🤍';
 
-  const onLikeMessage = (name) => {
-    console.log(`Hello ${name}! We\'re in printMessage!`);
-  }
+  const onLikeMessage = () => {
+    const updatedMessage = {
+      id: props.id,
+      sender: props.sender,
+      body: props.body,
+      timeStamp: props.timeStamp,
+      liked: !props.liked,
+    };
+    
+    props.onLikeMessage(updatedMessage);
+  };
 
   return (
     <div className={senderLocation}>
@@ -29,7 +44,8 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
-        <button className="like" onClick={() => onLikeMessage('Bob')}>🤍</button>
+        <p>it is {`${likeBool}`} that u like this message</p>
+        <button className="like" onClick={updateLike}>🤍</button>
       </section>
     </div>
   );
