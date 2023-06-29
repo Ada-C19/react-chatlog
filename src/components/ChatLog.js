@@ -10,7 +10,7 @@ const ChatLog = ({ entries, handleLikeClick }) => {
                 <ChatEntry
                     {...entry}
                     key={entry.id}
-                    handleLikeClick={() => handleLikeClick(entry.id)}
+                    handleLikeClick={handleLikeClick}
                 />
             ))}
         </div>
