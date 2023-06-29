@@ -23,7 +23,9 @@ const App = () => {
     
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Chat with Vladimir</h1>
+        <br></br>
+        <p className='heartWidget'>shout out to a certain amount of likes clicked</p>
       </header>
       <main>
         <ChatLog entries={messagesJSON} onLikeMessage={toggleLiked}/>
