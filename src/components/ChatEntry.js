@@ -1,22 +1,44 @@
 import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
+import TimeStamp from './TimeStamp';
+
 
 const ChatEntry = (props) => {
+  const heart = props.liked ? '❤️' : '🤍';
+  let color = 'black';
+  const user = () => {
+    if (props.sender === props.userList[0]) {
+      color = props.localColor;
+      return 'local';
+    } else {
+      color = props.remoteColor;
+      return 'remote';
+    }
+  }
+
   return (
-    <div className="chat-entry local">
-      <h2 className="entry-name">Replace with name of sender</h2>
+    <div className={`chat-entry ${user()}`}>
+      <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
-        <p>Replace with body of ChatEntry</p>
-        <p className="entry-time">Replace with TimeStamp component</p>
-        <button className="like">🤍</button>
+        <p className={color}>{props.body}</p>
+        <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
+        <button className="like" onClick={() => {props.updateHeart(props.id)}}>{heart}</button>
       </section>
     </div>
   );
 };
 
 ChatEntry.propTypes = {
-  //Fill with correct proptypes
+  id: PropTypes.number.isRequired,
+  liked: PropTypes.bool.isRequired,
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  timeStamp: PropTypes.string.isRequired,
+  updateHeart: PropTypes.func.isRequired,
+  localColor: PropTypes.string.isRequired,
+  remotecolor: PropTypes.string.isRequired,
+  userList: PropTypes.array.isRequired,
 };
 
 export default ChatEntry;
