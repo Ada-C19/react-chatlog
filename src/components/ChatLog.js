@@ -1,11 +1,12 @@
 import React from 'react';
 import ChatEntry from './ChatEntry';
 import './ChatLog.css';
+// import PropTypes from 'prop-types';
 
-const ChatLog = (props) => {
-  const messages = props.entries;
+const ChatLog = ({entries, onLikeMessage}) => {
+  // const messages = props.entries;
 
-  const chatComponents = messages.map((message) => {
+  const chatComponents = entries.map((message) => {
     return (
       <div key={message.id} >
         <ChatEntry 
@@ -13,8 +14,8 @@ const ChatLog = (props) => {
           sender={message.sender}
           body={message.body}
           timeStamp={message.timeStamp}
-          onLikeMessage={props.onLikeMessage}
           isLiked={message.liked}
+          onLikeMessage={onLikeMessage}
         />
       </div>
     );

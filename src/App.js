@@ -18,10 +18,11 @@ const App = () => {
   //     }
   //   });
   const toggleLiked = (id) => {
+    console.log('im toggling likes ova heare');
     const messages = messageData.map((message) => {
       if (message.id === id) {
         message.liked = !message.liked;
-      }
+      };
 
       return message;
     });

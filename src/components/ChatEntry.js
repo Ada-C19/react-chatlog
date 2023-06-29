@@ -15,12 +15,13 @@ const setMessageLocation = (userName) => {
 
 }
 
-const ChatEntry = ({id, sender, body, timeStamp, onLikeMessage, isLiked}) => {
+const ChatEntry = ({id, sender, body, timeStamp, isLiked, onLikeMessage}) => {
   // const [likeBool, setLikeBool] = useState(false);
 
   // setLikeBool(!likeBool);
   const updateLike = () => {
     // setLikeBool(!likeBool);
+    onLikeMessage(id);
     console.log(`thats a nice like. itd be a ${isLiked} shame if somebody updated it...`)
   };
 
