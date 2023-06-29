@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 
 const ChatEntry = (props) => {
-  const [likes, setLikes] = useState(props.likes)
+  const { likes, messageId, updateLikes } = props;
 
   const toggleLikes = () => {
-    setLikes((prevLiked) => !prevLiked);
-    props.updateLikes(!likes);
+    updateLikes(messageId);
   };
 
   return (
@@ -24,7 +22,7 @@ const ChatEntry = (props) => {
         </button>
       </section>
     </div>
-  );
+  )
 };
 
 ChatEntry.propTypes = {
@@ -32,7 +30,8 @@ ChatEntry.propTypes = {
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   likes: PropTypes.bool,
-  updateLikes: PropTypes.func
+  updateLikes: PropTypes.func,
+  messageId: PropTypes.number.isRequired
 };
 
 export default ChatEntry;

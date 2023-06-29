@@ -5,30 +5,29 @@ import ChatLog from './components/ChatLog';
 
 
 const App = () => {
-  const [totalLikes, setTotalLikes] = useState(0)
+  const [messages, setMessages] = useState(chatMessages)
 
-  const updateLikes = (liked) => {
-    setTotalLikes((prevLikes) => prevLikes + (liked ? 1 : -1));
-  };
+  const updateLikes = (messageId) => {
+    setMessages((prevMessages)=>
+      prevMessages.map((message)=>
+        message.id === messageId ? { ...message, likes: !message.likes } : message
+        )
+      );
+    };
 
-  const addHearts = () => {
-    let hearts = 0;
 
-    for (let i = 0; i < totalLikes; i++) {
-      hearts += 1
-    }
-
-    return hearts + ' ❤️s';
+  const getTotalLikes = () => {
+    return messages.reduce((total, message) => total + (message.likes ? 1 : 0), 0);
   };
 
   return (
     <div id="App">
       <header>
         <h1>Vladimir's Phone</h1>
-        <div>Total Number of Likes: {addHearts()}</div>
+        <div>Total Number of Likes: {getTotalLikes()} ❤️s</div>
       </header>
       <main>
-        <ChatLog entries={chatMessages} updateLikes={updateLikes}
+        <ChatLog entries={messages} updateLikes={updateLikes}
         />
       </main>
     </div>
