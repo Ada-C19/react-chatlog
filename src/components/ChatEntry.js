@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
+import LikeButton from './LikeButton';
 // import './ChatEntry.css';
 
 const setMessageLocation = (userName) => {
@@ -45,7 +46,8 @@ const ChatEntry = (props) => {
         <p>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
         <p>it is {`${likeBool}`} that u like this message</p>
-        <button className="like" onClick={updateLike}>🤍</button>
+        {/* <button className="like" onClick={updateLike}>🤍</button> */}
+        <LikeButton heartCondition={likeBool} updateLike={updateLike}/>
       </section>
     </div>
   );
