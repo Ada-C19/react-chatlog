@@ -1,31 +1,27 @@
 import React, {useState} from 'react';
 import './App.css';
-import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry';
+// import chatMessages from './data/messages.json';
+// import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
 import messages from './data/messages.json'
 
 const App = () => {
-  const [chatData, setChatData] = useState(chatMessages);
+  const [chatData, setChatData] = useState(messages);
 
-  const printLike = () => {
+  const printLike = (id) => {
     console.log('shout out to hearts');
-  };
-
-  const likeMessage = (id) => {
-    setChatData((prev) => {
-        printLike();
-        return prev.map((message) => {
-          if (id === message.id) {
-            return {
-              ...message,
-              liked: !message.liked,
-            };
-          } else {
-            return message;
-          }
-        })
-    });
+    // setChatData((prev) => {
+    //   return prev.map((message) => {
+    //     if (id === message.id) {
+    //       return {
+    //         ...message,
+    //         likeCount: true,
+    //       };
+    //     } else {
+    //       return message;
+    //     }
+    //   })
+    // })
   };
 
 
