@@ -14,6 +14,8 @@ const setMessageLocation = (userName) => {
 
 }
 
+const heartVersion = props.liked ? '❤️' : '🤍';
+
 const ChatEntry = (props) => {
   const senderLocation = setMessageLocation(props.sender);
 
