@@ -9,7 +9,6 @@ const App = () => {
   const [heartTotal, setHeartTotal] = useState(0);
 
   const toggleLiked = (id) => {
-    console.log('im toggling likes ova heare');
     const messages = messageData.map((message) => {
       if (message.id === id) {
         if (message.liked === false) {
