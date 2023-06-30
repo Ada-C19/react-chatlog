@@ -37,4 +37,3 @@ ChatLog.propTypes = {
 };
 
 export default ChatLog;
-
