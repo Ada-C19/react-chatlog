@@ -1,4 +1,5 @@
 import '../App.css';
+import PropTypes from 'prop-types';
 
 const HeartCounter = (props) => {
 
@@ -9,6 +10,10 @@ const HeartCounter = (props) => {
       </p>
     </div>
   );
+};
+
+HeartCounter.propTypes = {
+  likeTotal: PropTypes.number.isRequired,
 };
 
 export default HeartCounter;
