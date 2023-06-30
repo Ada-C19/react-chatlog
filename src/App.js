@@ -32,6 +32,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat with Vladimir</h1>
+        <br></br>
         <HeartCounter likeTotal={heartTotal} />
       </header>
       <main>

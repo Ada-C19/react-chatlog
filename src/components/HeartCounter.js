@@ -8,11 +8,9 @@ const HeartCounter = (props) => {
 
   return (
     <div>
-      <br></br>
       <p className='heartWidget'>
-        shout out to {props.likeTotal} likes clicked
+        💛 {props.likeTotal}
       </p>
-      <button onClick={() => printMessage('Bob')}>hello!</button>
     </div>
   );
 };
