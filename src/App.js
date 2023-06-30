@@ -6,11 +6,18 @@ import messagesJSON from './data/messages.json'
 
 const App = () => {
   const [messageData, setMessageData] = useState(messagesJSON);
+  const [heartTotal, setHeartTotal] = useState(0);
 
   const toggleLiked = (id) => {
     console.log('im toggling likes ova heare');
     const messages = messageData.map((message) => {
       if (message.id === id) {
+        if (message.liked === false) {
+          setHeartTotal(heartTotal + 1);
+        } else {
+          setHeartTotal(heartTotal -1);
+        };
+
         message.liked = !message.liked;
       };
 
@@ -25,7 +32,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat with Vladimir</h1>
-        <HeartCounter likeTotal={5} />
+        <HeartCounter likeTotal={heartTotal} />
       </header>
       <main>
         <ChatLog entries={messagesJSON} onLikeMessage={toggleLiked}/>
