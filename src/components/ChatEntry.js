@@ -3,13 +3,11 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
-const ChatEntry = ({ id, sender, body, timeStamp, onLikeChange }) => {
-  const [liked, setLiked] = useState(false);
+const ChatEntry = ({ id, sender, body, timeStamp, onLikeChange, liked }) => {
 
   const handleLike = () => {
-    const newLiked = !liked;
-    setLiked(newLiked);
-    onLikeChange(id, newLiked);
+
+    onLikeChange(id);
   };
 
   return (
@@ -29,11 +27,12 @@ const ChatEntry = ({ id, sender, body, timeStamp, onLikeChange }) => {
 };
 
 ChatEntry.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   onLikeChange: PropTypes.func.isRequired,
+  liked: PropTypes.bool.isRequired
 };
 
 export default ChatEntry;

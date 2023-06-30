@@ -14,6 +14,7 @@ const ChatLog = ({ entries, onLikeChange }) => {
           body={entry.body}
           timeStamp={entry.timeStamp}
           onLikeChange={onLikeChange}
+          liked={entry.liked}
         />
       ))}
     </div>
@@ -23,10 +24,11 @@ const ChatLog = ({ entries, onLikeChange }) => {
 ChatLog.propTypes = {
   entries: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
       sender: PropTypes.string.isRequired,
       body: PropTypes.string.isRequired,
       timeStamp: PropTypes.string.isRequired,
+      liked: PropTypes.bool.isRequired
     })
   ).isRequired,
   onLikeChange: PropTypes.func.isRequired,

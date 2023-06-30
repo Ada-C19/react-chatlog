@@ -5,10 +5,26 @@ import ChatLog from './components/ChatLog';
 
 const App = () => {
   const [totalLikes, setTotalLikes] = useState(0);
+  const [messages, setMessages] = useState(chatMessages); 
 
-  const handleLikeCount = (id, liked) => {
-    setTotalLikes((prevLikes) => (liked ? prevLikes + 1 : prevLikes - 1));
+  const handleLikeCount = (id) => {
+    const copyMessages = [...messages];
+    let newLiked;
+    for (let i = 0; i < copyMessages.length; i++){
+      if (copyMessages[i].id === id){
+        const oneMessage = {...copyMessages[i]}
+        oneMessage.liked = ! oneMessage.liked; 
+        copyMessages[i] = oneMessage;
+        newLiked = oneMessage.liked;
+      }
+    }
+
+    
+    setMessages(copyMessages); 
+    setTotalLikes((prevLikes) => (newLiked ? prevLikes + 1 : prevLikes - 1));
   };
+
+  
 
   return (
     <div id="App">
@@ -17,7 +33,7 @@ const App = () => {
         <p>{totalLikes} {totalLikes === 1 ? '❤️' : '❤️s'}</p>
       </header>
       <main>
-        <ChatLog entries={chatMessages} onLikeChange={handleLikeCount} />
+        <ChatLog entries={messages} onLikeChange={handleLikeCount} />
       </main>
     </div>
   );
