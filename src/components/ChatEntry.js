@@ -18,7 +18,6 @@ const ChatEntry = ({id, sender, body, timeStamp, isLiked, onLikeMessage}) => {
 
   const updateLike = () => {
     onLikeMessage(id);
-    console.log(`thats a nice like. itd be a ${isLiked} shame if somebody updated it...`)
   };
 
   const senderLocation = setMessageLocation(sender);
