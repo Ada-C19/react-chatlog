@@ -1,8 +1,8 @@
 import '../App.css';
 
-const HeartCounter = () => {
+const HeartCounter = (props) => {
   const printMessage = (name) => {
-    console.log(`Hello ${name}?? can\'t a program count hearts in peace??`);
+    console.log(`Hello {name}?? can\'t a program count hearts in peace??`);
     console.log('event details:', name);
   };
 
@@ -10,7 +10,7 @@ const HeartCounter = () => {
     <div>
       <br></br>
       <p className='heartWidget'>
-        shout out to a certain amount of likes clicked
+        shout out to {props.likeTotal} likes clicked
       </p>
       <button onClick={() => printMessage('Bob')}>hello!</button>
     </div>

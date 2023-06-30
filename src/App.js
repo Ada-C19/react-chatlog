@@ -25,7 +25,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat with Vladimir</h1>
-        <HeartCounter />
+        <HeartCounter likeTotal={5} />
       </header>
       <main>
         <ChatLog entries={messagesJSON} onLikeMessage={toggleLiked}/>
