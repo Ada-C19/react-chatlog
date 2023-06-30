@@ -4,33 +4,25 @@ import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
 import { useState } from 'react';
 
-
 const App = () => {
 
   const [chatData, setChatData] = useState(chatMessages);
   const [likeCount, setLikeCount] = useState(0);
 
 
-  const updateEntryData = updatedEntry => {
-    // const entry = chatData.find((e) => e.id === updatedEntry.id)
-    const entries = chatData.map(entry => {
-      if (entry.id === updatedEntry.id) {
-        if (entry.liked !== updatedEntry.liked) {
-          // If the liked state has changed
-          if (updatedEntry.liked) {
-            // If the entry is liked
-            setLikeCount(likeCount + 1); // Increment like count
-          } else {
-            // If the entry is unliked
-            setLikeCount(likeCount - 1); // Decrement like count
-          }
+  const updateChatData = (updatedChat) => {
+    const entries = chatData.map((entry) => {
+      if (entry.id === updatedChat.id) {
+        if (entry.liked !== updatedChat.liked) {
+          const likeCountChange = updatedChat.liked ? 1 : -1;
+          setLikeCount((prevCount) => prevCount + likeCountChange);
         }
-        return updatedEntry;
+        return updatedChat;
       } else {
         return entry;
       }
     });
-    setChatData(entries)
+    setChatData(entries);
   };
 
   return (
@@ -42,13 +34,11 @@ const App = () => {
         </section>
       </header>
       <main>
-
-        {/* <ChatEntry {...chatMessages[0]}></ChatEntry> */}
-        <ChatLog 
-        entries={chatData}
-        onUpdateEntry={updateEntryData}
-        // likeCountData={likeCount}
-        ></ChatLog>
+        <ChatLog
+          entries={chatData}
+          updateChatData={updateChatData}
+          likeCount={likeCount}
+        />
       </main>
     </div>
   );

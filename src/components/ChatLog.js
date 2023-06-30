@@ -1,36 +1,28 @@
-import React from 'react'
+import React from 'react';
 import './ChatLog.css';
 import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
-// const ChatLog = ({entries, onUpdateEntry}) => {
-    const ChatLog = (props) => {
-    // console.log({onUpdateEntry});
-
-    // const chatComponents = entries.map((entry) => {
-        const chatComponents = props.entries.map((entry, i) => {
-
+const ChatLog = (props) => {
+    const chatComponents = props.entries.map((entry) => {
         return (
-            <li key={i} className="chat-log">
-                <ChatEntry
-                    id={entry.id}
-                    sender={entry.sender}
-                    body={entry.body}
-                    timeStamp={entry.timeStamp}
-                    liked={entry.liked}
-                    onUpdate={props.onUpdateEntry}>
-                </ChatEntry>
-            </li>
+            <ChatEntry
+            key={entry.id}
+            id={entry.id}
+            sender={entry.sender}
+            body={entry.body}
+            timeStamp={entry.timeStamp}
+            liked={entry.liked}
+            updateChatData={props.updateChatData}
+            />
         );
-
     });
 
     return (
         <section>
-                {chatComponents}
+            {chatComponents}
         </section>
     )
-
 };
 
 ChatLog.propTypes = {
@@ -41,6 +33,8 @@ ChatLog.propTypes = {
         timeStamp: PropTypes.string.isRequired,
         liked: PropTypes.bool.isRequired,
     })),
-    onUpdateEntry: PropTypes.func.isRequired
+    updateChatData: PropTypes.func.isRequired
 };
+
 export default ChatLog;
+

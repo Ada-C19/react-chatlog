@@ -1,47 +1,34 @@
 import React from 'react';
 import './ChatEntry.css';
+import TimeStamp from './TimeStamp';
 import PropTypes from 'prop-types';
 
 
-const ChatEntry = (props) => {
+const ChatEntry = ({sender, body, timeStamp, liked, id, updateChatData}) => {
 
-  // const determineClassName = () => {
-  //   if (props.sender === props.entrie[0].sender) {
-  //     const localMessages = true;
-  //     return localMessages ? 'chat-entry local' : 'chat-entry remote';
-  //   }
-  // }
-
+  const location = sender === 'Vladimir' ? 'local' : 'remote';
+  const heartColor = liked ? '❤️' : '🤍';
 
   const onHeartClick = () => {
     const updatedEntry = {
-      id: props.id,
-      sender: props.sender,
-      body: props.body,
-      timeStamp: props.timeStamp,
-      liked: !props.liked,
+      id: id,
+      sender: sender,
+      body: body,
+      timeStamp: timeStamp,
+      liked: !liked,
     };
-    props.onUpdate(updatedEntry);
+    updateChatData(updatedEntry);
   };
-
-  const heartColor = props.liked ? '❤️' : '🤍';
-
-
-  const getTimeAgo = (timeStamp) => {
-    const currentYear = new Date().getFullYear();
-    const textYear = new Date(timeStamp).getFullYear();
-    const difference = currentYear - textYear;
-    return `${difference} years ago`;
-  };
+  
   return (
-    <div className="chat-entry local">
-    {/* <div className={determineClassName()}> */}
-      <h2 className="entry-name">{props.sender}</h2>
+    <div className={`chat-entry ${location}`}>
+      <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
-        <p>{props.body}</p>
-        <p className="entry-time">{getTimeAgo(props.timeStamp)}</p>
+        <p>{body}</p>
+        <p className="entry-time">
+          <TimeStamp time={timeStamp}/>
+        </p>
         <button className="like" onClick={onHeartClick}>{heartColor}</button>
-        {/* {likeColor} */}
       </section>
     </div>
   );
@@ -53,12 +40,8 @@ ChatEntry.propTypes = {
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
-  onUpdate: PropTypes.func,
-  // isRequired
+  updateChatData: PropTypes.func.isRequired,
 };
 
-// ChatEntry.defaultProps = {
-//   onUpdate: () => {} // Provide a default empty function as the value
-// };
-
 export default ChatEntry;
+  
