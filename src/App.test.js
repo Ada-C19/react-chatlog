@@ -7,6 +7,7 @@ describe('Wave 03: clicking like button and rendering App', () => {
     // Arrange
     const { container } = render(<App />);
     let buttons = container.querySelectorAll('button.like');
+    console.log(buttons);
 
     // Act
     fireEvent.click(buttons[0]);
