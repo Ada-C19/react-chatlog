@@ -8,15 +8,14 @@ import { useState } from 'react';
 
 const App = () => {
   const [chatData, setChatData] = useState(chatMessages)
-    // console.log(chatData)
     // {
     //   'sender':'Vladimir',
     //   'body':'why are you arguing with me',
     //   'timeStamp':'2018-05-29T22:49:06+00:00',
     // }
   
-  const updateChatData = updatedChatEntry => {
-    const updatedChatEntries = chatData.map(chatEntry => {
+  const updateChatData = (updatedChatEntry) => {
+    const updatedChatEntries = chatData.map((chatEntry) => {
       if (chatEntry.id === updatedChatEntry.id) {
         return updatedChatEntry;
       } else {
@@ -24,8 +23,8 @@ const App = () => {
       }
     });
     
-    setChatData(updatedChatEntries)
-  }
+    setChatData(updatedChatEntries);
+  };
 
   const likeCounts = () => {
     let likeCount = 0;
@@ -34,7 +33,7 @@ const App = () => {
         likeCount += 1
       }  
     }
-    return likeCount
+    return likeCount;
   }; 
 
   return (
