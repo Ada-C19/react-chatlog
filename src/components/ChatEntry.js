@@ -17,7 +17,7 @@ const ChatEntry = (props) => {
       sender: props.sender,
       body: props.body,
       timeStamp: props.timeStamp,
-      liked: !props.liked
+      liked: !props.liked,
     };
     props.onUpdate(updatedChatEntry);
   };
@@ -43,7 +43,7 @@ ChatEntry.propTypes = {
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool,
-  onUpdate: PropTypes.func.isRequired
+  onUpdate: PropTypes.func.isRequired,
 };
 
 export default ChatEntry;

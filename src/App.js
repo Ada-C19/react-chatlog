@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 
 const App = () => {
-  const [chatData, setChatData] = useState(chatMessages)
+  const [chatData, setChatData] = useState(chatMessages);
     // {
     //   'sender':'Vladimir',
     //   'body':'why are you arguing with me',
@@ -30,7 +30,7 @@ const App = () => {
     let likeCount = 0;
     for (let entry of chatData) {
       if (entry.liked === true) {
-        likeCount += 1
+        likeCount += 1;
       }  
     }
     return likeCount;
@@ -45,8 +45,8 @@ const App = () => {
       <main>
         {/* <ChatEntry sender={chatData.sender} body={chatData.body} timeStamp={chatData.timeStamp}></ChatEntry> */}
         <ChatLog 
-        entries={chatData}
-        onUpdateChatData={updateChatData}
+          entries={chatData}
+          onUpdateChatData={updateChatData}
         ></ChatLog>
       </main>
     </div>
