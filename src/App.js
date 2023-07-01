@@ -41,7 +41,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Anh's Chat Log</h1>
-        <h2>Total Number of Likes: {likeCounts()} ❤️</h2>
+        <h2>Total Number of Likes: {likeCounts()} ❤️s</h2>
       </header>
       <main>
         {/* <ChatEntry sender={chatData.sender} body={chatData.body} timeStamp={chatData.timeStamp}></ChatEntry> */}
