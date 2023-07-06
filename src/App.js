@@ -23,12 +23,17 @@ const App = () => {
     });
   };
 
-  const totalLikeTally = messages.reduce((total, message) => {
-    if (message.liked) {
-      total += 1;
-    };
-    return total;
-  }, 0);
+  // const totalLikeTally = messages.reduce((total, message) => {
+  //   if (message.liked) {
+  //     total += 1;
+  //   };
+  //   return total;
+  // }, 0);
+  const countLikes = (messages) => {
+    return messages.reduce((totalLikes, message) => (totalLikes + message.liked), 0);
+  };
+
+  const totalLikeTally = countLikes(messages);
 
   return (
     <div id="App">
