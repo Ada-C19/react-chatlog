@@ -32,7 +32,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Nadia's ChatLog</h1>
-        <h2>Total ❤️s: {totalLikesTally}</h2>
+        <h2>{totalLikesTally} ❤️s</h2>
       </header>
       <main>
         <ChatLog entries={messages} onClick={onLike}/>
