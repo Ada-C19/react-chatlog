@@ -1,19 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 
 const ChatEntry = (props) => {
-  const [isLiked, setIsLiked] = useState(false);
+  const heart = props.liked ? '❤️' : '🤍';
 
   const toggleLike = () => {
-    setIsLiked(!isLiked);
-    if (!isLiked) {
-      props.increaseLikes();
-    } 
+    props.handleLikeToggle(props.id);
   };
-
 
   return (
     <div className="chat-entry local">
@@ -21,17 +17,19 @@ const ChatEntry = (props) => {
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
-        <button className="like" onClick={toggleLike}>{isLiked ? '❤️' : '🤍'}</button>
+
+        <button className="like" onClick={toggleLike}>{heart}</button>
       </section>
     </div>
   );
 };
 
 ChatEntry.propTypes = {
+  id: PropTypes.number.isRequired,
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
-  liked: PropTypes.bool.isRequired
+  liked: PropTypes.bool.isRequired,
 };
 
 export default ChatEntry;
