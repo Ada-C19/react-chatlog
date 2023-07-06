@@ -11,9 +11,8 @@ const App = () => {
       return oldMessages.map((message) => {
         if (id === message.id) {
           return {...message, liked: !message.liked};
-        } else {
-          return message;
-        };
+        }
+        return message;
       })
     })
   }
