@@ -19,10 +19,10 @@ const App = () => {
   }
 
   const calcTotalLikes = (messages) => {
-    let likedTally = 0;
-    for (let message of messages) {
-      if (message.liked) likedTally++; 
-    };
+    const initialValue = 0;
+    const likedTally = messages.reduce((total, message)=> {
+      return (message.liked === true) ? total + 1 : total;
+    }, initialValue)
     return likedTally
   }
 
