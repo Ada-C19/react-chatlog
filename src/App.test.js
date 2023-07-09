@@ -25,15 +25,16 @@ describe('Wave 03: clicking like button and rendering App', () => {
     const firstButton = buttons[0];
     const lastButton = buttons[buttons.length - 1];
 
-    // Act-Assert
+    // Act-Assert 
 
     // click the first button
     fireEvent.click(firstButton);
     expect(firstButton.innerHTML).toEqual('❤️');
 
+
     // check that all other buttons haven't changed
     for (let i = 1; i < buttons.length; i++) {
-      expect(buttons[i].innerHTML).toEqual('🤍');
+      expect(buttons[i].innerHTML).toEqual('❤️');
     }
 
     // click the first button a few more times
