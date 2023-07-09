@@ -3,7 +3,7 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp.js';
 
-const ChatEntry = (props) => {
+const ChatEntry = (props, onLikeUpdate) => {
 
   const onLikeBtnClick = () => {
     const updatedEntry = {
@@ -13,9 +13,9 @@ const ChatEntry = (props) => {
       timeStamp: props.timeStamp,
       liked: !props.liked
     }
-    props.onUpdate(updatedEntry)
+    onLikeUpdate(updatedEntry);
   }
-  
+
   const heartStatus = props.liked ? '❤️' : '🤍';
 
   return (
@@ -37,6 +37,7 @@ ChatEntry.propTypes = {
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
+  onLikeUpdate: PropTypes.func.isRequired
 };
 
 export default ChatEntry;
