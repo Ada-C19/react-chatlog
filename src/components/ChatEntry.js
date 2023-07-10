@@ -17,9 +17,10 @@ const ChatEntry = ({id, sender, body, timeStamp, liked, onLikeUpdate}) => {
   }
 
   const heartStatus = liked ? '❤️' : '🤍';
+  const remoteStatus = sender === 'Estragon' ? 'remote' : 'local';
 
   return (
-    <div className="chat-entry local">
+    <div className={`chat-entry ${remoteStatus}`}>
       <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
         <p>{body}</p>
