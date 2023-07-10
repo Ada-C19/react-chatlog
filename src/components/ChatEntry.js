@@ -3,27 +3,27 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp.js';
 
-const ChatEntry = (props, onLikeUpdate) => {
+const ChatEntry = ({id, sender, body, timeStamp, liked, onLikeUpdate}) => {
 
   const onLikeBtnClick = () => {
     const updatedEntry = {
-      id: props.id,
-      sender: props.sender,
-      body: props.body,
-      timeStamp: props.timeStamp,
-      liked: !props.liked
+      id: id,
+      sender: sender,
+      body: body,
+      timeStamp: timeStamp,
+      liked: !liked
     }
     onLikeUpdate(updatedEntry);
   }
 
-  const heartStatus = props.liked ? '❤️' : '🤍';
+  const heartStatus = liked ? '❤️' : '🤍';
 
   return (
     <div className="chat-entry local">
-      <h2 className="entry-name">{props.sender}</h2>
+      <h2 className="entry-name">{sender}</h2>
       <section className="entry-bubble">
-        <p>{props.body}</p>
-        <p className="entry-time"><TimeStamp time={props.timeStamp}/></p>
+        <p>{body}</p>
+        <p className="entry-time"><TimeStamp time={timeStamp}/></p>
         <button className="like" onClick={onLikeBtnClick}>{heartStatus}</button>
       </section>
     </div>

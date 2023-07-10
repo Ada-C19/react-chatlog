@@ -8,7 +8,7 @@ const App = () => {
   
   const [chatDATA, setchatDATA] = useState(chatMessages);
 
-  const updateChat = (updatedEntry) => {
+  const onLikeUpdate = (updatedEntry) => {
     const entries = chatDATA.map(entry => {
       if (entry.id === updatedEntry.id) {
         return updatedEntry;
@@ -35,7 +35,7 @@ const App = () => {
         </section>
       </header>
       <main>
-        <ChatLog entries={chatDATA} onLikeUpdate={updateChat}/>
+        <ChatLog entries={chatDATA} onLikeUpdate={onLikeUpdate}/>
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
       </main>

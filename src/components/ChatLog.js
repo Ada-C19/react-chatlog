@@ -3,7 +3,7 @@ import ChatEntry from './ChatEntry.js';
 import PropTypes from 'prop-types';
 import './ChatLog.css';
 
-const ChatLog = ({ entries, onLikeUpdate }) => {
+const ChatLog = ({entries, onLikeUpdate}) => {
     return entries.map((entry) => {
         return (
             <ChatEntry
