@@ -7,6 +7,7 @@ const ChatLog = ({entries, onLikeUpdate}) => {
     return entries.map((entry) => {
         return (
             <ChatEntry
+                key={entry.id}
                 id={entry.id}
                 sender={entry.sender}
                 body={entry.body}
@@ -28,7 +29,7 @@ ChatLog.propTypes = {
             liked: PropTypes.bool.isRequired,
         })
     ),
-    onLikeUpdate: PropTypes.func.isRequired
+    onLikeUpdate: PropTypes.func
 };
 
 export default ChatLog;
