@@ -22,9 +22,7 @@ const App = () => {
   
     setMessages(updatedMessages);
   };
-  // const countLikes = () => {
 
-  // } can use ***reduce***/filter/for loop
   const likedMessagesCount = messages.reduce(
     (count, message) => (message.liked ? count + 1 : count),
     0

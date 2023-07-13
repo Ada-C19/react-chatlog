@@ -58,6 +58,10 @@ button {
   text-align: left;
 }
 
+.chat-entry.remote {
+  text-align: right;
+}
+
 .chat-entry.local .entry-time {
   text-align: right;
 }
