@@ -5,14 +5,20 @@ import TimeStamp from './TimeStamp';
 
 
 const ChatEntry = (props) => {
+
+  const handleClick = () => {
+    props.handleLike(props.id)
+  }
+
+
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{props.sender} </h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time"> <TimeStamp time={props.timeStamp} /> </p>
-        <button className="like"> '🤍'</button>
-      </section>
+        <button onClick={handleClick} className="like">{props.liked ? '❤️' : '🤍'}</button>
+      </section> 
     </div>
   );
 };
