@@ -7,11 +7,18 @@ import {useState} from 'react';
 
 const MESSAGES = chatMessages
 
+const USERS = [];
+for (let entry of MESSAGES) {
+  if (USERS.includes(entry.sender) === false) {
+    USERS.push(entry.sender)
+  }
+};
+
 const App = () => {
   const [entries, setEntries] = useState(MESSAGES)
   const [localColor, setLocalColor] = useState('black');
   const [remoteColor, setRemoteColor] = useState('black');
-  const [userList, setUserList] = useState(['Vladimir', 'Estragon'])
+  const [userList, setUserList] = useState([USERS[0], USERS[1]])
 
   const updateHeart = (id) => {
     const newEntries = entries.map((entry) => {
