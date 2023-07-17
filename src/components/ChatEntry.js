@@ -4,13 +4,15 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = (props) => {
+  const heartFill = props.liked ? '❤️' : '🤍';
+
   return (
     <div className="chat-entry local">
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
         <p className="entry-time">{<TimeStamp time={props.timeStamp}/>}</p>
-        <button className="like">🤍</button>
+        <button className="like" onClick={()=>props.handleLike(props.id)}>{heartFill}</button>
       </section>
     </div>
   );
