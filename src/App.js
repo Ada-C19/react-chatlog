@@ -31,10 +31,7 @@ const App = () => {
       </header>
       <main>
         {
-        /* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */
           <ChatLog entries={messages} handleLike={handleLike}/> 
-          // <ChatEntry body={exampleMessage.body} timeStamp={exampleMessage.timeStamp} sender={exampleMessage.sender}/>
         }
       </main>
     </div>
