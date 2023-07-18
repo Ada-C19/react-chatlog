@@ -30,7 +30,8 @@ const App = () => {
       </header>
       <main>
         <ChatLog 
-          entries={chatMessages}
+          // entries={chatMessages}
+          entries={entriesData}
           updateLike={updateLike}/>
       </main>
     </div>
