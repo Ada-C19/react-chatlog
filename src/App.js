@@ -1,28 +1,38 @@
 import React from 'react';
 import './App.css';
-import chatMessages from './data/messages.json';
-import ChatEntry from './components/ChatEntry'; 
 
-const App = () => {
+// Import sample message data 
+import chatMessages from './data/messages.json'; 
 
+// Import ChatEntry component
+import ChatEntry from './components/ChatEntry';
+
+function App() {
+
+  // Get first message object from sample data
   const [firstMessage] = chatMessages;
 
   return (
     <div id="App">
+    
+      {/* Header */}
       <header>
-        <h1>Chat Log</h1> 
+        <h1>Chat Log</h1>
       </header>
 
       <main>
-        <ChatEntry  
-          sender={firstMessage.sender}
+      
+        {/* Render single ChatEntry component */}
+        <ChatEntry
+          sender={firstMessage.sender} 
           body={firstMessage.body}
-          timeStamp={firstMessage.timeStamp} 
+          timeStamp={firstMessage.timeStamp}
         />
-      </main>
 
+      </main>
+    
     </div>
   );
-};
+}
 
 export default App;
