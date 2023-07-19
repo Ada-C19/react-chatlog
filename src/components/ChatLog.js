@@ -11,12 +11,11 @@ const ChatLog = (props) => {
             body={chat.body}
             timeStamp={chat.timeStamp}
             liked={chat.liked}
-            onClick={chat.onClick}
+            onClick={props.onClick}
             key={chat.id}
             />
         )
     })
-    console.log('Are we there yet?')
     return <div className='chat-log'>{getChat}</div>
 };
 
@@ -30,7 +29,7 @@ ChatLog.propTypes = {
             liked: PropTypes.bool.isRequired,
         })
     ).isRequired,
-    onClick: PropTypes.func
+    onClick: PropTypes.func.isRequired
 };
 
 

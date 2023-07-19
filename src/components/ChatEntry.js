@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
 
 const ChatEntry = ({id, sender, body, timeStamp, liked, onClick}) => {
-  const heartColor = liked === false ? '🤍' : '❤️';
+  const heartColor = liked === false ? '🤍' : '❤️'; 
   const likeButton = () => {onClick(id)};
   return (
     <div className="chat-entry local">

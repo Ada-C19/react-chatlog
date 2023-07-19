@@ -4,25 +4,40 @@ import chatMessages from './data/messages.json';
 import ChatEntry from './components/ChatEntry';
 import ChatLog from './components/ChatLog';
 
-const DATA = {
-  id: 1,
-  sender:'Vladimir',
-  body:'why are you arguing with me',
-  timeStamp:'2018-05-29T22:49:06+00:00',
-  liked: false
-}
 
 const App = () => {
+
   const [chatData, setChatData] = useState(chatMessages);
+  let [likeCount, setLikeCount] = useState(0);
+  // let likeCount = 0;
+
+  const onLikeClick = (id) => {
+  setChatData(chatData.map(chat => {
+    if (chat.id === id){
+      chat.liked = !chat.liked
+      if (chat.liked === true){
+        setLikeCount(likeCount += 1)
+      };
+      if (chat.liked === false){
+        setLikeCount(likeCount -= 1)
+      };
+      
+      return chat;
+    }
+    return chat;
+}));
+};
+
+
+
   return (
     <div id="App">
       <header>
         <h1>ChatBug</h1>
+        <h2>{likeCount} ❤️s</h2>
       </header>
       <main>
-        <div><ChatLog entries={chatData}></ChatLog></div>
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
+        <div><ChatLog entries={chatData} onClick={onLikeClick}></ChatLog></div>
       </main>
     </div>
   );
