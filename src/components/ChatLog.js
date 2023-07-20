@@ -5,22 +5,22 @@ import ChatEntry from './ChatEntry';
 
 const ChatLog = (props) => {
 
-  const chatEntries = props.entries.map(entry => {
+const chatEntries = props.entries.map(entry => {
     return (
-      <ChatEntry 
+    <ChatEntry 
         key={entry.id} 
         sender={entry.sender}
         body={entry.body}
         timeStamp={entry.timeStamp}
-      />
+    />
     );
-  });
+});
 
-  return (
+return (
     <div className="chat-log">
-      {chatEntries}
+    {chatEntries}
     </div>
-  );
+);
 
 }
 
