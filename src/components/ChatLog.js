@@ -5,10 +5,10 @@ import ChatEntry from './ChatEntry';
 const ChatLog = (props) => {
 
 const chatEntries = props.entries.map(entry => (
-    <ChatEntry 
-    key={entry.id}
+    <ChatEntry
+    key={entry.id} 
     {...entry}
-    onLike={props.onLike} 
+    onLike={props.onLike}
     />
 ));
 
