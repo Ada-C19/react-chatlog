@@ -5,14 +5,7 @@ import ChatLog from './components/ChatLog';
 
 
 const App = () => {
-  const [likes, setLikes] = useState(0);
-  const addLikes = () => {
-    setLikes(likes + 1);
-  }
-  const takeLikes = () => {
-    setLikes(likes - 1);
-  }
-
+  console.log(chatMessages);
   return (
     <div id="App">
       <header>
