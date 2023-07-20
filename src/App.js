@@ -1,22 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import chatMessages from './data/messages.json';
+import ChatLog from './components/ChatLog';
 
-// Import sample message data 
-import chatMessages from './data/messages.json'; 
+const App = () => {
 
-// Import ChatEntry component
-import ChatEntry from './components/ChatEntry';
+  const [totalLikes, setTotalLikes] = useState(0);
 
-import ChatLog from './components/ChatLog'; 
-
-function App() {
+  const incrementTotalLikes = () => {
+    setTotalLikes(totalLikes + 1);
+  }
 
   return (
-    <div>
-     {/* Render ChatLog */}
-     <ChatLog entries={chatMessages} />
+    <div id="App">
+      <header>
+        <h1>Chat Log</h1>
+      </header>
+
+      <main>
+        <ChatLog 
+          entries={chatMessages}
+          onLike={incrementTotalLikes}
+        />
+      </main>
+
+      <p>{totalLikes} ❤️s</p>
+
     </div>
-  )
+  );
 }
 
 export default App;
