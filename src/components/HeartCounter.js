@@ -6,7 +6,7 @@ const HeartCounter = (props) => {
   return (
     <div>
       <p className='heartWidget'>
-       ❤️ {props.likeTotal}
+      {props.likeTotal} ❤️s
       </p>
     </div>
   );

@@ -5,7 +5,7 @@ const LikeButton = (props) => {
   if (props.heartCondition) {
     return <button onClick={props.updateLike}>❤️</button>
   } else {
-    return <button onClick={props.updateLike}>🤍</button>
+    return <button className='like' onClick={props.updateLike}>🤍</button>
   };
 };
 
