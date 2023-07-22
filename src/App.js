@@ -29,7 +29,7 @@ const App = () => {
         <HeartCounter likeTotal={totalLikes} />
       </header>
       <main>
-        <ChatLog entries={messagesJSON} onLikeMessage={toggleLiked}/>
+        <ChatLog entries={messageData} onLikeMessage={toggleLiked}/>
       </main>
     </div>
   );
