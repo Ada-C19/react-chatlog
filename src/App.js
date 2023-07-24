@@ -1,16 +1,35 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import chatMessages from './data/messages.json';
+import ChatLog from './components/ChatLog';
+import HeartCounter from './components/HeartCounter'
+import messagesJSON from './data/messages.json'
 
 const App = () => {
+  const [messageData, setMessageData] = useState(messagesJSON);
+
+  const toggleLiked = (id) => {
+    const messages = messageData.map((message) => {
+      if (message.id === id) {
+        message.liked = !message.liked;
+      }
+      return message;
+    });
+
+    setMessageData(messages);
+  }
+
+  const totalLikes = messagesJSON.filter(message => message.liked).length;
+
   return (
+    
     <div id="App">
       <header>
-        <h1>Application title</h1>
+        <h1>Chat with Vladimir</h1>
+        <br></br>
+        <HeartCounter likeTotal={totalLikes} />
       </header>
       <main>
-        {/* Wave 01: Render one ChatEntry component
-        Wave 02: Render ChatLog component */}
+        <ChatLog entries={messageData} onLikeMessage={toggleLiked}/>
       </main>
     </div>
   );
