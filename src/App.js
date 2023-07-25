@@ -11,6 +11,7 @@ const App = () => {
       <main>
         {/* Wave 01: Render one ChatEntry component
         Wave 02: Render ChatLog component */}
+        {/* comment */}
       </main>
     </div>
   );
