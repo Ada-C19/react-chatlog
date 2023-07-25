@@ -3,7 +3,7 @@ import './ChatLog.css';
 import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
-const ChatLog = ( { entries } ) => {
+const ChatLog = ( { entries, likeMessage, unlikeMessage } ) => {
     const chatEntries = entries.map(entry => {
         return (
             <ChatEntry
@@ -12,6 +12,8 @@ const ChatLog = ( { entries } ) => {
                 body={entry.body}
                 timeStamp={entry.timeStamp}
                 liked={entry.liked}
+                likeMessage={likeMessage}
+                unlikeMessage={unlikeMessage}
             />
         )
     })
