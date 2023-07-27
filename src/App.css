@@ -30,19 +30,24 @@
   background-color: #e0ffff;
 }
 
-#App .widget {
-  display: inline-block;
+.widget {
+  display: block;
   line-height: 0.5em;
   border-radius: 10px;
   color: black;
   font-size:0.8em;
   padding-left: 1em;
   padding-right: 1em;
+  text-align: center;
+  align-content: center;
+  justify-content: space-between;
 }
 
-#App #heartWidget {
+#heartWidget {
   font-size: 1.5em;
-  margin: 1em
+  margin: 1em;
+  text-align: center;
+  color: whitesmoke;
 }
 
 #App span {
@@ -50,25 +55,25 @@
 }
 
 .red {
-  color: #b22222
+  color: #b22222;
 }
 
 .orange {
-  color: #e6ac00
+  color: #e6ac00;
 }
 
 .yellow {
-  color: #e6e600
+  color: #e6e600;
 }
 
 .green {
-  color: green
+  color: green;
 }
 
 .blue {
-  color: blue
+  color: blue;
 }
 
 .purple {
-  color: purple
+  color: purple;
 }

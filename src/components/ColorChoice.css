@@ -1,0 +1,45 @@
+button {
+    padding: .65em;
+    margin: 0 .25em;
+}
+
+.buttons {
+    display: flex;
+}
+
+.left {
+    justify-content: flex-start;
+}
+
+.right {
+    justify-content: flex-end;
+}
+.red-button {
+    border-radius: 50%;
+    background-color: #b22222;
+}
+
+.orange-button {
+    border-radius: 50%;
+    background-color: #e6ac00;
+}
+
+.yellow-button {
+    border-radius: 50%;
+    background-color: #e6e600;
+}
+
+.green-button {
+    border-radius: 50%;
+    background-color: green;
+}
+
+.blue-button {
+    border-radius: 50%;
+    background-color: blue;
+}
+
+.purple-button {
+    border-radius: 50%;
+    background-color: purple;
+}
