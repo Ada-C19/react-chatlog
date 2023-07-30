@@ -23,7 +23,7 @@ const App = () => {
   return (
     <div id="App">
       <header>
-        <h1>Chat 🪵 {likeCount} 🤍s</h1>
+        <h1>Chat 🪵 {likeCount} ❤️s</h1>
       </header>
       <main>
         <ChatLog entries={chatEntries} updateLike={updateLike} />

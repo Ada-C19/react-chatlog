@@ -4,7 +4,7 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
-  const heart = props.liked ? '🤍'  : '❤️';
+  const heart = props.liked ?  '❤️' : '🤍';
 
   const handleLikeButton = () => {
     props.updateLike(props.id);
