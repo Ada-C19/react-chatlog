@@ -1,6 +1,5 @@
 import React from 'react';
 import ChatEntry from './ChatEntry';
-import TimeStamp from './TimeStamp';
 import './ChatLog.css';
 import PropTypes from 'prop-types';
 
@@ -13,7 +12,7 @@ const ChatLog = (props) => {
                     id={entry.id}
                     sender={entry.sender}
                     body={entry.body}
-                    timeStamp={entry.time}
+                    timeStamp={entry.timeStamp}
                     liked={entry.liked}
                     updateLike={props.updateLike}
                 />

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
   const heart = props.liked ? '🤍'  : '❤️';
-  console.log(heart)
 
   const handleLikeButton = () => {
     props.updateLike(props.id);
@@ -16,7 +15,7 @@ const ChatEntry = (props) => {
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
-        <p className="entry-time">{props.timeStamp}</p>
+        <p className="entry-time">{props.timeStamp} years ago</p>
         <button className="like"  onClick={handleLikeButton} >{heart} </button>
       </section>
     </div>
@@ -30,7 +29,6 @@ ChatEntry.propTypes = {
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
   updateLike: PropTypes.func.isRequired,
-  // likeDecrease: PropTypes.func.isRequired,
 };
 
 export default ChatEntry;
