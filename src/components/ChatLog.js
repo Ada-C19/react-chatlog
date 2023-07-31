@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import ChatEntry from './ChatEntry';
 
 const ChatLog = (props) => {
+    // console.log(props.onLikeChange)
     const chatEntryComponents = props.entries.map((entry) => (
         <ChatEntry
             key={entry.id}
@@ -11,6 +12,7 @@ const ChatLog = (props) => {
             sender={entry.sender}
             body={entry.body}
             timeStamp={entry.timeStamp}
+            onLikeChange={props.onLikeChange}
         />
     ));
 
@@ -24,5 +26,7 @@ const ChatLog = (props) => {
 
 ChatLog.propTypes = {
     entries: PropTypes.array.isRequired,
+    onLikeChange: PropTypes.func.isRequired,
 };
+
 export default ChatLog;
