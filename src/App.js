@@ -18,7 +18,7 @@ const App = () => {
     <div id="App">
       <header>
         <h1>Chat between Vladimir and Estragon</h1>
-        <p> Total Likes: {totalLikes} ❤️ </p>
+        <p> {totalLikes} ❤️s</p>
       </header>
       <main>
         {/* Wave 01: Render one ChatEntry component

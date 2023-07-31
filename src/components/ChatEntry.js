@@ -13,9 +13,11 @@ const ChatEntry = (props) => {
     
   };
 
+  const isLocal = props.sender === 'Vladimir';
+  const entryClass = `chat-entry ${isLocal ? 'local': 'remote'}`;
 
   return (
-    <div className={ `chat-entry ${liked ? 'liked': ''}`}>
+    <div className={entryClass}>
       <h2 className="entry-name">{props.sender}</h2>
       <section className="entry-bubble">
         <p>{props.body}</p>
