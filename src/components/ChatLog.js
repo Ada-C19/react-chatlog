@@ -30,9 +30,4 @@ ChatLog.propTypes = {
     onLikeChange: PropTypes.func.isRequired,
 };
 
-
-ChatLog.defaultProps = {
-    onLikeChange: () => {},
-};
-
 export default ChatLog;
