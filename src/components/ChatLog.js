@@ -15,7 +15,7 @@ const ChatLog = (props) => {
         );
     });
 
-    return <div>{chatComponents}</div>;
+    return chatComponents;
 };
 
 export default ChatLog;
