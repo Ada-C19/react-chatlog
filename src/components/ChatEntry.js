@@ -1,3 +1,6 @@
+// represents a single chat entry
+// Takes multiple props: id, sender, body, timeStamp
+
 import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
@@ -17,6 +20,10 @@ const ChatEntry = (props) => {
 
 ChatEntry.propTypes = {
   //Fill with correct proptypes
+  id: PropTypes.number.isRequired,
+  sender: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  timeStamp: PropTypes.string.isRequired,
 };
 
 export default ChatEntry;
