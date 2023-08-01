@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 
 const ChatEntry = (props) => {
   const [liked, setLiked] = useState(false);
@@ -15,7 +16,7 @@ const ChatEntry = (props) => {
       <h2 className="entry-name">{ props.sender }</h2>
       <section className="entry-bubble">
         <p>{ props.body }</p>
-        <p className="entry-time">{ props.timeStamp }</p>
+        <p className="entry-time">{ moment(props.timeStamp).fromNow() }</p>
         <button className="like" onClick={toggleLike}>{ liked ? '❤️' : '🤍' }
         </button>
       </section>
