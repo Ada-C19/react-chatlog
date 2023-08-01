@@ -16,7 +16,7 @@ const App = () => {
         <h1>{likesCount} ❤️s</h1>
       </header>
       <main>
-        <ChatLog entries={chatMessages} onLikeChange={updateLikesCount} />
+        <ChatLog entries={chatMessages} onClickLike={updateLikesCount} />
       </main>
     </div>
   );

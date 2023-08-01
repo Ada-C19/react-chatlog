@@ -10,11 +10,12 @@ const ChatLog = (props) => {
                 sender={entry.sender}
                 body={entry.body}
                 timeStamp={entry.timeStamp}
+                onClickLike={props.onClickLike}
             />
         );
     });
 
-    return chatComponents;
+    return <div>{chatComponents}</div>;
 };
 
 export default ChatLog;

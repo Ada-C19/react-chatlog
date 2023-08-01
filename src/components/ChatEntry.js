@@ -3,7 +3,7 @@ import './ChatEntry.css';
 import PropTypes from 'prop-types';
 
 const ChatEntry = (props) => {
-  const [liked, setLiked] = useState(props.liked);
+  const [liked, setLiked] = useState(false);
 
   const toggleLike = () => {
     setLiked(!liked);
