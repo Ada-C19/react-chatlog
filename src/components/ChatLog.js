@@ -1,3 +1,4 @@
+// src/components/ChatLog.js
 import React from 'react';
 import './ChatLog.css';
 import ChatEntry from './ChatEntry';

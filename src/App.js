@@ -7,24 +7,24 @@ const App = () => {
 
   const [totalLikes, setTotalLikes] = useState(0);
 
-  const incrementTotalLikes = () => {
-    setTotalLikes(totalLikes + 1);
+  const handleLikeChange = (isLiked) => {
+    // Increment or decrement based on the liked status
+    setTotalLikes(prevTotalLikes => isLiked ? prevTotalLikes + 1 : prevTotalLikes - 1);
   }
 
   return (
     <div id="App">
       <header>
         <h1>Chat Log</h1>
+        <p>{totalLikes} ❤️s</p>  {/* Moved the total likes display to the top */}
       </header>
 
       <main>
         <ChatLog 
           entries={chatMessages}
-          onLike={incrementTotalLikes}
+          onLike={handleLikeChange}
         />
       </main>
-
-      <p>{totalLikes} ❤️s</p>
 
     </div>
   );

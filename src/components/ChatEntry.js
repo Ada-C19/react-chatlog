@@ -1,3 +1,4 @@
+// src/components/ChatEntry.js
 import React, { useState } from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
@@ -8,8 +9,10 @@ const ChatEntry = (props) => {
   const [liked, setLiked] = useState(props.liked);
 
   const toggleLiked = () => {
-    setLiked(!liked);
-    props.onLike();
+    const newLikedStatus = !liked;
+    setLiked(newLikedStatus);
+    // Pass the new liked status to the onLike function
+    props.onLike(newLikedStatus);
   }
 
   return (
