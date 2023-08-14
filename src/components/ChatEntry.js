@@ -5,35 +5,37 @@ import TimeStamp from './TimeStamp';
 import './ChatEntry.css';
 
 const ChatEntry = (props) => {
-
   const [liked, setLiked] = useState(props.liked);
 
   const toggleLiked = () => {
     const newLikedStatus = !liked;
     setLiked(newLikedStatus);
-    props.onLike && props.onLike(newLikedStatus); // Safeguard in case onLike is not provided
-  }
+    
+    // Safeguard the invocation of onLike
+    if (props.onLike) {
+      props.onLike(newLikedStatus);
+    }
+  };
 
   return (
     <div className="chat-entry">
-      <p className="entry-name">{props.sender}</p>
-      <section className="entry-bubble">
-        <p className="entry-body">{props.body}</p>
-        <p className="entry-time"><TimeStamp time={props.timeStamp} /></p>
-        <button className="like" onClick={toggleLiked}>
-          {liked ? '❤️' : '🤍'}
-        </button>
-      </section>
+      <h3>{props.sender}</h3>
+      <p>{props.body}</p>
+      <TimeStamp time={props.timeStamp} />
+      <button className="like" onClick={toggleLiked}>
+        {liked ? '❤️' : '🤍'}
+      </button>
     </div>
   );
-}
+};
 
 ChatEntry.propTypes = {
   sender: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   timeStamp: PropTypes.string.isRequired,
   liked: PropTypes.bool.isRequired,
-  onLike: PropTypes.func.isRequired
+  // Make onLike prop optional
+  onLike: PropTypes.func
 };
 
 export default ChatEntry;
