@@ -1,8 +1,8 @@
-// src/components/ChatEntry.js
+
 import React, { useState } from 'react';
-import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
+import './ChatEntry.css';
 
 const ChatEntry = (props) => {
 
@@ -11,28 +11,22 @@ const ChatEntry = (props) => {
   const toggleLiked = () => {
     const newLikedStatus = !liked;
     setLiked(newLikedStatus);
-    // Pass the new liked status to the onLike function
-    props.onLike(newLikedStatus);
+    props.onLike && props.onLike(newLikedStatus); // Safeguard in case onLike is not provided
   }
 
   return (
-    <div className={`chat-entry ${props.sender === 'Estragon' ? 'local' : 'remote'}`}>
-
-      <h2 className="entry-name">{props.sender}</h2>
-
+    <div className="chat-entry">
+      <p className="entry-name">{props.sender}</p>
       <section className="entry-bubble">
-        <p>{props.body}</p>
-        <p className="entry-time">
-          <TimeStamp time={props.timeStamp} />
-        </p>
-        <button onClick={toggleLiked}>
+        <p className="entry-body">{props.body}</p>
+        <p className="entry-time"><TimeStamp time={props.timeStamp} /></p>
+        <button className="like" onClick={toggleLiked}>
           {liked ? '❤️' : '🤍'}
         </button>
       </section>
-
     </div>
   );
-};
+}
 
 ChatEntry.propTypes = {
   sender: PropTypes.string.isRequired,
