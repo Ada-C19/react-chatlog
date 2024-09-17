@@ -6,35 +6,35 @@ import { render, screen } from '@testing-library/react';
 const LOG = [
   {
     id: 1,
-    sender: 'Vladimir',
+    sender: 'Barbara',
     body: 'why are you arguing with me',
     timeStamp: '2018-05-29T22:49:06+00:00',
     liked: false,
   },
   {
     id: 2,
-    sender: 'Estragon',
+    sender: 'Claire',
     body: 'Because you are wrong.',
     timeStamp: '2018-05-29T22:49:33+00:00',
     liked: false,
   },
   {
     id: 3,
-    sender: 'Vladimir',
+    sender: 'Barbara',
     body: 'because I am what',
     timeStamp: '2018-05-29T22:50:22+00:00',
     liked: false,
   },
   {
     id: 4,
-    sender: 'Estragon',
+    sender: 'Claire',
     body: 'A robot.',
     timeStamp: '2018-05-29T22:52:21+00:00',
     liked: false,
   },
   {
     id: 5,
-    sender: 'Vladimir',
+    sender: 'Barbara',
     body: 'Notabot',
     timeStamp: '2019-07-23T22:52:21+00:00',
     liked: false,
@@ -49,11 +49,11 @@ describe('Wave 02: ChatLog', () => {
   test('renders without crashing and shows all the names', () => {
     [
       {
-        name: 'Vladimir',
+        name: 'Barbara',
         numChats: 3,
       },
       {
-        name: 'Estragon',
+        name: 'Claire',
         numChats: 2,
       },
     ].forEach((person) => {

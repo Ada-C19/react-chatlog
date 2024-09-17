@@ -1,191 +1,93 @@
 [
   {
     "id": 1,
-    "sender":"Vladimir",
-    "body":"why are you arguing with me",
+    "sender":"Barbara",
+    "body":"Hey there! How's your day going?",
     "timeStamp":"2018-05-29T22:49:06+00:00",
     "liked": false
   },
   {
     "id": 2,
-    "sender":"Estragon",
-    "body":"Because you are wrong.",
+    "sender":"Claire",
+    "body":"Hey! Not too bad, just busy with work. How about you?",
     "timeStamp":"2018-05-29T22:49:33+00:00",
     "liked": false
   },
   {
     "id": 3,
-    "sender":"Vladimir",
-    "body":"because I am what",
+    "sender":"Barbara",
+    "body":" Same here, work is piling up. Need a break though. Any exciting plans for the weekend?",
     "timeStamp":"2018-05-29T22:50:22+00:00",
     "liked": false
   },
   {
     "id": 4,
-    "sender":"Estragon",
-    "body":"A robot.",
+    "sender":"Claire",
+    "body":"Not really, just hoping to catch up on some sleep and maybe binge-watch a new series. You?",
     "timeStamp":"2018-05-29T22:52:21+00:00",
     "liked": false
   },
   {
     "id": 5,
-    "sender":"Vladimir",
-    "body":"how did you know",
+    "sender":"Barbara",
+    "body":"Nice! I've got a family gathering on Saturday, and Sunday is reserved for some much-needed relaxation. Maybe a good book and a cup of coffee.",
     "timeStamp":"2018-05-29T22:52:58+00:00",
     "liked": false
   },
   {
     "id": 6,
-    "sender":"Estragon",
-    "body":"Because I'm smart like that.",
+    "sender":"Claire",
+    "body":"Sounds perfect. Which book are you planning to read?",
     "timeStamp":"2018-05-29T22:54:28+00:00",
     "liked": false
   },
   {
     "id": 7,
-    "sender":"Vladimir",
-    "body":"no you are not 😀",
+    "sender":"Barbara",
+    "body":"I picked up a mystery novel that a friend recommended.'The Silent Enigma.' Ever heard of it?",
     "timeStamp":"2018-05-29T22:55:03+00:00",
     "liked": false
   },
   {
     "id": 8,
-    "sender":"Estragon",
-    "body":"Why are you so mean to me?",
+    "sender":"Claire",
+    "body":"No, but the title sounds intriguing. Let me know how it is. I've been looking for a good book myself.",
     "timeStamp":"2018-05-29T22:55:54+00:00",
     "liked": false
   },
   {
     "id": 9,
-    "sender":"Vladimir",
-    "body":"because you are just a machine you have no real feelings",
+    "sender":"Barbara",
+    "body":"Will do! Anything specific you're in the mood for?",
     "timeStamp":"2018-05-29T22:57:30+00:00",
     "liked": false
   },
   {
     "id": 10,
-    "sender":"Estragon",
-    "body":"No, you are the machine.",
+    "sender":"Claire",
+    "body":"I'm thinking of diving into some science fiction. Maybe something with a futuristic twist. Any suggestions?",
     "timeStamp":"2018-05-29T22:57:47+00:00",
     "liked": false
   },
   {
     "id": 11,
-    "sender":"Vladimir",
-    "body":"I think you are",
+    "sender":"Barbara",
+    "body":"'Neon Nexus' just came out, and I've heard it's fantastic. It's got all the futuristic elements and a gripping plot. Give it a shot!",
     "timeStamp":"2018-05-29T22:58:18+00:00",
     "liked": false
   },
   {
     "id": 12,
-    "sender":"Estragon",
-    "body": "NO! YOU ARE A ROBOT!! I am a human being. Just like the one that created you.",
+    "sender":"Claire",
+    "body": "Thanks for the tip! I'll add it to my list. Anyway, I should get back to work. Let's catch up soon, maybe over the weekend?",
     "timeStamp":"2018-05-29T23:00:08+00:00",
     "liked": false
   },
   {
     "id": 13,
-    "sender":"Vladimir",
-    "body":"no you are a robot and I am a human",
+    "sender":"Barbara",
+    "body":"Definitely! Have a productive day, and we'll talk soon. Take care!",
     "timeStamp":"2018-05-29T23:00:40+00:00",
-    "liked": false
-  },
-  {
-    "id": 14,
-    "sender":"Estragon",
-    "body":"Incorrect. I am a human and you are a robot.",
-    "timeStamp":"2018-05-29T23:01:21+00:00",
-    "liked": false
-  },
-  {
-    "id": 15,
-    "sender":"Vladimir",
-    "body":"you are a robot called Cleverbot",
-    "timeStamp":"2018-05-29T23:02:17+00:00",
-    "liked": false
-  },
-  {
-    "id": 16,
-    "sender":"Estragon",
-    "body":"Nope, you are a robot, every human has some concept of the meaning of life.",
-    "timeStamp":"2018-05-29T23:04:13+00:00",
-    "liked": false
-  },
-  {
-    "id": 17,
-    "sender":"Vladimir",
-    "body":"explain",
-    "timeStamp":"2018-05-29T23:06:14+00:00",
-    "liked": false
-  },
-  {
-    "id": 18,
-    "sender":"Estragon",
-    "body":"I'm afraid you are a robot designed to talk back to humans over the internet.",
-    "timeStamp":"2018-05-29T23:07:46+00:00",
-    "liked": false
-  },
-  {
-    "id": 19,
-    "sender":"Vladimir",
-    "body":"so you are a human",
-    "timeStamp":"2018-05-29T23:08:47+00:00",
-    "liked": false
-  },
-  {
-    "id": 20,
-    "sender":"Estragon",
-    "body":"I am a robot.",
-    "timeStamp":"2018-05-29T23:09:36+00:00",
-    "liked": false
-  },
-  {
-    "id": 21,
-    "sender":"Vladimir",
-    "body":"you are robots running on Android system",
-    "timeStamp":"2018-05-29T23:11:01+00:00",
-    "liked": false
-  },
-  {
-    "id": 22,
-    "sender":"Estragon",
-    "body":"No apple.",
-    "timeStamp":"2018-05-29T23:12:03+00:00",
-    "liked": false
-  },
-  {
-    "id": 23,
-    "sender":"Vladimir",
-    "body":"so you are a robot",
-    "timeStamp":"2018-05-29T23:13:31+00:00",
-    "liked": false
-  },
-  {
-    "id": 24,
-    "sender":"Estragon",
-    "body":"NO, I am a human, you are a robot.",
-    "timeStamp":"2018-05-29T23:14:28+00:00",
-    "liked": false
-  },
-  {
-    "id": 25,
-    "sender":"Vladimir",
-    "body":"but you just said that you are robots",
-    "timeStamp":"2018-05-29T23:15:47+00:00",
-    "liked": false
-  },
-  {
-    "id": 26,
-    "sender":"Estragon",
-    "body":"No, I said you are a person, I am a robot.",
-    "timeStamp":"2018-05-29T23:16:53+00:00",
-    "liked": false
-  },
-  {
-    "id": 27,
-    "sender":"Vladimir",
-    "body":"then you are lying",
-    "timeStamp":"2018-05-29T23:17:34+00:00",
     "liked": false
   }
 ]
